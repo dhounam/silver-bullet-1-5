@@ -1,0 +1,33 @@
+/*  Chart outer wrapper nestles round child SVG object */
+
+.silver-chartwrapper {
+  display: inline-block;
+  transform-origin: top left;
+  transition-duration: 0.5s, 0.5s;
+  transition-property: height, width;
+}
+
+.svg-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-zoom-050 {
+  transform: scale(0.5);
+}
+
+.chart-zoom-1 {
+  transform: scale(1);
+}
+
+.chart-zoom-150 {
+  transform: scale(1.95);
+}
+
+.chart-zoom-175 {
+  transform: scale(2.275);
+}
+
+.chart-zoom-250 {
+  transform: scale(2.5);
+}

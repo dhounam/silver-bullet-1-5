@@ -1,0 +1,23 @@
+/*  This CSS file defines default styling for D3-generated axes...
+      Some elements are simply set 'off' (display: none)
+      Others (ticks and text) are set to be invisible by default
+        then inline styling will impose styles determined by prefs file(s)
+*/
+
+.axis-group {
+  fill: none;
+}
+/* Ignore domain path, which I explicitly remove */
+
+/* 'Hide' ticks and text */
+/* font and font-size are (hopefully) 'close enough' to avoid disruption */
+.axis-group line {
+  fill: none;
+  stroke: black;
+  stroke-width: 0;
+}
+.axis-group text {
+  font-size: 6.5px;
+  fill: none;
+  stroke: none;
+}

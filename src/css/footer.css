@@ -1,0 +1,40 @@
+/* Filename wrapper */
+
+.filename-wrapper {
+  display: flex;
+  padding-top: 5px;
+  align-items: center;
+}
+
+/* Export for `date`  `section`     Filename *yyyyddmm_SSCnnn* */
+.filename-label-1 {
+  font-weight: 600;
+  font-size: 16px;
+}
+.filename-label-2 {
+  text-align: right;
+}
+.filename-date-select {
+  width: 90px;
+}
+.filename-section-select {
+  width: 150px;
+}
+
+/* Export wrapper, with SVG and PNG buttons */
+.export-wrapper {
+  display: flex;
+  padding-top: 5px;
+  justify-content: flex-end;
+}
+.export-wrapper-disabled {
+  opacity: 0.5;
+  cursor: none;
+  pointer-events: none;
+}
+.export-svg-div {
+  margin-right: 10px;
+}
+.export-png-div {
+  margin-right: 10px;
+}

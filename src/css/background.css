@@ -1,0 +1,11 @@
+/*
+NOTE: I'm not sure that this component needs any css
+since we'll probably wind up with hard svg element props
+*/
+
+.d3-key-text {
+  font-family: 'OfficinaSanITC-Book';
+  font-size: 7px;
+  fill: #000;
+  stroke: none;
+}

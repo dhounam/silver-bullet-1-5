@@ -1,0 +1,24 @@
+{
+  "__NOTES1__": "Revised, hopefully simplified chartConfig object",
+  "__NOTES2__": "Radical restructure, March 2017; renamed Aug 2020",
+  "background": {
+    "outerbox": {},
+    "shapes": {},
+    "strings": {
+      "title": {},
+      "subtitle": {},
+      "source": {},
+      "footnote": {}
+    }
+  },
+  "panelArray": [],
+  "panelAttributes": {},
+  "metadata": {
+    "chartIndex": 0,
+    "preset": "",
+    "newchart": true,
+    "panels": {},
+    "subPreset": ""
+  },
+  "other": {"duration":100}
+}

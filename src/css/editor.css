@@ -1,0 +1,198 @@
+/* Header occupies top 30px and sprawls left across chart component */
+.editor-header-wrapper {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 206%;
+  height: 40px;
+  pointer-events: none;
+}
+
+/* Next is a kludge: if Editor isn't a child of Sibyl,
+this class resets header width */
+.parentless-header {
+  width: 100%;
+}
+.chart-preset-choices-div {
+  width: 50%;
+}
+.parentless-choices {
+  width: 100%;
+}
+
+/* Outer wrapper for form */
+.editor-outer-wrapper {
+  position: absolute;
+  width: 95%;
+  height: 100%;
+  margin-left: 3%;
+}
+
+/* stylelint-enable */
+/* CHART DATA fold elements: textarea... */
+.chartdata-textarea {
+  font-family: EconSansCndReg;
+  font-size: 16px;
+  line-height: 20px;
+  height: 200px;
+  width: 98%;
+  tab-size: 30;
+  overflow: auto;
+  resize: none;
+}
+.chartdata-textarea::-webkit-input-placeholder {
+  white-space: pre-line;
+  position: relative;
+}
+.chartdata-textarea::-moz-placeholder {
+  white-space: pre-line;
+  position: relative;
+}
+.chartdata-textarea-disabled {
+  display: none;
+}
+
+/* LAYOUT fold fieldset sub-elements */
+.layout-panels-fieldset {
+  width: 25%;
+  height: 70%;
+}
+.layout-panels-fieldset-input {
+  width: 25px;
+}
+.layout-size-fieldset {
+  width: 25%;
+  height: 70%;
+  margin-left: 10px;
+}
+.layout-size-fieldset-input {
+  width: 40px;
+}
+.layout-legend-fieldset {
+  width: 25%;
+  height: 70%;
+  margin-left: 10px;
+}
+.layout-legend-fieldset-select {
+  width: 40px;
+}
+.layout-recommended-height-span {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 3px;
+}
+.layout-recommended-height-span:hover {
+  background-color: #888;
+}
+.layout-recommended-height-span:active {
+  color: #f00;
+}
+.strings-background-fieldset {
+  margin-top: 20px;
+  width: 93%;
+}
+.strings-background-fieldset-input {
+  width: 85%;
+}
+.strings-panel-fieldset {
+  margin-top: 20px;
+  width: 93%;
+}
+.strings-panel-fieldset-input {
+  width: 85%;
+}
+.scales-left-fieldset {
+  margin-top: 20px;
+  height: 90%;
+  width: 45%;
+}
+.scales-right-fieldset {
+  margin-top: 20px;
+  height: 90%;
+  width: 40%;
+}
+
+.scales-mmi-input {
+  width: 20%;
+}
+/* Context choices wrapper: left half of Editor header */
+.chart-context-choices-div {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 49.75%;
+  height: 100%;
+  pointer-events: all;
+}
+
+/* Reset button wrapper: right half of Editor header */
+.chart-reset-wrapper {
+  /* NOTE: I' ve hidden the reset button for now... */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Class to hide blob controls on Datafold */
+.blobs-hidden {
+  display: none;
+}
+
+/* Classes for footnote fieldset in Datafold */
+.footnote-fieldset {
+  width: 95%;
+  /*overflow-y: auto;*/
+}
+.footnote-add-div {
+  width: 100%;
+  margin-top: 10px;
+}
+.footnote-add-span {
+  width: 50px;
+  height: 10px;
+  padding: 5px 0px;
+  background-color: #fff;
+  float: right;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.footnote-add-span:hover {
+  background-color: #f55;
+}
+.footnote-add-span:active {
+  font-weight: bold;
+  opacity: 1;
+}
+.footnote-div {
+  background-color: none;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  margin-top: 5px;
+}
+.footnote-div-label {
+  background-color: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*float: left;*/
+  height: 100%;
+  width: 5%;
+  line-height: 2em;
+  text-align: right;
+}
+.footnote-input {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 93%;
+  border-width: 0;
+  padding: 0;
+}

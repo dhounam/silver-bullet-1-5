@@ -1,0 +1,46 @@
+.panel-controls-wrapper {
+  display: flex;
+  pointer-events: all;
+  justify-content: flex-end;
+  height: 100%;
+  float: right;
+  align-items: center;
+}
+
+.dropdown-border.panel-rows-border {
+  display: none;
+}
+.panel-select-label {
+  margin-right: 0;
+  grid-column: 1;
+  text-align: right;
+  padding-right: 2px;
+}
+.panel-rows-label {
+  margin-left: 10px;
+  text-align: right;
+  padding-right: 0;
+  grid-column: 8;
+}
+.panel-rows-border {
+  grid-row: 1;
+  grid-column: 9;
+}
+.panel-rows-select {
+  grid-row: 1;
+  grid-column: 9;
+}
+
+.alert-div {
+  font-size: 16px;
+}
+
+.alert-on {
+  background-color: var(--alert-red);
+  font-weight: bold;
+}
+.panels-outer-wrapper .silver-label-alert {
+  position: absolute;
+  top: -13px;
+  left: 0;
+}

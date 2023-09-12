@@ -1,0 +1,29 @@
+.axis-headers-div {
+  margin-top: 10px;
+}
+.axis-header-div {
+  margin-top: 10px;
+}
+.axis-header-div-disabled {
+  display: none;
+}
+.xaxis-header-label,
+.yaxisleft-header-label,
+.yaxisright-header-label,
+.zaxis-header-label {
+  width: 100%;
+  height: 50%;
+  font-weight: 600;
+}
+.xaxis-header-input,
+.yaxisleft-header-input,
+.yaxisright-header-input,
+.zaxis-header-input {
+  width: 100%;
+  margin-top: 2px;
+}
+.axis-header-disabled {
+  opacity: 0.5;
+  cursor: none;
+  pointer-events: none;
+}

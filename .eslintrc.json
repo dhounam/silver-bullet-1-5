@@ -1,0 +1,129 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "rules": {
+    "RULES-NOTE": "max-lines/per-function both upped by factor of 10 until I can get to refactoring",
+    "max-lines": [
+      "error",
+      {
+        "max": 5000,
+        "skipComments": true
+      }
+    ],
+    "max-lines-per-function": [
+      "error",
+      {
+        "max": 500
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "bracketSpacing": true
+      }
+    ],
+    "camelcase": [
+      2,
+      {
+        "allow": ["^UNSAFE_"]
+      }
+    ],
+    "no-restricted-syntax": 0,
+    "func-names": 0,
+    "no-use-before-define": 0,
+    "no-restricted-globals": [
+      0,
+      {
+        "name": "isNaN"
+      }
+    ],
+    "guard-for-in": 0,
+    "no-mixed-operators": [
+      0,
+      {
+        "groups": [
+          ["&", "|", "^", "~", "<<", ">>", ">>>"],
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||"],
+          ["in", "instanceof"]
+        ]
+      }
+    ],
+    "no-nested-ternary": 0,
+    "no-plusplus": [
+      0,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "spaced-comment": [
+      2,
+      "always",
+      {
+        "exceptions": ["/"]
+      }
+    ],
+    "no-cond-assign": [2, "except-parens"],
+    "no-shadow": [
+      2,
+      {
+        "allow": ["memo"]
+      }
+    ],
+    "no-param-reassign": 0,
+    "no-confusing-arrow": 0,
+    "no-underscore-dangle": [
+      2,
+      {
+        "allow": [
+          "_scale",
+          "_accessor",
+          "__PRELOADED_STATE__",
+          "__ISBUILT__",
+          "__REDUX_DEVTOOLS_EXTENSION__"
+        ]
+      }
+    ],
+    "no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "class-methods-use-this": 0,
+    "no-prototype-builtins": 0,
+    "prefer-destructuring": 0,
+    "react/prop-types": [
+      2,
+      {
+        "skipUndeclared": true
+      }
+    ],
+    "react/no-array-index-key": 0,
+    "react/forbid-prop-types": 0,
+    "react/sort-comp": 0,
+    "react/require-default-props": 0,
+    "react/prefer-stateless-function": [
+      2,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/destructuring-assignment": 0,
+    "jsx-a11y/no-static-element-interactions": [0],
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": ["**/*config*.js", "./build.js"]
+      }
+    ]
+  },
+  "env": {
+    "browser": true
+  }
+}
