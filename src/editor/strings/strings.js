@@ -65,6 +65,7 @@ class Strings extends Component {
       subsubtitle: values.subsubtitle,
       panelHeader: values.panelHeader,
       source: values.source,
+      specialSourceStrings: values.specialSourceStrings,
     });
   }
 
@@ -444,6 +445,7 @@ class Strings extends Component {
     while (sourceString.slice(-1) === '.') {
       sourceString = sourceString.slice(0, -1);
     }
+    console.log(this.props.config.values.specialSourceStrings);
     // EIU with preceding semi-colon...
     const eiuStrAfterSemicolon = this.props.eiuStrAfterSemicolon;
     // ...or preceding colon

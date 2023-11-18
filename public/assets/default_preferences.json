@@ -129,7 +129,25 @@
         "font-size": 6,
         "leading": 7,
         "fill": "black75",
-        "anchor": "start"
+        "anchor": "start",
+        "specialStrings": {
+          "ecoStrPlain": "The Economist",
+          "ecoStrItal": "<i>The Economist</i>",
+          "ecoStrAfterSemicolon": "; <i>The Economist</i>",
+          "ecoStrAfterColon": ": <i>The Economist</i>",
+          "eiuStr": "The Economist Intelligence Unit",
+          "eiuStrAfterSemicolon": "; The Economist Intelligence Unit",
+          "eiuStrAfterColon": ": The Economist Intelligence Unit",
+          "refStr": "Refinitiv Datastream",
+          "refStrAfterSemicolon": "; Refinitiv Datastream",
+          "refStrAfterColon": ": Refinitiv Datastream",
+          "semicolon": ";",
+          "semicolonSpace": "; ",
+          "colon": ":",
+          "colonSpace": ": ",
+          "br": "<br>",
+          "spaceBr": " <br>"   
+        }
       },
       "footnote": {
         "content": "",

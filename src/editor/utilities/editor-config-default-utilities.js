@@ -105,7 +105,9 @@ export function getEdConfigDefaultScales() {
 }
 export function getEdConfigDefaultBackgroundStrings() {
   const source = Object.assign({}, globalAssets.DefaultPreferences.background.strings);
-  // editorConfig only needs string *content*
+  // Until Nov'23, editorConfig only needed basic string *content*
+  // Update introduces the various 'special' source strings
+  // for The Economist, EIU & Refinitiv
   return {
     title: source.title.content,
     subtitle: source.subtitle.content,
@@ -113,6 +115,7 @@ export function getEdConfigDefaultBackgroundStrings() {
     source: source.source.content,
     footnote: source.footnote.content,
     numberBox: source.numberBox.content,
+    specialSourceStrings: source.source.specialStrings,
   };
 }
 export function getEdConfigDefaultPanelHeader() {

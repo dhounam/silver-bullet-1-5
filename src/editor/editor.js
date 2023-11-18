@@ -1469,6 +1469,7 @@ class SilverEditor extends Component {
         panelHeader: onePanel.panelHeader,
         panelTotal: edConfigGlobal.panelVals.total,
         user: edConfigGlobal.user,
+        specialSourceStrings: edConfigGlobal.strings.specialSourceStrings,
       },
     };
   }

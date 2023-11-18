@@ -211,8 +211,10 @@ export function getEdConfigCurrentSections(payloadGVals, presetsConfig) {
   sections.index = sections.list.findIndex(item => item.code === sectionName);
   // if for any reason sectionName (coming from the spreadsheet global data tab)
   // is not found, use index of default section
-  if(sections.index === -1)
-    sections.index = sections.list.findIndex(item => item.code === sections.default);
+  if (sections.index === -1)
+    sections.index = sections.list.findIndex(
+      item => item.code === sections.default,
+    );
   return sections;
 }
 // GET ED CONFIG CURRENT SECTIONS
