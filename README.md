@@ -1,11 +1,11 @@
 _The Economist's_ chart-making tool, written in React and D3 using `create-react-app`.
 
 ## About Sibyl 1.5
-As of September 2023, there are conflicting versions of Silver Bullet on the loose. This is Donald Hounam's rogue version, created because of apparently unsurmountable permissions issues.
-This version is close to Sibyl 1.
+As of September 2023, there are conflicting versions of Silver Bullet on the loose. This is Donald Hounam's rogue version, created because of apparently unsurmountable permissions issues. This version is closely related to Sibyl 1.
+
 It incorporates a mod to read in lookup assets at runtime.
-It includes the Chartwrapper component, which was hived out as a separate component as Sibyl 1 opened out into Sibyl 2.
-This version is the one currently used in live production at The Economist
+It includes the Chartwrapper component, which was hived out as a separate component in the original Sibyl 1, in preparation for development of Sibyl 2.
+This version 1.5 is the one currently used in live production at The Economist
 
 ## Getting started
 
