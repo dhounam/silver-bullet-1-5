@@ -138,15 +138,17 @@
           "eiuStr": "The Economist Intelligence Unit",
           "eiuStrAfterSemicolon": "; The Economist Intelligence Unit",
           "eiuStrAfterColon": ": The Economist Intelligence Unit",
-          "refStr": "Refinitiv Datastream",
-          "refStrAfterSemicolon": "; Refinitiv Datastream",
-          "refStrAfterColon": ": Refinitiv Datastream",
+          "lsegStr": "LSEG Workspace",
+          "lsegStrAfterSemicolon": "; LSEG Workspace",
+          "lsegStrAfterColon": ": LSEG Workspace",
           "semicolon": ";",
           "semicolonSpace": "; ",
           "colon": ":",
           "colonSpace": ": ",
+          "tocomeAfterColon": ": to come",
+          "tocomeBeforeSemicolon": "to come; ",
           "br": "<br>",
-          "spaceBr": " <br>"   
+          "spaceBr": " <br>"
         }
       },
       "footnote": {

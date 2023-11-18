@@ -6,27 +6,29 @@ import PropTypes from 'prop-types';
 
 import EconomistIcon from '../icons/economist-icon';
 import EiuIcon from '../icons/eiu-icon';
+// Nov'23, 'Refinitiv' was replaced by 'LSEG Workspace'; however
+// we continue to use the original Refinitiv icon
 import RefinitivIcon from '../icons/refinitiv-icon';
 
 class Strings extends Component {
   static get defaultProps() {
     return {
-      ecoStrPlain: 'The Economist',
-      ecoStrItal: '<i>The Economist</i>',
-      ecoStrAfterSemicolon: '; <i>The Economist</i>',
-      ecoStrAfterColon: ': <i>The Economist</i>',
-      eiuStr: 'The Economist Intelligence Unit',
-      eiuStrAfterSemicolon: '; The Economist Intelligence Unit',
-      eiuStrAfterColon: ': The Economist Intelligence Unit',
-      refStr: 'Refinitiv Datastream',
-      refStrAfterSemicolon: '; Refinitiv Datastream',
-      refStrAfterColon: ': Refinitiv Datastream',
-      semicolon: ';',
-      semicolonSpace: '; ',
-      colon: ':',
-      colonSpace: ': ',
-      br: '<br>',
-      spaceBr: ' <br>',
+      // ecoStrPlain: 'The Economist',
+      // ecoStrItal: '<i>The Economist</i>',
+      // ecoStrAfterSemicolon: '; <i>The Economist</i>',
+      // ecoStrAfterColon: ': <i>The Economist</i>',
+      // eiuStr: 'The Economist Intelligence Unit',
+      // eiuStrAfterSemicolon: '; The Economist Intelligence Unit',
+      // eiuStrAfterColon: ': The Economist Intelligence Unit',
+      // lsegStr: 'Refinitiv Datastream',
+      // lsegStrAfterSemicolon: '; Refinitiv Datastream',
+      // lsegStrAfterColon: ': Refinitiv Datastream',
+      // semicolon: ';',
+      // semicolonSpace: '; ',
+      // colon: ':',
+      // colonSpace: ': ',
+      // br: '<br>',
+      // spaceBr: ' <br>',
       footnoteSymbols: ['*', '†', '‡', '§', '**', '††', '‡‡', '§§'],
     };
   }
@@ -53,7 +55,7 @@ class Strings extends Component {
     this.handleAddFootnote = this.handleAddFootnote.bind(this);
     this.handleEcoString = this.handleEcoString.bind(this);
     this.handleEiuString = this.handleEiuString.bind(this);
-    this.handleRefinitivString = this.handleRefinitivString.bind(this);
+    this.handleLsegString = this.handleLsegString.bind(this);
   }
   // CONSTRUCTOR ends
 
@@ -248,14 +250,15 @@ class Strings extends Component {
   // Called from filterSource to ensure that semi/colons are
   // followed by 1 space.
   checkSourcePunctuation(source) {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     let str = source.trim();
     if (str.length === 0) {
       return str;
     }
-    const sColon = this.props.semicolon;
-    const scSpace = this.props.semicolonSpace;
-    const colon = this.props.colon;
-    const cSpace = this.props.colonSpace;
+    const sColon = specialStrings.semicolon;
+    const scSpace = specialStrings.semicolonSpace;
+    const colon = specialStrings.colon;
+    const cSpace = specialStrings.colonSpace;
     if (str.includes(colon)) {
       str = this.enforceCharSpaceInSource(str, colon, cSpace);
     }
@@ -271,7 +274,8 @@ class Strings extends Component {
   // But NOTE: text-wrapping adds a space after return anyway --
   // something to do with italics tag!
   noSpaceBeforeBr(str) {
-    str = str.replace(this.props.spaceBr, this.props.br);
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    str = str.replace(specialStrings.spaceBr, specialStrings.br);
     return str;
   }
   // NO SPACE BEFORE BR ends
@@ -293,8 +297,9 @@ class Strings extends Component {
   // Called from italiciseAllEconomists, checks that 'The Economist'
   // has italics tags
   italiciseOneEconomist(str) {
-    const ecoStrPlain = this.props.ecoStrPlain;
-    const ecoStrItal = this.props.ecoStrItal;
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const ecoStrPlain = specialStrings.ecoStrPlain;
+    const ecoStrItal = specialStrings.ecoStrItal;
     if (str.includes(ecoStrPlain)) {
       if (!str.includes(ecoStrItal)) {
         str = str.replace(ecoStrPlain, ecoStrItal);
@@ -308,13 +313,14 @@ class Strings extends Component {
   // Called from filterSource. italicises 'The Economist'
   // but not 'The Economist Intelligence Unit'
   italiciseTheEconomist(source) {
-    const semicolon = this.props.semicolon;
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const semicolon = specialStrings.semicolon;
     // The string could include both simple 'Eco' and 'EIU',
     // so arrayify
     // (element 0 will include prefix, but I don't think that matters)
     const sArray = source.split(semicolon);
     const italicisedSource = sArray.map(oneSource => {
-      if (!oneSource.includes(this.props.eiuStr)) {
+      if (!oneSource.includes(specialStrings.eiuStr)) {
         // Ignore EIU; check others
         oneSource = this.italiciseOneEconomist(oneSource);
       }
@@ -411,25 +417,38 @@ class Strings extends Component {
   // HANDLE ECO STRING
   // Append or remove '<i>The Economist</i>' to/from the source string
   handleEcoString() {
+    // Current content of the field
     const sourceInput = this.source;
     let sourceString = sourceInput.value;
+    // Strings from DPs
+    const specialStrings = this.props.config.values.specialSourceStrings;
     // Economist with preceding semi-colon...
-    const ecoStrAfterSemicolon = this.props.ecoStrAfterSemicolon;
+    const ecoStrAfterSemicolon = specialStrings.ecoStrAfterSemicolon;
     // ...or preceding colon
-    const ecoStrAfterColon = this.props.ecoStrAfterColon;
+    const ecoStrAfterColon = specialStrings.ecoStrAfterColon;
+    const ecoStrItal = specialStrings.ecoStrItal;
+    // 'to come'
+    const addToCome = specialStrings.tocomeAfterColon;
+    const removeToCome = specialStrings.tocomeBeforeSemicolon;
     if (sourceString.includes(ecoStrAfterSemicolon)) {
       // If Eco is a subsequent source, delete it
       sourceString = sourceString.replace(ecoStrAfterSemicolon, '');
     } else if (sourceString.includes(ecoStrAfterColon)) {
       // If it's the ONLY source, replace with default
       if (sourceString.includes('Source:')) {
-        sourceString = sourceString.replace(ecoStrAfterColon, ': to come');
+        sourceString = sourceString.replace(ecoStrAfterColon, addToCome);
       } else {
         sourceString = sourceString.replace(`${ecoStrAfterColon};`, ':');
       }
     } else {
       // If it isn't already a source, append it
-      sourceString = `${sourceString}${ecoStrAfterSemicolon}`;
+      if (sourceString === 'Source: ') {
+        sourceString = `${sourceString}${ecoStrItal}`;
+      } else {
+        sourceString = `${sourceString}${ecoStrAfterSemicolon}`;
+      }
+      // and, since we now have a source, delete 'to come; ' (if found)
+      sourceString = sourceString.replace(removeToCome, '');
     }
     this.source.value = sourceString;
     this.updateEditor();
@@ -440,16 +459,16 @@ class Strings extends Component {
   // HANDLE EIU STRING
   // Append or remove 'The Economist Intelligence Unit' to/from the source string
   handleEiuString() {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     let sourceString = this.source.value;
     // Remove EIU-style final full stop(s)
     while (sourceString.slice(-1) === '.') {
       sourceString = sourceString.slice(0, -1);
     }
-    console.log(this.props.config.values.specialSourceStrings);
     // EIU with preceding semi-colon...
-    const eiuStrAfterSemicolon = this.props.eiuStrAfterSemicolon;
+    const eiuStrAfterSemicolon = specialStrings.eiuStrAfterSemicolon;
     // ...or preceding colon
-    const eiuStrAfterColon = this.props.eiuStrAfterColon;
+    const eiuStrAfterColon = specialStrings.eiuStrAfterColon;
     if (sourceString.includes(eiuStrAfterSemicolon)) {
       // If EIU is a subsequent source, delete it
       sourceString = sourceString.replace(eiuStrAfterSemicolon, '');
@@ -470,37 +489,38 @@ class Strings extends Component {
   }
   // HANDLE EIU STRING ends
 
-  // HANDLE REFINITIV STRING
-  // Append or remove 'Refinitiv Datastream' to/from the source string
-  handleRefinitivString() {
+  // HANDLE LSEG STRING
+  // Append or remove 'LSEG Workspace' to/from the source string
+  handleLsegString() {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     let sourceString = this.source.value;
     // Remove EIU-style final full stop(s)
     while (sourceString.slice(-1) === '.') {
       sourceString = sourceString.slice(0, -1);
     }
     // RD with preceding semi-colon...
-    const refStrAfterSemicolon = this.props.refStrAfterSemicolon;
+    const lsegStrAfterSemicolon = specialStrings.lsegStrAfterSemicolon;
     // ...or preceding colon
-    const refStrAfterColon = this.props.refStrAfterColon;
-    if (sourceString.includes(refStrAfterSemicolon)) {
+    const lsegStrAfterColon = specialStrings.lsegStrAfterColon;
+    if (sourceString.includes(lsegStrAfterSemicolon)) {
       // If RD is a subsequent source, delete it
-      sourceString = sourceString.replace(refStrAfterSemicolon, '');
-    } else if (sourceString.includes(refStrAfterColon)) {
+      sourceString = sourceString.replace(lsegStrAfterSemicolon, '');
+    } else if (sourceString.includes(lsegStrAfterColon)) {
       // If it's the ONLY source, replace with default
       if (sourceString.includes('Source:')) {
-        sourceString = sourceString.replace(refStrAfterColon, ': to come');
+        sourceString = sourceString.replace(lsegStrAfterColon, ': to come');
       } else {
-        sourceString = sourceString.replace(`${refStrAfterColon};`, ':');
+        sourceString = sourceString.replace(`${lsegStrAfterColon};`, ':');
       }
     } else {
       // If it isn't already a source, append it
-      sourceString = `${sourceString}${refStrAfterSemicolon}`;
+      sourceString = `${sourceString}${lsegStrAfterSemicolon}`;
     }
     this.source.value = sourceString;
     this.updateEditor();
     this.setState({ focusFootnote: '' });
   }
-  // HANDLE REFINITIV STRING ends
+  // HANDLE LSEG STRING ends
 
   // ______________________________
   // *** JSX ASSEMBLY FUNCTIONS ***
@@ -704,7 +724,8 @@ class Strings extends Component {
   // includes 'The Economist'
   sourceIncludesJustEconomist(source, hasEiu) {
     let hasEco = false;
-    const ecoRx = new RegExp(this.props.ecoStrPlain, 'g');
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const ecoRx = new RegExp(specialStrings.ecoStrPlain, 'g');
     const ecoMatch = source.match(ecoRx);
     if (ecoMatch !== null) {
       let ecoCount = ecoMatch.length;
@@ -719,13 +740,16 @@ class Strings extends Component {
   // SOURCE INCLUDES JUST ECONOMIST ends
 
   // MAKE SOURCES JSX
-  // Source field, plus Economist, EIU and Refinitiv buttons
+  // Source field, plus Economist, EIU and LSEG buttons
   makeSourcesJsx() {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     const source = this.props.config.values.source;
     // Flags for highlighting (string exists in source)
-    const hasEiu = source.includes(this.props.eiuStr);
+    const hasEiu = source.includes(specialStrings.eiuStr);
     const hasEconomist = this.sourceIncludesJustEconomist(source, hasEiu);
-    const hasRef = source.includes(this.props.refStr);
+    // NB: Nov'23, 'Refinitiv' string replaced by 'LSEG'; but
+    // button and icon retain original ID
+    const hasLseg = source.includes(specialStrings.lsegStr);
     return (
       <div className="source-strings-div">
         <div className="source-strings-div-header">
@@ -753,10 +777,10 @@ class Strings extends Component {
           <button
             type="button"
             className={`silver-button append-refinitiv-button ${
-              hasRef ? 'button-selected' : ''
+              hasLseg ? 'button-selected' : ''
             }`}
-            onClick={this.handleRefinitivString}
-            title="Appends Refinitiv Datastream to the sources"
+            onClick={this.handleLsegString}
+            title="Appends LSEG Workspace to the sources"
           >
             <RefinitivIcon size={10} />
           </button>
@@ -805,22 +829,22 @@ Strings.propTypes = {
   config: PropTypes.object.isRequired,
   onValuesToEditor: PropTypes.func.isRequired,
   footnoteSymbols: PropTypes.array,
-  ecoStrPlain: PropTypes.string,
-  ecoStrItal: PropTypes.string,
-  ecoStrAfterSemicolon: PropTypes.string,
-  ecoStrAfterColon: PropTypes.string,
-  eiuStr: PropTypes.string,
-  eiuStrAfterSemicolon: PropTypes.string,
-  eiuStrAfterColon: PropTypes.string,
-  refStr: PropTypes.string,
-  refStrAfterSemicolon: PropTypes.string,
-  refStrAfterColon: PropTypes.string,
-  semicolon: PropTypes.string,
-  semicolonSpace: PropTypes.string,
-  colon: PropTypes.string,
-  colonSpace: PropTypes.string,
-  br: PropTypes.string,
-  spaceBr: PropTypes.string,
+  // ecoStrPlain: PropTypes.string,
+  // ecoStrItal: PropTypes.string,
+  // ecoStrAfterSemicolon: PropTypes.string,
+  // ecoStrAfterColon: PropTypes.string,
+  // eiuStr: PropTypes.string,
+  // eiuStrAfterSemicolon: PropTypes.string,
+  // eiuStrAfterColon: PropTypes.string,
+  // lsegStr: PropTypes.string,
+  // lsegStrAfterSemicolon: PropTypes.string,
+  // lsegStrAfterColon: PropTypes.string,
+  // semicolon: PropTypes.string,
+  // semicolonSpace: PropTypes.string,
+  // colon: PropTypes.string,
+  // colonSpace: PropTypes.string,
+  // br: PropTypes.string,
+  // spaceBr: PropTypes.string,
 };
 
 export default Strings;
