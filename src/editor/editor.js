@@ -24,11 +24,10 @@ import MonteuxImport from './monteux/monteux-import';
 import globalAssets from './assets/globalAssets';
 import { updateOnlineSubPreset } from './utilities/payload-utilities/presets-utilities';
 
-let DefaultChartConfig,
-  DefaultPreferences,
-  PresetPreferences,
-  ColourLookup;
-
+let DefaultChartConfig;
+let DefaultPreferences;
+let PresetPreferences;
+let ColourLookup;
 
 class SilverEditor extends Component {
   static get defaultProps() {
@@ -92,7 +91,9 @@ class SilverEditor extends Component {
     this.handleValuesFromPanels = this.handleValuesFromPanels.bind(this);
     this.handleValuesFromStrings = this.handleValuesFromStrings.bind(this);
     this.handleValuesFromFooter = this.handleValuesFromFooter.bind(this);
-    this.handleValuesFromFoldsWrapper = this.handleValuesFromFoldsWrapper.bind(this);
+    this.handleValuesFromFoldsWrapper = this.handleValuesFromFoldsWrapper.bind(
+      this,
+    );
     this.handleMonteuxImportValues = this.handleMonteuxImportValues.bind(this);
   }
 
@@ -105,15 +106,14 @@ class SilverEditor extends Component {
   // Calls makeNewChartConfig to assemble a new default chart CO
   // ...and initiateNewEdConfig to assemble default editor CO
   UNSAFE_componentWillMount() {
-
     // load external assets: a collection of JSON files containing all the available settings
-    let assetsFolder = 'assets',
-      assetFiles = [
-        'default_chart_config.json',
-        'default_preferences.json',
-        'preset_preferences.json',
-        'colours.json'
-      ].map(assetFile => [assetsFolder,assetFile].join('/'));
+    const assetsFolder = 'assets';
+    const assetFiles = [
+      'default_chart_config.json',
+      'default_preferences.json',
+      'preset_preferences.json',
+      'colours.json',
+    ].map(assetFile => [assetsFolder, assetFile].join('/'));
 
     // fetch all the files
     Promise
@@ -1470,6 +1470,7 @@ class SilverEditor extends Component {
         panelTotal: edConfigGlobal.panelVals.total,
         user: edConfigGlobal.user,
         specialSourceStrings: edConfigGlobal.strings.specialSourceStrings,
+        footnoteSymbols: edConfigGlobal.strings.footnoteSymbols,
       },
     };
   }
@@ -1508,7 +1509,7 @@ class SilverEditor extends Component {
   makeFoldsJsx() {
     const { editorConfig } = this.state;
     // Design fold
-    const designConfig = this.makeDesignFoldConfig();    
+    const designConfig = this.makeDesignFoldConfig();
     // Scales fold
     const disableFold = this.setDisabledStatusByChartType();
     // Factors disabled, Oct'20. But still pass DP's factoring prefs

@@ -116,6 +116,7 @@ export function getEdConfigDefaultBackgroundStrings() {
     footnote: source.footnote.content,
     numberBox: source.numberBox.content,
     specialSourceStrings: source.source.specialStrings,
+    footnoteSymbols: source.footnote.footnoteSymbols,
   };
 }
 export function getEdConfigDefaultPanelHeader() {

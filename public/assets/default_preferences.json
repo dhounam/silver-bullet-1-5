@@ -135,9 +135,10 @@
           "ecoStrItal": "<i>The Economist</i>",
           "ecoStrAfterSemicolon": "; <i>The Economist</i>",
           "ecoStrAfterColon": ": <i>The Economist</i>",
-          "eiuStr": "The Economist Intelligence Unit",
-          "eiuStrAfterSemicolon": "; The Economist Intelligence Unit",
-          "eiuStrAfterColon": ": The Economist Intelligence Unit",
+          "eiuStr": "EIU",
+          "eiuLongStr": "The Economist Intelligence Unit",
+          "eiuStrAfterSemicolon": "; EIU",
+          "eiuStrAfterColon": ": EIU",
           "lsegStr": "LSEG Workspace",
           "lsegStrAfterSemicolon": "; LSEG Workspace",
           "lsegStrAfterColon": ": LSEG Workspace",
@@ -162,7 +163,8 @@
         "leading": 7,
         "fill": "black75",
         "anchor": "end",
-        "aboveSource": false
+        "aboveSource": false,
+        "footnoteSymbols": ["*", "†", "‡", "§", "**", "††", "‡‡", "§§"]
       },
       "numberBox": {
         "content": "",
