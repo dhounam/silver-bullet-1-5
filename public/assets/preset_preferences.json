@@ -850,26 +850,30 @@
           "strings": {
             "title": {
               "x": 0,
-              "y": 26,
-              "font-size": 16,
+              "y": 28,
+              "font-family": "EconomistSans-Bold",
+              "font-size": 17,
               "leading": 20
             },
             "subtitle": {
               "x": 0,
-              "y": 48,
-              "font-size": 16,
-              "leading": 18
+              "y": 52,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20
             },
             "subsubtitle": {
               "x": 0,
-              "y": 68,
+              "y": 76,
+              "font-family": "EconomistSans-Light",
               "font-size": 15,
-              "leading": 17
+              "leading": 20
             },
             "source": {
               "x": 0,
-              "font-size": 13,
-              "leading": 18,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20,
               "fill": "dc-greytext",
               "wrapoptions": {
                 "hasfootnote": 100
@@ -879,8 +883,9 @@
             "footnote": {
               "x": 0,
               "anchor": "start",
-              "font-size": 13,
-              "leading": 18,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20,
               "fill": "dc-greytext",
               "note": "Footnote stacked above source",
               "aboveSource": true,
@@ -888,6 +893,7 @@
               "wrapwidth": 100
             },
             "numberBox": {
+              "font-family": "EconomistSans-Bold",
               "fontsize": "14",
               "rectfill": "dc-greytext",
               "rectheight": 20,
@@ -1097,8 +1103,8 @@
               }
             },
             "margins": {
-              "linearInnerMargin": 10,
-              "ordinalInnerMargin": 10
+              "linearInnerMargin": 20,
+              "ordinalInnerMargin": 20
             },
             "brokenScalePadding": {
               "default": 20,
