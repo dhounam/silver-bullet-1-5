@@ -909,31 +909,31 @@
           },
           "topPadding": {
             "belowTitleClusterBaseline": {
-              "toPanelFlash": 30,
-              "toLegendBaseline": 30,
+              "toPanelFlash": 32,
+              "toLegendBaseline": 28,
               "toBlobTop": 30,
               "toTopOfChart": {
-                "default": 30,
-                "bar": 26,
-                "double": 24
+                "default": 32,
+                "bar": 28,
+                "double": 26
               }
             },
             "belowPanelHeaderBaseline": {
-              "toLegendBaseline": 24,
+              "toLegendBaseline": 20,
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 30,
-                "bar": 26,
-                "double": 24
+                "default": 28,
+                "bar": 24,
+                "double": 22
               },
               "NOTE": "Padding BETWEEN panels is in panelAttributes node"
             },
             "belowLegendBaseline": {
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 20,
-                "bar": 20,
-                "double": 24
+                "default": 32,
+                "bar": 32,
+                "double": 36
               }
             },
             "belowBlobBottom": {
@@ -942,7 +942,7 @@
           }
         },
         "panelAttributes": {
-          "gap": 20,
+          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -962,17 +962,17 @@
           },
           "strings": {
             "panelheader": {
-              "font-family": "EconSansCndMed",
+              "font-family": "EconomistSans-Medium",
               "font-size": 15,
-              "leading": 18,
+              "leading": 20,
               "x": 0,
-              "y": 18
+              "y": 20
             }
           }
         },
         "chart": {
           "padding": {
-            "below": 30
+            "below": 32
           }
         },
         "axes": {
@@ -1049,12 +1049,12 @@
                   "thermo": 4
                 },
                 "axisAtBottom": {
-                  "default": 20,
-                  "brokenScatter": 16
+                  "default": 24,
+                  "brokenScatter": 20
                 }
               },
               "leading": 15,
-              "rowheight": 20,
+              "rowheight": 24,
               "size": {
                 "primaryOnly": 14,
                 "primaryIfSecondary": 13,
@@ -2032,15 +2032,16 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
-            "size": 14,
-            "leading": 16
+            "font": "EconomistSans-Medium",
+            "size": 15,
+            "leading": 20
           },
           "text": {
             "anchor": "start",
-            "font": "EconSansCndLig",
-            "size": 14,
-            "fill": "black100",
-            "leading": 16
+            "font": "EconomistSans-Light",
+            "size": 15,
+            "leading": 20,
+            "fill": "black100"
           },
           "padding": {
             "belowHeader": 20,
@@ -2173,35 +2174,41 @@
           "strings": {
             "title": {
               "x": 0,
-              "y": 26,
-              "font-size": 16,
+              "y": 28,
+              "font-family": "EconomistSans-Bold",
+              "font-size": 17,
               "leading": 20
             },
             "subtitle": {
               "x": 0,
-              "y": 48,
-              "font-size": 16,
-              "leading": 18
+              "y": 52,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20
             },
             "subsubtitle": {
               "x": 0,
-              "y": 68,
+              "y": 76,
+              "font-family": "EconomistSans-Light",
               "font-size": 15,
-              "leading": 17
+              "leading": 20
             },
             "source": {
               "x": 0,
-              "font-size": 13,
-              "leading": 18,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20,
               "fill": "dc-greytext"
             },
             "footnote": {
               "x": -0.0001,
-              "font-size": 13,
-              "leading": 18,
+              "font-family": "EconomistSans-Light",
+              "font-size": 15,
+              "leading": 20,
               "fill": "dc-greytext"
             },
             "numberBox": {
+              "font-family": "EconomistSans-Bold",
               "fontsize": "14",
               "rectfill": "dc-greytext",
               "rectheight": 20,
@@ -2217,31 +2224,31 @@
           },
           "topPadding": {
             "belowTitleClusterBaseline": {
-              "toPanelFlash": 30,
-              "toLegendBaseline": 30,
+              "toPanelFlash": 32,
+              "toLegendBaseline": 28,
               "toBlobTop": 30,
               "toTopOfChart": {
-                "default": 30,
-                "bar": 26,
-                "double": 24
+                "default": 32,
+                "bar": 28,
+                "double": 26
               }
             },
             "belowPanelHeaderBaseline": {
-              "toLegendBaseline": 24,
+              "toLegendBaseline": 20,
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 30,
-                "bar": 26,
-                "double": 24
+                "default": 28,
+                "bar": 24,
+                "double": 22
               },
               "NOTE": "Padding BETWEEN panels is in panelAttributes node"
             },
             "belowLegendBaseline": {
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 20,
-                "bar": 20,
-                "double": 24
+                "default": 32,
+                "bar": 32,
+                "double": 36
               }
             },
             "belowBlobBottom": {
@@ -2250,7 +2257,7 @@
           }
         },
         "panelAttributes": {
-          "gap": 20,
+          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -2270,17 +2277,17 @@
           },
           "strings": {
             "panelheader": {
-              "font-family": "EconSansCndMed",
+              "font-family": "EconomistSans-Medium",
               "font-size": 15,
-              "leading": 18,
+              "leading": 20,
               "x": 0,
-              "y": 18
+              "y": 20
             }
           }
         },
         "chart": {
           "padding": {
-            "below": 30
+            "below": 32
           }
         },
         "axes": {
@@ -2356,12 +2363,12 @@
                   "thermo": 4
                 },
                 "axisAtBottom": {
-                  "default": 20,
-                  "brokenScatter": 16
+                  "default": 24,
+                  "brokenScatter": 20
                 }
               },
               "leading": 15,
-              "rowheight": 20,
+              "rowheight": 24,
               "size": {
                 "primaryOnly": 14,
                 "primaryIfSecondary": 13,
@@ -3339,15 +3346,16 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
-            "size": 14,
-            "leading": 16
+            "font": "EconomistSans-Medium",
+            "size": 15,
+            "leading": 20
           },
           "text": {
             "anchor": "start",
-            "font": "EconSansCndLig",
-            "size": 14,
-            "fill": "black100",
-            "leading": 16
+            "font": "EconomistSans-Light",
+            "size": 15,
+            "leading": 20,
+            "fill": "black100"
           },
           "padding": {
             "belowHeader": 20,
@@ -3570,7 +3578,7 @@
           }
         },
         "panelAttributes": {
-          "gap": 20,
+          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -4889,7 +4897,7 @@
           }
         },
         "panelAttributes": {
-          "gap": 20,
+          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {

@@ -233,7 +233,7 @@
   "_END-BACKGROUND-PROPERTIES": "End of background properties",
   "_PANEL-ATTRIBUTES": "Properties for chart/panel-specific elements",
   "panelAttributes": {
-    "gap": 10,
+    "gap_REDUNDANT": 10,
     "alignChartsInPanels": false,
     "padding": {
       "delete-above": "Was 15; superseded by background.topPadding, above",
@@ -375,8 +375,8 @@
         "x": -6,
         "y_NOTE": "Is the 'y' property redundant?",
         "y": 0,
+        "padding_NOTE": "For axis *header* padding",
         "padding": {
-          "NOTE": "For axis header padding",
           "NOTE_OLD_axisAtTop": 5,
           "axisAtTop": {
             "bar": 5,
@@ -388,6 +388,7 @@
           }
         },
         "leading": 7.5,
+        "rowheight_NOTE": "Sets y-value for axis labels below baseline",
         "rowheight": 10,
         "font": "EconSansCndLig",
         "size": {
