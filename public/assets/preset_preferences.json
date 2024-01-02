@@ -853,7 +853,8 @@
               "y": 28,
               "font-family": "EconomistSans-Bold",
               "font-size": 17,
-              "leading": 20
+              "leading": 20,
+              "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
@@ -1055,17 +1056,19 @@
               },
               "leading": 15,
               "rowheight": 24,
+              "font": "EconomistSans-Light",
               "size": {
-                "primaryOnly": 14,
-                "primaryIfSecondary": 13,
-                "secondary": 14
+                "primaryOnly": 15,
+                "primaryIfSecondary": 14,
+                "secondary": 15
               },
               "realheight": 9.5,
               "minGapBetweenLabels": 6
             },
             "header": {
-              "size": 14,
-              "leading": 16,
+              "font": "EconomistSans-Light",
+              "size": 15,
+              "leading": 20,
               "margin": 20
             },
             "brokenScalePadding": 10,
@@ -1093,12 +1096,14 @@
               }
             },
             "text": {
-              "size": 14,
-              "leading": 15,
-              "y": 2.5,
+              "size": 15,
+              "leading": 20,
+              "font": "EconomistSans-Light",
+              "y": 4,
               "header": {
-                "size": 14,
-                "leading": 16,
+                "font": "EconomistSans-Light",
+                "size": 15,
+                "leading": 20,
                 "margin": 20
               }
             },
@@ -2177,7 +2182,8 @@
               "y": 28,
               "font-family": "EconomistSans-Bold",
               "font-size": 17,
-              "leading": 20
+              "leading": 20,
+              "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
@@ -2369,17 +2375,19 @@
               },
               "leading": 15,
               "rowheight": 24,
+              "font": "EconomistSans-Light",
               "size": {
-                "primaryOnly": 14,
-                "primaryIfSecondary": 13,
-                "secondary": 14
+                "primaryOnly": 15,
+                "primaryIfSecondary": 14,
+                "secondary": 15
               },
               "realheight": 9.5,
               "minGapBetweenLabels": 6
             },
             "header": {
-              "size": 14,
-              "leading": 16,
+              "font": "EconomistSans-Light",
+              "size": 15,
+              "leading": 20,
               "margin": 20
             },
             "brokenScalePadding": 10,
@@ -2408,11 +2416,13 @@
             },
             "text": {
               "size": 14,
-              "leading": 15,
-              "y": 2.5,
+              "leading": 20,
+              "font": "EconomistSans-Light",
+              "y": 4,
               "header": {
-                "size": 14,
-                "leading": 16,
+                "font": "EconomistSans-Light",
+                "size": 15,
+                "leading": 20,
                 "margin": 20
               }
             },
