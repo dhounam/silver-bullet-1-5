@@ -474,6 +474,7 @@ class SilverYaxisLinear extends Component {
           const fillName = config.textPrefs.fill
           labID = `${labID}~~~fill:${fillName}`
           labID = `${labID},justification:${anchor}`
+          labID = `${labID},leading:${config.textPrefs.leading}`
           // Width after a timeout, below
           return labID
         })

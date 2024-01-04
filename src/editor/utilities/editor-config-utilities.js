@@ -1447,7 +1447,9 @@ export function reconcileEdConfigPanelSeriesToConfig(
   );
   // Clone DP series
   // let defaultSeries = Object.assign({}, globalAssets.DefaultPreferences.series);
-  let defaultSeries = JSON.parse(JSON.stringify(globalAssets.DefaultPreferences.series));
+  let defaultSeries = JSON.parse(
+    JSON.stringify(globalAssets.DefaultPreferences.series),
+  );
   // Are there any preset-specific series prefs?
   const pps = presetsConfig.userPresets;
   const preset = presetsConfig.presetName;

@@ -269,6 +269,9 @@ class SilverXaxisLinear extends Component {
     axisGroup.selectAll('text').each(function(ddd, iii) {
       const thisLabel = d3.select(this)
       // ID: name and metadata
+
+      console.log(config.textPrefs)
+      
       thisLabel
         .attr('id', () => {
           // NOTE: I need to derive all element base ids from... somewhere
@@ -277,6 +280,7 @@ class SilverXaxisLinear extends Component {
           const fillName = config.textPrefs.fill
           labID = `${labID}~~~fill:${fillName}`
           labID = `${labID},justification:${anchor}`
+          labID = `${labID},leading:${config.textPrefs.leading}`
           // Getting the anchor position is a nightmare. I'm getting
           // WIDTH from bBox, then working with justification and
           // whatever Illustrator sets origin to...
