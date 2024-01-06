@@ -1621,7 +1621,7 @@ export function reconcileEditorToChartPanelConfig(activePanel, presetsConfig) {
     activePanel.chartType.left.type.includes('table') &&
     activePanel.chartType.right.type.includes('table');
   if (isTable) {
-    injectTablePropsIntoConfig(configPanel);
+    injectTablePropsIntoConfig(configPanel, presetsConfig);
   } else {
     configPanel.series = reconcileEdConfigPanelSeriesToConfig(
       activePanel,
@@ -1646,11 +1646,37 @@ export function reconcileEditorToChartPanelConfig(activePanel, presetsConfig) {
 // RECONCILE EDITOR TO CHART PANEL CONFIG ends
 
 // INJECT TABLE PROPS INTO CONFIG
-export function injectTablePropsIntoConfig(configPanel) {
-  configPanel.tableProperties = Object.assign(
-    {},
-    globalAssets.DefaultPreferences.series.table,
+export function injectTablePropsIntoConfig(configPanel, presetsConfig) {
+  // First get default table properties. These will be used if there
+  // are no specific PP.series.table props to overwrite
+  const tableProps = JSON.parse(
+    JSON.stringify(globalAssets.DefaultPreferences.series.table),
   );
+  // Look for table props for sub/preset
+  const preset = presetsConfig.presetName;
+  const subpreset = presetsConfig.subpresetName;
+  const pps = presetsConfig.userPresets;
+  // Sadly, optional chaining isn't available
+  // const testObj = pps[preset][subpreset].series?.table;
+  // So we do it the hard way:
+  let specificTableProps = pps[preset][subpreset].series;
+  if (typeof specificTableProps !== 'undefined') {
+    specificTableProps = specificTableProps.table;
+    if (typeof specificTableProps !== 'undefined') {
+      // So if there IS a 'table' node, merge its deltas into
+      // the default props
+      EditorUtils.deepMerge(tableProps, specificTableProps);
+      // tableProps = JSON.parse(JSON.stringify(specificTableProps));
+    }
+  }
+  // Pass either default or specific (if they exist) table props to config
+  configPanel.tableProperties = tableProps;
+  // Prior to Jan'24, we used the default for all tables
+  // These lines can delete in due course
+  // configPanel.tableProperties = Object.assign(
+  //   {},
+  //   globalAssets.DefaultPreferences.series.table,
+  // );
   configPanel.overallChartType = 'table';
 }
 // INJECT TABLE PROPS INTO CONFIG ends

@@ -372,9 +372,9 @@ class SilverEditor extends Component {
     // NOTE: I had a query here about whether we need the eco/eiu user flag...
     // ...but it seems that we don't... for now, at least...
     let id = Filename.getFilenameSectionId(pObj.name);
-    // Search list for an item with existing code. If not
-    // found, revert to default
-    if (!sections.list.some(item => item.code === id)) {
+    // Some presets force a default; otherwise check list for an item with
+    // existing ID and, if not found, use default
+    if (sections.forceDefault || !sections.list.some(item => item.code === id)) {
       id = sections.default;
     }
     return id;
@@ -899,7 +899,7 @@ class SilverEditor extends Component {
     
     // first check to be done ASAP is to update a possible deprecatede
     // online subpreset (see presets-utilities.js for a rationale on that)
-    let { subPreset, hasBeenUpdated } =  updateOnlineSubPreset(
+    const { subPreset, hasBeenUpdated } =  updateOnlineSubPreset(
       values.global.values.preset,
       values.global.values.subPreset
     );

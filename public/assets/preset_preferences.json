@@ -102,7 +102,8 @@
             "name": "Data analytics [ZZ]"
           }
         ],
-        "default": "TK"
+        "default": "TK",
+        "forceDefault": false
       },
       "__PRINT-1-COLUMN": "Print single column",
       "narrow": {
@@ -161,7 +162,8 @@
               "name": "Leader [LD]"
             }
           ],
-          "default": "LD"
+          "default": "LD",
+          "forceDefault": true
         },
         "background": {
           "outerbox": {
@@ -298,7 +300,8 @@
               "name": "World this Week [WW]"
             }
           ],
-          "default": "WW"
+          "default": "WW",
+          "forceDefault": true
         },
         "background": {
           "outerbox": {
@@ -436,7 +439,8 @@
               "name": "Finance [FN]"
             }
           ],
-          "default": "FN"
+          "default": "FN",
+          "forceDefault": true
         },
         "background": {
           "outerbox": {
@@ -464,7 +468,8 @@
               "name": "Finance [FN]"
             }
           ],
-          "default": "FN"
+          "default": "FN",
+          "forceDefault": true
         },
         "background": {
           "outerbox": {
@@ -528,7 +533,8 @@
             "name": "Data analytics [ZZ]"
           }
         ],
-        "default": "SR"
+        "default": "SR",
+        "forceDefault": false
       },
       "__HALF-COLUMN": "Print special: 0.5 column",
       "half-column": {
@@ -785,11 +791,16 @@
             "name": "Web only [WO]"
           },
           {
+            "code": "DA",
+            "name": "Espresso [DA]"
+          },
+        {
             "code": "ZZ",
             "name": "Data analytics [ZZ]"
           }
         ],
-        "default": "WO"
+        "default": "WO",
+        "forceDefault": false
       },
       "__WEB-SLIM": "Web Slim",
       "online-slim": {
@@ -808,7 +819,8 @@
               "name": "Data analytics [ZZ]"
             }
           ],
-          "default": "WO"
+          "default": "WO",
+          "forceDefault": true
         },
         "colourSpace": "rgb",
         "chartScaleClass": "chart-zoom-1",
@@ -1938,19 +1950,21 @@
           "table": {
             "text": {
               "header": {
-                "size": 14,
-                "leading": 16,
+                "font": "EconomistSans-Medium",
+                "size": 15,
+                "leading": 20,
                 "padding": {
                   "left": 6,
                   "right": 6
                 }
               },
               "content": {
-                "size": 14,
+                "font": "EconomistSans-Light",
+                "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 24,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
-                "leading": 16,
+                "leading": 20,
                 "padding": {
                   "left": 6,
                   "right": 6
@@ -2137,7 +2151,8 @@
               "name": "Data analytics [ZZ]"
             }
           ],
-          "default": "WO"
+          "default": "WO",
+          "forceDefault": true
         },
         "colourSpace": "rgb",
         "chartScaleClass": "chart-zoom-1",
@@ -2147,7 +2162,7 @@
               "id": "wo",
               "display": "Full width",
               "width": 700,
-              "height": 360,
+              "height": 400,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -3257,19 +3272,21 @@
           "table": {
             "text": {
               "header": {
-                "size": 14,
-                "leading": 16,
+                "font": "EconomistSans-Medium",
+                "size": 15,
+                "leading": 20,
                 "padding": {
                   "left": 6,
                   "right": 6
                 }
               },
               "content": {
-                "size": 14,
+                "font": "EconomistSans-Light",
+                "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 24,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
-                "leading": 16,
+                "leading": 20,
                 "padding": {
                   "left": 6,
                   "right": 6
@@ -3448,19 +3465,20 @@
         "sections": {
           "list": [
             {
-              "code": "WO",
-              "name": "Web only [WO]"
-            },
-            {
               "code": "DA",
               "name": "Espresso [DA]"
+            },
+            {
+              "code": "WO",
+              "name": "Web only [WO]"
             },
             {
               "code": "ZZ",
               "name": "Data analytics [ZZ]"
             }
           ],
-          "default": "DA"
+          "default": "DA",
+          "forceDefault": true
         },
         "colourSpace": "rgb",
         "chartScaleClass": "chart-zoom-1",
@@ -4773,7 +4791,8 @@
               "name": "Custom [XX]"
             }
           ],
-          "default": "XX"
+          "default": "XX",
+          "forceDefault": true
         },
         "colourSpace": "rgb",
         "chartScaleClass": "chart-zoom-050",
@@ -6906,7 +6925,8 @@
             "code": "ZZ"
           }
         ],
-        "default": "ZZ"
+        "default": "ZZ",
+        "forceDefault": false
       },
       "__STANDARD-HALF-SIZE": "EIU standard half size subpreset",
       "standard_narrow": {

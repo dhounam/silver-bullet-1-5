@@ -47,7 +47,7 @@ class DesignFoldBody extends Component {
   // DESIGN BODY JSX
   // Calls sub-functions to construct individual elements and clusters
   designBodyJsx() {
-    let { chartType, legend, panels, blobs } = this.props.config;
+    let { chartType, legend, blobs } = this.props.config;
     return (
       <div className="fold-body">
         <ChartType
