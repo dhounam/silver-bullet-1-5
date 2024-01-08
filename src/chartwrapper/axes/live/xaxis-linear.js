@@ -269,9 +269,6 @@ class SilverXaxisLinear extends Component {
     axisGroup.selectAll('text').each(function(ddd, iii) {
       const thisLabel = d3.select(this)
       // ID: name and metadata
-
-      console.log(config.textPrefs)
-      
       thisLabel
         .attr('id', () => {
           // NOTE: I need to derive all element base ids from... somewhere

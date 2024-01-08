@@ -927,7 +927,8 @@
               "toBlobTop": 30,
               "toTopOfChart": {
                 "default": 32,
-                "bar": 28,
+                "NOTE": "to get 28 for bars/hthermos",
+                "bar": 26,
                 "double": 26
               }
             },
@@ -935,8 +936,9 @@
               "toLegendBaseline": 20,
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 28,
-                "bar": 24,
+                "default": 32,
+                "NOTE_bar": "26 gives 28, but now thermos have a gap of 34!",
+                "bar": 26,
                 "double": 22
               },
               "NOTE": "Padding BETWEEN panels is in panelAttributes node"
@@ -2250,7 +2252,8 @@
               "toBlobTop": 30,
               "toTopOfChart": {
                 "default": 32,
-                "bar": 28,
+                "NOTE": "to get 28 for bars/hthermos",
+                "bar": 26,
                 "double": 26
               }
             },
@@ -2258,8 +2261,9 @@
               "toLegendBaseline": 20,
               "toBlobTop": 20,
               "toTopOfChart": {
-                "default": 28,
-                "bar": 24,
+                "default": 32,
+                "NOTE_bar": "26 gives 28, but now thermos have a gap of 34!",
+                "bar": 26,
                 "double": 22
               },
               "NOTE": "Padding BETWEEN panels is in panelAttributes node"
@@ -2268,7 +2272,7 @@
               "toBlobTop": 20,
               "toTopOfChart": {
                 "default": 32,
-                "bar": 32,
+                "bar": 26,
                 "double": 36
               }
             },
