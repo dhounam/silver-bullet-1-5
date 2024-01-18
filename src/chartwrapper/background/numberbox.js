@@ -39,9 +39,14 @@ export function updateNumberBox(config, bgName) {
 export function updateRect(nbRect, config) {
   const nbProps = config.background.strings.numberBox
   const dimensions = config.background.outerbox.dimensions
+  const rectStrokeColour = nbProps.rectstroke
+  console.log(rectStrokeColour);
   nbRect
     .style({
-      // Assumes no stroke
+      // Stroke added Jan'24
+      // Colour returned whether stroked or not
+      stroke: config.metadata.colours[rectStrokeColour],
+      'stroke-width': nbProps.rectstrokewidth,
       fill: () => {
         const fillName = nbProps.rectfill
         return config.metadata.colours[fillName]
@@ -55,8 +60,11 @@ export function updateRect(nbRect, config) {
       id: () => {
         let id = 'chartnumber-rect~~~'
         id = `${id}fill:${nbProps.rectfill}`
+        // Nope: ExtendScript doesn't recognise the strokealign property
+        // id = `${id}strokealign:${nbProps.strokealign}`
         return id
       },
+      'clip-path': 'url(#id)',
     })
 }
 // UPDATE RECT ends

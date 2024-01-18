@@ -193,7 +193,6 @@ class SilverChartWrapper extends Component {
       innerBox.y += tcPadding
       innerBox.height -= tcPadding
     }
-    console.log(innerBox.y)
     // In either case, get padding above source/footnote
     const bPadding = this.getPaddingBelowChart(config)
     innerBox.height -= bPadding
@@ -281,7 +280,7 @@ class SilverChartWrapper extends Component {
             config={oneChart}
             key={key}
             drawChart={drawChart}
-            chartTypeComponentCanRender={true} // {this.props.chartTypeComponentCanRender}
+            chartTypeComponentCanRender={true}
           />
         )
       }
