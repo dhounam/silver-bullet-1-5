@@ -60,11 +60,8 @@ export function updateRect(nbRect, config) {
       id: () => {
         let id = 'chartnumber-rect~~~'
         id = `${id}fill:${nbProps.rectfill}`
-        // Nope: ExtendScript doesn't recognise the strokealign property
-        // id = `${id}strokealign:${nbProps.strokealign}`
         return id
       },
-      'clip-path': 'url(#id)',
     })
 }
 // UPDATE RECT ends
