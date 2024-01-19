@@ -884,6 +884,7 @@
             },
             "source": {
               "x": 0,
+              "y": -0.0001,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -895,6 +896,7 @@
             },
             "footnote": {
               "x": 0,
+              "y": -0.0001,
               "anchor": "start",
               "font-family": "EconomistSans-Light",
               "font-size": 15,
@@ -1966,28 +1968,32 @@
                 "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
-                "paragraph": 24,
+                "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
                 "padding": {
-                  "left": 6,
-                  "right": 6
+                  "left": 0,
+                  "right": 0
                 }
               }
             },
             "rules": {
               "top": {
                 "width": 1,
-                "belowText": 7
+                "belowText": 16
               },
               "bottom": {
                 "width": 1,
-                "belowText": 7
+                "stroke": "dc-gridlines",
+                "belowText": 16
               }
             },
-            "tint": {
+            "separators": {
+              "drawFills": false,
               "fill": "dc-highlight",
-              "belowText": 7
+              "strokeName": "dc-gridlines",
+              "strokeWidth": 1,
+              "belowText": 16
             }
           },
           "double": {
@@ -2220,6 +2226,7 @@
             },
             "source": {
               "x": 0,
+              "y": -0.0001,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -2227,6 +2234,7 @@
             },
             "footnote": {
               "x": -0.0001,
+              "y": -0.0001,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -3292,28 +3300,32 @@
                 "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
-                "paragraph": 24,
-                "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
+                "paragraph": 42.5,
+                "NOTE-2": "leading might be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
                 "padding": {
-                  "left": 6,
-                  "right": 6
+                  "left": 0,
+                  "right": 0
                 }
               }
             },
             "rules": {
               "top": {
                 "width": 1,
-                "belowText": 7
+                "belowText": 16
               },
               "bottom": {
                 "width": 1,
-                "belowText": 7
+                "stroke": "dc-gridlines",
+                "belowText": 16
               }
             },
-            "tint": {
+            "separators": {
+              "drawFills": false,
               "fill": "dc-highlight",
-              "belowText": 7
+              "strokeName": "dc-gridlines",
+              "strokeWidth": 1,
+              "belowText": 16
             }
           },
           "double": {
@@ -3550,6 +3562,7 @@
             },
             "source": {
               "x": 0,
+              "y": -0.0001,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -3561,6 +3574,7 @@
             },
             "footnote": {
               "x": 0,
+              "y": -0.0001,
               "anchor": "start",
               "font-family": "EconomistSans-Light",
               "font-size": 15,
@@ -4632,28 +4646,32 @@
                 "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
-                "paragraph": 24,
+                "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
                 "padding": {
-                  "left": 6,
-                  "right": 6
+                  "left": 0,
+                  "right": 0
                 }
               }
             },
             "rules": {
               "top": {
                 "width": 1,
-                "belowText": 7
+                "belowText": 16
               },
               "bottom": {
                 "width": 1,
-                "belowText": 7
+                "stroke": "dc-gridlines",
+                "belowText": 16
               }
             },
-            "tint": {
+            "separators": {
+              "drawFills": false,
               "fill": "dc-highlight",
-              "belowText": 7
+              "strokeName": "dc-gridlines",
+              "strokeWidth": 1,
+              "belowText": 16
             }
           },
           "double": {
@@ -5944,38 +5962,44 @@
           "table": {
             "text": {
               "header": {
-                "size": 14,
-                "leading": 16,
+                "font": "EconomistSans-Medium",
+                "size": 15,
+                "leading": 20,
                 "padding": {
                   "left": 6,
                   "right": 6
                 }
               },
               "content": {
-                "size": 14,
+                "font": "EconomistSans-Light",
+                "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
-                "paragraph": 24,
+                "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
-                "leading": 16,
+                "leading": 20,
                 "padding": {
-                  "left": 6,
-                  "right": 6
+                  "left": 0,
+                  "right": 0
                 }
               }
             },
             "rules": {
               "top": {
                 "width": 1,
-                "belowText": 7
+                "belowText": 16
               },
               "bottom": {
                 "width": 1,
-                "belowText": 7
+                "stroke": "dc-gridlines",
+                "belowText": 16
               }
             },
-            "tint": {
+            "separators": {
+              "drawFills": false,
               "fill": "dc-highlight",
-              "belowText": 7
+              "strokeName": "dc-gridlines",
+              "strokeWidth": 1,
+              "belowText": 16
             }
           },
           "double": {

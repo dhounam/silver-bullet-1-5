@@ -40,7 +40,6 @@ export function updateRect(nbRect, config) {
   const nbProps = config.background.strings.numberBox
   const dimensions = config.background.outerbox.dimensions
   const rectStrokeColour = nbProps.rectstroke
-  console.log(rectStrokeColour);
   nbRect
     .style({
       // Stroke added Jan'24
@@ -60,6 +59,9 @@ export function updateRect(nbRect, config) {
       id: () => {
         let id = 'chartnumber-rect~~~'
         id = `${id}fill:${nbProps.rectfill}`
+        if (typeof rectStrokeColour !== 'undefined') {
+          id = `${id},stroke:${rectStrokeColour}`
+        }
         return id
       },
     })

@@ -1538,8 +1538,11 @@
           "belowText": 3.5
         }
       },
-      "tint": {
+      "separators": {
+        "drawFills": true,
         "fill": "highlight",
+        "strokeName": "black100",
+        "strokeWidth": 1,
         "belowText": 3.5
       }
     },

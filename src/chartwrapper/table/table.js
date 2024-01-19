@@ -4,8 +4,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TableText from './tabletext'
-import TableRules from './tablerules'
-import TableFills from './tablefills'
+import TopAndBottomRules from './topandbottomrules'
+import RowSeparators from './rowseparators'
 
 class SilverTable extends Component {
   render() {
@@ -17,8 +17,10 @@ class SilverTable extends Component {
     const rulesId = `table-rules-group-${chartIndex}`
     const fillsId = `table-fills-group-${chartIndex}`
     const tableTextJsx = <TableText config={config} idName={textId} />
-    const tableRulesJsx = <TableRules config={config} idName={rulesId} />
-    const tableFillsJsx = <TableFills config={config} idName={fillsId} />
+    const topAndBottomRulesJsx = (
+      <TopAndBottomRules config={config} idName={rulesId} />
+    );
+    const tableFillsJsx = <RowSeparators config={config} idName={fillsId} />
 
     // const { width, height, x, y } = this.props.config.innerBox;
     // NOTE: I can draw a temporary 'inner box'
@@ -41,7 +43,7 @@ class SilverTable extends Component {
     const chartComponentsJSX = (
       <g className="outer-table-group" id={outerId}>
         {tableFillsJsx}
-        {tableRulesJsx}
+        {topAndBottomRulesJsx}
         {tableTextJsx}
       </g>
     )
