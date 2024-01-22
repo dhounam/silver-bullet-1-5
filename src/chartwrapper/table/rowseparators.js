@@ -1,3 +1,5 @@
+// This component draws row markers, either as alternate tints
+// or as rules beneath each line of text
 import * as d3 from 'd3'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -21,6 +23,8 @@ class TableFills extends Component {
   }
   // GET CONTENT HEIGHT ends
 
+  // +++ RULES +++ +++ +++ +++ +++ +++ +++
+
   // APPEND RULE
   appendRule(rProps, rGrp) {
     rGrp
@@ -39,19 +43,6 @@ class TableFills extends Component {
       })
   }
   // APPEND RULE ends
-
-  // APPEND FILL
-  appendFill(fGrp, fProps) {
-    fGrp.append('rect').attr({
-      x: fProps.x,
-      y: fProps.y,
-      width: fProps.width,
-      height: fProps.height,
-      fill: fProps.fill,
-      id: `table-tint~~~fill:${fProps.fillName}`,
-    })
-  }
-  // APPEND FILL ends
 
   // DRAW RULES
   drawRules(config, rulesGrp) {
@@ -81,6 +72,22 @@ class TableFills extends Component {
   }
   // DRAW RULES ends
 
+  // +++ TINTS +++ +++ +++ +++ +++ +++ +++
+
+  // APPEND FILL
+  appendFill(fGrp, fProps) {
+    fGrp.append('rect').attr({
+      x: fProps.x,
+      y: fProps.y,
+      width: fProps.width,
+      height: fProps.height,
+      fill: fProps.fill,
+      id: `table-tint~~~fill:${fProps.fillName}`,
+    })
+  }
+  // APPEND FILL ends
+
+
   // DRAW FILLS
   drawFills(config, fillsGrp) {
     // Number of rows
@@ -108,6 +115,8 @@ class TableFills extends Component {
     }
   }
   // DRAW FILLS ends
+
+  // +++ TRIAGE +++ +++ +++ +++ +++ +++
 
   // UPDATE SEPARATORS
   // Determines: alternate-fills or rules
