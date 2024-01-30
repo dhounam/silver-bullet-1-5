@@ -109,7 +109,7 @@ class SilverXaxisLinear extends Component {
       // Tick length
       .tickSize(tickLength)
       // Number format
-      .tickFormat((ddd) => AxisUtils.getLinearAxisTickFormat(ddd, textFormat))
+      .tickFormat(ddd => AxisUtils.getLinearAxisTickFormat(ddd, textFormat));
     return xAxis
   }
   // SET X-AXIS CONFIG ends
@@ -162,7 +162,7 @@ class SilverXaxisLinear extends Component {
     const labelBase = config.tickPrefs.padding
     const yPos = 0 - labelBase - labelHeight / 2
     // // Create array of coordinates
-    const lineData = breakObj.points.map((onePt) => {
+    const lineData = breakObj.points.map(onePt => {
       const ptObj = {
         x: xPos + onePt.x,
         y: yPos + onePt.y,
@@ -173,8 +173,8 @@ class SilverXaxisLinear extends Component {
     // and dup'd elsewhere
     const lineFunction = d3.svg
       .line()
-      .x((ddd) => ddd.x)
-      .y((ddd) => ddd.y)
+      .x(ddd => ddd.x)
+      .y(ddd => ddd.y)
       .interpolate('linear')
     bsGroup
       .append('path')

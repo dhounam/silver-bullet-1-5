@@ -218,7 +218,13 @@ export function tSpanify(textElement, lineArray) {
       'font-family': (ddd) => {
         let fam = fontFamily
         if (ddd.italics) {
-          fam = `${fam}Ita`
+          // Kludge, Jan'24. Old 'Econ' fonts append 'Ita';
+          // new 'Economist' fonts append 'Italic'
+          if (fam.includes('Economist')) {
+            fam = `${fam}Italic`
+          } else {
+            fam = `${fam}Ita`
+          }
         }
         return fam
       },

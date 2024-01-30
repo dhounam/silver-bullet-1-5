@@ -847,7 +847,7 @@
             },
             "bboxB": {
               "x": 0,
-              "width": 30,
+              "width": 40,
               "height": 4,
               "display": true,
               "adjustable": {
@@ -864,27 +864,27 @@
               "x": 0,
               "y": 28,
               "font-family": "EconomistSans-Bold",
-              "font-size": 17,
-              "leading": 20,
+              "font-size": 20,
+              "leading": 24,
               "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
-              "y": 52,
-              "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "y": 56,
+              "font-family": "EconomistSans-Medium",
+              "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
               "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
-              "y": -0.0001,
+              "y": -3,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -896,7 +896,7 @@
             },
             "footnote": {
               "x": 0,
-              "y": -0.0001,
+              "y": -3,
               "anchor": "start",
               "font-family": "EconomistSans-Light",
               "font-size": 15,
@@ -904,7 +904,7 @@
               "fill": "dc-greytext",
               "note": "Footnote stacked above source",
               "aboveSource": true,
-              "sourceGap": 18,
+              "sourceGap": 20,
               "wrapwidth": 100
             },
             "numberBox": {
@@ -976,13 +976,13 @@
           "rect": {
             "x": 0,
             "y": 0,
-            "width": 30,
+            "width": 40,
             "height": 1
           },
           "strings": {
             "panelheader": {
               "font-family": "EconomistSans-Medium",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20,
               "x": 0,
               "y": 20
@@ -1117,11 +1117,11 @@
               "size": 15,
               "leading": 16,
               "font": "EconomistSans-Light",
-              "y": 4,
+              "y": 3.5,
               "header": {
                 "font": "EconomistSans-Light",
                 "size": 15,
-                "leading": 20,
+                "leading": 16,
                 "margin": 20
               }
             },
@@ -1146,7 +1146,7 @@
               "headerMargin": 20
             },
             "scatter": {
-              "headerMargin": 20
+              "headerMargin": 24
             }
           },
           "brokenScaleFactors": {
@@ -1155,85 +1155,85 @@
             "strokewidth": 2.5
           }
         },
-        "_SERIES": "Properties for series",
+        "_SERIES": "Properties for series; NOTE: columns use bar colours",
         "series": {
           "bar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "narrowGap": 2,
@@ -1244,80 +1244,80 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "minWidth": 7,
@@ -1326,83 +1326,82 @@
           "thermometer": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "spindle": {
-              "stroke": "black50",
+              "stroke": "dc-greytext",
               "width": 2
             },
             "dot": {
@@ -1418,79 +1417,78 @@
           "line": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -1503,79 +1501,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "dots": {
@@ -1588,8 +1586,9 @@
             "text": {
               "x": 2,
               "y": 10,
-              "leading": 12,
-              "size": 4
+              "leading": 15,
+              "font": "EconomistSans-Light",
+              "size": 13
             },
             "trendline": {
               "stroke": "dc-blue1",
@@ -1600,6 +1599,7 @@
               ]
             },
             "zkey": {
+              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -1610,79 +1610,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -1694,79 +1693,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -1780,79 +1778,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -1865,90 +1862,92 @@
           "pie": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "wedges": {
               "outerMargin": 10
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
+              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
+              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -1999,61 +1998,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
               ],
               "right": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
-              ],
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
+               ],
               "columnalone": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ]
             }
           }
@@ -2189,7 +2188,7 @@
             },
             "bboxB": {
               "x": 0,
-              "width": 30,
+              "width": 40,
               "height": 4,
               "display": true,
               "adjustable": {
@@ -2206,27 +2205,27 @@
               "x": 0,
               "y": 28,
               "font-family": "EconomistSans-Bold",
-              "font-size": 17,
-              "leading": 20,
+              "font-size": 20,
+              "leading": 24,
               "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
-              "y": 52,
-              "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "y": 56,
+              "font-family": "EconomistSans-Medium",
+              "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
               "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
-              "y": -0.0001,
+              "y": -3,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -2234,7 +2233,7 @@
             },
             "footnote": {
               "x": -0.0001,
-              "y": -0.0001,
+              "y": -3,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -2309,13 +2308,13 @@
           "rect": {
             "x": 0,
             "y": 0,
-            "width": 30,
+            "width": 40,
             "height": 1
           },
           "strings": {
             "panelheader": {
               "font-family": "EconomistSans-Medium",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20,
               "x": 0,
               "y": 20
@@ -2449,11 +2448,11 @@
               "size": 15,
               "leading": 16,
               "font": "EconomistSans-Light",
-              "y": 4,
+              "y": 3.5,
               "header": {
                 "font": "EconomistSans-Light",
                 "size": 15,
-                "leading": 20,
+                "leading": 16,
                 "margin": 20
               }
             },
@@ -2478,7 +2477,7 @@
               "headerMargin": 20
             },
             "scatter": {
-              "headerMargin": 20
+              "headerMargin": 24
             }
           },
           "brokenScaleFactors": {
@@ -2492,80 +2491,80 @@
           "bar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "narrowGap": 2,
@@ -2576,80 +2575,80 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "minWidth": 7,
@@ -2658,83 +2657,82 @@
           "thermometer": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "spindle": {
-              "stroke": "black50",
+              "stroke": "dc-greytext",
               "width": 2
             },
             "dot": {
@@ -2750,79 +2748,78 @@
           "line": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -2835,79 +2832,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "dots": {
@@ -2920,8 +2917,9 @@
             "text": {
               "x": 2,
               "y": 10,
-              "leading": 12,
-              "size": 4
+              "leading": 15,
+              "font": "EconomistSans-Light",
+              "size": 13
             },
             "trendline": {
               "stroke": "dc-blue1",
@@ -2932,6 +2930,7 @@
               ]
             },
             "zkey": {
+              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -2942,79 +2941,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -3026,79 +3024,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -3112,79 +3109,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -3197,90 +3193,92 @@
           "pie": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "wedges": {
               "outerMargin": 10
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
+              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
+              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -3301,7 +3299,7 @@
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 42.5,
-                "NOTE-2": "leading might be useful later, but as of Oct'20 is ignored",
+                "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
                 "padding": {
                   "left": 0,
@@ -3331,61 +3329,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
               ],
               "right": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
-              ],
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
+               ],
               "columnalone": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ]
             }
           }
@@ -3525,7 +3523,7 @@
             },
             "bboxB": {
               "x": 0,
-              "width": 30,
+              "width": 40,
               "height": 4,
               "display": true,
               "adjustable": {
@@ -3542,27 +3540,27 @@
               "x": 0,
               "y": 28,
               "font-family": "EconomistSans-Bold",
-              "font-size": 17,
-              "leading": 20,
+              "font-size": 20,
+              "leading": 24,
               "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
-              "y": 52,
-              "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "y": 56,
+              "font-family": "EconomistSans-Medium",
+              "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
               "font-family": "EconomistSans-Light",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
-              "y": -0.0001,
+              "y": -3,
               "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
@@ -3574,7 +3572,7 @@
             },
             "footnote": {
               "x": 0,
-              "y": -0.0001,
+              "y": -3,
               "anchor": "start",
               "font-family": "EconomistSans-Light",
               "font-size": 15,
@@ -3654,13 +3652,13 @@
           "rect": {
             "x": 0,
             "y": 0,
-            "width": 30,
+            "width": 40,
             "height": 1
           },
           "strings": {
             "panelheader": {
               "font-family": "EconomistSans-Medium",
-              "font-size": 15,
+              "font-size": 17,
               "leading": 20,
               "x": 0,
               "y": 20
@@ -3795,11 +3793,11 @@
               "size": 15,
               "leading": 16,
               "font": "EconomistSans-Light",
-              "y": 4,
+              "y": 3.5,
               "header": {
                 "font": "EconomistSans-Light",
                 "size": 15,
-                "leading": 20,
+                "leading": 16,
                 "margin": 20
               }
             },
@@ -3824,7 +3822,7 @@
               "headerMargin": 20
             },
             "scatter": {
-              "headerMargin": 20
+              "headerMargin": 24
             }
           },
           "brokenScaleFactors": {
@@ -3838,80 +3836,80 @@
           "bar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "narrowGap": 2,
@@ -3922,80 +3920,80 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "gap": 10,
             "minWidth": 7,
@@ -4004,83 +4002,82 @@
           "thermometer": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue2",
-                "dc-purple1",
-                "dc-blue1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "spindle": {
-              "stroke": "black50",
+              "stroke": "dc-greytext",
               "width": 2
             },
             "dot": {
@@ -4096,79 +4093,78 @@
           "line": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -4181,79 +4177,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "dots": {
@@ -4266,8 +4262,9 @@
             "text": {
               "x": 2,
               "y": 10,
-              "leading": 12,
-              "size": 4
+              "leading": 15,
+              "font": "EconomistSans-Light",
+              "size": 13
             },
             "trendline": {
               "stroke": "dc-blue1",
@@ -4278,6 +4275,7 @@
               ]
             },
             "zkey": {
+              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -4288,79 +4286,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -4372,79 +4369,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -4458,79 +4454,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
+              ],[
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext"
-              ],
-              [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-stone",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-green2",
-                "dc-green1",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
               ]
             ],
             "stroke": {
@@ -4543,90 +4538,92 @@
           "pie": {
             "colours": [
               [
-                "dc-blue1"
+                "dc-Econred60"
               ],
               [
-                "dc-blue1",
-                "dc-blue2"
+                "dc-Econred",
+                "dc-Econredtint"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70"
               ],
               [
-                "dc-blue1",
-                "dc-blue2",
-                "dc-purple2",
-                "dc-purple1",
-                "dc-green2",
-                "dc-green1",
-                "dc-stone",
-                "dc-stonetext",
-                "dc-bluetext",
-                "dc-bluedark"
-              ]
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-ChartBlue",
+                "dc-ChartChicago",
+                "dc-Land3",
+                "dc-Landtext",
+                "dc-Land4",
+                "dc-London30",
+                "dc-London70",
+                "dc-Chicago30"
+              ]              
             ],
             "wedges": {
               "outerMargin": 10
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
+              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
+              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -4677,61 +4674,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
               ],
               "right": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink",
-                "dc-purple1",
-                "dc-purple2",
-                "dc-pink"
-              ],
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark",
+                "dc-Econred",
+                "dc-Econredtint",
+                "dc-Econreddark"
+               ],
               "columnalone": [
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1",
-                "dc-blue2",
-                "dc-green1",
-                "dc-blue1"
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext",
+                "dc-Land3",
+                "dc-Land4",
+                "dc-Landtext"
               ]
             }
           }
@@ -5154,7 +5151,7 @@
               "headerMargin": 20
             },
             "scatter": {
-              "headerMargin": 20
+              "headerMargin": 24
             }
           },
           "brokenScaleFactors": {
@@ -5595,8 +5592,9 @@
             "text": {
               "x": 2,
               "y": 10,
-              "leading": 12,
-              "size": 4
+              "leading": 15,
+              "font": "EconomistSans-Light",
+              "size": 13
             },
             "trendline": {
               "stroke": "dc-blue1",
@@ -5607,6 +5605,7 @@
               ]
             },
             "zkey": {
+              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 12.5,
@@ -5951,10 +5950,12 @@
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
+              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
+              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -6069,11 +6070,11 @@
           "headerText": {
             "size": 32,
             "leading": 38,
-            "font": "EconSansCndMed"
+            "font": "EconomistSans-Medium"
           },
           "text": {
             "anchor": "start",
-            "font": "EconSansCndLig",
+            "font": "EconomistSans-Light",
             "size": 32,
             "fill": "black100",
             "leading": 38

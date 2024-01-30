@@ -220,8 +220,10 @@ class SilverSeriesLine extends Component {
       }
       return objA
     })
-    // Line series in reverse order? Maybe not...
-    // return mappedData.reverse();
+    // Unstacked line series in reverse order: modded Jan'24
+    if (!config.accum) {
+      return mappedData.reverse();
+    }
     return mappedData
   }
   // MAP LINE SERIES DATA ends
