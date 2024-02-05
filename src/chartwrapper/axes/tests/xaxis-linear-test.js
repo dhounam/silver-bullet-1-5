@@ -104,6 +104,12 @@ class SilverXaxisLinearTest extends Component {
       const dotProjection = this.getDotProjection()
       tWidth = Math.max(tWidth, dotProjection)
     } else {
+      // Rightmost label
+      // Bars and hthermos set margin to rightmost tick
+      // so don't allow for label
+      if (config.chartType === 'bar' || config.chartType === 'thermohorizontal') {
+        tWidth = 0;
+      }
       // Check for bar chart breaking scale at right:
       const barProjection = this.getBarProjection()
       tWidth = Math.max(tWidth, barProjection)
@@ -116,6 +122,8 @@ class SilverXaxisLinearTest extends Component {
     // to the r/h edge of the IB, PLUS the distance the label projects
     // So add a new property to the bounds
     // I *think* this is only linear xaxes...
+    // NOTE: CAN I JUST COMMENT THIS OUT????????????????????
+    // Apparently not!
     bounds.labelProjection = tWidth
   }
   // ADJUST BOUNDS WIDTH ends

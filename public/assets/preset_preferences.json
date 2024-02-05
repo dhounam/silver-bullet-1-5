@@ -2127,21 +2127,23 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
-            "size": 14
+            "font": "EconomistSans-Light",
+            "size": 15
           },
           "background": {
             "padding": {
               "horizontal": 6,
               "vertical": 6
             },
-            "fill": "dc-numberbox"
+            "fill": "dc-gridlines"
           },
           "margin": {
-            "left": 10
+            "left": 20
           },
           "header": {
-            "size": 14,
-            "leading": 15,
+            "font": "EconomistSans-Light",
+            "size": 15,
+            "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
           }
@@ -3458,21 +3460,23 @@
           "maxCircleSize": 60,
           "maxRectWidth": 60,
           "text": {
-            "size": 14
+            "font": "EconomistSans-Light",
+            "size": 15
           },
           "background": {
             "padding": {
               "horizontal": 6,
               "vertical": 6
             },
-            "fill": "dc-numberbox"
+            "fill": "dc-gridlines"
           },
           "margin": {
-            "left": 10
+            "left": 20
           },
           "header": {
-            "size": 14,
-            "leading": 15,
+            "font": "EconomistSans-Light",
+            "size": 15,
+            "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
           }
@@ -4803,21 +4807,23 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
-            "size": 14
-          },
+            "font": "EconomistSans-Light",
+            "size": 15
+         },
           "background": {
             "padding": {
               "horizontal": 6,
               "vertical": 6
             },
-            "fill": "dc-numberbox"
+            "fill": "dc-gridlines"
           },
           "margin": {
-            "left": 10
+            "left": 20
           },
           "header": {
-            "size": 14,
-            "leading": 15,
+            "font": "EconomistSans-Light",
+            "size": 15,
+            "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
           }
