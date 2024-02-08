@@ -105,10 +105,12 @@ class SilverXaxisLinearTest extends Component {
       tWidth = Math.max(tWidth, dotProjection)
     } else {
       // Rightmost label
-      // Bars and hthermos set margin to rightmost tick
+      // If there are blobs, bars and hthermos set margin to rightmost *tick*
       // so don't allow for label
-      if (config.chartType === 'bar' || config.chartType === 'thermohorizontal') {
-        tWidth = 0;
+      if (config.hasBlobs) {
+        if (config.chartType === 'bar' || config.chartType === 'thermohorizontal') {
+          tWidth = 0;
+        }
       }
       // Check for bar chart breaking scale at right:
       const barProjection = this.getBarProjection()

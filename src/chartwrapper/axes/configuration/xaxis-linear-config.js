@@ -22,6 +22,8 @@ export default function(chartConfig, bounds, testFlag) {
   const isLog = chartConfig.scales[side].log
   const mmO = Object.assign({}, chartConfig.scales[side].minMaxObj.scale)
   const chartType = chartConfig.scales[side].type
+  // Blobs?
+  const hasBlobs = chartConfig.blobs.hasBlobs
   // Broken scale...?
   const breakScaleObj = BrokenScale.makeBreakScaleObj(chartType, chartConfig)
   // (No index check on a linear x-axis)
@@ -113,6 +115,7 @@ export default function(chartConfig, bounds, testFlag) {
     duration: chartConfig.duration,
     factor: chartConfig.scales[side].factor,
     forceTurn: chartConfig.forceTurn,
+    hasBlobs,
     hasSecondaryAxis: false,
     header,
     minVal: mmO.min,
