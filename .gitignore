@@ -13,6 +13,10 @@
 /build-economist
 /build-eiu
 
+/sibyl
+/sibyl/static/css
+/sibyl/static/js
+
 # misc
 .DS_Store
 .env
