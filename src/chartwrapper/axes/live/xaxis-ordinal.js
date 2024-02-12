@@ -668,6 +668,7 @@ class SilverXaxisOrdinal extends Component {
         const fillName = config.textPrefs.fill
         labID = `${labID}~~~fill:${fillName}`
         labID = `${labID},justification:${anchor}`
+        labID = `${labID},leading:${config.textPrefs.leading}`
         // NOTE: *****
         // I tried to get width here, but D3 hasn't rendered 2ry
         // labels yet, so this fails

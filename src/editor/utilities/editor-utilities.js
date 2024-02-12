@@ -365,7 +365,7 @@ export function deepMerge(target, source) {
 // GET SPECIFIC PRESET PROPERTIES
 // Called from getNewChartObject to extract non-global
 // lookup properties from the current sub/preset
-export function getSpecificPresetProps(presetsConfig) {  
+export function getSpecificPresetProps(presetsConfig) {
   // Isolate the user-specific sub-preset source node
   const pps = presetsConfig.userPresets;
   const psSource = pps[presetsConfig.presetName][presetsConfig.subpresetName];
@@ -422,7 +422,7 @@ export function getSpecificPresetProps(presetsConfig) {
     yAxis: mergedYaxis,
     zAxis: mergedZaxis,
     brokenScaleFactors,
-    blobs: mergedBlobs
+    blobs: mergedBlobs,
   };
 }
 // GET SPECIFIC PRESET PROPERTIES ends

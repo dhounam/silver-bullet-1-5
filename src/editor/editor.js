@@ -24,11 +24,10 @@ import MonteuxImport from './monteux/monteux-import';
 import globalAssets from './assets/globalAssets';
 import { updateOnlineSubPreset } from './utilities/payload-utilities/presets-utilities';
 
-let DefaultChartConfig,
-  DefaultPreferences,
-  PresetPreferences,
-  ColourLookup;
-
+let DefaultChartConfig;
+let DefaultPreferences;
+let PresetPreferences;
+let ColourLookup;
 
 class SilverEditor extends Component {
   static get defaultProps() {
@@ -92,7 +91,9 @@ class SilverEditor extends Component {
     this.handleValuesFromPanels = this.handleValuesFromPanels.bind(this);
     this.handleValuesFromStrings = this.handleValuesFromStrings.bind(this);
     this.handleValuesFromFooter = this.handleValuesFromFooter.bind(this);
-    this.handleValuesFromFoldsWrapper = this.handleValuesFromFoldsWrapper.bind(this);
+    this.handleValuesFromFoldsWrapper = this.handleValuesFromFoldsWrapper.bind(
+      this,
+    );
     this.handleMonteuxImportValues = this.handleMonteuxImportValues.bind(this);
   }
 
@@ -105,15 +106,14 @@ class SilverEditor extends Component {
   // Calls makeNewChartConfig to assemble a new default chart CO
   // ...and initiateNewEdConfig to assemble default editor CO
   UNSAFE_componentWillMount() {
-
     // load external assets: a collection of JSON files containing all the available settings
-    let assetsFolder = 'assets',
-      assetFiles = [
-        'default_chart_config.json',
-        'default_preferences.json',
-        'preset_preferences.json',
-        'colours.json'
-      ].map(assetFile => [assetsFolder,assetFile].join('/'));
+    const assetsFolder = 'assets';
+    const assetFiles = [
+      'default_chart_config.json',
+      'default_preferences.json',
+      'preset_preferences.json',
+      'colours.json',
+    ].map(assetFile => [assetsFolder, assetFile].join('/'));
 
     // fetch all the files
     Promise
@@ -372,9 +372,9 @@ class SilverEditor extends Component {
     // NOTE: I had a query here about whether we need the eco/eiu user flag...
     // ...but it seems that we don't... for now, at least...
     let id = Filename.getFilenameSectionId(pObj.name);
-    // Search list for an item with existing code. If not
-    // found, revert to default
-    if (!sections.list.some(item => item.code === id)) {
+    // Some presets force a default; otherwise check list for an item with
+    // existing ID and, if not found, use default
+    if (sections.forceDefault || !sections.list.some(item => item.code === id)) {
       id = sections.default;
     }
     return id;
@@ -899,7 +899,7 @@ class SilverEditor extends Component {
     
     // first check to be done ASAP is to update a possible deprecatede
     // online subpreset (see presets-utilities.js for a rationale on that)
-    let { subPreset, hasBeenUpdated } =  updateOnlineSubPreset(
+    const { subPreset, hasBeenUpdated } =  updateOnlineSubPreset(
       values.global.values.preset,
       values.global.values.subPreset
     );
@@ -1469,6 +1469,8 @@ class SilverEditor extends Component {
         panelHeader: onePanel.panelHeader,
         panelTotal: edConfigGlobal.panelVals.total,
         user: edConfigGlobal.user,
+        specialSourceStrings: edConfigGlobal.strings.specialSourceStrings,
+        footnoteSymbols: edConfigGlobal.strings.footnoteSymbols,
       },
     };
   }
@@ -1507,7 +1509,7 @@ class SilverEditor extends Component {
   makeFoldsJsx() {
     const { editorConfig } = this.state;
     // Design fold
-    const designConfig = this.makeDesignFoldConfig();    
+    const designConfig = this.makeDesignFoldConfig();
     // Scales fold
     const disableFold = this.setDisabledStatusByChartType();
     // Factors disabled, Oct'20. But still pass DP's factoring prefs

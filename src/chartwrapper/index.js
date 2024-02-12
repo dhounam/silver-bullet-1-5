@@ -123,6 +123,10 @@ class SilverChartWrapper extends Component {
         chartType = 'line'
       }
     }
+    // Inferential kludge, Jan'24: hthermo sets same padding as bar:
+    if (chartType === 'thermohorizontal') {
+      chartType = 'bar';
+    }
     let padding = pLookup.toTopOfChart.default
     if (hasBlobs) {
       padding = pLookup.toBlobTop
@@ -276,7 +280,7 @@ class SilverChartWrapper extends Component {
             config={oneChart}
             key={key}
             drawChart={drawChart}
-            chartTypeComponentCanRender={true} // {this.props.chartTypeComponentCanRender}
+            chartTypeComponentCanRender={true}
           />
         )
       }

@@ -75,10 +75,10 @@ class SilverThermoHorizontalSeries extends Component {
   updateSpindles(spindleBinding, config) {
     spindleBinding.attr({
       class: 'thermo-spindle',
-      y1: (ddd) => config.yMainScale(ddd.category),
-      y2: (ddd) => config.yMainScale(ddd.category),
-      width: (ddd) => ddd.strokewidth,
-      x1: (ddd) => {
+      y1: ddd => config.yMainScale(ddd.category),
+      y2: ddd => config.yMainScale(ddd.category),
+      width: ddd => ddd.strokewidth,
+      x1: ddd => {
         let x1 = config.xScale(ddd.min)
         if (config.isLog) {
           x1 = config.xScale(config.minVal)
@@ -87,7 +87,7 @@ class SilverThermoHorizontalSeries extends Component {
         }
         return x1
       },
-      x2: (ddd) => config.xScale(ddd.max),
+      x2: ddd => config.xScale(ddd.max),
     })
   }
   // UPDATE SPINDLES ends
@@ -120,12 +120,12 @@ class SilverThermoHorizontalSeries extends Component {
       .append('line')
       .attr({
         class: 'd3-thermo-marker',
-        y1: (ddd) => {
+        y1: ddd => {
           let yPos = config.yMainScale(ddd.category)
           yPos -= styles.length / 2
           return yPos
         },
-        y2: (ddd) => {
+        y2: ddd => {
           let yPos = config.yMainScale(ddd.category)
           yPos += styles.length / 2
           return yPos
@@ -160,10 +160,10 @@ class SilverThermoHorizontalSeries extends Component {
       .transition(config.duration)
       .attr({
         'stroke-width': config.styles.line.width,
-        x1: (ddd) => config.xScale(ddd.val),
-        x2: (ddd) => config.xScale(ddd.val),
+        x1: ddd => config.xScale(ddd.val),
+        x2: ddd => config.xScale(ddd.val),
       })
-      .style('stroke', (ddd) => ddd.stroke)
+      .style('stroke', ddd => ddd.stroke);
   }
   // UPDATE LINE MARKERS ends
 
@@ -194,7 +194,7 @@ class SilverThermoHorizontalSeries extends Component {
       .attr({
         class: 'd3-thermo-marker',
         cx: config.xScale(0),
-        cy: (ddd) => config.yMainScale(ddd.category),
+        cy: ddd => config.yMainScale(ddd.category),
         fill: 'red',
         r: 0,
         'stroke-width': 0,
@@ -226,10 +226,10 @@ class SilverThermoHorizontalSeries extends Component {
       .transition(config.duration)
       .attr({
         'stroke-width': styles.strokeWidth,
-        cx: (ddd) => config.xScale(ddd.val),
+        cx: ddd => config.xScale(ddd.val),
         r: styles.radius,
       })
-      .style('fill', (ddd) => ddd.fill)
+      .style('fill', ddd => ddd.fill);
   }
   // UPDATE DOT MARKERS ends
 
@@ -303,7 +303,7 @@ class SilverThermoHorizontalSeries extends Component {
     // Bind inner (points) data
     const markerBinding = groupBinding
       .selectAll('.d3-thermo-marker')
-      .data((ddd) => ddd)
+      .data(ddd => ddd);
     if (config.dotFlag) {
       this.enterDotMarkers(markerBinding, config)
       this.updateDotMarkers(markerBinding, config)

@@ -437,18 +437,16 @@ class SilverBarChart extends Component {
 
     // NOTE: I can draw a temporary 'inner box'
     // so I can see what I've got...
-    /*
-    const rectStyle = {
-      fill: '#aa5',
-      width: this.state.innerBox.width,
-      height: this.state.innerBox.height,
-      x: 0,
-      y: 0,
-    };
+    // const rectStyle = {
+    //   fill: '#aa5',
+    //   width: this.state.innerBox.width,
+    //   height: this.state.innerBox.height,
+    //   x: 0,
+    //   y: 0,
+    // };
     // Next goes to top of JSX stack
-    <rect style={rectStyle} />
-    */
-
+    // <rect style={rectStyle} />
+    
     const chartComponentsJSX = (
       <g className={mainGroupClass} key={kids.mainGroupKey} id={kids.contentId}>
         {xaxisJSX}

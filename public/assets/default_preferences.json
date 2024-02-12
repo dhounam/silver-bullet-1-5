@@ -129,7 +129,28 @@
         "font-size": 6,
         "leading": 7,
         "fill": "black75",
-        "anchor": "start"
+        "anchor": "start",
+        "specialStrings": {
+          "ecoStrPlain": "The Economist",
+          "ecoStrItal": "<i>The Economist</i>",
+          "ecoStrAfterSemicolon": "; <i>The Economist</i>",
+          "ecoStrAfterColon": ": <i>The Economist</i>",
+          "eiuStr": "EIU",
+          "eiuLongStr": "The Economist Intelligence Unit",
+          "eiuStrAfterSemicolon": "; EIU",
+          "eiuStrAfterColon": ": EIU",
+          "lsegStr": "LSEG Workspace",
+          "lsegStrAfterSemicolon": "; LSEG Workspace",
+          "lsegStrAfterColon": ": LSEG Workspace",
+          "semicolon": ";",
+          "semicolonSpace": "; ",
+          "colon": ":",
+          "colonSpace": ": ",
+          "tocomeAfterColon": ": to come",
+          "tocomeBeforeSemicolon": "to come; ",
+          "br": "<br>",
+          "spaceBr": " <br>"
+        }
       },
       "footnote": {
         "content": "",
@@ -142,7 +163,8 @@
         "leading": 7,
         "fill": "black75",
         "anchor": "end",
-        "aboveSource": false
+        "aboveSource": false,
+        "footnoteSymbols": ["*", "†", "‡", "§", "**", "††", "‡‡", "§§"]
       },
       "numberBox": {
         "content": "",
@@ -211,7 +233,7 @@
   "_END-BACKGROUND-PROPERTIES": "End of background properties",
   "_PANEL-ATTRIBUTES": "Properties for chart/panel-specific elements",
   "panelAttributes": {
-    "gap": 10,
+    "gap_REDUNDANT": 10,
     "alignChartsInPanels": false,
     "padding": {
       "delete-above": "Was 15; superseded by background.topPadding, above",
@@ -353,8 +375,8 @@
         "x": -6,
         "y_NOTE": "Is the 'y' property redundant?",
         "y": 0,
+        "padding_NOTE": "For axis *header* padding",
         "padding": {
-          "NOTE": "For axis header padding",
           "NOTE_OLD_axisAtTop": 5,
           "axisAtTop": {
             "bar": 5,
@@ -366,6 +388,7 @@
           }
         },
         "leading": 7.5,
+        "rowheight_NOTE": "Sets y-value for axis labels below baseline",
         "rowheight": 10,
         "font": "EconSansCndLig",
         "size": {
@@ -1515,8 +1538,11 @@
           "belowText": 3.5
         }
       },
-      "tint": {
+      "separators": {
+        "drawFills": true,
         "fill": "highlight",
+        "strokeName": "black100",
+        "strokeWidth": 1,
         "belowText": 3.5
       }
     },
@@ -1676,7 +1702,7 @@
       "strokewidth": 0
     },
     "margin": {
-      "DELETED_below": 10,
+      "DELETED_below-set in top-padding": 10,
       "left": 5
     },
     "header": {
@@ -1808,7 +1834,7 @@
   "other": {
     "dayInMilliSeconds": 86400000,
     "defaultChartDataString": "Paste raw data (top row MUST be headers)",
-    "defaultSource": "Source: to come",
+    "defaultSource": "Source: to come BUT THIS IS SURELY REDUDANT",
     "NOTE-DURATION": "duration never overwrites value in default_chart_config.json",
     "duration": 0,
     "forceTurn": "<br>",
@@ -1892,6 +1918,7 @@
     "gifFactor": 2,
     "updateOnUnchangedDataBlur": true,
     "publicationDay": 6,
+    "NOTE": "Next, steplineSpur, is surely in the wrong place",
     "steplineSpur": 0
   }
 }

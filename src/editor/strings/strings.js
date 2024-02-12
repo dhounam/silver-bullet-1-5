@@ -6,31 +6,11 @@ import PropTypes from 'prop-types';
 
 import EconomistIcon from '../icons/economist-icon';
 import EiuIcon from '../icons/eiu-icon';
+// Nov'23, 'Refinitiv' was replaced by 'LSEG Workspace'; however
+// we continue to use the original Refinitiv icon
 import RefinitivIcon from '../icons/refinitiv-icon';
 
 class Strings extends Component {
-  static get defaultProps() {
-    return {
-      ecoStrPlain: 'The Economist',
-      ecoStrItal: '<i>The Economist</i>',
-      ecoStrAfterSemicolon: '; <i>The Economist</i>',
-      ecoStrAfterColon: ': <i>The Economist</i>',
-      eiuStr: 'The Economist Intelligence Unit',
-      eiuStrAfterSemicolon: '; The Economist Intelligence Unit',
-      eiuStrAfterColon: ': The Economist Intelligence Unit',
-      refStr: 'Refinitiv Datastream',
-      refStrAfterSemicolon: '; Refinitiv Datastream',
-      refStrAfterColon: ': Refinitiv Datastream',
-      semicolon: ';',
-      semicolonSpace: '; ',
-      colon: ':',
-      colonSpace: ': ',
-      br: '<br>',
-      spaceBr: ' <br>',
-      footnoteSymbols: ['*', '†', '‡', '§', '**', '††', '‡‡', '§§'],
-    };
-  }
-
   // CONSTRUCTOR
   // Creates empty array of footnote items
   // Sets up the event listener
@@ -38,7 +18,7 @@ class Strings extends Component {
     super(props);
     this.state = {
       // This will be an array of objects, each with props 'symbol' and 'content'
-      // FIXME: I suspect, July'20, that this may be redundant. Revisit...
+      // I suspect, July'20, that this may be redundant
       activeFootnotes: [],
       focusFootnote: '',
       // Tracking old values of all except footnotes
@@ -51,9 +31,7 @@ class Strings extends Component {
     };
     this.handleStringBlur = this.handleStringBlur.bind(this);
     this.handleAddFootnote = this.handleAddFootnote.bind(this);
-    this.handleEcoString = this.handleEcoString.bind(this);
-    this.handleEiuString = this.handleEiuString.bind(this);
-    this.handleRefinitivString = this.handleRefinitivString.bind(this);
+    this.handleSpecialSourceString = this.handleSpecialSourceString.bind(this);
   }
   // CONSTRUCTOR ends
 
@@ -78,14 +56,13 @@ class Strings extends Component {
 
   // *** REACT LIFECYCLE STUFF ENDS ***
 
-  // *** EVENT LISTENERS ***
-
   // GET FOOTNOTES
   // Called from handleStringBlur to concatenate footnote strings
   // (I can't get list from state, because last-added content
   // isn't in state yet)
   getFootnotes() {
-    const symbolList = this.props.footnoteSymbols;
+    // const symbolList = this.props.footnoteSymbols;
+    const symbolList = this.props.config.values.footnoteSymbols;
     // Collect all existing footnote strings in an array
     const fArray = [];
     // Loop thro all potential symbols
@@ -132,7 +109,8 @@ class Strings extends Component {
   collectFootnotesFromInputs() {
     const fArray = [];
     const outerThis = this;
-    const symbols = this.props.footnoteSymbols;
+    // const symbols = this.props.footnoteSymbols;
+    const symbols = this.props.config.values.footnoteSymbols;
     const parent = this['footnote-strings-body'];
     const fCount = parent.childElementCount;
     for (let iii = 0; iii < fCount; iii++) {
@@ -164,7 +142,7 @@ class Strings extends Component {
   // editing a footnote, the latter's blur event fires the callback
   // to Editor with the existing footnotes; and this then
   // precipitates a rerender of this component that hides the
-  // newly-visible footnote div. So Timeout just ensure that
+  // newly-visible footnote div. So Timeout just ensures that
   // the field is made visible after the blur sequence has
   // concluded...
   handleAddFootnote() {
@@ -213,7 +191,8 @@ class Strings extends Component {
       propList = this.footnoteStringsToObjects(fArray);
     }
     const showClass = 'one-footnote-div-visible';
-    const symbols = this.props.footnoteSymbols;
+    // const symbols = this.props.footnoteSymbols;
+    const symbols = this.props.config.values.footnoteSymbols;
     for (let fNo = 0; fNo < symbols.length; fNo++) {
       const symbol = symbols[fNo];
       const thisFoot = `footnote-input-${symbol}`;
@@ -247,14 +226,15 @@ class Strings extends Component {
   // Called from filterSource to ensure that semi/colons are
   // followed by 1 space.
   checkSourcePunctuation(source) {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     let str = source.trim();
     if (str.length === 0) {
       return str;
     }
-    const sColon = this.props.semicolon;
-    const scSpace = this.props.semicolonSpace;
-    const colon = this.props.colon;
-    const cSpace = this.props.colonSpace;
+    const sColon = specialStrings.semicolon;
+    const scSpace = specialStrings.semicolonSpace;
+    const colon = specialStrings.colon;
+    const cSpace = specialStrings.colonSpace;
     if (str.includes(colon)) {
       str = this.enforceCharSpaceInSource(str, colon, cSpace);
     }
@@ -270,7 +250,8 @@ class Strings extends Component {
   // But NOTE: text-wrapping adds a space after return anyway --
   // something to do with italics tag!
   noSpaceBeforeBr(str) {
-    str = str.replace(this.props.spaceBr, this.props.br);
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    str = str.replace(specialStrings.spaceBr, specialStrings.br);
     return str;
   }
   // NO SPACE BEFORE BR ends
@@ -292,8 +273,9 @@ class Strings extends Component {
   // Called from italiciseAllEconomists, checks that 'The Economist'
   // has italics tags
   italiciseOneEconomist(str) {
-    const ecoStrPlain = this.props.ecoStrPlain;
-    const ecoStrItal = this.props.ecoStrItal;
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const ecoStrPlain = specialStrings.ecoStrPlain;
+    const ecoStrItal = specialStrings.ecoStrItal;
     if (str.includes(ecoStrPlain)) {
       if (!str.includes(ecoStrItal)) {
         str = str.replace(ecoStrPlain, ecoStrItal);
@@ -307,13 +289,14 @@ class Strings extends Component {
   // Called from filterSource. italicises 'The Economist'
   // but not 'The Economist Intelligence Unit'
   italiciseTheEconomist(source) {
-    const semicolon = this.props.semicolon;
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const semicolon = specialStrings.semicolon;
     // The string could include both simple 'Eco' and 'EIU',
     // so arrayify
     // (element 0 will include prefix, but I don't think that matters)
     const sArray = source.split(semicolon);
     const italicisedSource = sArray.map(oneSource => {
-      if (!oneSource.includes(this.props.eiuStr)) {
+      if (!oneSource.includes(specialStrings.eiuStr)) {
         // Ignore EIU; check others
         oneSource = this.italiciseOneEconomist(oneSource);
       }
@@ -385,10 +368,21 @@ class Strings extends Component {
     const newVal = evt.target.value;
     const id = evt.target.id;
     const oldVal = this.state[id];
-    const hasChanged = newVal !== oldVal;
+    // console.log(`newVal: ${newVal};  oldVal: ${oldVal}`);
+    let hasChanged = newVal !== oldVal;
+    // KLUDGE to fix very occasional issue where there've been multiple footnotes
+    // and the first has been emptied, causing the others to 'close up';
+    // culminating in only one footnote remaining, whereupon...
+    // ...if that final footnote is emptied, the string persists on the chart
+    if (id === 'footnoteinput-0') {
+      if (newVal === '' && oldVal === '') {
+        hasChanged = true;
+      }
+    }
+    // KLUDGE ends
     if (hasChanged) {
       this.setState({
-        [newVal]: newVal,
+        [id]: newVal,
       });
     }
     return hasChanged;
@@ -407,107 +401,74 @@ class Strings extends Component {
   }
   // HANDLE STRING BLUR ends
 
-  // HANDLE ECO STRING
-  // Append or remove '<i>The Economist</i>' to/from the source string
-  handleEcoString() {
+  // HANDLE SPECIAL SOURCE STRING
+  // Append or remove special string to/from the source string
+  // Param flags 'eco/eiu/lseg'
+  handleSpecialSourceString(whichSource) {
+    // Current content of the field
     const sourceInput = this.source;
     let sourceString = sourceInput.value;
+    // Strings from DPs
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    // Now: Eco, EIU or LSEG?
+    // Eco is default:
     // Economist with preceding semi-colon...
-    const ecoStrAfterSemicolon = this.props.ecoStrAfterSemicolon;
-    // ...or preceding colon
-    const ecoStrAfterColon = this.props.ecoStrAfterColon;
-    if (sourceString.includes(ecoStrAfterSemicolon)) {
-      // If Eco is a subsequent source, delete it
-      sourceString = sourceString.replace(ecoStrAfterSemicolon, '');
-    } else if (sourceString.includes(ecoStrAfterColon)) {
-      // If it's the ONLY source, replace with default
+    let stringAfterSemicolon = specialStrings.ecoStrAfterSemicolon;
+    // ...or preceding colon...
+    let stringAfterColon = specialStrings.ecoStrAfterColon;
+    // ...or on its own
+    let stringOnly = specialStrings.ecoStrItal;
+    // EIU or LSEG
+    if (whichSource === 'eiu') {
+      stringAfterSemicolon = specialStrings.eiuStrAfterSemicolon;
+      stringAfterColon = specialStrings.eiuStrAfterColon;
+      stringOnly = specialStrings.eiuStr;
+    } else if (whichSource === 'lseg') {
+      stringAfterSemicolon = specialStrings.lsegStrAfterSemicolon;
+      stringAfterColon = specialStrings.lsegStrAfterColon;
+      stringOnly = specialStrings.lsegStr;
+    }
+    // 'to come'
+    const addToCome = specialStrings.tocomeAfterColon;
+    const removeToCome = specialStrings.tocomeBeforeSemicolon;
+    if (sourceString.includes(stringAfterSemicolon)) {
+      // If string is a subsequent source, delete it
+      sourceString = sourceString.replace(stringAfterSemicolon, '');
+    } else if (sourceString.includes(stringAfterColon)) {
+      // If it's the ONLY source
       if (sourceString.includes('Source:')) {
-        sourceString = sourceString.replace(ecoStrAfterColon, ': to come');
+        // 'Source' is singular, so there's only one citation,
+        // and it's our string:
+        sourceString = sourceString.replace(stringAfterColon, addToCome);
       } else {
-        sourceString = sourceString.replace(`${ecoStrAfterColon};`, ':');
+        // Delete string if first of several sources
+        sourceString = sourceString.replace(
+          `${stringAfterColon}${specialStrings.semicolon}`,
+          specialStrings.colon,
+        );
       }
     } else {
       // If it isn't already a source, append it
-      sourceString = `${sourceString}${ecoStrAfterSemicolon}`;
+      if (sourceString === 'Source: ') {
+        sourceString = `${sourceString}${stringOnly}`;
+      } else {
+        sourceString = `${sourceString}${stringAfterSemicolon}`;
+      }
+      // and, since we now have a source, delete 'to come; ' (if found)
+      sourceString = sourceString.replace(removeToCome, '');
     }
     this.source.value = sourceString;
     this.updateEditor();
     this.setState({ focusFootnote: '' });
   }
-  // HANDLE ECO STRING ends
-
-  // HANDLE EIU STRING
-  // Append or remove 'The Economist Intelligence Unit' to/from the source string
-  handleEiuString() {
-    let sourceString = this.source.value;
-    // Remove EIU-style final full stop(s)
-    while (sourceString.slice(-1) === '.') {
-      sourceString = sourceString.slice(0, -1);
-    }
-    // EIU with preceding semi-colon...
-    const eiuStrAfterSemicolon = this.props.eiuStrAfterSemicolon;
-    // ...or preceding colon
-    const eiuStrAfterColon = this.props.eiuStrAfterColon;
-    if (sourceString.includes(eiuStrAfterSemicolon)) {
-      // If EIU is a subsequent source, delete it
-      sourceString = sourceString.replace(eiuStrAfterSemicolon, '');
-    } else if (sourceString.includes(eiuStrAfterColon)) {
-      // If it's the ONLY source, replace with default
-      if (sourceString.includes('Source:')) {
-        sourceString = sourceString.replace(eiuStrAfterColon, ': to come');
-      } else {
-        sourceString = sourceString.replace(`${eiuStrAfterColon};`, ':');
-      }
-    } else {
-      // If it isn't already a source, append it
-      sourceString = `${sourceString}${eiuStrAfterSemicolon}`;
-    }
-    this.source.value = sourceString;
-    this.updateEditor();
-    this.setState({ focusFootnote: '' });
-  }
-  // HANDLE EIU STRING ends
-
-  // HANDLE REFINITIV STRING
-  // Append or remove 'Refinitiv Datastream' to/from the source string
-  handleRefinitivString() {
-    let sourceString = this.source.value;
-    // Remove EIU-style final full stop(s)
-    while (sourceString.slice(-1) === '.') {
-      sourceString = sourceString.slice(0, -1);
-    }
-    // RD with preceding semi-colon...
-    const refStrAfterSemicolon = this.props.refStrAfterSemicolon;
-    // ...or preceding colon
-    const refStrAfterColon = this.props.refStrAfterColon;
-    if (sourceString.includes(refStrAfterSemicolon)) {
-      // If RD is a subsequent source, delete it
-      sourceString = sourceString.replace(refStrAfterSemicolon, '');
-    } else if (sourceString.includes(refStrAfterColon)) {
-      // If it's the ONLY source, replace with default
-      if (sourceString.includes('Source:')) {
-        sourceString = sourceString.replace(refStrAfterColon, ': to come');
-      } else {
-        sourceString = sourceString.replace(`${refStrAfterColon};`, ':');
-      }
-    } else {
-      // If it isn't already a source, append it
-      sourceString = `${sourceString}${refStrAfterSemicolon}`;
-    }
-    this.source.value = sourceString;
-    this.updateEditor();
-    this.setState({ focusFootnote: '' });
-  }
-  // HANDLE REFINITIV STRING ends
-
-  // ______________________________
-  // *** JSX ASSEMBLY FUNCTIONS ***
+  // HANDLE SPECIAL SOURCE STRING ends
 
   // FOOTNOTE STRING TO ARRAY
   // Called from unpickFootnotes, converts complete footnote string
   // into an array of individual items
   footnoteStringToArray(fString) {
-    const symbols = this.props.footnoteSymbols;
+    // const symbols = this.props.footnoteSymbols;
+    const symbols = this.props.config.values.footnoteSymbols;
     // First do a crude split
     const crudeArray = fString.split(' ');
     // The problem is, of course, that any one footnote may have internal spaces, so...
@@ -532,7 +493,8 @@ class Strings extends Component {
 
   // FOOTNOTE STRINGS TO OBJECTS
   footnoteStringsToObjects(fArray) {
-    const symbols = this.props.footnoteSymbols;
+    // const symbols = this.props.footnoteSymbols;
+    const symbols = this.props.config.values.footnoteSymbols;
     // Now, on each, separate into symbol and content
     const fObjArray = fArray.map(fNote => {
       const fObj = {};
@@ -574,7 +536,8 @@ class Strings extends Component {
   // MAP FOOTNOTE ELEMENTS
   // Called from makeFootnotesJSX
   mapFootnoteElements() {
-    const symbols = this.props.footnoteSymbols;
+    // const symbols = this.props.footnoteSymbols;
+    const symbols = this.props.config.values.footnoteSymbols;
     const feMap = symbols.map((symbol, fIndex) => {
       const fNoteInputKey = `footnote-input-${symbol}`;
       return (
@@ -585,6 +548,7 @@ class Strings extends Component {
             ref={c => {
               this[fNoteInputKey] = c;
             }}
+            id={`footnoteinput-${fIndex}`}
             onBlur={this.handleStringBlur}
           />
         </div>
@@ -699,15 +663,16 @@ class Strings extends Component {
 
   // SOURCE INCLUDES JUST ECONOMIST
   // Called from makeSourcesJsx. Returns true if the source
-  // includes 'The Economist'
-  sourceIncludesJustEconomist(source, hasEiu) {
+  // includes 'The Economist' in isolation
+  sourceIncludesJustEconomist(source, hasLongEiu) {
     let hasEco = false;
-    const ecoRx = new RegExp(this.props.ecoStrPlain, 'g');
+    const specialStrings = this.props.config.values.specialSourceStrings;
+    const ecoRx = new RegExp(specialStrings.ecoStrPlain, 'g');
     const ecoMatch = source.match(ecoRx);
     if (ecoMatch !== null) {
       let ecoCount = ecoMatch.length;
-      // Count occurrences. Discount EIU string.
-      if (hasEiu) {
+      // Count occurrences. Discount long EIU string.
+      if (hasLongEiu) {
         ecoCount--;
       }
       hasEco = ecoCount > 0;
@@ -717,13 +682,17 @@ class Strings extends Component {
   // SOURCE INCLUDES JUST ECONOMIST ends
 
   // MAKE SOURCES JSX
-  // Source field, plus Economist, EIU and Refinitiv buttons
+  // Source field, plus Economist, EIU and LSEG buttons
   makeSourcesJsx() {
+    const specialStrings = this.props.config.values.specialSourceStrings;
     const source = this.props.config.values.source;
     // Flags for highlighting (string exists in source)
-    const hasEiu = source.includes(this.props.eiuStr);
-    const hasEconomist = this.sourceIncludesJustEconomist(source, hasEiu);
-    const hasRef = source.includes(this.props.refStr);
+    const hasEiu = source.includes(specialStrings.eiuStr);
+    const hasLongEiu = source.includes(specialStrings.eiuLongStr);
+    const hasEconomist = this.sourceIncludesJustEconomist(source, hasLongEiu);
+    // NB: Nov'23, 'Refinitiv' string replaced by 'LSEG'; but
+    // button and icon retain original ID
+    const hasLseg = source.includes(specialStrings.lsegStr);
     return (
       <div className="source-strings-div">
         <div className="source-strings-div-header">
@@ -733,7 +702,7 @@ class Strings extends Component {
             className={`silver-button append-economist-button ${
               hasEconomist ? 'button-selected' : ''
             }`}
-            onClick={this.handleEcoString}
+            onClick={() => this.handleSpecialSourceString('eco')}
             title="Appends The Economist to the sources"
           >
             <EconomistIcon size={10} />
@@ -743,18 +712,18 @@ class Strings extends Component {
             className={`silver-button append-eiu-button ${
               hasEiu ? 'button-selected' : ''
             }`}
-            onClick={this.handleEiuString}
-            title="Appends The Economist Intelligence Unit to the sources"
+            onClick={() => this.handleSpecialSourceString('eiu')}
+            title="Appends EIU to the sources"
           >
             <EiuIcon size={10} />
           </button>
           <button
             type="button"
             className={`silver-button append-refinitiv-button ${
-              hasRef ? 'button-selected' : ''
+              hasLseg ? 'button-selected' : ''
             }`}
-            onClick={this.handleRefinitivString}
-            title="Appends Refinitiv Datastream to the sources"
+            onClick={() => this.handleSpecialSourceString('lseg')}
+            title="Appends LSEG Workspace to the sources"
           >
             <RefinitivIcon size={10} />
           </button>
@@ -802,23 +771,6 @@ class Strings extends Component {
 Strings.propTypes = {
   config: PropTypes.object.isRequired,
   onValuesToEditor: PropTypes.func.isRequired,
-  footnoteSymbols: PropTypes.array,
-  ecoStrPlain: PropTypes.string,
-  ecoStrItal: PropTypes.string,
-  ecoStrAfterSemicolon: PropTypes.string,
-  ecoStrAfterColon: PropTypes.string,
-  eiuStr: PropTypes.string,
-  eiuStrAfterSemicolon: PropTypes.string,
-  eiuStrAfterColon: PropTypes.string,
-  refStr: PropTypes.string,
-  refStrAfterSemicolon: PropTypes.string,
-  refStrAfterColon: PropTypes.string,
-  semicolon: PropTypes.string,
-  semicolonSpace: PropTypes.string,
-  colon: PropTypes.string,
-  colonSpace: PropTypes.string,
-  br: PropTypes.string,
-  spaceBr: PropTypes.string,
 };
 
 export default Strings;

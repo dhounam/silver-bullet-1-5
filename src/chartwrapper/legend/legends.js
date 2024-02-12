@@ -107,8 +107,11 @@ class SilverLegends extends Component {
       } else if (panelConfig.scales.isDouble) {
         // Double scale
         iBox.paddingBelowLegends = paddings.toTopOfChart.double
-      } else if (panelConfig.overallChartType.includes('bar')) {
-        // Bars
+      } else if (
+        panelConfig.overallChartType.includes('bar') ||
+        panelConfig.overallChartType.includes('thermohorizontal')
+      ) {
+        // Bars or hThermos
         iBox.paddingBelowLegends = paddings.toTopOfChart.bar
       } else {
         // Default

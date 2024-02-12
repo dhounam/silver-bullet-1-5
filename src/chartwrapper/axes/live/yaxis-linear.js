@@ -113,7 +113,7 @@ class SilverYaxisLinear extends Component {
       // Tick length
       .tickSize(tickLength)
       // Number format
-      .tickFormat((ddd) =>
+      .tickFormat(ddd =>
         AxisUtilities.getLinearAxisTickFormat(ddd, textFormat)
       )
     return yAxis
@@ -174,7 +174,7 @@ class SilverYaxisLinear extends Component {
     }
     const yPos = config.bounds.height - breakObj.padding / 2
     // Create array of coordinates
-    const lineData = breakObj.points.map((onePt) => {
+    const lineData = breakObj.points.map(onePt => {
       const ptObj = {
         x: xPos + onePt.x,
         y: yPos + onePt.y,
@@ -185,8 +185,8 @@ class SilverYaxisLinear extends Component {
     // and dup'd elsewhere
     const lineFunction = d3.svg
       .line()
-      .x((ddd) => ddd.x)
-      .y((ddd) => ddd.y)
+      .x(ddd => ddd.x)
+      .y(ddd => ddd.y)
       .interpolate('linear')
     bsGroup
       .append('path')
@@ -262,7 +262,7 @@ class SilverYaxisLinear extends Component {
         'font-size': `${hPrefs.size}px`,
         'text-anchor': anchor,
       })
-      .text((ddd) => ddd.content)
+      .text(ddd => ddd.content)
 
     // Text wrapping
     // (to debug text wrapping, add a 5th param)
@@ -306,7 +306,8 @@ class SilverYaxisLinear extends Component {
   // position of single y-axis header
   tweakScatterYaxisHeader(originalThis) {
     const config = originalThis.props.config
-    const leading = config.textPrefs.leading
+    // Leading from header-specific props
+    const leading = config.textPrefs.header.leading
     const headName = `.yaxis-header-${config.chartIndex}-${config.side}`
     const head = d3.select(headName)
     // First I need to know how for to move the header
@@ -474,6 +475,7 @@ class SilverYaxisLinear extends Component {
           const fillName = config.textPrefs.fill
           labID = `${labID}~~~fill:${fillName}`
           labID = `${labID},justification:${anchor}`
+          labID = `${labID},leading:${config.textPrefs.leading}`
           // Width after a timeout, below
           return labID
         })

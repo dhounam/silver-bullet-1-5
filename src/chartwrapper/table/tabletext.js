@@ -23,10 +23,13 @@ class TableText extends Component {
     let x = config.innerBox.x
     const contentPrefs = config.tableProperties.text.content
     x += contentPrefs.padding.left
-    // Row anchor uses paragraph (leading is ignored pending further development)
+    // Row anchor uses paragraph
+    // (Although the prefs define a leading, I'm ignoring it until
+    //    I can work out another way of handling table text in Joxer)
     let dy = contentPrefs.paragraph
     let fill = contentPrefs.fill
-    // Similarly: pending further devel, use paragraph for leading
+    // Similarly: pending further devel, use paragraph for leading. This
+    // is all due to SVGs' inability to handle leading
     let leading = contentPrefs.paragraph
     if (isHeader) {
       dy = 0
@@ -48,11 +51,13 @@ class TableText extends Component {
       const { size, font } = headPrefs
       fill = headPrefs.fill
       leading = headPrefs.paragraph
-      thisRow.attr({ id: `table-tspan~~~fill:${fill}` }).style({
-        'font-family': font,
-        'font-size': `${size}px`,
-        fill: config.colourLookup[fill],
-        leading,
+      thisRow
+        .attr({ id: `table-tspan~~~fill:${fill}, leading:${leading}` })
+        .style({
+          'font-family': font,
+          'font-size': `${size}px`,
+          fill: config.colourLookup[fill],
+          leading,
       })
     }
   }
