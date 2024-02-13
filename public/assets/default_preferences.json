@@ -65,8 +65,8 @@
         "display": true,
         "x": 6,
         "y": 0,
-        "width": 15,
-        "height": 5,
+        "width": 18,
+        "height": 2.5,
         "adjustable": {
           "height": false,
           "width": false
@@ -81,10 +81,10 @@
         "x": 6,
         "y": 15,
         "wrapwidth": 100,
-        "font-family": "EconSansBol",
-        "font-size": 8.5,
+        "font-family": "EconomistSans-Bold",
+        "font-size": 9,
         "leading": 10,
-        "letter-spacing": ".005em",
+        "letter-spacing": "0em",
         "fill": "black100",
         "anchor": "start"
       },
@@ -93,11 +93,11 @@
         "content": "Subtitle to come",
         "id": "subtitle-string",
         "x": 6,
-        "y": 25,
+        "y": 27.5,
         "wrapwidth": 100,
-        "font-family": "EconSansCndReg",
+        "font-family": "EconomistSans-Medium",
         "font-size": 7.5,
-        "leading": 9,
+        "leading": 8.75,
         "fill": "black100",
         "anchor": "start"
       },
@@ -107,7 +107,7 @@
         "x": 6,
         "y": 34,
         "wrapwidth": 100,
-        "font-family": "EconSansCndLig",
+        "font-family": "EconomistSans-Light",
         "font-size": 7,
         "leading": 9,
         "fill": "black100",
@@ -118,16 +118,16 @@
         "display": true,
         "id": "source-string",
         "x": 6,
-        "y": -6,
+        "y": -5,
         "wrapoptions": {
           "hasfootnote": 45,
           "nofootnote": 100,
           "basealigned": true
         },
         "wrapwidth": 100,
-        "font-family": "EconSansCndLig",
+        "font-family": "EconomistSans-Light",
         "font-size": 6,
-        "leading": 7,
+        "leading": 7.5,
         "fill": "black75",
         "anchor": "start",
         "specialStrings": {
@@ -156,11 +156,11 @@
         "content": "",
         "id": "footnote-string",
         "x": -6,
-        "y": -6,
+        "y": -5,
         "wrapwidth": 45,
-        "font-family": "EconSansCndLig",
+        "font-family": "EconomistSans-Light",
         "font-size": 6,
-        "leading": 7,
+        "leading": 7.5,
         "fill": "black75",
         "anchor": "end",
         "aboveSource": false,
@@ -169,18 +169,19 @@
       "numberBox": {
         "content": "",
         "id": "number-box",
-        "x": 4,
-        "y": 4,
-        "font": "EconSansBol",
-        "fontsize": "7.5",
-        "textfill": "white",
+        "x": 6.25,
+        "y": 6.25,
+        "font": "EconomistSans-Regular",
+        "fontsize": 7,
+        "leading": 8,
+        "textfill": "black100",
         "anchor": "middle",
-        "rectwidth": 10,
-        "rectheight": 10,
-        "rectfill": "numberbox",
+        "rectwidth": 9.5,
+        "rectheight": 9.5,
+        "rectfill": "white",
         "rectopacity": 1,
-        "rectstroke": "none",
-        "rectstrokewidth": 0
+        "rectstroke": "black100",
+        "rectstrokewidth": 0.5
       }
     },
     "DELETE_gapBelowStrings": {
@@ -194,23 +195,23 @@
     },
     "topPadding": {
       "belowTitleClusterBaseline": {
-        "toPanelFlash": 15,
-        "toLegendBaseline": 15,
-        "toBlobTop": 15,
+        "toPanelFlash": 12.5,
+        "toLegendBaseline": 10,
+        "toBlobTop": 10,
         "toTopOfChart": {
-          "default": 15,
-          "bar": 13,
-          "BAR-NOTE": "13 gives 15 to x-axis labels baseline",
+          "default": 12,
+          "bar": 10,
+          "BAR-NOTE": "Was 13 gives 15 to x-axis labels baseline",
           "double": 12,
-          "DOUBLE-NOTE": "12 gives 15 to axis header baseline"
+          "DOUBLE-NOTE": "Was 12 gives 15 to axis header baseline"
         }
       },
       "belowPanelHeaderBaseline": {
-        "toLegendBaseline": 12,
+        "toLegendBaseline": 10,
         "toBlobTop": 10,
         "toTopOfChart": {
           "default": 10,
-          "bar": 13,
+          "bar": 12,
           "double": 12
         },
         "NOTE": "Padding BETWEEN panels is in panelAttributes node"
@@ -218,7 +219,7 @@
       "belowLegendBaseline": {
         "toBlobTop": 10,
         "toTopOfChart": {
-          "default": 10,
+          "default": 12,
           "bar": 10,
           "BAR-NOTE": "10 gives 12 to x-axis labels baseline",
           "double": 12
@@ -286,17 +287,17 @@
           "across": false,
           "baseline": {
             "stroke": "black100",
-            "width": 0.4
+            "width": 0.5
           },
           "display": true,
           "lengths": {
             "long": {
               "start": 0,
-              "end": 3
+              "end": 5
             },
             "default": {
               "start": 0,
-              "end": 2
+              "end": 3
             },
             "short": {
               "start": 0,
@@ -390,7 +391,7 @@
         "leading": 7.5,
         "rowheight_NOTE": "Sets y-value for axis labels below baseline",
         "rowheight": 10,
-        "font": "EconSansCndLig",
+        "font": "EconomistSans-Light",
         "size": {
           "primaryOnly": 7,
           "primaryIfSecondary": 6,
@@ -402,10 +403,10 @@
       },
       "header": {
         "anchor": "middle",
-        "font": "EconSansCndReg",
+        "font": "EconomistSans-Regular",
         "size": 7,
         "fill": "black100",
-        "leading": 8,
+        "leading": 8.5,
         "margin": 10
       },
       "orient": {
@@ -432,7 +433,7 @@
           "across": true,
           "baseline": {
             "stroke": "black100",
-            "width": 0.4
+            "width": 0.5
           },
           "display": true,
           "lengths": {
@@ -451,7 +452,7 @@
           },
           "padding": 5,
           "projection": 3,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5,
           "zero": {
             "simple": "black100",
@@ -480,7 +481,7 @@
         "thermohorizontal": {
           "across": true,
           "projection": 3,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5
         }
       },
@@ -527,15 +528,15 @@
           }
         },
         "x": 0,
-        "note_on_y_val": "Desired is 1.5; compensate for D3 mis-centering text",
-        "y": 1.25,
+        "note_on_y_val": "Desired is 2; compensate for D3 mis-centering text",
+        "y": 2,
         "leading": 7.5,
-        "font": "EconSansCndLig",
+        "font": "EconomistSans-Light",
         "size": 7,
         "fill": "black100",
         "header": {
           "anchor": "middle",
-          "font": "EconSansCndReg",
+          "font": "EconomistSans-Regular",
           "size": 7,
           "fill": "black100",
           "leading": 8,
@@ -573,7 +574,7 @@
           "linealone": "purple1",
           "columnalone": "bluetext"
         },
-        "font": "EconSansCndReg",
+        "font": "EconomistSans-Regular",
         "leading": 7.5,
         "size": "7",
         "headerMargin": 10
@@ -1099,7 +1100,7 @@
         "x": 1,
         "y": 5,
         "leading": 6,
-        "font": "EconSansCndLig",
+        "font": "EconomistSans-Light",
         "size": 7,
         "fill": "black100",
         "anchor": "start"
@@ -1114,7 +1115,7 @@
       },
       "zkey": {
         "_zkey-note": "props for key if there's a z-axis",
-        "font": "EconSansCndReg",
+        "font": "EconomistSans-Regular",
         "fontSize": 7,
         "textFill": "black100",
         "anchor": "end",
@@ -1484,7 +1485,7 @@
       "labels": {
         "LABELS_NOTE": "Not implemented; using standard legends...",
         "leading": 6,
-        "font": "EconSansCndReg",
+        "font": "EconomistSans-Regular",
         "size": 7,
         "fill": "black100"
       },
@@ -1510,7 +1511,7 @@
           }
         },
         "content": {
-          "font": "EconSansCndLig",
+          "font": "EconomistSans-Light",
           "size": 7,
           "NOTE-1": "paragraph is padding between lines; currently used for leading",
           "paragraph": 12,
@@ -1617,18 +1618,18 @@
     "drawLeftToRight": true,
     "headerText": {
       "anchor": "start",
-      "font": "EconSansCndReg",
+      "font": "EconomistSans-Regular",
       "size": 7,
-      "leading": 8,
+      "leading": 8.5,
       "fill": "black100"
     },
     "header": "",
     "text": {
       "anchor": "start",
-      "font": "EconSansCndLig",
+      "font": "EconomistSans-Light",
       "size": 7,
       "fill": "black100",
-      "leading": 8
+      "leading": 8.5
     },
     "padding": {
       "belowHeader": 10,
@@ -1686,7 +1687,7 @@
     "maxCircleSize": 30,
     "maxRectWidth": 30,
     "text": {
-      "font": "EconSansCndReg",
+      "font": "EconomistSans-Regular",
       "size": 7,
       "fill": "black100",
       "anchor": "middle"
@@ -1706,7 +1707,7 @@
       "left": 5
     },
     "header": {
-      "font": "EconSansCndReg",
+      "font": "EconomistSans-Regular",
       "size": 7,
       "leading": 7.5,
       "fill": "white",

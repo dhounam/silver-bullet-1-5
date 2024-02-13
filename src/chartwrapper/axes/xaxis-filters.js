@@ -312,7 +312,7 @@ export function getDateProps(
     } else {
       // I'm not wild about this; prev'y was 5, but
       // I've no recollection of where I got that from...
-      result.tickLen = longLength + defaultLength
+      result.tickLen = longLength; // + defaultLength
     }
     result.isBoundary = true
   } else if (monthB > monthA) {
