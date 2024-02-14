@@ -182,20 +182,24 @@
           },
           "shapes": {
             "bboxC": {
-              "width": 12,
-              "height": 4
+              "width": 18,
+              "height": 2.5,
+              "display": false
             }
           },
           "strings": {
             "title": {
-              "y": 12,
-              "font-size": 7.5,
-              "leading": 7.5
+              "y": 10,
+              "font-family": "EconomistSans-SemiBold",
+              "font-size": 7,
+              "leading": 7,
+              "fill": "econred"
             },
             "subtitle": {
-              "y": 20,
-              "font-size": 6.5,
-              "leading": 7.5
+              "y": 19,
+              "font-family": "EconomistSans-Regular",
+              "font-size": 7,
+              "leading": 8.5
             },
             "subsubtitle": {
               "y": 28,
@@ -222,8 +226,8 @@
               "toLegendBaseline": 15,
               "toBlobTop": 10,
               "toTopOfChart": {
-                "default": 10,
-                "bar": 8,
+                "default": 12,
+                "bar": 10,
                 "BAR-NOTE": "8 gives 10 to x-axis labels baseline",
                 "double": 8.5
               }

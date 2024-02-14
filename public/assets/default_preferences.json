@@ -260,7 +260,7 @@
     "strings": {
       "panelheader": {
         "default": "To come",
-        "font-family": "EconSansCndMed",
+        "font-family": "EconomistSans-Medium",
         "font-size": 7.5,
         "fill": "black100",
         "id": "panel-header-string",
