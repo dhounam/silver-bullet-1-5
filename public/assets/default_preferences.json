@@ -171,14 +171,14 @@
         "id": "number-box",
         "x": 6.25,
         "y": 6.25,
-        "font": "EconomistSans-Regular",
+        "font": "EconomistSans-Medium",
         "fontsize": 7,
         "leading": 8,
         "textfill": "black100",
         "anchor": "middle",
         "rectwidth": 9.5,
         "rectheight": 9.5,
-        "rectfill": "white",
+        "rectfill": "printbkgd",
         "rectopacity": 1,
         "rectstroke": "black100",
         "rectstrokewidth": 0.5
@@ -403,7 +403,7 @@
       },
       "header": {
         "anchor": "middle",
-        "font": "EconomistSans-Regular",
+        "font": "EconomistSans-Light",
         "size": 7,
         "fill": "black100",
         "leading": 8.5,
@@ -536,7 +536,7 @@
         "fill": "black100",
         "header": {
           "anchor": "middle",
-          "font": "EconomistSans-Regular",
+          "font": "EconomistSans-Light",
           "size": 7,
           "fill": "black100",
           "leading": 8,
@@ -568,11 +568,11 @@
       },
       "doubleScale": {
         "fill": {
-          "left": "purple1",
-          "right": "bluetext",
+          "left": "econred",
+          "right": "landtext",
           "NOTE": "If types are identical, set left/right; else set coloursets by type",
-          "linealone": "purple1",
-          "columnalone": "bluetext"
+          "linealone": "econred",
+          "columnalone": "landtext"
         },
         "font": "EconomistSans-Regular",
         "leading": 7.5,
@@ -631,80 +631,80 @@
       ],
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "purple1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
-        ]
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
+        ]              
       ],
       "stroke": {
         "width": 0,
@@ -727,79 +727,79 @@
       ],
       "colours": [
         [
-          "blue1"
+          "econred60"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "stroke": {
@@ -822,83 +822,82 @@
     "thermometer": {
       "colours": [
         [
-          "blue2"
+          "econred60"
+        ],[
+          "econred",
+          "econredtint"
         ],
         [
-          "blue2",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30",
+          "london70"
         ],
         [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple2",
-          "red1",
-          "greybox"
-        ],
-        [
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "spindle": {
-        "stroke": "greybox",
+        "stroke": "greytext",
         "width": 1,
         "linecap": "butt",
         "linejoin": "bevel",
@@ -920,79 +919,78 @@
     "line": {
       "colours": [
         [
-          "blue1"
+          "econred85"
+        ],[
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
-        ],
-        [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land4",
+          "landtext",
+          "land3",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "stroke": {
@@ -1009,79 +1007,79 @@
     "scatter": {
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "dots": {
@@ -1106,7 +1104,7 @@
         "anchor": "start"
       },
       "trendline": {
-        "stroke": "blue1",
+        "stroke": "econred85",
         "strokewidth": 1,
         "dash": [
           3,
@@ -1115,7 +1113,7 @@
       },
       "zkey": {
         "_zkey-note": "props for key if there's a z-axis",
-        "font": "EconomistSans-Regular",
+        "font": "EconomistSans-Medium",
         "fontSize": 7,
         "textFill": "black100",
         "anchor": "end",
@@ -1131,79 +1129,79 @@
     "layercake": {
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "green1",
-          "green2",
-          "bluedark",
-          "purple1",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "stroke": {
@@ -1222,79 +1220,79 @@
     "pointline": {
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "stroke": {
@@ -1311,79 +1309,79 @@
     "stepline": {
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "stroke": {
@@ -1399,79 +1397,79 @@
     "pie": {
       "colours": [
         [
-          "blue1"
+          "econred85"
         ],
         [
-          "blue1",
-          "blue2"
+          "econred",
+          "econredtint"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago"
         ],
         [
-          "blue1",
-          "blue2",
-          "purple1",
-          "green1",
-          "yellow"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3"
         ],
         [
-          "blue1",
-          "blue2",
-          "purple1",
-          "yellow",
-          "green1",
-          "purple2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70"
         ],
         [
-          "blue1",
-          "blue2",
-          "yellow",
-          "purple1",
-          "green1",
-          "purple2",
-          "green2",
-          "red1",
-          "greybox",
-          "greytext"
+          "econred",
+          "econredtint",
+          "chartblue",
+          "chartchicago",
+          "land3",
+          "landtext",
+          "land4",
+          "london30",
+          "london70",
+          "chicago30"
         ]
       ],
       "wedges": {
@@ -1485,14 +1483,14 @@
       "labels": {
         "LABELS_NOTE": "Not implemented; using standard legends...",
         "leading": 6,
-        "font": "EconomistSans-Regular",
+        "font": "EconomistSans-Light",
         "size": 7,
         "fill": "black100"
       },
       "header": {
         "anchor": "middle",
         "leading": 6,
-        "font": "EconSansCndMed",
+        "font": "EconomistSans-Medium",
         "size": 7,
         "fill": "black100"
       }
@@ -1500,7 +1498,7 @@
     "table": {
       "text": {
         "header": {
-          "font": "EconSansCndMed",
+          "font": "EconomistSans-Medium",
           "size": 7,
           "leading": 8,
           "fill": "black100",
@@ -1550,61 +1548,61 @@
     "double": {
       "colours": {
         "left": [
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink"
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark"
         ],
         "right": [
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1"
+          "land3",
+          "land4",
+          "landtext",
+          "land3",
+          "land4",
+          "landtext",
+          "land3",
+          "land4",
+          "landtext",
+          "land3",
+          "land4",
+          "landtext"
         ],
-        "NOTE": "If types are identical, set left/right; else set types to a colourset ",
+  "NOTE": "If types are identical, set left/right; else set types to a colourset ",
         "linealone": [
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink",
-          "purple1",
-          "purple2",
-          "pink"
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark"
         ],
         "columnalone": [
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1",
-          "blue2",
-          "green1",
-          "blue1"
+          "dc-land3",
+          "dc-land4",
+          "dc-landtext",
+          "dc-land3",
+          "dc-land4",
+          "dc-landtext",
+          "dc-land3",
+          "dc-land4",
+          "dc-landtext",
+          "dc-land3",
+          "dc-land4",
+          "dc-landtext"
         ]
       }
     }
@@ -1618,7 +1616,7 @@
     "drawLeftToRight": true,
     "headerText": {
       "anchor": "start",
-      "font": "EconomistSans-Regular",
+      "font": "EconomistSans-Medium",
       "size": 7,
       "leading": 8.5,
       "fill": "black100"
@@ -1687,7 +1685,7 @@
     "maxCircleSize": 30,
     "maxRectWidth": 30,
     "text": {
-      "font": "EconomistSans-Regular",
+      "font": "EconomistSans-Light",
       "size": 7,
       "fill": "black100",
       "anchor": "middle"
@@ -1697,7 +1695,7 @@
         "horizontal": 3,
         "vertical": 3
       },
-      "fill": "numberbox",
+      "fill": "gridlines",
       "opacity": 0.8,
       "stroke": "none",
       "strokewidth": 0
@@ -1707,7 +1705,7 @@
       "left": 5
     },
     "header": {
-      "font": "EconomistSans-Regular",
+      "font": "EconomistSans-Light",
       "size": 7,
       "leading": 7.5,
       "fill": "white",
@@ -1719,8 +1717,7 @@
   },
   "_METADATA": "Operational metadata",
   "metadata": {
-    "_NOTE": "Colour lookup is in a separate file, appended by Editor",
-    "__NOTE": "'types' must be more or less obsolete; maybe doubleScaleTypes too...",
+    "_NOTE": "'types' must be more or less obsolete; maybe doubleScaleTypes too...",
     "timeformats": [
       {
         "interval": "years",

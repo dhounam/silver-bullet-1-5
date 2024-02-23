@@ -189,6 +189,7 @@
           },
           "strings": {
             "title": {
+              "NOTE": "Leader has special title styling",
               "y": 10,
               "font-family": "EconomistSans-SemiBold",
               "font-size": 7,
@@ -280,7 +281,6 @@
         "legend": {
           "text": {
             "anchor": "start",
-            "font": "EconSansCndLig",
             "size": 6,
             "fill": "black100",
             "leading": 8
@@ -867,7 +867,6 @@
             "title": {
               "x": 0,
               "y": 28,
-              "font-family": "EconomistSans-Bold",
               "font-size": 20,
               "leading": 24,
               "letter-spacing": "0em"
@@ -875,21 +874,18 @@
             "subtitle": {
               "x": 0,
               "y": 56,
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
-              "font-family": "EconomistSans-Light",
               "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
               "y": -3,
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext",
@@ -902,7 +898,6 @@
               "x": 0,
               "y": -3,
               "anchor": "start",
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext",
@@ -914,7 +909,6 @@
             "numberBox": {
               "x": 0.5,
               "y": 0.5,
-              "font": "EconomistSans-Medium",
               "fontsize": "13",
               "textfill": "black100",
               "rectheight": 20,
@@ -985,7 +979,6 @@
           },
           "strings": {
             "panelheader": {
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20,
               "x": 0,
@@ -1078,7 +1071,6 @@
               },
               "leading": 16,
               "rowheight": 24,
-              "font": "EconomistSans-Light",
               "size": {
                 "primaryOnly": 15,
                 "primaryIfSecondary": 13,
@@ -1088,7 +1080,6 @@
               "minGapBetweenLabels": 6
             },
             "header": {
-              "font": "EconomistSans-Light",
               "size": 15,
               "leading": 20,
               "margin": 20
@@ -1120,10 +1111,8 @@
             "text": {
               "size": 15,
               "leading": 16,
-              "font": "EconomistSans-Light",
               "y": 3.5,
               "header": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "leading": 16,
                 "margin": 20
@@ -1139,11 +1128,11 @@
             },
             "doubleScale": {
               "fill": {
-                "left": "dc-purple1",
-                "right": "dc-bluetext",
+                "left": "econred",
+                "right": "landtext",
                 "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "dc-purple1",
-                "columnalone": "dc-bluetext"
+                "linealone": "econred",
+                "columnalone": "landtext"
               },
               "leading": 15,
               "size": 14,
@@ -1164,79 +1153,79 @@
           "bar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -1248,79 +1237,79 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -1330,79 +1319,79 @@
           "thermometer": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
-              ]              
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
+              ]
             ],
             "spindle": {
               "stroke": "dc-greytext",
@@ -1421,78 +1410,78 @@
           "line": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -1505,79 +1494,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "dots": {
@@ -1591,11 +1580,10 @@
               "x": 2,
               "y": 10,
               "leading": 15,
-              "font": "EconomistSans-Light",
               "size": 13
             },
             "trendline": {
-              "stroke": "dc-blue1",
+              "stroke": "dc-econred60",
               "strokewidth": 2,
               "dash": [
                 6,
@@ -1603,7 +1591,6 @@
               ]
             },
             "zkey": {
-              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -1614,78 +1601,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -1697,78 +1684,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -1782,78 +1769,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -1866,79 +1853,79 @@
           "pie": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "wedges": {
@@ -1946,12 +1933,10 @@
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
-              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
-              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -1959,7 +1944,6 @@
           "table": {
             "text": {
               "header": {
-                "font": "EconomistSans-Medium",
                 "size": 15,
                 "leading": 20,
                 "padding": {
@@ -1968,7 +1952,6 @@
                 }
               },
               "content": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 42.5,
@@ -2002,61 +1985,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "right": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
                ],
               "columnalone": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ]
             }
           }
@@ -2064,13 +2047,11 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
-            "font": "EconomistSans-Medium",
             "size": 15,
             "leading": 20
           },
           "text": {
             "anchor": "start",
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 20,
             "fill": "black100"
@@ -2131,7 +2112,6 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
-            "font": "EconomistSans-Light",
             "size": 15
           },
           "background": {
@@ -2145,7 +2125,6 @@
             "left": 20
           },
           "header": {
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 16,
             "strokewidth": 0,
@@ -2210,7 +2189,6 @@
             "title": {
               "x": 0,
               "y": 28,
-              "font-family": "EconomistSans-Bold",
               "font-size": 20,
               "leading": 24,
               "letter-spacing": "0em"
@@ -2218,21 +2196,18 @@
             "subtitle": {
               "x": 0,
               "y": 56,
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
-              "font-family": "EconomistSans-Light",
               "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
               "y": -3,
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext"
@@ -2240,7 +2215,6 @@
             "footnote": {
               "x": -0.0001,
               "y": -3,
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext"
@@ -2248,7 +2222,6 @@
             "numberBox": {
               "x": 0.5,
               "y": 0.5,
-              "font": "EconomistSans-Medium",
               "fontsize": "13",
               "textfill": "black100",
               "rectheight": 20,
@@ -2319,7 +2292,6 @@
           },
           "strings": {
             "panelheader": {
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20,
               "x": 0,
@@ -2411,7 +2383,6 @@
               },
               "leading": 16,
               "rowheight": 24,
-              "font": "EconomistSans-Light",
               "size": {
                 "primaryOnly": 15,
                 "primaryIfSecondary": 13,
@@ -2421,7 +2392,6 @@
               "minGapBetweenLabels": 6
             },
             "header": {
-              "font": "EconomistSans-Light",
               "size": 15,
               "leading": 20,
               "margin": 20
@@ -2453,10 +2423,8 @@
             "text": {
               "size": 15,
               "leading": 16,
-              "font": "EconomistSans-Light",
               "y": 3.5,
               "header": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "leading": 16,
                 "margin": 20
@@ -2472,11 +2440,11 @@
             },
             "doubleScale": {
               "fill": {
-                "left": "dc-purple1",
-                "right": "dc-bluetext",
+                "left": "econred",
+                "right": "landtext",
                 "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "dc-purple1",
-                "columnalone": "dc-bluetext"
+                "linealone": "econred",
+                "columnalone": "landtext"      
               },
               "leading": 15,
               "size": 14,
@@ -2497,79 +2465,79 @@
           "bar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -2581,79 +2549,79 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -2663,78 +2631,78 @@
           "thermometer": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "spindle": {
@@ -2754,78 +2722,78 @@
           "line": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -2838,79 +2806,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "dots": {
@@ -2924,11 +2892,10 @@
               "x": 2,
               "y": 10,
               "leading": 15,
-              "font": "EconomistSans-Light",
               "size": 13
             },
             "trendline": {
-              "stroke": "dc-blue1",
+              "stroke": "dc-econred60",
               "strokewidth": 2,
               "dash": [
                 6,
@@ -2936,7 +2903,6 @@
               ]
             },
             "zkey": {
-              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -2947,78 +2913,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -3030,78 +2996,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -3115,78 +3081,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -3199,79 +3165,79 @@
           "pie": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "wedges": {
@@ -3279,12 +3245,10 @@
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
-              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
-              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -3292,7 +3256,6 @@
           "table": {
             "text": {
               "header": {
-                "font": "EconomistSans-Medium",
                 "size": 15,
                 "leading": 20,
                 "padding": {
@@ -3301,7 +3264,6 @@
                 }
               },
               "content": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 42.5,
@@ -3335,61 +3297,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "right": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
                ],
               "columnalone": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ]
             }
           }
@@ -3397,13 +3359,11 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
-            "font": "EconomistSans-Medium",
             "size": 15,
             "leading": 20
           },
           "text": {
             "anchor": "start",
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 20,
             "fill": "black100"
@@ -3464,7 +3424,6 @@
           "maxCircleSize": 60,
           "maxRectWidth": 60,
           "text": {
-            "font": "EconomistSans-Light",
             "size": 15
           },
           "background": {
@@ -3478,7 +3437,6 @@
             "left": 20
           },
           "header": {
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 16,
             "strokewidth": 0,
@@ -3547,7 +3505,6 @@
             "title": {
               "x": 0,
               "y": 28,
-              "font-family": "EconomistSans-Bold",
               "font-size": 20,
               "leading": 24,
               "letter-spacing": "0em"
@@ -3555,21 +3512,18 @@
             "subtitle": {
               "x": 0,
               "y": 56,
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
-              "font-family": "EconomistSans-Light",
               "font-size": 17,
               "leading": 20
             },
             "source": {
               "x": 0,
               "y": -3,
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext",
@@ -3582,7 +3536,6 @@
               "x": 0,
               "y": -3,
               "anchor": "start",
-              "font-family": "EconomistSans-Light",
               "font-size": 15,
               "leading": 20,
               "fill": "dc-greytext",
@@ -3594,7 +3547,6 @@
             "numberBox": {
               "x": 0.5,
               "y": 0.5,
-              "font": "EconomistSans-Medium",
               "fontsize": "13",
               "textfill": "black100",
               "rectheight": 20,
@@ -3665,7 +3617,6 @@
           },
           "strings": {
             "panelheader": {
-              "font-family": "EconomistSans-Medium",
               "font-size": 17,
               "leading": 20,
               "x": 0,
@@ -3758,7 +3709,6 @@
               },
               "leading": 16,
               "rowheight": 24,
-              "font": "EconomistSans-Light",
               "size": {
                 "primaryOnly": 15,
                 "primaryIfSecondary": 13,
@@ -3768,7 +3718,6 @@
               "minGapBetweenLabels": 6
             },
             "header": {
-              "font": "EconomistSans-Light",
               "size": 15,
               "leading": 20,
               "margin": 20
@@ -3800,10 +3749,8 @@
             "text": {
               "size": 15,
               "leading": 16,
-              "font": "EconomistSans-Light",
               "y": 3.5,
               "header": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "leading": 16,
                 "margin": 20
@@ -3819,11 +3766,11 @@
             },
             "doubleScale": {
               "fill": {
-                "left": "dc-purple1",
-                "right": "dc-bluetext",
+                "left": "econred",
+                "right": "landtext",
                 "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "dc-purple1",
-                "columnalone": "dc-bluetext"
+                "linealone": "econred",
+                "columnalone": "landtext"      
               },
               "leading": 15,
               "size": 14,
@@ -3844,79 +3791,79 @@
           "bar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -3928,79 +3875,79 @@
           "stackedbar": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "gap": 10,
@@ -4010,78 +3957,78 @@
           "thermometer": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "spindle": {
@@ -4101,78 +4048,78 @@
           "line": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -4185,79 +4132,79 @@
           "scatter": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "dots": {
@@ -4271,11 +4218,10 @@
               "x": 2,
               "y": 10,
               "leading": 15,
-              "font": "EconomistSans-Light",
               "size": 13
             },
             "trendline": {
-              "stroke": "dc-blue1",
+              "stroke": "dc-econred60",
               "strokewidth": 2,
               "dash": [
                 6,
@@ -4283,7 +4229,6 @@
               ]
             },
             "zkey": {
-              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 6,
@@ -4294,78 +4239,78 @@
           "layercake": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -4377,78 +4322,78 @@
           "pointline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -4462,78 +4407,78 @@
           "stepline": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],[
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]
             ],
             "stroke": {
@@ -4546,79 +4491,79 @@
           "pie": {
             "colours": [
               [
-                "dc-Econred60"
+                "dc-econred60"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint"
+                "dc-econred",
+                "dc-econredtint"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70"
               ],
               [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-ChartBlue",
-                "dc-ChartChicago",
-                "dc-Land3",
-                "dc-Landtext",
-                "dc-Land4",
-                "dc-London30",
-                "dc-London70",
-                "dc-Chicago30"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-chartblue",
+                "dc-chartchicago",
+                "dc-land3",
+                "dc-landtext",
+                "dc-land4",
+                "dc-london30",
+                "dc-london70",
+                "dc-chicago30"
               ]              
             ],
             "wedges": {
@@ -4626,12 +4571,10 @@
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
-              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
-              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -4639,7 +4582,6 @@
           "table": {
             "text": {
               "header": {
-                "font": "EconomistSans-Medium",
                 "size": 15,
                 "leading": 20,
                 "padding": {
@@ -4648,7 +4590,6 @@
                 }
               },
               "content": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 42.5,
@@ -4682,61 +4623,61 @@
           "double": {
             "colours": {
               "left": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "right": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark",
-                "dc-Econred",
-                "dc-Econredtint",
-                "dc-Econreddark"
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
                ],
               "columnalone": [
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext",
-                "dc-Land3",
-                "dc-Land4",
-                "dc-Landtext"
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
               ]
             }
           }
@@ -4744,13 +4685,11 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
-            "font": "EconomistSans-Medium",
             "size": 15,
             "leading": 20
           },
           "text": {
             "anchor": "start",
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 20,
             "fill": "black100"
@@ -4811,7 +4750,6 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
-            "font": "EconomistSans-Light",
             "size": 15
          },
           "background": {
@@ -4825,7 +4763,6 @@
             "left": 20
           },
           "header": {
-            "font": "EconomistSans-Light",
             "size": 15,
             "leading": 16,
             "strokewidth": 0,
@@ -5603,11 +5540,10 @@
               "x": 2,
               "y": 10,
               "leading": 15,
-              "font": "EconomistSans-Light",
               "size": 13
             },
             "trendline": {
-              "stroke": "dc-blue1",
+              "stroke": "dc-econred60",
               "strokewidth": 4,
               "dash": [
                 6,
@@ -5615,7 +5551,6 @@
               ]
             },
             "zkey": {
-              "font": "EconomistSans-Medium",
               "fontSize": 14,
               "leading": 14,
               "dotRadius": 12.5,
@@ -5960,12 +5895,10 @@
             },
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
-              "font": "EconomistSans-Light",
               "leading": 15,
               "size": 14
             },
             "header": {
-              "font": "EconomistSans-Medium",
               "leading": 15,
               "size": 14
             }
@@ -5973,7 +5906,6 @@
           "table": {
             "text": {
               "header": {
-                "font": "EconomistSans-Medium",
                 "size": 15,
                 "leading": 20,
                 "padding": {
@@ -5982,7 +5914,6 @@
                 }
               },
               "content": {
-                "font": "EconomistSans-Light",
                 "size": 15,
                 "NOTE-1": "paragraph is padding between lines; currently used for leading",
                 "paragraph": 42.5,
@@ -6079,12 +6010,10 @@
         "legend": {
           "headerText": {
             "size": 32,
-            "leading": 38,
-            "font": "EconomistSans-Medium"
+            "leading": 38
           },
           "text": {
             "anchor": "start",
-            "font": "EconomistSans-Light",
             "size": 32,
             "fill": "black100",
             "leading": 38
