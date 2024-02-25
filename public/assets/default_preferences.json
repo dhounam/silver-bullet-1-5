@@ -403,7 +403,7 @@
       },
       "header": {
         "anchor": "middle",
-        "font": "EconomistSans-Light",
+        "font": "EconomistSans-Regular",
         "size": 7,
         "fill": "black100",
         "leading": 8.5,
