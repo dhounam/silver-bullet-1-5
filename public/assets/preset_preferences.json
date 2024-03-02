@@ -519,6 +519,293 @@
         }
       }
     },
+    "__PRINT-SPECIAL-REPORT": "NEW PRINT SPECIAL PROPERTIES, MARCH 2024",
+    "special report": {
+      "display": "Special Report",
+      "sections": {
+        "list": [
+          {
+            "code": "SR",
+            "name": "Print special [SR]"
+          },
+          {
+            "code": "TQ",
+            "name": "Tech Quarterly [TQ]"
+          },
+          {
+            "code": "ZZ",
+            "name": "Data analytics [ZZ]"
+          }
+        ],
+        "default": "SR",
+        "forceDefault": false
+      },
+      "__MINI": "SR MINI, MARCH 2024",
+      "mini": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "Mini",
+              "width": 74,
+              "height": 145,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "black100",
+              "x": 0,
+              "width": "100%",
+              "height": 2.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "display": false
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0,
+              "y": 15,
+              "font-family": "EconomistSans-Bold",
+              "font-size": 7.5,
+              "leading": 8.75,
+              "fill": "econred"
+            },
+            "subtitle": {
+              "x": 0,
+              "y": 23.75,
+              "font-family": "EconomistSans-Regular",
+              "font-size": 7.5,
+              "leading": 8.75,
+              "letter-spacing": "0em",
+              "fill": "black100"
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        },
+        "axes": {
+          "xAxis": {
+            "text": {
+              "size": {
+                "primaryOnly": 6,
+                "primaryIfSecondary": 5,
+                "secondary": 6
+              }
+            }
+          },
+          "yAxis": {
+            "text": {
+              "size": 6
+            }
+          }
+        }
+      },
+      "__ONE-COLUMN": "Print special: 1 column",
+      "one-column": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "1 column",
+              "width": 246,
+              "height": 165,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "econred",
+              "x": 0,
+              "width": "100%",
+              "height": 0.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "x": 0,
+              "width": 15,
+              "height": 5,
+              "adjustable": {
+                "height": false,
+                "width": false
+              }
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0
+            },
+            "subtitle": {
+              "x": 0
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        }
+      },
+      "__ONE-AND-A-HALF-COLUMN": "Print special: 1.5 column",
+      "one-and-a-half-column": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "1.5 column",
+              "width": 332,
+              "height": 165,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "econred",
+              "x": 0,
+              "width": "100%",
+              "height": 0.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "x": 0,
+              "width": 15,
+              "height": 5,
+              "adjustable": {
+                "height": false,
+                "width": false
+              }
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0
+            },
+            "subtitle": {
+              "x": 0
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        }
+      },
+      "__TWO-COLUMN": "Print special: 2 columns",
+      "two-column": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "2 columns",
+              "width": 504,
+              "height": 165,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "econred",
+              "x": 0,
+              "width": "100%",
+              "height": 0.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "x": 0,
+              "width": 15,
+              "height": 5,
+              "adjustable": {
+                "height": false,
+                "width": false
+              }
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0
+            },
+            "subtitle": {
+              "x": 0
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        }
+      }
+    },
     "__PRINT-SPECIAL": "PRINT SPECIAL PROPERTIES",
     "print special": {
       "display": "Print special",

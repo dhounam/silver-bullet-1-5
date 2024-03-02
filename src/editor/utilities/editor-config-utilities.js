@@ -1102,9 +1102,17 @@ export function setBackgroundProperties(config, presetsConfig, startUp) {
   // by gapBelowStrings... which is, in turn, replace: see below...
   chain = ['chart', 'padding'];
   config.background.chartPadding = findPreferencesNode(presetsConfig, chain);
-  // Background values for gap below strings stack
-  chain = ['background', 'topPadding'];
-  config.background.topPadding = findPreferencesNode(presetsConfig, chain);
+  // Top padding (title cluster, keys, blobs...)
+  // Mod Mar'24 to dig deeper into node
+  const paddingKeys = Object.keys(dps.background.topPadding);
+  const paddingObj = {};
+  for (let iii = 0; iii < paddingKeys.length; iii++) {
+    const keyName = paddingKeys[iii];
+    chain = ['background', 'topPadding', keyName];
+    const onePadding = findPreferencesNode(presetsConfig, chain);
+    paddingObj[keyName] = onePadding;
+  }
+  config.background.topPadding = paddingObj;
 }
 // SET BACKGROUND PROPERTIES ends
 
