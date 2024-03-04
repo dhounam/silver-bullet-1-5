@@ -520,8 +520,8 @@
       }
     },
     "__PRINT-SPECIAL-REPORT": "NEW PRINT SPECIAL PROPERTIES, MARCH 2024",
-    "special report 2024": {
-      "display": "Special Report",
+    "print special": {
+      "display": "Print Special",
       "sections": {
         "list": [
           {
@@ -694,36 +694,156 @@
             }
           }
         }
-      }
-    },
-    "__OLD-PRINT-SPECIAL-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX": "OLD PRINT SPECIAL PROPERTIES",
-    "print special": {
-      "display": "Old print special",
-      "sections": {
-        "list": [
-          {
-            "code": "SR",
-            "name": "Print special [SR]"
-          },
-          {
-            "code": "TQ",
-            "name": "Tech Quarterly [TQ]"
-          },
-          {
-            "code": "ZZ",
-            "name": "Data analytics [ZZ]"
-          }
-        ],
-        "default": "SR",
-        "forceDefault": false
       },
-      "__HALF-COLUMN": "Print special: 0.5 column",
-      "half-column": {
+      "__ONE-COLUMN-WIDE": "SR 1-COL-WIDE, MARCH 2024",
+      "one-column-wide": {
         "background": {
           "outerbox": {
             "dimensions": {
               "id": "SR",
-              "display": "0.5 column",
+              "display": "1 column wide",
+              "width": 289,
+              "height": 165,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "black100",
+              "x": 0,
+              "width": "100%",
+              "height": 2.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "display": false
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0
+            },
+            "subtitle": {
+              "x": 0
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        },
+        "axes": {
+          "xAxis": {
+            "text": {
+              "size": {
+                "primaryOnly": 6,
+                "primaryIfSecondary": 5,
+                "secondary": 6
+              }
+            }
+          },
+          "yAxis": {
+            "text": {
+              "size": 6
+            }
+          }
+        }
+      },
+      "__TWO-COLUMN": "SR 2-COL, MARCH 2024",
+      "two-column": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "2 column",
+              "width": 418,
+              "height": 165,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "margins": {
+              "left": 0,
+              "right": 0
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "white"
+            },
+            "bboxB": {
+              "fill": "black100",
+              "x": 0,
+              "width": "100%",
+              "height": 2.5,
+              "display": true,
+              "adjustable": {
+                "height": false,
+                "width": true
+              }
+            },
+            "bboxC": {
+              "display": false
+            }
+          },
+          "strings": {
+            "title": {
+              "x": 0
+            },
+            "subtitle": {
+              "x": 0
+            },
+            "subsubtitle": {
+              "x": 0
+            },
+            "source": {
+              "x": 0
+            },
+            "footnote": {
+              "x": -0.001
+            }
+          }
+        },
+        "axes": {
+          "xAxis": {
+            "text": {
+              "size": {
+                "primaryOnly": 6,
+                "primaryIfSecondary": 5,
+                "secondary": 6
+              }
+            }
+          },
+          "yAxis": {
+            "text": {
+              "size": 6
+            }
+          }
+        }
+      },
+      "__BOX STORY": "SR BOX STORY, MARCH 2024",
+      "box-story": {
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "SR",
+              "display": "Box story",
               "width": 160,
               "height": 165,
               "forceHeight": true,
@@ -739,10 +859,10 @@
               "fill": "white"
             },
             "bboxB": {
-              "fill": "econred",
+              "fill": "black100",
               "x": 0,
               "width": "100%",
-              "height": 0.5,
+              "height": 2.5,
               "display": true,
               "adjustable": {
                 "height": false,
@@ -750,13 +870,7 @@
               }
             },
             "bboxC": {
-              "x": 0,
-              "width": 15,
-              "height": 5,
-              "adjustable": {
-                "height": false,
-                "width": false
-              }
+              "display": false
             }
           },
           "strings": {
@@ -776,187 +890,20 @@
               "x": -0.001
             }
           }
-        }
-      },
-      "__ONE-COLUMN": "Print special: 1 column",
-      "one-column": {
-        "background": {
-          "outerbox": {
-            "dimensions": {
-              "id": "SR",
-              "display": "1 column",
-              "width": 246,
-              "height": 165,
-              "forceHeight": true,
-              "forceWidth": true
-            },
-            "margins": {
-              "left": 0,
-              "right": 0
-            }
-          },
-          "shapes": {
-            "bboxA": {
-              "fill": "white"
-            },
-            "bboxB": {
-              "fill": "econred",
-              "x": 0,
-              "width": "100%",
-              "height": 0.5,
-              "display": true,
-              "adjustable": {
-                "height": false,
-                "width": true
-              }
-            },
-            "bboxC": {
-              "x": 0,
-              "width": 15,
-              "height": 5,
-              "adjustable": {
-                "height": false,
-                "width": false
+        },
+        "axes": {
+          "xAxis": {
+            "text": {
+              "size": {
+                "primaryOnly": 6,
+                "primaryIfSecondary": 5,
+                "secondary": 6
               }
             }
           },
-          "strings": {
-            "title": {
-              "x": 0
-            },
-            "subtitle": {
-              "x": 0
-            },
-            "subsubtitle": {
-              "x": 0
-            },
-            "source": {
-              "x": 0
-            },
-            "footnote": {
-              "x": -0.001
-            }
-          }
-        }
-      },
-      "__ONE-AND-A-HALF-COLUMN": "Print special: 1.5 column",
-      "one-and-a-half-column": {
-        "background": {
-          "outerbox": {
-            "dimensions": {
-              "id": "SR",
-              "display": "1.5 column",
-              "width": 332,
-              "height": 165,
-              "forceHeight": true,
-              "forceWidth": true
-            },
-            "margins": {
-              "left": 0,
-              "right": 0
-            }
-          },
-          "shapes": {
-            "bboxA": {
-              "fill": "white"
-            },
-            "bboxB": {
-              "fill": "econred",
-              "x": 0,
-              "width": "100%",
-              "height": 0.5,
-              "display": true,
-              "adjustable": {
-                "height": false,
-                "width": true
-              }
-            },
-            "bboxC": {
-              "x": 0,
-              "width": 15,
-              "height": 5,
-              "adjustable": {
-                "height": false,
-                "width": false
-              }
-            }
-          },
-          "strings": {
-            "title": {
-              "x": 0
-            },
-            "subtitle": {
-              "x": 0
-            },
-            "subsubtitle": {
-              "x": 0
-            },
-            "source": {
-              "x": 0
-            },
-            "footnote": {
-              "x": -0.001
-            }
-          }
-        }
-      },
-      "__TWO-COLUMN": "Print special: 2 columns",
-      "two-column": {
-        "background": {
-          "outerbox": {
-            "dimensions": {
-              "id": "SR",
-              "display": "2 columns",
-              "width": 504,
-              "height": 165,
-              "forceHeight": true,
-              "forceWidth": true
-            },
-            "margins": {
-              "left": 0,
-              "right": 0
-            }
-          },
-          "shapes": {
-            "bboxA": {
-              "fill": "white"
-            },
-            "bboxB": {
-              "fill": "econred",
-              "x": 0,
-              "width": "100%",
-              "height": 0.5,
-              "display": true,
-              "adjustable": {
-                "height": false,
-                "width": true
-              }
-            },
-            "bboxC": {
-              "x": 0,
-              "width": 15,
-              "height": 5,
-              "adjustable": {
-                "height": false,
-                "width": false
-              }
-            }
-          },
-          "strings": {
-            "title": {
-              "x": 0
-            },
-            "subtitle": {
-              "x": 0
-            },
-            "subsubtitle": {
-              "x": 0
-            },
-            "source": {
-              "x": 0
-            },
-            "footnote": {
-              "x": -0.001
+          "yAxis": {
+            "text": {
+              "size": 6
             }
           }
         }
