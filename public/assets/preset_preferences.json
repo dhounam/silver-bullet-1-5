@@ -625,7 +625,7 @@
         }
       },
       "__STANDARD-ONE-COLUMN": "SR 1-COL, MARCH 2024",
-      "standard-one-column": {
+      "one-column": {
         "background": {
           "outerbox": {
             "dimensions": {

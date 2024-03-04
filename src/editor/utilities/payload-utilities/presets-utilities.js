@@ -5,15 +5,19 @@ import { has } from 'lodash';
     In Sept 2022 Online sub presets and its sizes are updated. Here the table of old ones and the
     equivalences with the new ones (table contains displayed values, not the IDs):
     
-    Old                 New
+      Old                 New
     ----------------------------------------
-    Narrow              Slim
-    Full width          Full width
-    Espresso            Espresso
-    Instagram Story     Slime
-    DC Desktop          Full width
-    DC Mobile           Slim
-    Films               Films
+    SPECIALS
+      half-column             mini
+      one-and-a-half-column   one-column-wide
+    ONINE
+      Narrow                  Slim
+      Full width              Full width
+      Espresso                Espresso
+      Instagram Story         Slime
+      DC Desktop              Full width
+      DC Mobile               Slim
+      Films                   Films
     ----------------------------------------
 
     For those subPresets that persist (Espresso, Full width), they change its width as well.
@@ -31,9 +35,11 @@ import { has } from 'lodash';
 
     @returns {subPreset, hasBeenUpdated} 
   */
-export function updateOnlineSubPreset(preset, _subPreset) {
-    // table with old sub preset names and its equivalences
+export function updateOldSubPreset(preset, _subPreset) {
+    // table with old sub preset names and new equivalents
     const conversionTable = {
+    'half-column': 'mini',
+    'one-and-a-half-column': 'one-column-wide',
     'narrow': 'online-slim',
     'wide': 'online-full-width',
     'espresso': 'online-espresso',
@@ -43,7 +49,8 @@ export function updateOnlineSubPreset(preset, _subPreset) {
     'films': 'online-films'
   };
 
-  let subPreset = (preset === 'online' && has(conversionTable, _subPreset)) ? 
+  // let subPreset = (preset === 'online' && has(conversionTable, _subPreset)) ? 
+  let subPreset = (has(conversionTable, _subPreset)) ? 
     conversionTable[_subPreset] : 
     _subPreset;
   

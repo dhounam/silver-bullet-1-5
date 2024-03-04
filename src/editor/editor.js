@@ -22,7 +22,7 @@ import FooterWrapper from './footer/footer';
 import MonteuxImport from './monteux/monteux-import';
 // Assets
 import globalAssets from './assets/globalAssets';
-import { updateOnlineSubPreset } from './utilities/payload-utilities/presets-utilities';
+import { updateOldSubPreset } from './utilities/payload-utilities/presets-utilities';
 
 let DefaultChartConfig;
 let DefaultPreferences;
@@ -896,23 +896,22 @@ class SilverEditor extends Component {
   // Sep'20: 2nd param deleted when axis headers recoupled
   // fromMonteux is true for Monteux payload; false for paste-in
   handleMonteuxImportValues(values) {
-    
-    // first check to be done ASAP is to update a possible deprecatede
+    // first check to be done ASAP is to update a possible deprecated
     // online subpreset (see presets-utilities.js for a rationale on that)
-    const { subPreset, hasBeenUpdated } =  updateOnlineSubPreset(
-      values.global.values.preset,
-      values.global.values.subPreset
+    const preset = values.global.values.preset;
+    const oldSubPreset = values.global.values.subPreset;
+    const { subPreset, hasBeenUpdated } =  updateOldSubPreset(
+      preset,
+      oldSubPreset
     );
     if(hasBeenUpdated) {
       // if the subpreset was a deprecated one, update it and 
       // override the old width
       values.global.values.subPreset = subPreset;
       values.global.values.width = globalAssets
-        .PresetPreferences
-        .economist
-        .online[subPreset]
-        .background
-        .outerbox.dimensions.width;
+        .PresetPreferences.economist
+        [preset][subPreset]
+        .background.outerbox.dimensions.width;
     }
 
     // Check validity flags in each 'panel' data.
