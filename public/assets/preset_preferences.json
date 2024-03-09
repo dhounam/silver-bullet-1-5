@@ -190,20 +190,20 @@
           "strings": {
             "title": {
               "NOTE": "Leader has special title styling",
-              "y": 10,
+              "y": 11,
               "font-family": "EconomistSans-SemiBold",
               "font-size": 7,
               "leading": 7,
               "fill": "econred"
             },
             "subtitle": {
-              "y": 19,
+              "y": 20,
               "font-family": "EconomistSans-Regular",
               "font-size": 7,
               "leading": 8.5
             },
             "subsubtitle": {
-              "y": 28,
+              "y": 29,
               "font-size": 6.5,
               "leading": 7.5
             },
@@ -310,37 +310,40 @@
         "background": {
           "outerbox": {
             "dimensions": {
-              "id": "world-this-week",
-              "display": "World this week",
+              "id": "leader",
+              "display": "World this Week",
               "width": 117,
-              "height": 115,
+              "height": 110,
               "forceHeight": true,
               "forceWidth": true
             },
             "margins": {
-              "top": 10,
-              "bottom": 10
+              "top": 8,
+              "bottom": 6
             }
           },
           "shapes": {
             "bboxC": {
-              "width": 12,
-              "height": 4
+              "display": false
             }
           },
           "strings": {
             "title": {
-              "y": 12,
-              "font-size": 7.5,
-              "leading": 7.5
+              "NOTE": "WW has special title styling",
+              "y": 11,
+              "font-family": "EconomistSans-SemiBold",
+              "font-size": 7,
+              "leading": 7,
+              "fill": "econred"
             },
             "subtitle": {
               "y": 20,
-              "font-size": 6.5,
-              "leading": 7.5
+              "font-family": "EconomistSans-Regular",
+              "font-size": 7,
+              "leading": 8.5
             },
             "subsubtitle": {
-              "y": 27.5,
+              "y": 29,
               "font-size": 6.5,
               "leading": 7.5
             },
@@ -351,8 +354,7 @@
               "leading": 7
             },
             "source": {
-              "display": true,
-              "font-size": 6
+              "display": true
             }
           },
           "DELETE_gapBelowStrings": {
@@ -362,11 +364,11 @@
           "topPadding": {
             "belowTitleClusterBaseline": {
               "toPanelFlash": 10,
-              "toLegendBaseline": 10,
-              "toBlobTop": 12,
+              "toLegendBaseline": 15,
+              "toBlobTop": 10,
               "toTopOfChart": {
                 "default": 12,
-                "bar": 8,
+                "bar": 10,
                 "BAR-NOTE": "8 gives 10 to x-axis labels baseline",
                 "double": 8.5
               }
@@ -375,37 +377,29 @@
               "toLegendBaseline": 10,
               "toBlobTop": 10,
               "toTopOfChart": {
-                "default": 8,
-                "bar": 8,
-                "double": 8.5
-              }
-            },
-            "belowLegendBaseline": {
-              "toBlobTop": 8,
-              "toTopOfChart": {
                 "default": 10,
                 "bar": 8,
                 "double": 8.5
               }
             },
+            "belowLegendBaseline": {
+              "toBlobTop": 10,
+              "toTopOfChart": {
+                "default": 8,
+                "bar": 8,
+                "double": 8.5
+              }
+            },
             "belowBlobBottom": {
-              "default": 5,
+              "default": 10,
               "No_bar": "because no blobs above bar charts!"
             }
           }
         },
-        "panelAttributes": {
-          "strings": {
-            "panelheader": {
-              "default": "To come",
-              "font-family": "EconSansCndMed",
-              "font-size": 6.5,
-              "fill": "black100",
-              "id": "panel-header-string",
-              "leading": 7.5,
-              "x": 0,
-              "y": 8
-            }
+        "chart": {
+          "padding": {
+            "above": 10,
+            "below": 10
           }
         },
         "axes": {
@@ -427,10 +421,17 @@
         "legend": {
           "text": {
             "anchor": "start",
-            "font": "EconSansCndLig",
-            "size": 6.5,
+            "size": 6,
             "fill": "black100",
-            "leading": 7.5
+            "leading": 8
+          },
+          "padding": {
+            "belowHeader": 8,
+            "betweenKeys": 8,
+            "betweenColumns": 10,
+            "textGap": 2,
+            "belowStack": 8,
+            "belowStackDoubleScale": 12
           }
         }
       },

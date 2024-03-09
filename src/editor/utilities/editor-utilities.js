@@ -411,7 +411,6 @@ export function getSpecificPresetProps(presetsConfig) {
   const mergedBlobs = Object.assign({}, globalAssets.DefaultPreferences.blobs);
   const ppBlobs = psSource.blobs;
   if (typeof ppBlobs !== 'undefined') {
-    // debugger;
     deepMerge(mergedBlobs, ppBlobs);
   }
 

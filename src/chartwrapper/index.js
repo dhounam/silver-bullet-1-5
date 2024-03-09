@@ -127,8 +127,14 @@ class SilverChartWrapper extends Component {
     if (chartType === 'thermohorizontal') {
       chartType = 'bar';
     }
+    // debugger;
     let padding = pLookup.toTopOfChart.default
-    if (hasBlobs) {
+    if (chartType === 'table') {
+      const tHead = pLookup.toTableHeaders
+      if (typeof tHead !== 'undefined') {
+        padding = tHead
+      }
+    } else if (hasBlobs) {
       padding = pLookup.toBlobTop
     } else if (hasLegend) {
       padding = pLookup.toLegendBaseline

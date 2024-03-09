@@ -198,6 +198,7 @@
         "toPanelFlash": 12.5,
         "toLegendBaseline": 10,
         "toBlobTop": 10,
+        "toTableHeaders": 15,
         "toTopOfChart": {
           "default": 12,
           "bar": 10,
@@ -209,6 +210,7 @@
       "belowPanelHeaderBaseline": {
         "toLegendBaseline": 10,
         "toBlobTop": 10,
+        "toTableHeaders": 15,
         "toTopOfChart": {
           "default": 10,
           "bar": 12,
@@ -1512,37 +1514,37 @@
           "font": "EconomistSans-Light",
           "size": 7,
           "NOTE-1": "paragraph is padding between lines; currently used for leading",
-          "paragraph": 12,
+          "paragraph": 12.5,
           "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
           "leading": 8,
           "fill": "black100",
           "scale": 100,
           "padding": {
-            "left": 3,
-            "right": 3
+            "left": 0,
+            "right": 0
           }
         }
       },
       "rules": {
         "top": {
           "drawn": true,
-          "width": 0.5,
+          "width": 0.25,
           "stroke": "black100",
-          "belowText": 3.5
+          "belowText": 3.75
         },
         "bottom": {
           "drawn": true,
-          "width": 0.5,
-          "stroke": "black100",
+          "width": 0.25,
+          "stroke": "black25",
           "belowText": 3.5
         }
       },
       "separators": {
-        "drawFills": true,
+        "drawFills": false,
         "fill": "highlight",
-        "strokeName": "black100",
-        "strokeWidth": 1,
-        "belowText": 3.5
+        "strokeName": "black25",
+        "strokeWidth": 0.25,
+        "belowText": 3.75
       }
     },
     "double": {

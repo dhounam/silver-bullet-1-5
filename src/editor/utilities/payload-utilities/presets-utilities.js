@@ -36,10 +36,13 @@ import { has } from 'lodash';
     @returns {subPreset, hasBeenUpdated} 
   */
 export function updateOldSubPreset(preset, _subPreset) {
-    // table with old sub preset names and new equivalents
-    const conversionTable = {
-    'half-column': 'mini',
+  // Lookups have old sub preset names and new equivalents
+  // for print special and online charts
+  const printSpecialConversionTable = {
+   'half-column': 'mini',
     'one-and-a-half-column': 'one-column-wide',
+  };
+  const onlineConversionTable = {
     'narrow': 'online-slim',
     'wide': 'online-full-width',
     'espresso': 'online-espresso',
@@ -48,6 +51,10 @@ export function updateOldSubPreset(preset, _subPreset) {
     'daily-chart-mobile': 'online-slim',
     'films': 'online-films'
   };
+  // So: print-special, or online?
+  const conversionTable = (preset === 'print') ?
+    printSpecialConversionTable :
+    onlineConversionTable;
 
   // let subPreset = (preset === 'online' && has(conversionTable, _subPreset)) ? 
   let subPreset = (has(conversionTable, _subPreset)) ? 
@@ -56,6 +63,6 @@ export function updateOldSubPreset(preset, _subPreset) {
   
   return {
     subPreset, 
-    hasBeenUpdated: _subPreset !== subPreset
+    hasBeenUpdated: _subPreset !== subPreset,
   };
 }
