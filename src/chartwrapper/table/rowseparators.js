@@ -35,7 +35,7 @@ class TableFills extends Component {
         x2: rProps.x2,
         y1: rProps.y,
         y2: rProps.y,
-        id: `${rProps.id}~~~stroke:${rProps.strokeName}`,
+        id: `table-separator~~~stroke:${rProps.strokeName}`,
       })
       .style({
         'stroke-width': rProps.strokeWidth,
@@ -123,11 +123,15 @@ class TableFills extends Component {
   updateSeparators() {
     const config = this.props.config
     // Group
-    const idName = this.props.idName
-    const separatorsGrp = d3.select(`#${idName}`)
+    const rulesGrpId = this.props.rulesId
+    const fillsGrpId = this.props.fillsId
+    // const idName = this.props.idName
+    // Groups for fills or rules
+    let separatorsGrp = d3.select(`#${fillsGrpId}`)
     if (config.tableProperties.separators.drawFills) {
       this.drawFills(config, separatorsGrp)
     } else {
+      let separatorsGrp = d3.select(`#${rulesGrpId}`)
       this.drawRules(config, separatorsGrp)
     }
   }
@@ -142,6 +146,8 @@ class TableFills extends Component {
 TableFills.propTypes = {
   config: PropTypes.object,
   idName: PropTypes.string,
+  rulesGrpId: PropTypes.string,
+  fillsGrp: PropTypes.string,
 }
 
 export default TableFills

@@ -20,7 +20,11 @@ class SilverTable extends Component {
     const topAndBottomRulesJsx = (
       <TopAndBottomRules config={config} idName={rulesId} />
     );
-    const tableFillsJsx = <RowSeparators config={config} idName={fillsId} />
+    const tableFillsJsx = (
+      // <RowSeparators config={config} idNames={[rulesId, fillsId]} />
+      // Mar'24: send ids for rules as well as fills group
+      <RowSeparators config={config} rulesId={rulesId} fillsId={fillsId} />
+    );
 
     // const { width, height, x, y } = this.props.config.innerBox;
     // NOTE: I can draw a temporary 'inner box'

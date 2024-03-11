@@ -117,7 +117,7 @@
         "content": "Source: to come",
         "display": true,
         "id": "source-string",
-        "x": 6,
+        "x": 5,
         "y": -5,
         "wrapoptions": {
           "hasfootnote": 45,
@@ -538,11 +538,12 @@
         "fill": "black100",
         "header": {
           "anchor": "middle",
-          "font": "EconomistSans-Light",
+          "font": "EconomistSans-Regular",
           "size": 7,
           "fill": "black100",
-          "leading": 8,
-          "margin": 10
+          "leading": 8.5,
+          "NEXT": "Doesn't seem to do anything",
+          "margin": 15
         }
       },
       "orient": {
@@ -570,16 +571,17 @@
       },
       "doubleScale": {
         "fill": {
-          "left": "econred",
-          "right": "landtext",
+          "left": "landtext",
+          "right": "econred",
           "NOTE": "If types are identical, set left/right; else set coloursets by type",
           "linealone": "econred",
           "columnalone": "landtext"
         },
         "font": "EconomistSans-Regular",
         "leading": 7.5,
-        "size": "7",
-        "headerMargin": 10
+        "size": 7,
+        "HEADER-MARGIN-NOTE": "13 gives 12",
+        "headerMargin": 13
       },
       "scatter": {
         "headerMargin": 10
@@ -1528,13 +1530,13 @@
       "rules": {
         "top": {
           "drawn": true,
-          "width": 0.25,
+          "width": 0.5,
           "stroke": "black100",
           "belowText": 3.75
         },
         "bottom": {
           "drawn": true,
-          "width": 0.25,
+          "width": 0.5,
           "stroke": "black25",
           "belowText": 3.5
         }
@@ -1543,27 +1545,13 @@
         "drawFills": false,
         "fill": "highlight",
         "strokeName": "black25",
-        "strokeWidth": 0.25,
+        "strokeWidth": 0.5,
         "belowText": 3.75
       }
     },
     "double": {
       "colours": {
         "left": [
-          "econred",
-          "econredtint",
-          "econreddark",
-          "econred",
-          "econredtint",
-          "econreddark",
-          "econred",
-          "econredtint",
-          "econreddark",
-          "econred",
-          "econredtint",
-          "econreddark"
-        ],
-        "right": [
           "land3",
           "land4",
           "landtext",
@@ -1576,6 +1564,20 @@
           "land3",
           "land4",
           "landtext"
+        ],
+        "right": [
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark",
+          "econred",
+          "econredtint",
+          "econreddark"
         ],
   "NOTE": "If types are identical, set left/right; else set types to a colourset ",
         "linealone": [

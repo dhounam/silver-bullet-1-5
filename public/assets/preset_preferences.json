@@ -596,15 +596,16 @@
               "fill": "black100"
             },
             "subsubtitle": {
-              "x": 0
+              "x": 0,
+              "y": 32.5
             },
             "source": {
               "x": 0,
-              "y": -0.001
+              "y": -1.5
             },
             "footnote": {
               "x": -0.001,
-              "y": -0.001
+              "y": -1.5
             }
           }
         },
@@ -672,26 +673,12 @@
               "x": 0
             },
             "source": {
-              "x": 0
+              "x": 0,
+              "y": -1.5
             },
             "footnote": {
-              "x": -0.001
-            }
-          }
-        },
-        "axes": {
-          "xAxis": {
-            "text": {
-              "size": {
-                "primaryOnly": 6,
-                "primaryIfSecondary": 5,
-                "secondary": 6
-              }
-            }
-          },
-          "yAxis": {
-            "text": {
-              "size": 6
+              "x": -0.001,
+              "y": -1.5
             }
           }
         }
@@ -743,26 +730,12 @@
               "x": 0
             },
             "source": {
-              "x": 0
+              "x": 0,
+              "y": -1.5
             },
             "footnote": {
-              "x": -0.001
-            }
-          }
-        },
-        "axes": {
-          "xAxis": {
-            "text": {
-              "size": {
-                "primaryOnly": 6,
-                "primaryIfSecondary": 5,
-                "secondary": 6
-              }
-            }
-          },
-          "yAxis": {
-            "text": {
-              "size": 6
+              "x": -0.001,
+              "y": -1.5
             }
           }
         }
@@ -814,26 +787,12 @@
               "x": 0
             },
             "source": {
-              "x": 0
+              "x": 0,
+              "y": -1.5
             },
             "footnote": {
-              "x": -0.001
-            }
-          }
-        },
-        "axes": {
-          "xAxis": {
-            "text": {
-              "size": {
-                "primaryOnly": 6,
-                "primaryIfSecondary": 5,
-                "secondary": 6
-              }
-            }
-          },
-          "yAxis": {
-            "text": {
-              "size": 6
+              "x": -0.001,
+              "y": -1.5
             }
           }
         }
@@ -885,10 +844,12 @@
               "x": 0
             },
             "source": {
-              "x": 0
+              "x": 0,
+              "y": -1.5
             },
             "footnote": {
-              "x": -0.001
+              "x": -0.001,
+              "y": -1.5
             }
           }
         },
@@ -1252,13 +1213,6 @@
               "thermoHorizontal": 24
             },
             "doubleScale": {
-              "fill": {
-                "left": "econred",
-                "right": "landtext",
-                "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "econred",
-                "columnalone": "landtext"
-              },
               "leading": 15,
               "size": 14,
               "headerMargin": 20
@@ -2564,13 +2518,6 @@
               "thermoHorizontal": 24
             },
             "doubleScale": {
-              "fill": {
-                "left": "econred",
-                "right": "landtext",
-                "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "econred",
-                "columnalone": "landtext"      
-              },
               "leading": 15,
               "size": 14,
               "headerMargin": 20
@@ -3889,15 +3836,7 @@
               "default": 20,
               "thermoHorizontal": 24
             },
-            "doubleScale": {
-              "fill": {
-                "left": "econred",
-                "right": "landtext",
-                "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "econred",
-                "columnalone": "landtext"      
-              },
-              "leading": 15,
+            "doubleScale": {              "leading": 15,
               "size": 14,
               "headerMargin": 20
             },
@@ -5211,13 +5150,6 @@
               "thermoHorizontal": 80
             },
             "doubleScale": {
-              "fill": {
-                "left": "dc-purple1",
-                "right": "dc-bluetext",
-                "NOTE": "If types are identical, set left/right; else set coloursets by type",
-                "linealone": "dc-purple1",
-                "columnalone": "dc-bluetext"
-              },
               "leading": 15,
               "size": 14,
               "headerMargin": 20

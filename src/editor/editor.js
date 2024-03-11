@@ -909,8 +909,7 @@ class SilverEditor extends Component {
       // override the old width
       values.global.values.subPreset = subPreset;
       values.global.values.width = globalAssets
-        .PresetPreferences.economist
-        [preset][subPreset]
+        .PresetPreferences.economist[preset][subPreset]
         .background.outerbox.dimensions.width;
     }
 

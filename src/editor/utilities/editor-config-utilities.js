@@ -1096,14 +1096,31 @@ export function setBackgroundProperties(config, presetsConfig, startUp) {
   const pAtts = findPreferencesNode(presetsConfig, ['panelAttributes']);
   config.panelAttributes = pAtts;
   // Legend
+  // debugger;
   config.legend = findPreferencesNode(presetsConfig, ['legend']);
+  // The legends node contains some individual properties, but also
+  // a sub-node, headerText. Unless PP definitions of headerText contain
+  // all properties, I need to handle deltas (if I simply read the
+  // headerText node, any properties that it doesn't explicitly define
+  // get omitted [so, e.g. no font was being defined]). So anyway, I
+  // have to loop through the legends node item by item to handle
+  // headerText properly.
+  const legendKeys = Object.keys(dps.legend);
+  const legendObj = {};
+  for (let iii = 0; iii < legendKeys.length; iii++) {
+    const keyName = legendKeys[iii];
+    chain = ['legend', keyName];
+    const oneLegend = findPreferencesNode(presetsConfig, chain);
+    legendObj[keyName] = oneLegend;
+  }
+  config.legend = legendObj;
   // Chart padding:
   // NOTE: only needed for 'below' property now. Above is replaced
   // by gapBelowStrings... which is, in turn, replace: see below...
   chain = ['chart', 'padding'];
   config.background.chartPadding = findPreferencesNode(presetsConfig, chain);
   // Top padding (title cluster, keys, blobs...)
-  // Mod Mar'24 to dig deeper into node
+  // See legendKeys, above
   const paddingKeys = Object.keys(dps.background.topPadding);
   const paddingObj = {};
   for (let iii = 0; iii < paddingKeys.length; iii++) {

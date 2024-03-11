@@ -40,6 +40,7 @@ export function updateOldSubPreset(preset, _subPreset) {
   // for print special and online charts
   const printSpecialConversionTable = {
    'half-column': 'mini',
+   'standard-one-column': 'one-column',
     'one-and-a-half-column': 'one-column-wide',
   };
   const onlineConversionTable = {
