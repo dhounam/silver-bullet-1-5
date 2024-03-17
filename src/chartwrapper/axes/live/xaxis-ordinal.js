@@ -617,6 +617,7 @@ class SilverXaxisOrdinal extends Component {
     const anchor = config.textPrefs.anchor[config.chartType]
     const yShift = config.textPrefs.rowheight
     const xShift = config.xShift
+    console.log('drawing 2ry axis')
     axisGroup
       // Transition to scale top/bottom
       .attr('transform', transform)

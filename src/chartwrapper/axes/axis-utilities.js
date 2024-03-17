@@ -337,7 +337,7 @@ export function fixNegativeLabels(axisGroup) {
 // FIX NEGATIVE LABELS ends
 
 // GET AXIS LABEL WIDTH
-// Called from XaxisOrdinal and XaxisLinear, to get width
+// Called from XaxisOrdinal and XaxisLinear, to get half-width
 // of first or last axis label, for margin adjustment
 export function getAxisLabelWidth(testObj, tVal, forceTurn, isFirst) {
   // Fork on whether text turns, in which case

@@ -114,11 +114,11 @@ class SilverXaxisOrdinal extends Component {
   // GET TICK FORMAT ends
 
   // GET INDEX DOT TWEAK
-  // Called from calcTestForOnTicks and, in due course,
-  // I think, calcTestForBetweenTicks, to return the
+  // Called from getFirstAndLastLabelHalfWidths and, in due course,
+  // I think, calcMarginsForLabelsBetweenTicks, to return the
   // tweak for any index dot
   // NOTE: as of Jul'19, this doesn't get called. See
-  // calcTestForOnTicks
+  // getFirstAndLastLabelHalfWidths
   getIndexDotTweak(config) {
     let idTweak = 0
     // First, are series indexed?
@@ -133,13 +133,29 @@ class SilverXaxisOrdinal extends Component {
     return idTweak
   }
 
-  // CALC TEST FOR 'ON' TICKS
+  // GET FIRST AND LAST LABEL HALF0WIDTHS
   // Puts 1ry/2ry formatted axis strings into an on-page text object and
   // measures their width.
-  calcTestForOnTicks(config, testText, hasSecondaryAxis) {
+  getFirstAndLastLabelHalfWidths(config, testText, hasSecondaryAxis, primaryGaps, secondaryGaps) {
     const forceTurn = config.forceTurn
-    let leftTweak = 0
-    let rightTweak = 0
+    let elementA = primaryGaps.firstLabelIndex;
+    let elementB = primaryGaps.lastLabelIndex;
+    const result = {
+      primary: {
+        left: 0,
+        right: 0,
+        leftTickFirstElement: false,
+        rightTickLastElement: false,
+      },
+      secondary: {
+        left: 0,
+        right: 0,
+        leftTickFirstElement: false,
+        rightTickLastElement: false,
+      },
+    }
+    // let leftTweak = 0
+    // let rightTweak = 0
     // NOTE: following comm'd-out section is just a stub, laid in, Jul'19,
     // for possible future use. Currently index dot tweaks are handled in
     // XaxisBlobs. That seems to work there, but it's
@@ -153,8 +169,9 @@ class SilverXaxisOrdinal extends Component {
     // leftTweaksArray.push(this.getIndexDotTweak(config));
     //
     const domain = config.scale.domain()
-    const valA = domain[0]
-    const valZ = domain[domain.length - 1]
+    // NO: GET THE RIGHT VALUE
+    let valA = domain[elementA]
+    let valZ = domain[elementB]
     // Are there primary labels?
     const { showLabel } = config.granularity.primary
     if (showLabel) {
@@ -167,7 +184,7 @@ class SilverXaxisOrdinal extends Component {
         formattedPrimaryValA = formattedPrimaryValA[0]
         formattedPrimaryValZ = formattedPrimaryValZ[0]
       }
-      leftTweak = AxisUtils.getAxisLabelWidth(
+      result.primary.left= AxisUtils.getAxisLabelWidth(
         testText,
         formattedPrimaryValA,
         forceTurn,
@@ -184,142 +201,172 @@ class SilverXaxisOrdinal extends Component {
           }
         }
       }
-      rightTweak = AxisUtils.getAxisLabelWidth(
+      result.primary.right = AxisUtils.getAxisLabelWidth(
         testText,
         formattedPrimaryValZ,
         forceTurn,
-        false
+        false,
       )
     }
     // Secondary axis
-    let sWidthA = 0
-    let sWidthZ = 0
     if (hasSecondaryAxis) {
+      // Update size of testText
+      testText.style({
+        'font-size': config.textPrefs.size.secondary,
+      })
+      elementA = secondaryGaps.firstLabelIndex;
+      elementB = secondaryGaps.lastLabelIndex;
+      valA = domain[elementA]
+      valZ = domain[elementB]
       const timeFormat = this.getTickFormat(config, false)
       const formattedSecValA = timeFormat(valA)
       const formattedSecValZ = timeFormat(valZ)
       // If 2ry axis has a label on the first point:
       const fArray = config.secondaryAxisFilter
-      if (fArray[0].label) {
-        sWidthA = AxisUtils.getAxisLabelWidth(
+      if (fArray[elementA].label) {
+        result.secondary.left = AxisUtils.getAxisLabelWidth(
           testText,
           formattedSecValA,
           forceTurn,
-          true
+          true,
         )
-        if (sWidthA > leftTweak) {
-          leftTweak = sWidthA
-        }
       }
       // Label on last point?
-      if (fArray[fArray.length - 1].label) {
-        sWidthZ = AxisUtils.getAxisLabelWidth(
+      if (fArray[elementB].label) {
+        result.secondary.right = AxisUtils.getAxisLabelWidth(
           testText,
           formattedSecValZ,
           forceTurn,
-          false
+          false,
         )
-        if (sWidthZ > rightTweak) {
-          rightTweak = sWidthZ
-        }
       }
     }
-    // Originally halved string width, but that's now
-    // done by AxisUtils.getAxisLabelWidth
-    // Now left checks against projection of thermometer marker, if any
+    // Now primary left check against projection of thermometer marker, if any
+    // (Do I need to check secondary?)
     if (config.thermometer) {
-      leftTweak = Math.max(leftTweak, config.thermoMargin)
+      result.primary.left = Math.max(result.primary.left, config.thermoMargin)
     }
-    return {
-      left: leftTweak,
-      right: rightTweak,
-      leftTickFirstElement: false,
-      rightTickLastElement: false,
-    }
+    return result;
   }
-  // CALC TEST FOR 'ON' TICKS ends
+  // GET FIRST AND LAST LABEL HALF0WIDTHS ends
 
-  // GET FIRST AND LAST TICK GAPS
-  // Called from calcTestForBetweenTicks. Returns an object with
-  // indices of the 2nd and last-but-one ticks in the primary or
-  // secondary series filter
-  getFirstAndLastTickGaps(myFilter, granularity) {
-    const gaps = {}
-    // Maybe there are cleverer ways of doing this... but I want the
-    // indices of the 2nd and last-but-one ticks, to get the 'width'
-    // of the first and last 'slots' between ticks
-    for (let iii = 1; iii < myFilter.length; iii++) {
-      if (myFilter[iii].tick) {
-        gaps.leftPts = iii
-        gaps.leftVal = iii * granularity.dataPointWidth
+  // GET FIRST AND LAST LABEL MARGINS
+  // Called from adjustBoundsWidth. Returns an object with
+  // indices of the first and last drawn labels in primary and
+  // secondary series filter, and the provisional distances
+  // that those points would be from the existing IB left and right
+  // (calc'd from number of tick-intervals)
+  getFirstAndLastLabelMargins(myFilter, granularity) {
+    const margins = {
+      firstLabelIndex: 0,
+      firstLabelMargin: 0,
+      lastLabelIndex: 0,
+      lastLabelMargin: 0,
+    }
+    // 1ry or 2ry axis doesn't exist:
+    if (typeof myFilter === 'undefined') {
+      return margins;
+    }
+    for (let iii = 0; iii < myFilter.length; iii++) {
+      if (myFilter[iii].label) {
+        margins.firstLabelIndex = iii
+        margins.firstLabelMargin = (iii + 1) * granularity.dataPointWidth
         break
       }
     }
-    for (let iii = myFilter.length - 2; iii >= 0; iii--) {
-      if (myFilter[iii].tick) {
-        gaps.rightPts = myFilter.length - 1 - iii
-        gaps.rightVal = gaps.rightPts * granularity.dataPointWidth
+    for (let iii = myFilter.length - 1; iii >= 0; iii--) {
+      if (myFilter[iii].label) {
+        // Get putative margin at right
+        margins.lastLabelIndex = iii //myFilter.length - 1 - iii
+        margins.lastLabelMargin = (myFilter.length - iii) * granularity.dataPointWidth
         break
       }
     }
-    return gaps
+    return margins
   }
-  // GET FIRST AND LAST TICK GAPS ends
+  // GET FIRST AND LAST LABEL MARGINS ends
 
-  // CALC TEST FOR 'BETWEEN' TICKS
+  // CALC MARGINS FOR LABELS 'BETWEEN' TICKS
   // Called from doStringTests
-  calcTestForBetweenTicks(
+  calcMarginsForLabelsBetweenTicks(
     config,
     granularity,
-    tickWidth,
-    testText,
-    hasSecondaryAxis
+    hasSecondaryAxis,
+    halfLabelWidths,
+    primaryMargins,
+    secondaryMargins
   ) {
     // Assuming that the granularity fcn has done its stuff,
     // Distance that first/last datapoints are inside axis
     // This is default if first tick 'slot' is wider than first label
     let leftTweak = granularity.dataPointWidth / 2
     let rightTweak = granularity.dataPointWidth / 2
-    // Flag if ticks are left/rightmost objects on axis
+    // Default flag: ticks are left/rightmost objects on axis
     // (i.e. labels don't project)
-    let leftTickFirstElement = true
-    let rightTickLastElement = true
-    // May'21: trap 'unlabelled' intervals
-    if (!granularity.interval.includes('unlabelled')) {
-      // Get half string-widths, left and right:
-      // NOTE: may need to revisit if/when calcTestForOnTicks changes...
-      const strW = this.calcTestForOnTicks(config, testText, hasSecondaryAxis)
-      // stringWidths is an obj with props left and right, each half a string's width
-      const gaps = this.getFirstAndLastTickGaps(
-        config.primaryAxisFilter,
-        granularity
-      )
-      // gaps is an object with left and right gap point-counts and widths
-      // NOTE: don't forget 2ry axis!!!
-      // If the first label is wider than its tick-slot...
-      if (strW.left > gaps.leftVal / 2) {
-        // I adjust by the difference between string and slot widths, plus half the
-        // distance from the first tick to the first data point
-        // Seems to work...
-        leftTweak =
-          strW.left - gaps.leftVal / 2 + granularity.dataPointWidth / 2
-        leftTickFirstElement = false
-      }
-      if (strW.right > gaps.rightVal / 2) {
-        rightTweak =
-          strW.right - gaps.rightVal / 2 + granularity.dataPointWidth / 2
-        rightTickLastElement = false
-      }
+    let primaryLeftTickFirstElement = true
+    let primaryRightTickLastElement = true
+    let secondaryLeftTickFirstElement = true
+    let secondaryRightTickLastElement = true
+
+    // We know the indices of the first and last labels
+    // and their respective default margins from the sides of
+    // the inner box (primary/secondaryMargins)
+    // We have half string-widths, left and right (halfLabelWidths)
+
+    let primaryLeftTweak = 0
+    let primaryRightTweak = 0;
+    let secondaryLeftTweak = 0
+    let secondaryRightTweak = 0;
+
+    if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin) {
+      // I adjust by the difference between half label width and label origin margin
+      primaryLeftTweak = halfLabelWidths.primary.left - primaryMargins.firstLabelMargin
+      primaryLeftTweak += granularity.dataPointWidth / 2
+      primaryLeftTickFirstElement = false
     }
-    // But is there a better way of doing all this?
+    if (halfLabelWidths.primary.right > primaryMargins.lastLabelMargin) {
+      primaryRightTweak = halfLabelWidths.primary.right - primaryMargins.lastLabelMargin / 2
+      primaryRightTweak += granularity.dataPointWidth / 2
+      primaryRightTickLastElement = false
+    }
+    // PREVIOUSLY:      
+    // if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin / 2) {
+    //   // I adjust by the difference between string and slot widths, plus half the
+    //   // distance from the first tick to the first data point
+    //   // Seems to work...
+    //   secondaryLeftTweak = halfLabelWidths.secondary.left - (secondaryMargins.firstLabelMargin / 2) + (granularity.dataPointWidth / 2)
+    //   secondaryLeftTickFirstElement = false
+    // }
+
+    // Secondary axis:
+    if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin) {
+      secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin
+      secondaryLeftTweak += granularity.dataPointWidth / 2
+      secondaryLeftTickFirstElement = false
+    }
+
+    if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin) {
+      secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin
+      secondaryRightTweak += granularity.dataPointWidth / 2
+      secondaryRightTickLastElement = false
+    }
+
     return {
-      left: leftTweak,
-      right: rightTweak,
-      leftTickFirstElement,
-      rightTickLastElement,
+      primary: {
+        left: primaryLeftTweak,
+        right: primaryRightTweak,
+        leftTickFirstElement: primaryLeftTickFirstElement,
+        rightTickFirstElement: primaryRightTickLastElement,
+      },
+      secondary: {
+        left: secondaryLeftTweak,
+        right: secondaryRightTweak,
+        leftTickFirstElement: secondaryLeftTickFirstElement,
+        rightTickFirstElement: secondaryRightTickLastElement,
+      },
     }
   }
-  // CALC TEST FOR 'BETWEEN' TICKS ends
+  // CALC MARGINS FOR LABELS 'BETWEEN' TICKS ends
 
   // GET EXTRA LINE COUNT
   // Called from doStringTests. Returns the max number of forced lines
@@ -341,29 +388,49 @@ class SilverXaxisOrdinal extends Component {
   // Called from doStringTests
   adjustBoundsWidth(bounds, testText, config) {
     const granularity = Object.assign({}, config.granularity)
+    let primaryMargins;
+    let secondaryMargins;
+    // Get indices and margins for first and last labels
+    if (granularity.primary.showLabel || granularity.secondary.showLabel) {
+      primaryMargins = this.getFirstAndLastLabelMargins(
+        config.primaryAxisFilter,
+        granularity,
+      )
+      secondaryMargins = this.getFirstAndLastLabelMargins(
+        config.secondaryAxisFilter,
+        granularity,
+      )
+    }
     // Is there a secondary axis?
     const hasSecondaryAxis = typeof granularity.secondary !== 'undefined'
-    // Object returned
-    let tweaks = {}
-    // Are ticks 'on' or 'between'...?
-
-    if (granularity.ticksOn) {
-      // 'ON' ticks
-      tweaks = this.calcTestForOnTicks(config, testText, hasSecondaryAxis)
-    } else {
+    // Half widths of first and last labels, axes 1&2
+    let halfLabelWidths = this.getFirstAndLastLabelHalfWidths(
+      config,
+      testText,
+      hasSecondaryAxis,
+      primaryMargins,
+      secondaryMargins,
+    );
+    // If labels are 'on' ticks, first and last labels must project;
+    // so I know enough for the adjustment
+    // But if 'between', I need to compare label and 'slot' widths
+    if (!granularity.ticksOn) {
       // 'BETWEEN' ticks
       const tickW = config.tickPrefs.width
-      tweaks = this.calcTestForBetweenTicks(
+      halfLabelWidths = this.calcMarginsForLabelsBetweenTicks(
         config,
         granularity,
-        tickW,
-        testText,
-        hasSecondaryAxis
+        hasSecondaryAxis,
+        halfLabelWidths,
+        primaryMargins,
+        secondaryMargins
       )
     }
     // On/between ticks rejoin here...
-    let leftTweak = tweaks.left
-    let rightTweak = tweaks.right
+
+    // Max halfLabelWidths for 1ry/2ry axes
+    let leftTweak = Math.max(halfLabelWidths.primary.left, halfLabelWidths.secondary.left)
+    let rightTweak = Math.max(halfLabelWidths.primary.right, halfLabelWidths.secondary.right)
 
     // Consider clusterwidth, if this is a column chart...
     // OK, so this is headache-inducing. The 'tweak' is
@@ -391,11 +458,14 @@ class SilverXaxisOrdinal extends Component {
 
     // There's another tweak, of half tick strokewidth,
     // if 1st or last tick lies exactly on the chart edge
-    if (tweaks.leftTickFirstElement) {
+    if (
+      halfLabelWidths.primary.leftTickFirstElement ||
+      halfLabelWidths.secondary.leftTickFirstElement
+    ) {
       bounds.x += config.tickPrefs.width / 2
-      bounds.width -= config.tickPrefs.width
+      bounds.width -= config.tickPrefs.width / 2
     }
-    if (tweaks.rightTickLastElement) {
+    if (halfLabelWidths.primary.rightTickLastElement) {
       bounds.width -= config.tickPrefs.width / 2
     }
     // I need half the width of a data-slot, before the bounds change

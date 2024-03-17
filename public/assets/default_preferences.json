@@ -117,7 +117,7 @@
         "content": "Source: to come",
         "display": true,
         "id": "source-string",
-        "x": 5,
+        "x": 6,
         "y": -5,
         "wrapoptions": {
           "hasfootnote": 45,
@@ -295,11 +295,11 @@
           "lengths": {
             "long": {
               "start": 0,
-              "end": 3
+              "end": 5
             },
             "default": {
               "start": 0,
-              "end": 2
+              "end": 3
             },
             "short": {
               "start": 0,

@@ -74,7 +74,7 @@ export function fillAllYears(fArray, isPrimary, tickLengths) {
     for (let iii = 0; iii < fArray.length; iii++) {
       const thisYear = fArray[iii]
       thisYear.label = true
-      thisYear.tick = tickLengths.long
+      thisYear.tick = tickLengths.default
     }
   }
 }
@@ -264,8 +264,7 @@ export function getDateProps(
   // Extract tick lengths
   const longLength = tickLengths.long
   const defaultLength = tickLengths.default
-  // Defined in prefs but never, AFAIK, used...
-  // const shortLength = tickLengths.short;
+  const shortLength = tickLengths.short;
   // Years
   const yearA = dateA.getFullYear()
   const yearB = dateB.getFullYear()
@@ -308,7 +307,7 @@ export function getDateProps(
     }
     // }
     if (displayInterval.includes('year')) {
-      result.tickLen = longLength // was 3
+      result.tickLen = longLength // was default
     } else {
       // I'm not wild about this; prev'y was 5, but
       // I've no recollection of where I got that from...
@@ -318,7 +317,7 @@ export function getDateProps(
   } else if (monthB > monthA) {
     // Month incremented
     if (displayInterval === 'months' || displayInterval === 'days') {
-      result.tickLen = longLength // was 3
+      result.tickLen = defaultLength; //longLength // was 3
       if (showLabel && !firstDate) {
         result.label = true
         result.isBoundary = true
