@@ -89,9 +89,9 @@ export function fillAlternateYears(fArray, isPrimary, tickLengths) {
     const thisYear = fArray[iii]
     if (iii % 2 === 0) {
       thisYear.label = true
-      thisYear.tick = tickLengths.long
-    } else {
       thisYear.tick = tickLengths.default
+    } else {
+      thisYear.tick = tickLengths.short
     }
   }
   // Do I even need to test on isPrimary? Surely this should
@@ -150,9 +150,9 @@ export function fillModYears(
     // This works like fillAlternateYears, above
     if (thisCat % mainMod === 0) {
       thisYear.label = true
-      thisYear.tick = tickLengths.long
-    } else if (thisCat % minorMod === 0) {
       thisYear.tick = tickLengths.default
+    } else if (thisCat % minorMod === 0) {
+      thisYear.tick = tickLengths.short
     } else {
       thisYear.tick = 0
     }
