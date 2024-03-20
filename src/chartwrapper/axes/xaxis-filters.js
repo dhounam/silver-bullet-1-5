@@ -264,7 +264,8 @@ export function getDateProps(
   // Extract tick lengths
   const longLength = tickLengths.long
   const defaultLength = tickLengths.default
-  const shortLength = tickLengths.short;
+  // Short exists, but not currently used...
+  // const shortLength = tickLengths.short;
   // Years
   const yearA = dateA.getFullYear()
   const yearB = dateB.getFullYear()

@@ -287,7 +287,7 @@ class SilverXaxisOrdinal extends Component {
   // GET FIRST AND LAST LABEL MARGINS ends
 
   // CALC MARGINS FOR LABELS 'BETWEEN' TICKS
-  // Called from doStringTests
+  // Called from adjustBoundsWidth
   calcMarginsForLabelsBetweenTicks(
     config,
     granularity,
@@ -298,9 +298,8 @@ class SilverXaxisOrdinal extends Component {
   ) {
     // Assuming that the granularity fcn has done its stuff,
     // Distance that first/last datapoints are inside axis
-    // This is default if first tick 'slot' is wider than first label
-    let leftTweak = granularity.dataPointWidth / 2
-    let rightTweak = granularity.dataPointWidth / 2
+    // This is default if tick 'slot' is wider than label
+    let halfDPWidth = granularity.dataPointWidth / 2
     // Default flag: ticks are left/rightmost objects on axis
     // (i.e. labels don't project)
     let primaryLeftTickFirstElement = true
@@ -321,13 +320,17 @@ class SilverXaxisOrdinal extends Component {
     if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin) {
       // I adjust by the difference between half label width and label origin margin
       primaryLeftTweak = halfLabelWidths.primary.left - primaryMargins.firstLabelMargin
-      primaryLeftTweak += granularity.dataPointWidth / 2
+      primaryLeftTweak += halfDPWidth
       primaryLeftTickFirstElement = false
+    } else {
+      primaryLeftTweak = halfDPWidth;
     }
     if (halfLabelWidths.primary.right > primaryMargins.lastLabelMargin) {
       primaryRightTweak = halfLabelWidths.primary.right - primaryMargins.lastLabelMargin / 2
-      primaryRightTweak += granularity.dataPointWidth / 2
+      primaryRightTweak += halfDPWidth
       primaryRightTickLastElement = false
+    } else {
+      primaryRightTweak = halfDPWidth;
     }
     // PREVIOUSLY:      
     // if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin / 2) {
@@ -341,14 +344,18 @@ class SilverXaxisOrdinal extends Component {
     // Secondary axis:
     if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin) {
       secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin
-      secondaryLeftTweak += granularity.dataPointWidth / 2
+      secondaryLeftTweak += halfDPWidth
       secondaryLeftTickFirstElement = false
+    } else {
+      secondaryLeftTweak = halfDPWidth;
     }
 
     if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin) {
       secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin
-      secondaryRightTweak += granularity.dataPointWidth / 2
+      secondaryRightTweak += halfDPWidth
       secondaryRightTickLastElement = false
+    } else {
+      secondaryRightTweak = halfDPWidth;
     }
 
     return {
@@ -416,7 +423,6 @@ class SilverXaxisOrdinal extends Component {
     // But if 'between', I need to compare label and 'slot' widths
     if (!granularity.ticksOn) {
       // 'BETWEEN' ticks
-      const tickW = config.tickPrefs.width
       halfLabelWidths = this.calcMarginsForLabelsBetweenTicks(
         config,
         granularity,
@@ -458,19 +464,21 @@ class SilverXaxisOrdinal extends Component {
 
     // There's another tweak, of half tick strokewidth,
     // if 1st or last tick lies exactly on the chart edge
+    const halfTickW = config.tickPrefs.width / 2
     if (
       halfLabelWidths.primary.leftTickFirstElement ||
       halfLabelWidths.secondary.leftTickFirstElement
     ) {
-      bounds.x += config.tickPrefs.width / 2
-      bounds.width -= config.tickPrefs.width / 2
+      bounds.x += halfTickW
+      bounds.width -= halfTickW
     }
     if (halfLabelWidths.primary.rightTickLastElement) {
-      bounds.width -= config.tickPrefs.width / 2
+      bounds.width -= halfTickW
     }
-    // I need half the width of a data-slot, before the bounds change
-    // for the x-axis. This allows me to move ticks
+    // I need to remember half the width of a data-slot, before the bounds change
+    // for the x-axis. This will allow me to move ticks
     // into the correct position, between labels
+    // (Is this too early?)
     bounds.halfDataPointWidth = granularity.dataPointWidth / 2
   }
   // ADJUST BOUNDS WIDTH ends
