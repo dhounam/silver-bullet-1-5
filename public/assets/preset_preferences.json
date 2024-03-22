@@ -224,7 +224,7 @@
           "topPadding": {
             "belowTitleClusterBaseline": {
               "toPanelFlash": 10,
-              "toLegendBaseline": 15,
+              "toLegendBaseline": 10,
               "toBlobTop": 10,
               "toTopOfChart": {
                 "default": 12,
@@ -234,7 +234,7 @@
               }
             },
             "belowPanelHeaderBaseline": {
-              "toLegendBaseline": 10,
+              "toLegendBaseline": 12,
               "toBlobTop": 10,
               "toTopOfChart": {
                 "default": 10,
@@ -364,7 +364,7 @@
           "topPadding": {
             "belowTitleClusterBaseline": {
               "toPanelFlash": 10,
-              "toLegendBaseline": 15,
+              "toLegendBaseline": 10,
               "toBlobTop": 10,
               "toTopOfChart": {
                 "default": 12,
@@ -549,7 +549,7 @@
               "id": "SR",
               "display": "Mini",
               "width": 74,
-              "height": 145,
+              "height": 170,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -601,11 +601,11 @@
             },
             "source": {
               "x": 0,
-              "y": -1.5
+              "y": -5
             },
             "footnote": {
               "x": -0.001,
-              "y": -1.5
+              "y": -5
             }
           }
         },
@@ -614,7 +614,7 @@
             "text": {
               "size": {
                 "primaryOnly": 6,
-                "primaryIfSecondary": 5,
+                "primaryIfSecondary": 6,
                 "secondary": 6
               }
             }
@@ -634,7 +634,7 @@
               "id": "SR",
               "display": "Standard 1 column",
               "width": 203,
-              "height": 165,
+              "height": 170,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -674,11 +674,11 @@
             },
             "source": {
               "x": 0,
-              "y": -1.5
+              "y": -5
             },
             "footnote": {
               "x": -0.001,
-              "y": -1.5
+              "y": -5
             }
           }
         }
@@ -691,7 +691,7 @@
               "id": "SR",
               "display": "1 column wide",
               "width": 289,
-              "height": 165,
+              "height": 170,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -731,11 +731,11 @@
             },
             "source": {
               "x": 0,
-              "y": -1.5
+              "y": -5
             },
             "footnote": {
               "x": -0.001,
-              "y": -1.5
+              "y": -5
             }
           }
         }
@@ -748,7 +748,7 @@
               "id": "SR",
               "display": "2 column",
               "width": 418,
-              "height": 165,
+              "height": 170,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -788,11 +788,11 @@
             },
             "source": {
               "x": 0,
-              "y": -1.5
+              "y": -5
             },
             "footnote": {
               "x": -0.001,
-              "y": -1.5
+              "y": -5
             }
           }
         }
@@ -805,7 +805,7 @@
               "id": "SR",
               "display": "Box story",
               "width": 160,
-              "height": 165,
+              "height": 170,
               "forceHeight": true,
               "forceWidth": true
             },
@@ -845,11 +845,11 @@
             },
             "source": {
               "x": 0,
-              "y": -1.5
+              "y": -5
             },
             "footnote": {
               "x": -0.001,
-              "y": -1.5
+              "y": -5
             }
           }
         },
@@ -857,15 +857,15 @@
           "xAxis": {
             "text": {
               "size": {
-                "primaryOnly": 6,
-                "primaryIfSecondary": 5,
-                "secondary": 6
+                "primaryOnly": 7,
+                "primaryIfSecondary": 6,
+                "secondary": 7
               }
             }
           },
           "yAxis": {
             "text": {
-              "size": 6
+              "size": 7
             }
           }
         }

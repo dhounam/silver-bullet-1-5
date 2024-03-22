@@ -265,7 +265,7 @@ export function getDateProps(
   const longLength = tickLengths.long
   const defaultLength = tickLengths.default
   // Short exists, but not currently used...
-  // const shortLength = tickLengths.short;
+  const shortLength = tickLengths.short;
   // Years
   const yearA = dateA.getFullYear()
   const yearB = dateB.getFullYear()
@@ -281,13 +281,17 @@ export function getDateProps(
   // Hours
   const minuteA = dateA.getMinutes()
   const minuteB = dateB.getMinutes()
-  // NOTE: that I'm assuming, for now, that I want
-  // to plot months->years
-  // Also NOTE: that I've hard-coded ticklengths; but
-  // these should eventually be displayInterval-related and
-  // set in DPs...
-  // There's a threshold below which smallest ticks aren't shown
-  // This is being set on every iteration. Can I move it upstairs?
+  // Interval as number, for comparison
+  let intervalNo = 1;
+  if (displayInterval.includes('month')) {
+    intervalNo = 2
+  } else if (displayInterval.includes('day')) {
+    intervalNo = 3
+  } else if (displayInterval.includes('hour')) {
+    intervalNo = 4
+  } else if (displayInterval.includes('minute')) {
+    intervalNo = 5
+  }
   // NOTE: this is all very messy and needs re-examination
   // Default object to return:
   const result = {
@@ -306,81 +310,76 @@ export function getDateProps(
         result.label = true
       }
     }
-    // }
-    if (displayInterval.includes('year')) {
-      result.tickLen = longLength // was default
+    if (intervalNo === 1) {
+      result.tickLen = defaultLength
     } else {
-      // I'm not wild about this; prev'y was 5, but
-      // I've no recollection of where I got that from...
-      result.tickLen = longLength; // + defaultLength
+      result.tickLen = longLength
     }
     result.isBoundary = true
   } else if (monthB > monthA) {
     // Month incremented
-    if (displayInterval === 'months' || displayInterval === 'days') {
-      result.tickLen = defaultLength; //longLength // was 3
+    // if (displayInterval.includes('month') || displayInterval.includes('day')) {
+    if (intervalNo > 1) {
+      result.tickLen = defaultLength;
       if (showLabel && !firstDate) {
         result.label = true
         result.isBoundary = true
       }
     } else if (firstDate || forceTick) {
-      if (displayInterval.includes('year')) {
-        result.tickLen = defaultLength // was 2
-      } else {
-        result.tickLen = longLength // was 3
+      if (intervalNo === 1) {
+        // So in this case, if monthly data are drawn by years
+        result.tickLen = shortLength // was default
       }
     }
   } else if (dayB > dayA) {
-    // Day incremented
-    if (
-      displayInterval === 'days' ||
-      displayInterval === 'hours' ||
-      displayInterval === 'minutes'
-    ) {
-      result.tickLen = defaultLength // was 2
+    if (intervalNo <= 2) {
+      result.tickLen = shortLength // was 0
+    } else if (intervalNo === 3) {
+      result.tickLen = defaultLength
       if (showLabel && !firstDate) {
         result.label = true
         result.isBoundary = true
       }
-    } else if (firstDate || forceTick) {
-      result.tickLen = defaultLength // was 2
+    } else {
+      result.tickLen = defaultLength
     }
-    if (displayInterval === 'hours' || displayInterval === 'minutes') {
-      result.tickLen = longLength // was 3
-    }
-    // The logic has gone a bit screwy. This is
-    // to cover unlabelled-days
-    if (tickInterval === 'days') {
-      result.tickLen = defaultLength // was 2
+    if (firstDate || forceTick) {
+      if (intervalNo < 3) {
+        result.tickLen = shortLength
+      } else {
+        result.tickLen = defaultLength
+      }
     }
   } else if (hourB > hourA) {
     // Hour incremented
-    if (displayInterval === 'hours' || displayInterval === 'minutes') {
+    if (intervalNo >= 4) {
       result.tickLen = defaultLength // was 2
       if (showLabel && !firstDate) {
         result.label = true
         result.isBoundary = true
       }
     } else if (firstDate || forceTick) {
-      result.tickLen = defaultLength // was 2
+      if (intervalNo < 4) {
+        result.tickLen = shortLength // was default
+      }
     }
   } else if (minuteB !== minuteA) {
     // Minute incremented
-    if (displayInterval === 'minutes' || displayInterval === 'hours') {
-      result.tickLen = defaultLength // was 2
+    // if (displayInterval === 'minutes' || displayInterval === 'hours') {
+    if (intervalNo >= 4) {
+      result.tickLen = defaultLength
       if (showLabel && !firstDate) {
         result.label = true
         result.isBoundary = true
       }
     } else if (firstDate || forceTick) {
-      result.tickLen = defaultLength // was 2
+      result.tickLen = shortLength // was 2
     }
   }
-  // Last date always labelled
   if (lastDate && showLabel) {
+    // Last date always labelled
     result.label = true
   }
-  // Label
   return result
 }
 // GET DATE PROPS ends
@@ -585,7 +584,7 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
     showLabel,
     // checkTimeChange
     true,
-    // Force duplicate tick
+    // Force tick (because duplicate)
     true,
     tickInterval,
     tickLengths
@@ -614,6 +613,7 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
   if (displayInterval.includes('years')) {
     granularityTimeFormats.yearCount = getYearCount(catArray)
   }
+  // console.log(filterArray)
   return filterArray
 }
 // GET NON-YEARS AXIS FILTER ends
@@ -637,13 +637,13 @@ export function checkAlternateYearMod(catArray, yearMod) {
 // the unwanted labels
 export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
   // Extract tick lengths
-  const longLength = tickLengths.long
+  // No: I'm not tweaking ticklengths here any more (Mar'24)
+  // const longLength = tickLengths.long
   if (yearMod > 1) {
     const aLen = filterArray.length - 1
     // Alternate years may be odd or even, depending
     // upon initial year. altMod is true for even
     // years, false for odd
-
     const oddMod = checkAlternateYearMod(catArray, yearMod)
     // Set the mod val to check for slot-opening point
     let modCheckA = 0
@@ -667,12 +667,12 @@ export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
             // But if it's the year-end AFTER the mod,
             // set the tick long
             if (thisPoint.tick > 0) {
-              thisPoint.tick = longLength // was 3
+              // thisPoint.tick = longLength // was 3
             }
           }
         } else if (thisPoint.tick > 0) {
           // Mod tick:
-          thisPoint.tick = longLength // was 3
+          // thisPoint.tick = longLength // was 3
         }
       } else if (!killYears && filterArray[pNo].label) {
         // Hit first label
@@ -680,11 +680,11 @@ export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
         if (oddMod) {
           // Alternate years, odd
           if (thisDate % yearMod > 0) {
-            filterArray[0].tick = longLength // was 3
+            // filterArray[0].tick = longLength // was 3
           }
         } else if (thisDate % yearMod === 0) {
           // Alternate years, even
-          filterArray[0].tick = longLength // was 3
+          // filterArray[0].tick = longLength // was 3
         }
         // Preserve it and reset flag
         killYears = true

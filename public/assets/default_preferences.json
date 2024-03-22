@@ -196,7 +196,7 @@
     "topPadding": {
       "belowTitleClusterBaseline": {
         "toPanelFlash": 12.5,
-        "toLegendBaseline": 10,
+        "toLegendBaseline": 12,
         "toBlobTop": 10,
         "toTableHeaders": 15,
         "toTopOfChart": {
@@ -208,7 +208,7 @@
         }
       },
       "belowPanelHeaderBaseline": {
-        "toLegendBaseline": 10,
+        "toLegendBaseline": 12,
         "toBlobTop": 10,
         "toTableHeaders": 15,
         "toTopOfChart": {

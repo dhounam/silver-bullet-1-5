@@ -136,7 +136,13 @@ class SilverXaxisOrdinal extends Component {
   // GET FIRST AND LAST LABEL HALF0WIDTHS
   // Puts 1ry/2ry formatted axis strings into an on-page text object and
   // measures their width.
-  getFirstAndLastLabelHalfWidths(config, testText, hasSecondaryAxis, primaryGaps, secondaryGaps) {
+  getFirstAndLastLabelHalfWidths(
+    config,
+    testText,
+    hasSecondaryAxis,
+    primaryGaps,
+    secondaryGaps,
+  ) {
     const forceTurn = config.forceTurn
     let elementA = primaryGaps.firstLabelIndex;
     let elementB = primaryGaps.lastLabelIndex;
@@ -271,14 +277,17 @@ class SilverXaxisOrdinal extends Component {
       if (myFilter[iii].label) {
         margins.firstLabelIndex = iii
         margins.firstLabelMargin = (iii + 1) * granularity.dataPointWidth
+        // NEXT IS EXPT 
+        // margins.firstLabelMargin -= granularity.dataPointWidth
         break
       }
     }
     for (let iii = myFilter.length - 1; iii >= 0; iii--) {
       if (myFilter[iii].label) {
         // Get putative margin at right
-        margins.lastLabelIndex = iii //myFilter.length - 1 - iii
-        margins.lastLabelMargin = (myFilter.length - iii) * granularity.dataPointWidth
+        margins.lastLabelIndex = iii
+        margins.lastLabelMargin =
+          (myFilter.length - iii) * granularity.dataPointWidth;
         break
       }
     }
@@ -299,7 +308,7 @@ class SilverXaxisOrdinal extends Component {
     // Assuming that the granularity fcn has done its stuff,
     // Distance that first/last datapoints are inside axis
     // This is default if tick 'slot' is wider than label
-    let halfDPWidth = granularity.dataPointWidth / 2
+    const halfDPWidth = granularity.dataPointWidth / 2
     // Default flag: ticks are left/rightmost objects on axis
     // (i.e. labels don't project)
     let primaryLeftTickFirstElement = true
@@ -316,6 +325,12 @@ class SilverXaxisOrdinal extends Component {
     let primaryRightTweak = 0;
     let secondaryLeftTweak = 0
     let secondaryRightTweak = 0;
+
+    // If there's no secondary axis, margin needs a final adjustment
+    // to align year label to the correct slot
+    if (!hasSecondaryAxis) {
+      primaryMargins.firstLabelMargin -= granularity.dataPointWidth;
+    }
 
     if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin) {
       // I adjust by the difference between half label width and label origin margin
@@ -418,7 +433,7 @@ class SilverXaxisOrdinal extends Component {
       primaryMargins,
       secondaryMargins,
     );
-    // If labels are 'on' ticks, first and last labels must project;
+    // If labels are 'on' ticks, first and last labels MUST project;
     // so I know enough for the adjustment
     // But if 'between', I need to compare label and 'slot' widths
     if (!granularity.ticksOn) {
