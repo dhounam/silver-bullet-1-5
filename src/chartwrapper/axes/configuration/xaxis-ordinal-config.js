@@ -106,6 +106,12 @@ export default function(chartConfig, bounds, testFlag, granularity) {
     }
     xAxisConfig.thermoMargin = thermoMargin
   }
+  // NOTE: kludge in the index dot factor
+  let idFactor = 1
+  if (typeof chartConfig.series.line !== 'undefined') {
+    idFactor = chartConfig.series.line.indexDotFactor
+  }
+  xAxisConfig.indexed.idFactor = idFactor
   // NOTE: kludge to see if I can override default time formats
   // NOTE: nasty check on integrity of 'granularity'. The trouble is,
   // I'm using this before xAxis-test has actually set it...

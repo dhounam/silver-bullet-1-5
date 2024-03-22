@@ -120,17 +120,12 @@ class SilverXaxisOrdinal extends Component {
   // NOTE: as of Jul'19, this doesn't get called. See
   // getFirstAndLastLabelHalfWidths
   getIndexDotTweak(config) {
-    let idTweak = 0
+    let idRad = 0
     // First, are series indexed?
     if (config.chartType === 'line' && config.isIndexed) {
-      // Where is first point? For 'on' ticks this is, by
-      // definition, zero. But for 'between', can it be
-      // non-zero...? As of Jul'19, I'm not sure.
-      const idPos = config.scale.range()[0]
-      const idRad = config.indexed.radius
-      idTweak = idRad - idPos
+      idRad = config.indexed.radius * config.indexed.idFactor
     }
-    return idTweak
+    return idRad
   }
 
   // GET FIRST AND LAST LABEL HALF0WIDTHS
@@ -473,6 +468,12 @@ class SilverXaxisOrdinal extends Component {
       leftTweak = Math.max(leftTweak, halfCluster)
       rightTweak = Math.max(rightTweak, halfCluster)
     }
+    // Index dot?
+    const indexDotHalfRad = this.getIndexDotTweak(config)
+    if (indexDotHalfRad > leftTweak) {
+      leftTweak = indexDotHalfRad
+    }
+
     // Update bounds
     bounds.x += leftTweak
     bounds.width -= leftTweak + rightTweak
