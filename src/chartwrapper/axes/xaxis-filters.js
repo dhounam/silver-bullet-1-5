@@ -332,8 +332,8 @@ export function getDateProps(
       }
     }
   } else if (dayB > dayA) {
-    if (intervalNo <= 2) {
-      result.tickLen = shortLength // was 0
+    if (intervalNo < 3) {
+      result.tickLen = 0
     } else if (intervalNo === 3) {
       result.tickLen = defaultLength
       if (showLabel && !firstDate) {
