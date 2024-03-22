@@ -249,6 +249,7 @@ export function setDateByInterval(date, interval) {
 //    flags for first and last dates
 //    ...
 //    tickLengths added Nov'21
+//    dpWidth added March'24
 export function getDateProps(
   dateA,
   dateB,
@@ -259,7 +260,8 @@ export function getDateProps(
   checkTimeChange,
   forceTick,
   tickInterval,
-  tickLengths
+  tickLengths,
+  dpWidth
 ) {
   // Extract tick lengths
   const longLength = tickLengths.long
@@ -333,7 +335,13 @@ export function getDateProps(
     }
   } else if (dayB > dayA) {
     if (intervalNo < 3) {
-      result.tickLen = 0
+      // Are day-ticks spaced enough to display?
+      // (NOTE: 3-pt gap is arbitrary, and Print-specific: what about Online?)
+      if (dpWidth < 3) {
+        result.tickLen = 0
+      } else {
+        result.tickLen = shortLength
+      }
     } else if (intervalNo === 3) {
       result.tickLen = defaultLength
       if (showLabel && !firstDate) {
@@ -521,6 +529,10 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
         checkTimeChange = false
       }
     }
+    // Late kludge, March'24. Let's send in the dataPointWidth. This
+    // is, so far, just for day-series, where I need to determine whether
+    // there's enough space to display them...
+    const dpWidth = granularity.dataPointWidth
     // So I want to check sequentially at year, month and day levels
     // I'm oversimplifying now, assuming data are days->months
     const boundaryObj = getDateProps(
@@ -533,7 +545,8 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
       checkTimeChange,
       false,
       tickInterval,
-      tickLengths
+      tickLengths,
+      dpWidth
     )
     filterItem.tick = boundaryObj.tickLen
     filterItem.duplicate = boundaryObj.duplicate
