@@ -1093,6 +1093,10 @@ export function setBackgroundProperties(config, presetsConfig, startUp) {
   }
   config.background.strings = stringObj;
   // Panel attributes
+  // debugger;
+  // GET STUCK IN AGAIN HERE::::::::::::::::
+  // const specialPanelAttributes = this.getAllPanelAttributes(dps, presetsConfig);
+  // console.log(specialPanelAttributes);
   const pAtts = findPreferencesNode(presetsConfig, ['panelAttributes']);
   config.panelAttributes = pAtts;
   // Legend
@@ -1905,3 +1909,20 @@ export function setIllustratorColourSpace(edConfigGlobal, presetsConfig) {
   }
 }
 // SET ILLUSTRATOR COLOUR SPACE ends
+
+// GET ALL PANEL ATTRIBUTES
+// Incomplete function to extract all panel attributes
+export function getAllPanelAttributes(dps, presetsConfig) {
+  debugger;
+  let chain;
+  const panelKeys = Object.keys(dps.panelAttributes);
+  const panelObj = {};
+  for (let iii = 0; iii < panelKeys.length; iii++) {
+    const keyName = panelKeys[iii];
+    chain = ['panelAttributes', keyName];
+    const onePanel = findPreferencesNode(presetsConfig, chain);
+    panelObj[keyName] = onePanel;
+  }
+  return panelObj;
+}
+// GET ALL PANEL ATTRIBUTES ends

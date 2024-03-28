@@ -21,20 +21,15 @@ import * as AxisUtilities from './axes/axis-utilities'
 import * as ChartUtilities from './chart-utilities'
 
 // Fonts as base64 strings
-import EconSansReg from './font/econsans-reg'
-import EconSansBol from './font/econsans-bol'
-import EconSansLig from './font/econsans-lig'
-import EconSansBolIta from './font/econsans-bol-ita'
-import EconSansCndReg from './font/econsanscnd-reg'
-import EconSansCndRegIta from './font/econsanscnd-reg-ita'
-import EconSansCndLig from './font/econsanscnd-lig'
-import EconSansCndLigIta from './font/econsanscnd-lig-ita'
-import EconSansCndMed from './font/econsanscnd-med'
-import EconSansCndMedIta from './font/econsanscnd-med-ita'
-import MiloTEBold from './font/milo-primary-bd'
-import MiloTEMedium from './font/milo-primary-md'
-import MiloTERegular from './font/milo-primary-rg'
-import MiloTERegularItalic from './font/milo-primary-rg-it'
+import EconomistSansBold from './font/economistsans-bold'
+import EconomistSansBoldItalic from './font/economistsans-bolditalic'
+import EconomistSansLight from './font/economistsans-light'
+import EconomistSansLightItalic from './font/economistsans-lightitalic'
+import EconomistSansMedium from './font/economistsans-medium'
+import EconomistSansMediumItalic from './font/economistsans-mediumitalic'
+import EconomistSansRegular from './font/economistsans-regular'
+import EconomistSansRegularItalic from './font/economistsans-regularitalic'
+
 
 class SilverChartWrapper extends Component {
   static get defaultProps() {
@@ -356,61 +351,38 @@ class SilverChartWrapper extends Component {
           dangerouslySetInnerHTML={{
             __html: `
               @font-face {
-                font-family: EconSansReg;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansReg})
+                font-family: EconomistSans-Bold;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansBold})
               }
               @font-face {
-                font-family: EconSansBol;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansBol})
+                font-family: EconomistSans-BoldItalic;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansBoldItalic})
               }
               @font-face {
-                font-family: EconSansLig;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansLig})
+                font-family: EconomistSans-Light;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansLight})
               }
               @font-face {
-                font-family: EconSansBolIta;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansBolIta})
+                font-family: EconomistSans-LightItalic;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansLightItalic})
               }
               @font-face {
-                font-family: EconSansCndLig;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndLig})
+                font-family: EconomistSans-Medium;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansMedium})
               }
               @font-face {
-                font-family: EconSansCndLigIta;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndLigIta})
+                font-family: EconomistSans-MediumItalic;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansMediumItalic})
               }
               @font-face {
-                font-family: EconSansCndReg;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndReg})
+                font-family: EconomistSans-Regular;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansRegular})
               }
               @font-face {
-                font-family: EconSansCndRegIta;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndRegIta})
+                font-family: EconomistSans-RegularItalic;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansRegularItalic})
               }
-              @font-face {
-                font-family: EconSansCndMed;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndMed})
-              }
-              @font-face {
-                font-family: EconSansCndMedIta;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconSansCndMedIta})
-              }
-              @font-face {
-                font-family: MiloTE-Bold;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${MiloTEBold})
-              }
-              @font-face {
-                font-family: MiloTE-Medium;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${MiloTEMedium})
-              }
-              @font-face {
-                font-family: MiloTE-RegularItalic;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${MiloTERegularItalic})
-              }
-              @font-face {
-                font-family: MiloTE-Regular;
-                src: url(data:application/x-font-woff2;charset=utf-8;base64,${MiloTERegular})
-              }`,
+              `,
           }}
         />
       </defs>
