@@ -453,7 +453,7 @@ export function getNewChartObject(newPayload, presetsConfig) {
   // Chart object:
   const newChart = {
     scales: getChartScaleDefaultObject(dps.metadata.defaults),
-    panelheader: dps.panelAttributes.strings.panelheader.default,
+    panelheader: dps.panelAttributes.panelheader.default,
     // Some props packed into each chart (saves extracting later)
     duration: dps.other.duration,
     steplineSpur: Number(dps.other.steplineSpur),

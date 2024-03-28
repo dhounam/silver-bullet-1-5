@@ -236,7 +236,6 @@
   "_END-BACKGROUND-PROPERTIES": "End of background properties",
   "_PANEL-ATTRIBUTES": "Properties for chart/panel-specific elements",
   "panelAttributes": {
-    "gap_REDUNDANT": 10,
     "alignChartsInPanels": false,
     "padding": {
       "delete-above": "Was 15; superseded by background.topPadding, above",
@@ -259,17 +258,15 @@
       "height": 0.5,
       "id": "panel-header-rect"
     },
-    "strings": {
-      "panelheader": {
-        "default": "To come",
-        "font-family": "EconomistSans-Medium",
-        "font-size": 7.5,
-        "leading": 8.75,
-        "fill": "black100",
-        "id": "panel-header-string",
-        "x": 0,
-        "y": 10
-      }
+    "panelheader": {
+      "default": "To come",
+      "font-family": "EconomistSans-Medium",
+      "font-size": 7.5,
+      "leading": 8.75,
+      "fill": "black100",
+      "id": "panel-header-string",
+      "x": 0,
+      "y": 10
     }
   },
   "_CHART": "Padding above and below the actual chart-arena (is this redundant?)",

@@ -1093,14 +1093,11 @@ export function setBackgroundProperties(config, presetsConfig, startUp) {
   }
   config.background.strings = stringObj;
   // Panel attributes
-  // debugger;
-  // GET STUCK IN AGAIN HERE::::::::::::::::
-  // const specialPanelAttributes = this.getAllPanelAttributes(dps, presetsConfig);
-  // console.log(specialPanelAttributes);
-  const pAtts = findPreferencesNode(presetsConfig, ['panelAttributes']);
+  // const pAtts = findPreferencesNode(presetsConfig, ['panelAttributes']);
+  const pAtts = getAllPanelAttributes(dps, presetsConfig);
   config.panelAttributes = pAtts;
-  // Legend
   // debugger;
+  // Legend
   config.legend = findPreferencesNode(presetsConfig, ['legend']);
   // The legends node contains some individual properties, but also
   // a sub-node, headerText. Unless PP definitions of headerText contain
@@ -1911,9 +1908,12 @@ export function setIllustratorColourSpace(edConfigGlobal, presetsConfig) {
 // SET ILLUSTRATOR COLOUR SPACE ends
 
 // GET ALL PANEL ATTRIBUTES
-// Incomplete function to extract all panel attributes
+// Function to extract all panel attributes
+// NOTE: it doesn't actually dig quite deep enough. This
+// isn't a problem at the moment, since all values for
+// .padding.between.x are overwritten (i.e. no deltas)
+// But I'm short of time, so it's a kludge
 export function getAllPanelAttributes(dps, presetsConfig) {
-  debugger;
   let chain;
   const panelKeys = Object.keys(dps.panelAttributes);
   const panelObj = {};

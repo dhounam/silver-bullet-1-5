@@ -128,7 +128,7 @@ class SilverPanels extends Component {
     // Attributes common to *all* panels, rects and headers --
     // Panels:
     const pWidth = this.getPanelWidth(globalInnerBox.width, pGapX, colLen)
-    const pHeadAttribs = config.panelAttributes.strings.panelheader
+    const pHeadAttribs = config.panelAttributes.panelheader
 
     const panelArray = []
     // Since we're looping by rows, then columns, we need a counter:
@@ -308,7 +308,7 @@ class SilverPanels extends Component {
     // for padding between panels:
     const pHeight = this.getPanelHeight(globalInnerBox.height, pGapY, rowLen)
     // IBs will adjust to header baseline (below rect)
-    const headProps = config.panelAttributes.strings.panelheader
+    const headProps = config.panelAttributes.panelheader
     const hBaseline = headProps.y
 
     // Data for binding
@@ -387,7 +387,7 @@ class SilverPanels extends Component {
     // Number of charts per row
     const rowLen = pProps.total / pProps.rows
     // Get leading
-    const leading = config.panelAttributes.strings.panelheader.leading
+    const leading = config.panelAttributes.panelheader.leading
     // Inner boxes:
     const innerBoxes = JSON.parse(JSON.stringify(this.innerBoxBounds))
     // First, get a 1d array of all panel-headers' line-counts

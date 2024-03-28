@@ -1045,7 +1045,6 @@
           }
         },
         "panelAttributes": {
-          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -1063,13 +1062,11 @@
             "width": 40,
             "height": 1
           },
-          "strings": {
-            "panelheader": {
-              "font-size": 17,
-              "leading": 20,
-              "x": 0,
-              "y": 20
-            }
+          "panelheader": {
+            "font-size": 17,
+            "leading": 20,
+            "x": 0,
+            "y": 20
           }
         },
         "chart": {
@@ -2351,7 +2348,6 @@
           }
         },
         "panelAttributes": {
-          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -2369,13 +2365,11 @@
             "width": 40,
             "height": 1
           },
-          "strings": {
-            "panelheader": {
-              "font-size": 17,
-              "leading": 20,
-              "x": 0,
-              "y": 20
-            }
+          "panelheader": {
+            "font-size": 17,
+            "leading": 20,
+            "x": 0,
+            "y": 20
           }
         },
         "chart": {
@@ -3669,7 +3663,6 @@
           }
         },
         "panelAttributes": {
-          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -3687,13 +3680,11 @@
             "width": 40,
             "height": 1
           },
-          "strings": {
-            "panelheader": {
-              "font-size": 17,
-              "leading": 20,
-              "x": 0,
-              "y": 20
-            }
+          "panelheader": {
+            "font-size": 17,
+            "leading": 20,
+            "x": 0,
+            "y": 20
           }
         },
         "chart": {
@@ -4978,7 +4969,6 @@
           }
         },
         "panelAttributes": {
-          "gap_REDUNDANT": 20,
           "padding": {
             "between": {
               "x": {
@@ -4996,14 +4986,11 @@
             "width": 20,
             "height": 1
           },
-          "strings": {
-            "panelheader": {
-              "font-family": "EconSansCndMed",
-              "font-size": 15,
-              "leading": 18,
-              "x": 0,
-              "y": 18
-            }
+          "panelheader": {
+            "font-size": 15,
+            "leading": 18,
+            "x": 0,
+            "y": 18
           }
         },
         "chart": {

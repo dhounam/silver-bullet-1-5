@@ -121,7 +121,7 @@ export function getEdConfigDefaultBackgroundStrings() {
 }
 export function getEdConfigDefaultPanelHeader() {
   const dps = Object.assign({}, globalAssets.DefaultPreferences);
-  return dps.panelAttributes.strings.panelheader.default;
+  return dps.panelAttributes.panelheader.default;
 }
 export function getEdConfigDefaultEnableScale() {
   const dps = Object.assign({}, globalAssets.DefaultPreferences);
