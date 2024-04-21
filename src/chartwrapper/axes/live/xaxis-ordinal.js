@@ -103,13 +103,27 @@ class SilverXaxisOrdinal extends Component {
     }
     // Half tickwidth tweak
     const halfTick = config.tickPrefs.width / 2
-    // Default: chart bounds
+    // Default for left end of baseline: original margin
+    // (before innerbox was adjusted for axis labels, etc.)
     let startPoint = 0
-    if (breakLeft) {
-      startPoint -= halfTick
+
+    if (config.granularity.ticksOn) {
+      // If labels are 'on' ticks, adjust baseline to left margin
+      startPoint -= bounds.x - originalBounds.x;
+    } else if (bounds.leftTickFirstElement) {
+      // Labels project
+      startPoint -= halfTick;
     } else {
-      startPoint -= bounds.x - originalBounds.x
+      // This doesn't add up: condition seems reversed!
+      // Unreversed????????
+      startPoint -= (bounds.x - originalBounds.x);
+      startPoint += config.xShift;
     }
+
+    // } else if (breakLeft || bounds.leftTickFirstElement) {
+    //   // 'Between' ticks: tweak to give a good 'corner' with first tick
+    //   startPoint -= halfTick
+    // }
     // Align right to last tick (including tick-width), unless inverted
     let endPoint = bounds.width
     if (breakRight) {
@@ -122,10 +136,7 @@ class SilverXaxisOrdinal extends Component {
       startPoint -= config.xShift
       endPoint += config.xShift
     }
-    const lineData = [
-      { x: startPoint, y: 0 },
-      { x: endPoint, y: 0 },
-    ]
+    const lineData = [{ x: startPoint, y: 0 }, { x: endPoint, y: 0 }];
     // NOTE: duplicates code in yaxis-linear.drawBreakSymbol
     const lineFunction = d3.svg
       .line()

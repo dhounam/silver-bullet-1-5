@@ -128,7 +128,7 @@ class SilverXaxisOrdinal extends Component {
     return idRad
   }
 
-  // GET FIRST AND LAST LABEL HALF0WIDTHS
+  // GET FIRST AND LAST LABEL HALFWIDTHS
   // Puts 1ry/2ry formatted axis strings into an on-page text object and
   // measures their width.
   getFirstAndLastLabelHalfWidths(
@@ -271,8 +271,13 @@ class SilverXaxisOrdinal extends Component {
     for (let iii = 0; iii < myFilter.length; iii++) {
       if (myFilter[iii].label) {
         margins.firstLabelIndex = iii
-        margins.firstLabelMargin = (iii + 1) * granularity.dataPointWidth
-        // NEXT IS EXPT 
+        margins.firstLabelMargin = iii * granularity.dataPointWidth
+        // I did a lot of fidding about here, Apr'24. I think the
+        // above is correct; but I've left a few fails below, for
+        // (hopefully) subsequent deletion
+        // margins.firstLabelMargin = (iii + 1) * granularity.dataPointWidth
+        // margins.firstLabelMargin = iii * granularity.dataPointWidth
+        // margins.firstLabelMargin += granularity.dataPointWidth/2
         // margins.firstLabelMargin -= granularity.dataPointWidth
         break
       }
@@ -323,19 +328,36 @@ class SilverXaxisOrdinal extends Component {
 
     // If there's no secondary axis, margin needs a final adjustment
     // to align year label to the correct slot
-    if (!hasSecondaryAxis) {
-      primaryMargins.firstLabelMargin -= granularity.dataPointWidth;
-    }
+    // WRONG PLACE, OR JUST WRONG?????????????????/
+    // if (!hasSecondaryAxis) {
+    //   primaryMargins.firstLabelMargin -= granularity.dataPointWidth;
+    // }
 
+    // I need to find out why I'm not getting the correct result...
+    // debugger
+
+    // if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin / 2) {
+    // if (halfLabelWidths.primary.left > (primaryMargins.firstLabelMargin - halfDPWidth)) {
     if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin) {
+      // I think that's right: I'm comparing half the width of the label with the
+      // distance from the edge
       // I adjust by the difference between half label width and label origin margin
-      primaryLeftTweak = halfLabelWidths.primary.left - primaryMargins.firstLabelMargin
-      primaryLeftTweak += halfDPWidth
+      // primaryLeftTweak = halfLabelWidths.primary.left - primaryMargins.firstLabelMargin / 2
+      // PREVIOUSLY
+      // primaryLeftTweak = halfLabelWidths.primary.left - primaryMargins.firstLabelMargin // - halfDPWidth
+      // primaryLeftTweak += halfDPWidth 
+      primaryLeftTweak = halfLabelWidths.primary.left;
+      primaryLeftTweak -= primaryMargins.firstLabelMargin
+      console.log(primaryLeftTweak)
+      // primaryLeftTweak -= (primaryMargins.firstLabelIndex * granularity.dataPointWidth);
+              // primaryLeftTweak -= primaryMargins.firstLabelMargin;
+              // primaryLeftTweak += halfDPWidth
+              // primaryLeftTweak *= 0.95
       primaryLeftTickFirstElement = false
     } else {
       primaryLeftTweak = halfDPWidth;
     }
-    if (halfLabelWidths.primary.right > primaryMargins.lastLabelMargin) {
+    if (halfLabelWidths.primary.right > primaryMargins.lastLabelMargin / 2) {
       primaryRightTweak = halfLabelWidths.primary.right - primaryMargins.lastLabelMargin / 2
       primaryRightTweak += halfDPWidth
       primaryRightTickLastElement = false
@@ -352,20 +374,30 @@ class SilverXaxisOrdinal extends Component {
     // }
 
     // Secondary axis:
+    // if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin / 2) {
+    // if (halfLabelWidths.secondary.left > (secondaryMargins.firstLabelMargin - halfDPWidth)) {
     if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin) {
-      secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin
+      // secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin / 2
+      secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin // - halfDPWidth
       secondaryLeftTweak += halfDPWidth
       secondaryLeftTickFirstElement = false
     } else {
       secondaryLeftTweak = halfDPWidth;
     }
 
-    if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin) {
-      secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin
+    if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin / 2) {
+      secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin / 2
       secondaryRightTweak += halfDPWidth
       secondaryRightTickLastElement = false
     } else {
       secondaryRightTweak = halfDPWidth;
+    }
+
+    // But I need an override: if 1st 2ry label is 'between', but
+    // 1ry is 'on', force flag for 2ry tick off. Mind you: I'm not
+    // 100% convinced by this...
+    if (secondaryLeftTickFirstElement & !primaryLeftTickFirstElement) {
+      secondaryLeftTickFirstElement = false;
     }
 
     return {
@@ -432,7 +464,7 @@ class SilverXaxisOrdinal extends Component {
     // so I know enough for the adjustment
     // But if 'between', I need to compare label and 'slot' widths
     if (!granularity.ticksOn) {
-      // 'BETWEEN' ticks
+      // 'BETWEEN' ticks (passing in halfLabelWidths calc'd just above)
       halfLabelWidths = this.calcMarginsForLabelsBetweenTicks(
         config,
         granularity,
@@ -481,12 +513,15 @@ class SilverXaxisOrdinal extends Component {
     // There's another tweak, of half tick strokewidth,
     // if 1st or last tick lies exactly on the chart edge
     const halfTickW = config.tickPrefs.width / 2
+    bounds.leftTickFirstElement = false;
     if (
       halfLabelWidths.primary.leftTickFirstElement ||
       halfLabelWidths.secondary.leftTickFirstElement
     ) {
       bounds.x += halfTickW
+      console.log('tripped first tick condition')
       bounds.width -= halfTickW
+      bounds.leftTickFirstElement = true;
     }
     if (halfLabelWidths.primary.rightTickLastElement) {
       bounds.width -= halfTickW
@@ -495,6 +530,7 @@ class SilverXaxisOrdinal extends Component {
     // for the x-axis. This will allow me to move ticks
     // into the correct position, between labels
     // (Is this too early?)
+    console.log(bounds.x)
     bounds.halfDataPointWidth = granularity.dataPointWidth / 2
   }
   // ADJUST BOUNDS WIDTH ends
