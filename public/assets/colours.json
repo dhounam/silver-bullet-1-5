@@ -10,7 +10,6 @@
     "chartblue": "#6b9ed6",
     "land4": "#8c8a7d",
     "land3": "#aaa798",
-    "landtext": "#626160",
     "london5":	"#0d0d0d",
     "london30":	"#4d4d4d",
     "london70":	"#b3b3b3",
@@ -18,12 +17,13 @@
     "black25": "#cccccd",
     "black50": "#989898",
     "black75": "#626160",
+    "___note": "75k for overprint",
+    "black75-op": "#626160",
     "black100": "#28231d",
     "highlight": "#dbdad2",
     "printbkgd": "#f0eee4",
     "gridlines": "#cccccd",
     "greybox": "#dbdad2",
-    "greytext": "#626160",
     "___POlITICAl": "COlOURS______________________________",
     "conservative": "#2a429c",
     "labour": "#ef422b",
@@ -68,6 +68,9 @@
     "films-bkgd": "#f5f4ef",
     "films-greytext": "#666666",
     "none": "#fff"
+    "___note": "definitions deprecated Apr'24; but left for legacy charts",
+    "landtext": "#626160",
+    "greytext": "#626160"
   },
   "ids": {
     "note": "not used",

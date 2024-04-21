@@ -128,7 +128,7 @@
         "font-family": "EconomistSans-Light",
         "font-size": 6,
         "leading": 7.5,
-        "fill": "black75",
+        "fill": "black75-op",
         "anchor": "start",
         "specialStrings": {
           "ecoStrPlain": "The Economist",
@@ -161,7 +161,7 @@
         "font-family": "EconomistSans-Light",
         "font-size": 6,
         "leading": 7.5,
-        "fill": "black75",
+        "fill": "black75-op",
         "anchor": "end",
         "aboveSource": false,
         "footnoteSymbols": ["*", "†", "‡", "§", "**", "††", "‡‡", "§§"]
@@ -568,11 +568,11 @@
       },
       "doubleScale": {
         "fill": {
-          "left": "landtext",
+          "left": "black75-op",
           "right": "econred",
           "NOTE": "If types are identical, set left/right; else set coloursets by type",
           "linealone": "econred",
-          "columnalone": "landtext"
+          "columnalone": "black75-op"
         },
         "font": "EconomistSans-Regular",
         "leading": 7.5,
@@ -662,7 +662,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -670,7 +670,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -679,7 +679,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -689,7 +689,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -700,7 +700,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -758,7 +758,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -766,7 +766,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -775,7 +775,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -785,7 +785,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -796,7 +796,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -852,7 +852,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -860,7 +860,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3"
         ],
         [
@@ -869,7 +869,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30"
         ],
@@ -879,7 +879,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30",
           "london70"
@@ -890,7 +890,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30",
           "london70",
@@ -898,7 +898,7 @@
         ]
       ],
       "spindle": {
-        "stroke": "greytext",
+        "stroke": "black75",
         "width": 1,
         "linecap": "butt",
         "linejoin": "bevel",
@@ -949,7 +949,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -957,7 +957,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3"
         ],
         [
@@ -966,7 +966,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30"
         ],
@@ -976,7 +976,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30",
           "london70"
@@ -987,7 +987,7 @@
           "chartblue",
           "chartchicago",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "london30",
           "london70",
@@ -1038,7 +1038,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -1046,7 +1046,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -1055,7 +1055,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -1065,7 +1065,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -1076,7 +1076,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -1160,7 +1160,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -1168,7 +1168,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -1177,7 +1177,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -1187,7 +1187,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -1198,7 +1198,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -1251,7 +1251,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -1259,7 +1259,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -1268,7 +1268,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -1278,7 +1278,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -1289,7 +1289,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -1340,7 +1340,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -1348,7 +1348,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -1357,7 +1357,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -1367,7 +1367,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -1378,7 +1378,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -1428,7 +1428,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext"
+          "black75"
         ],
         [
           "econred",
@@ -1436,7 +1436,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4"
         ],
         [
@@ -1445,7 +1445,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30"
         ],
@@ -1455,7 +1455,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70"
@@ -1466,7 +1466,7 @@
           "chartblue",
           "chartchicago",
           "land3",
-          "landtext",
+          "black75",
           "land4",
           "london30",
           "london70",
@@ -1551,16 +1551,16 @@
         "left": [
           "land3",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "land4",
-          "landtext",
+          "black75",
           "land3",
           "land4",
-          "landtext"
+          "black75"
         ],
         "right": [
           "econred",
