@@ -128,7 +128,7 @@
         "font-family": "EconomistSans-Light",
         "font-size": 6,
         "leading": 7.5,
-        "fill": "black75-op",
+        "fill": "blackop75",
         "anchor": "start",
         "specialStrings": {
           "ecoStrPlain": "The Economist",
@@ -161,7 +161,7 @@
         "font-family": "EconomistSans-Light",
         "font-size": 6,
         "leading": 7.5,
-        "fill": "black75-op",
+        "fill": "blackop75",
         "anchor": "end",
         "aboveSource": false,
         "footnoteSymbols": ["*", "†", "‡", "§", "**", "††", "‡‡", "§§"]
@@ -568,11 +568,11 @@
       },
       "doubleScale": {
         "fill": {
-          "left": "black75-op",
+          "left": "blackop75",
           "right": "econred",
           "NOTE": "If types are identical, set left/right; else set coloursets by type",
           "linealone": "econred",
-          "columnalone": "black75-op"
+          "columnalone": "blackop75"
         },
         "font": "EconomistSans-Regular",
         "leading": 7.5,

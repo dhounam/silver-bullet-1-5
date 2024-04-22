@@ -17,8 +17,8 @@
     "black25": "#cccccd",
     "black50": "#989898",
     "black75": "#626160",
-    "___note": "75k for overprint",
-    "black75-op": "#626160",
+    "__note": "75k for overprint",
+    "blackop75": "#626160",
     "black100": "#28231d",
     "highlight": "#dbdad2",
     "printbkgd": "#f0eee4",
@@ -67,7 +67,7 @@
     "dc-socmedbkgd": "#f5f4ef",
     "films-bkgd": "#f5f4ef",
     "films-greytext": "#666666",
-    "none": "#fff"
+    "none": "#fff",
     "___note": "definitions deprecated Apr'24; but left for legacy charts",
     "landtext": "#626160",
     "greytext": "#626160"
