@@ -12,6 +12,10 @@
   height: 100%;
 }
 
+.chart-zoom-030 {
+  transform: scale(0.3);
+}
+
 .chart-zoom-050 {
   transform: scale(0.5);
 }

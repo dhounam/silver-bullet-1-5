@@ -95,7 +95,7 @@ export default function(chartConfig, bounds, testFlag) {
     //    radius of dot
     scatterDotProps = {
       minVal: xMin,
-      dotRad,
+      dotRad
     }
   }
   // Add'nal prefs not inherited from defaults

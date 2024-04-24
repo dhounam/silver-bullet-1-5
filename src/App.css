@@ -119,6 +119,7 @@ select {
   grid-column: 2;
   grid-row: 3/4;
   min-height: 500px;
+  max-height: 700px;
   grid-auto-rows: minmax(300px, auto);
 }
 

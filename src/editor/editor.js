@@ -330,6 +330,10 @@ class SilverEditor extends Component {
         onePanel,
         presetsConfig,
       );
+      // Hideous kludge, Apr'24: somehow (!) the padding below blobs
+      // got overlooked, so hack it in:
+      onePanelConfig.blobs.blobMeta.belowBlobs =
+        chartConfig.background.topPadding.belowBlobBottom.default;
       configPanelArray.push(onePanelConfig);
     }
     chartConfig.panelArray = configPanelArray;    
