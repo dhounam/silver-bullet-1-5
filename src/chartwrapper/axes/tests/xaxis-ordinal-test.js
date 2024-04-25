@@ -348,7 +348,6 @@ class SilverXaxisOrdinal extends Component {
       // primaryLeftTweak += halfDPWidth 
       primaryLeftTweak = halfLabelWidths.primary.left;
       primaryLeftTweak -= primaryMargins.firstLabelMargin
-      console.log(primaryLeftTweak)
       // primaryLeftTweak -= (primaryMargins.firstLabelIndex * granularity.dataPointWidth);
               // primaryLeftTweak -= primaryMargins.firstLabelMargin;
               // primaryLeftTweak += halfDPWidth
@@ -519,7 +518,6 @@ class SilverXaxisOrdinal extends Component {
       halfLabelWidths.secondary.leftTickFirstElement
     ) {
       bounds.x += halfTickW
-      console.log('tripped first tick condition')
       bounds.width -= halfTickW
       bounds.leftTickFirstElement = true;
     }
@@ -530,7 +528,6 @@ class SilverXaxisOrdinal extends Component {
     // for the x-axis. This will allow me to move ticks
     // into the correct position, between labels
     // (Is this too early?)
-    console.log(bounds.x)
     bounds.halfDataPointWidth = granularity.dataPointWidth / 2
   }
   // ADJUST BOUNDS WIDTH ends

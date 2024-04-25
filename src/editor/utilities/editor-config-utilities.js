@@ -1667,9 +1667,40 @@ export function reconcileEditorToChartPanelConfig(activePanel, presetsConfig) {
       configPanel.overallChartType = ocType;
     }
   }
+  reconcileEdConfigOtherPropsToConfig(configPanel, presetsConfig);
   return configPanel;
 }
 // RECONCILE EDITOR TO CHART PANEL CONFIG ends
+
+// RECONCILE ED CONFIG OTHER PROPS TO CONFIG
+// Added Apr'24
+// Called from reconcileEditorToChartPanelConfig
+// to pull in properties from PP 'other' node
+export function reconcileEdConfigOtherPropsToConfig(
+  configPanel,
+  presetsConfig,
+) {
+  const preset = presetsConfig.presetName;
+  const subpreset = presetsConfig.subpresetName;
+  const pps = presetsConfig.userPresets;
+  const specificOtherProps = pps[preset][subpreset].other;
+  if (typeof specificOtherProps !== 'undefined') {
+    // Have to be specific:
+    const idProps = specificOtherProps.indexDot;
+    if (typeof idProps !== 'undefined') {
+      configPanel.indexDot.fillName = idProps.fill;
+      configPanel.indexDot.fillValue = globalAssets.ColourLookup.colours[idProps.fill];
+      configPanel.indexDot.radius = idProps.radius;
+    }
+    const bsProps = specificOtherProps.brokenScale;
+    if (typeof bsProps !== 'undefined') {
+      configPanel.brokenScaleSymbol.strokeName = bsProps.stroke;
+      configPanel.brokenScaleSymbol.strokeValue =
+        globalAssets.ColourLookup.colours[bsProps.stroke];
+    }
+  }
+}
+// RECONCILE ED CONFIG OTHER PROPS TO CONFIG ends
 
 // INJECT TABLE PROPS INTO CONFIG
 export function injectTablePropsIntoConfig(configPanel, presetsConfig) {

@@ -4867,6 +4867,9 @@
             }
           },
           "shapes": {
+            "bboxA": {
+              "fill": "films-bkgd"
+            },
             "bboxB": {
               "bboxB-note": "Just as a guide during devel",
               "x": 0,
@@ -4887,6 +4890,7 @@
               "y": 547.5,
               "wrapwidth": 100,
               "font-family": "EconomistSans-SemiBold",
+              "fill": "dc-london5",
               "font-size": 52,
               "leading": 60
             },
@@ -4895,6 +4899,7 @@
               "y": 607.5,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
+              "fill": "dc-london5",
               "font-size": 46,
               "leading": 52
             },
@@ -4903,6 +4908,7 @@
               "y": 667.5,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
+              "fill": "dc-london5",
               "font-size": 46,
               "leading": 52
             },
@@ -4932,10 +4938,12 @@
               "x": 154,
               "y": 487.5,
               "font": "EconomistSans-Medium",
+              "fill": "dc-london5",
               "fontsize": 40,
               "leading": 48,
               "rectwidth": 50,
               "rectheight": 50,
+              "rectstroke": "dc-london5",
               "rectstrokewidth": 3
             }
           },
@@ -4976,7 +4984,12 @@
           }
         },
         "panelAttributes": {
-
+          "rect": {
+            "fill": "dc-london5"
+          },
+          "panelheader": {
+            "fill": "dc-london5"
+          }
         },
         "chart": {
           "padding": {
@@ -4988,6 +5001,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 3
                 },
                 "lengths": {
@@ -5008,22 +5022,29 @@
                 "projection": {
                   "bar": 18
                 },
+                "stroke": "dc-london5",
                 "width": 3,
                 "zero": {
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 3
                 }
               },
               "bar": {
-                "width": 3
+                "width": 3,
+                "stroke": "dc-gridlines"
               },
               "scatter": {
-                "width": 3
+                "width": 3,
+                "stroke": "dc-gridlines"
               },
               "sizedscatter": {
-                "width": 3
+                "width": 3,
+                "stroke": "dc-gridlines"
               },
               "thermovertical": {
-                "width": 3
+                "width": 3,
+                "stroke": "dc-gridlines"
               },
               "column": {
                 "display": false,
@@ -5061,21 +5082,33 @@
                 "primaryIfSecondary": 36,
                 "secondary": 40
               },
+              "fill": "dc-london5",
               "rowheight": 72,
               "realheight": 20,
               "minGapBetweenLabels": 20
-            }
+            },
+            "header": {
+              "size": 40,
+              "fill": "dc-london5",
+              "leading": 48,
+              "margin": 72
+            },
+            "brokenScalePadding": 40          
           },
           "yAxis": {
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 3
                 },
                 "padding": 30,
                 "projection": 3,
                 "width": 3,
+                "stroke": "dc-gridlines",
                 "zero": {
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 3
                 }
               },
@@ -5088,12 +5121,14 @@
               "y": 12,
               "leading": 48,
               "size": 40,
+              "fill": "dc-london5",
               "header": {
                 "anchor": "middle",
                 "font": "EconomistSans-Regular",
                 "size": 40,
-                "fill": "black100",
-                "leading": 48
+                "fill": "dc-london5",
+                "leading": 48,
+                "margin": 60
               }
             },
             "margins": {
@@ -5102,8 +5137,8 @@
               "ordinalInnerMargin": 24
             },
             "brokenScalePadding": {
-              "default": 10,
-              "thermoHorizontal": 12
+              "default": 50,
+              "thermoHorizontal": 60
             },
             "doubleScale": {
               "leading": 48,
@@ -5112,8 +5147,13 @@
               "headerMargin": 13
             },
             "scatter": {
-              "headerMargin": 10
+              "headerMargin": 60
             }
+          },
+          "brokenScaleFactors": {
+            "note": "x and y axes (tho no BS drawn on x-axis)",
+            "size": 8,
+            "strokewidth": 10
           }
         },
         "series": {
@@ -5362,15 +5402,15 @@
             ],
             "spindle": {
               "stroke": "dc-greytext",
-              "width": 2
+              "width": 9
             },
             "dot": {
-              "radius": 5,
+              "radius": 20,
               "strokeWidth": 0
             },
             "line": {
-              "width": 4,
-              "length": 16
+              "width": 12,
+              "length": 50
             },
             "gap": 10
           },
@@ -5542,12 +5582,14 @@
             },
             "links": {
               "length": 90,
+              "stroke": "dc-london5",
               "width": 2
             },
             "text": {
               "x": 6,
               "y": 30,
               "leading": 48,
+              "fill": "dc-london5",
               "size": 40
             },
             "trendline": {
@@ -5563,6 +5605,8 @@
               "leading": 48,
               "dotRadius": 18,
               "dotStrokeWidth": 1.8,
+              "textFill": "dc-london5",
+              "dotStroke": "dc-london5",
               "gap": 12
             }
           },
@@ -5644,6 +5688,7 @@
               ]
             ],
             "stroke": {
+              "topWidth": "dc-london5",
               "width": 1,
               "topwidth": 1
             },
@@ -5899,14 +5944,16 @@
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
               "leading": 15,
+              "fill": "dc-london5",
               "size": 14
             },
             "header": {
-              "leading": 15,
-              "size": 14
+              "leading": 48,
+              "fill": "dc-london5",
+              "size": 40
             }
           },
-          "___tables": "No tables in video",
+          "___table": "No tables in video",
           "double": {
             "colours": {
               "left": [
@@ -5971,11 +6018,13 @@
         },
         "legend": {
           "headerText": {
+            "fill": "dc-london5",
             "size": 40,
             "leading": 48
           },
           "text": {
             "font": "EconomistSans-Regular",
+            "fill": "dc-london5",
             "size": 46,
             "leading": 48
           },
@@ -6035,6 +6084,7 @@
           "maxCircleSize": 90,
           "maxRectWidth": 450,
           "text": {
+            "fill": "dc-london5",
             "size": 46
           },
           "background": {
@@ -6053,8 +6103,16 @@
             "strokewidth": 0,
             "rectHeight": 60
           }
+        },
+        "other": {
+          "indexDot": {
+            "radius": 16,
+            "fill": "dc-london5"
+          },
+          "brokenScale": {
+            "stroke": "dc-london5"
+          }
         }
-        
       }      
     }
   },
