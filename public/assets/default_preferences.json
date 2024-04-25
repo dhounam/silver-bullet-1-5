@@ -1086,7 +1086,9 @@
         "fixedRadius": 2,
         "strokeWidth": 0,
         "fixedOpacity": 0.5,
-        "sizedOpacity": 0.5
+        "sizedOpacity": 0.5,
+        "minSizedRadius": 2,
+        "maxSizedRadius": 10
       },
       "links": {
         "length": 15,

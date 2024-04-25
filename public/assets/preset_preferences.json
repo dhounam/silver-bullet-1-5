@@ -1646,7 +1646,9 @@
               ]
             ],
             "dots": {
-              "fixedRadius": 4
+              "fixedRadius": 4,
+              "minSizedRadius": 6,
+              "maxSizedRadius": 30
             },
             "links": {
               "length": 30,
@@ -2948,7 +2950,9 @@
               ]
             ],
             "dots": {
-              "fixedRadius": 4
+              "fixedRadius": 4,
+              "minSizedRadius": 6,
+              "maxSizedRadius": 30
             },
             "links": {
               "length": 30,
@@ -4263,7 +4267,9 @@
               ]
             ],
             "dots": {
-              "fixedRadius": 4
+              "fixedRadius": 4,
+              "minSizedRadius": 6,
+              "maxSizedRadius": 30
             },
             "links": {
               "length": 30,
@@ -5530,7 +5536,9 @@
               ]
             ],
             "dots": {
-              "fixedRadius": 15
+              "fixedRadius": 15,
+              "minSizedRadius": 20,
+              "maxSizedRadius": 100
             },
             "links": {
               "length": 90,

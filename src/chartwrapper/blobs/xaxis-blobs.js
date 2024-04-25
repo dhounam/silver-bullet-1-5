@@ -64,7 +64,7 @@ class SilverXaxisBlobs extends Component {
       // The vertical adjustment is relatively simple...
       // NOTE: Line charts with circular blobs need the
       // blobWidth to calculate the vertical margin
-      // let vMargin = this.getVblobMargin(bounds.blobWidth)
+      let vMargin = this.getVblobMargin(bounds.blobWidth)
       // Adjust and return the IB
       bounds.y += vMargin
       bounds.height -= vMargin
@@ -73,9 +73,7 @@ class SilverXaxisBlobs extends Component {
     const iTweak = this.getIndexBlobTweak(config)
     bounds.x += iTweak
     bounds.width -= iTweak
-    // const returnedBounds = JSON.parse(JSON.stringify(bounds))
-    // returnedBounds.y += 50
-    // this.props.onReturnRevisedInnerBox(returnedBounds)
+    this.props.onReturnRevisedInnerBox(bounds)
   }
   // DO BLOB TESTS ends
 

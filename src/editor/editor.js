@@ -156,6 +156,7 @@ class SilverEditor extends Component {
               headersChanged: false,
               isDataError: false,
               dataErrorString: '',
+              overwriteSizedScatterRads: false,
             });
           })
           .catch(console.error)
@@ -334,9 +335,24 @@ class SilverEditor extends Component {
       // got overlooked, so hack it in:
       onePanelConfig.blobs.blobMeta.belowBlobs =
         chartConfig.background.topPadding.belowBlobBottom.default;
+      // Another kludge, Apr'24. I foolishly set sizedscatter min
+      // and max radii globally (in DPs metadata node). But these
+      // now need to change by preset. Rather than pull everything
+      // apart, crash the PP value into the location where
+      // sized scatters will expect to find them
+      // The condition enables values set in the Scales z-fields
+      // to 'stick'
+      if (this.state.overwriteSizedScatterRads) {
+        try {
+          onePanelConfig.scales.z.min =
+          onePanelConfig.series.sizedscatter.dots.minSizedRadius;
+          onePanelConfig.scales.z.max =
+          onePanelConfig.series.sizedscatter.dots.maxSizedRadius;
+        } catch (err) {}
+      }
       configPanelArray.push(onePanelConfig);
     }
-    chartConfig.panelArray = configPanelArray;    
+    chartConfig.panelArray = configPanelArray;
 
     // The last thing to do, before we go whizzing off chartside,
     // is add definitions for any additional colours.
@@ -500,7 +516,9 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: true,
     });
+    // overwriteSizedScatterRads forces kludge in reconcileEditorToChartConfig
   }
   // HANDLE VALUES FROM SIZE AND PRESET ends
 
@@ -760,6 +778,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM CHART TYPE COMPONENT ends
@@ -796,6 +815,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM BLOB COMPONENT ends
@@ -817,6 +837,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM LEGEND COMPONENT ends
@@ -878,6 +899,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM AXIS HEADERS COMPONENT ends
@@ -893,6 +915,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
 
@@ -984,6 +1007,7 @@ class SilverEditor extends Component {
           dataErrorString,
           newPayload: edConfigObj.global.newPayload,
           editorConfig: edConfigObj,
+          overwriteSizedScatterRads: false,
         });
       }
     } else {
@@ -994,6 +1018,7 @@ class SilverEditor extends Component {
         headersChanged: false,
         isDataError: true,
         dataErrorString: dataReport.dataMsg,
+        overwriteSizedScatterRads: false,
       });
     }
   }
@@ -1031,6 +1056,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM STRINGS FOLD ends
@@ -1056,6 +1082,7 @@ class SilverEditor extends Component {
         dataErrorString: '',
         editorConfig,
         newPayload: false,
+        overwriteSizedScatterRads: false,
       },
       this.handleHeightChange,
     );
@@ -1097,6 +1124,7 @@ class SilverEditor extends Component {
       isDataError: false,
       dataErrorString: '',
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
 
@@ -1170,6 +1198,7 @@ class SilverEditor extends Component {
       dataErrorString: '',
       newPayload: false,
       editorConfig,
+      overwriteSizedScatterRads: false,
     });
   }
   // HANDLE VALUES FROM PANELS ends
