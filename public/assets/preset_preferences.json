@@ -5144,7 +5144,7 @@
               "leading": 48,
               "size": 40,
               "HEADER-MARGIN-NOTE": "13 gives 12",
-              "headerMargin": 13
+              "headerMargin": 60
             },
             "scatter": {
               "headerMargin": 60
