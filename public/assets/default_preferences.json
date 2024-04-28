@@ -1908,7 +1908,7 @@
         "value": 1000000
       }
     ],
-    "maximumChartWidth": 700,
+    "maximumChartWidth": 1200,
     "minimumBounds": {
       "width": 50,
       "height": 25

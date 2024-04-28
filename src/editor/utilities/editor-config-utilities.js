@@ -1684,21 +1684,48 @@ export function reconcileEdConfigOtherPropsToConfig(
   const subpreset = presetsConfig.subpresetName;
   const pps = presetsConfig.userPresets;
   const specificOtherProps = pps[preset][subpreset].other;
-  if (typeof specificOtherProps !== 'undefined') {
-    // Have to be specific:
-    const idProps = specificOtherProps.indexDot;
-    if (typeof idProps !== 'undefined') {
-      configPanel.indexDot.fillName = idProps.fill;
-      configPanel.indexDot.fillValue = globalAssets.ColourLookup.colours[idProps.fill];
-      configPanel.indexDot.radius = idProps.radius;
-    }
-    const bsProps = specificOtherProps.brokenScale;
-    if (typeof bsProps !== 'undefined') {
-      configPanel.brokenScaleSymbol.strokeName = bsProps.stroke;
-      configPanel.brokenScaleSymbol.strokeValue =
-        globalAssets.ColourLookup.colours[bsProps.stroke];
-    }
+  // Have to be specific:
+  if (
+    specificOtherProps &&
+    specificOtherProps.indexDot &&
+    specificOtherProps.indexDot.fill
+  ) {
+    const fill = specificOtherProps.indexDot.fill;
+    configPanel.indexDot.fillName = fill;
+    configPanel.indexDot.fillValue = globalAssets.ColourLookup.colours[fill];
   }
+  if (
+    specificOtherProps &&
+    specificOtherProps.indexDot &&
+    specificOtherProps.indexDot.radius
+  ) {
+    configPanel.indexDot.radius = specificOtherProps.indexDot.radius;
+  }
+  if (
+    specificOtherProps &&
+    specificOtherProps.brokenScale &&
+    specificOtherProps.brokenScale.stroke
+  ) {
+    const stroke = specificOtherProps.brokenScale.stroke;
+    configPanel.brokenScaleSymbol.strokeName = stroke;
+    configPanel.brokenScaleSymbol.strokeValue =
+      globalAssets.ColourLookup.colours[stroke];
+  }
+
+  // if (typeof specificOtherProps !== 'undefined') {
+  //   const idProps = specificOtherProps.indexDot;
+  //   if (typeof idProps !== 'undefined') {
+  //     configPanel.indexDot.fillName = idProps.fill;
+  //     configPanel.indexDot.fillValue = globalAssets.ColourLookup.colours[idProps.fill];
+  //     configPanel.indexDot.radius = idProps.radius;
+  //   }
+  //   const bsProps = specificOtherProps.brokenScale;
+  //   if (typeof bsProps !== 'undefined') {
+  //     configPanel.brokenScaleSymbol.strokeName = bsProps.stroke;
+  //     configPanel.brokenScaleSymbol.strokeValue =
+  //       globalAssets.ColourLookup.colours[bsProps.stroke];
+  //   }
+  // }
 }
 // RECONCILE ED CONFIG OTHER PROPS TO CONFIG ends
 

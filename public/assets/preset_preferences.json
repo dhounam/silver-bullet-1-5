@@ -939,6 +939,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
+              "fill": "dc-london5",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -953,6 +954,7 @@
             "title": {
               "x": 0,
               "y": 28,
+              "fill": "dc-london5",
               "font-size": 20,
               "leading": 24,
               "letter-spacing": "0em"
@@ -960,12 +962,14 @@
             "subtitle": {
               "x": 0,
               "y": 56,
+              "fill": "dc-london5",
               "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
+              "fill": "dc-london5",
               "font-size": 17,
               "leading": 20
             },
@@ -996,11 +1000,11 @@
               "x": 0.5,
               "y": 0.5,
               "fontsize": "13",
-              "textfill": "black100",
+              "textfill": "dc-london5",
               "rectheight": 20,
               "rectwidth": 20,
               "rectfill": "white",
-              "rectstroke": "black100",
+              "rectstroke": "dc-london5",
               "rectstrokewidth": 1
             }
           },
@@ -1059,11 +1063,13 @@
           "rect": {
             "x": 0,
             "y": 0,
+            "fill": "dc-london5",
             "width": 40,
             "height": 1
           },
           "panelheader": {
             "font-size": 17,
+            "fill": "dc-london5",
             "leading": 20,
             "x": 0,
             "y": 20
@@ -1079,6 +1085,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "lengths": {
@@ -1099,9 +1106,11 @@
                 "projection": {
                   "bar": 6
                 },
+                "stroke": "dc-london5",
                 "width": 1,
                 "zero": {
-                  "mixed": "black100",
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
@@ -1122,7 +1131,7 @@
                 "width": 1
               },
               "column": {
-                "stroke": "black100",
+                "stroke": "dc-london5",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -1159,11 +1168,13 @@
                 "primaryIfSecondary": 13,
                 "secondary": 15
               },
+              "fill": "dc-london5",
               "realheight": 9.5,
               "minGapBetweenLabels": 6
             },
             "header": {
               "size": 15,
+              "stroke": "dc-london5",
               "leading": 20,
               "margin": 20
             },
@@ -1181,7 +1192,7 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
-                  "mixed": "black100",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
@@ -1194,9 +1205,11 @@
             "text": {
               "size": 15,
               "leading": 16,
+              "fill": "dc-london5",
               "y": 3.5,
               "header": {
                 "size": 15,
+                "fill": "dc-london5",
                 "leading": 16,
                 "margin": 20
               }
@@ -1652,11 +1665,13 @@
             },
             "links": {
               "length": 30,
+              "stroke": "dc-london5",
               "width": 0.6
             },
             "text": {
               "x": 2,
               "y": 10,
+              "fill": "dc-london5",
               "leading": 15,
               "size": 13
             },
@@ -1670,9 +1685,11 @@
             },
             "zkey": {
               "fontSize": 14,
+              "textFill": "dc-london5",
               "leading": 14,
               "dotRadius": 6,
               "dotStrokeWidth": 0.6,
+              "dotStroke": "dc-london5",
               "gap": 4
             }
           },
@@ -1755,7 +1772,8 @@
             ],
             "stroke": {
               "width": 1,
-              "topwidth": 1
+              "topwidth": 1,
+              "topcolour": "dc-london5"
             },
             "blobGap": 10
           },
@@ -2012,9 +2030,11 @@
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
               "leading": 15,
+              "fill": "dc-london5",
               "size": 14
             },
             "header": {
+              "fill": "dc-london5",
               "leading": 15,
               "size": 14
             }
@@ -2024,6 +2044,7 @@
               "header": {
                 "size": 15,
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 6,
                   "right": 6
@@ -2035,6 +2056,7 @@
                 "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 0,
                   "right": 0
@@ -2044,6 +2066,7 @@
             "rules": {
               "top": {
                 "width": 1,
+                "stroke": "dc-london5",
                 "belowText": 16
               },
               "bottom": {
@@ -2125,6 +2148,7 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
+            "fill": "dc-london5",
             "size": 15,
             "leading": 20
           },
@@ -2132,7 +2156,7 @@
             "anchor": "start",
             "size": 15,
             "leading": 20,
-            "fill": "black100"
+            "fill": "dc-london5"
           },
           "padding": {
             "belowHeader": 20,
@@ -2190,6 +2214,7 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
+            "fill": "dc-london5",
             "size": 15
           },
           "background": {
@@ -2207,6 +2232,14 @@
             "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
+          }
+        },
+        "other": {
+          "indexDot": {
+            "fill": "dc-london5"
+          },
+          "brokenScale": {
+            "stroke": "dc-london5"
           }
         }
       },
@@ -2253,6 +2286,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
+              "fill": "dc-london5",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -2269,17 +2303,20 @@
               "y": 28,
               "font-size": 20,
               "leading": 24,
+              "fill": "dc-london5",
               "letter-spacing": "0em"
             },
             "subtitle": {
               "x": 0,
               "y": 56,
+              "fill": "dc-london5",
               "font-size": 17,
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
+              "fill": "dc-london5",
               "font-size": 17,
               "leading": 20
             },
@@ -2301,11 +2338,11 @@
               "x": 0.5,
               "y": 0.5,
               "fontsize": "13",
-              "textfill": "black100",
+              "textfill": "dc-london5",
               "rectheight": 20,
               "rectwidth": 20,
               "rectfill": "white",
-              "rectstroke": "black100",
+              "rectstroke": "dc-london5",
               "rectstrokewidth": 1
             }
           },
@@ -2364,11 +2401,13 @@
           "rect": {
             "x": 0,
             "y": 0,
+            "fill": "dc-london5",
             "width": 40,
             "height": 1
           },
           "panelheader": {
             "font-size": 17,
+            "fill": "dc-london5",
             "leading": 20,
             "x": 0,
             "y": 20
@@ -2384,6 +2423,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "lengths": {
@@ -2406,6 +2446,8 @@
                 },
                 "width": 1,
                 "zero": {
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
@@ -2426,7 +2468,7 @@
                 "width": 1
               },
               "column": {
-                "stroke": "black100",
+                "stroke": "dc-london5",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -2463,11 +2505,13 @@
                 "primaryIfSecondary": 13,
                 "secondary": 15
               },
+              "fill": "dc-london5",
               "realheight": 9.5,
               "minGapBetweenLabels": 6
             },
             "header": {
               "size": 15,
+              "stroke": "dc-london5",
               "leading": 20,
               "margin": 20
             },
@@ -2485,7 +2529,7 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
-                  "mixed": "black100",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
@@ -2498,10 +2542,12 @@
             "text": {
               "size": 15,
               "leading": 16,
+              "fill": "dc-london5",
               "y": 3.5,
               "header": {
                 "size": 15,
                 "leading": 16,
+                "fill": "dc-london5",
                 "margin": 20
               }
             },
@@ -2956,11 +3002,13 @@
             },
             "links": {
               "length": 30,
+              "stroke": "dc-london5",
               "width": 0.6
             },
             "text": {
               "x": 2,
               "y": 10,
+              "fill": "dc-london5",
               "leading": 15,
               "size": 13
             },
@@ -2974,9 +3022,11 @@
             },
             "zkey": {
               "fontSize": 14,
+              "textFill": "dc-london5",
               "leading": 14,
               "dotRadius": 6,
               "dotStrokeWidth": 0.6,
+              "dotStroke": "dc-london5",
               "gap": 4
             }
           },
@@ -3058,6 +3108,7 @@
               ]
             ],
             "stroke": {
+              "topcolour": "dc-london5",
               "width": 1,
               "topwidth": 1
             },
@@ -3316,9 +3367,11 @@
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
               "leading": 15,
+              "fill": "dc-london5",
               "size": 14
             },
             "header": {
+              "fill": "dc-london5",
               "leading": 15,
               "size": 14
             }
@@ -3328,6 +3381,7 @@
               "header": {
                 "size": 15,
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 6,
                   "right": 6
@@ -3339,6 +3393,7 @@
                 "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 0,
                   "right": 0
@@ -3348,6 +3403,7 @@
             "rules": {
               "top": {
                 "width": 1,
+                "stroke": "dc-london5",
                 "belowText": 16
               },
               "bottom": {
@@ -3429,6 +3485,7 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
+            "fill": "dc-london5",
             "size": 15,
             "leading": 20
           },
@@ -3436,7 +3493,7 @@
             "anchor": "start",
             "size": 15,
             "leading": 20,
-            "fill": "black100"
+            "fill": "dc-london5"
           },
           "padding": {
             "belowHeader": 20,
@@ -3494,6 +3551,7 @@
           "maxCircleSize": 60,
           "maxRectWidth": 60,
           "text": {
+            "fill": "dc-london5",
             "size": 15
           },
           "background": {
@@ -3511,6 +3569,14 @@
             "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
+          }
+        },
+        "other": {
+          "indexDot": {
+            "fill": "dc-london5"
+          },
+          "brokenScale": {
+            "stroke": "dc-london5"
           }
         }
       },
@@ -3561,6 +3627,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
+              "fill": "dc-london5",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -3576,6 +3643,7 @@
               "x": 0,
               "y": 28,
               "font-size": 20,
+              "fill": "dc-london5",
               "leading": 24,
               "letter-spacing": "0em"
             },
@@ -3583,12 +3651,14 @@
               "x": 0,
               "y": 56,
               "font-size": 17,
+              "fill": "dc-london5",
               "leading": 20
             },
             "subsubtitle": {
               "x": 0,
               "y": 76,
               "font-size": 17,
+              "fill": "dc-london5",
               "leading": 20
             },
             "source": {
@@ -3618,11 +3688,11 @@
               "x": 0.5,
               "y": 0.5,
               "fontsize": "13",
-              "textfill": "black100",
+              "textfill": "dc-london5",
               "rectheight": 20,
               "rectwidth": 20,
               "rectfill": "white",
-              "rectstroke": "black100",
+              "rectstroke": "dc-london5",
               "rectstrokewidth": 1
             }
           },
@@ -3682,11 +3752,13 @@
             "x": 0,
             "y": 0,
             "width": 40,
-            "height": 1
+            "height": 1,
+            "fill": "dc-london5"
           },
           "panelheader": {
             "font-size": 17,
             "leading": 20,
+            "fill": "dc-london5",
             "x": 0,
             "y": 20
           }
@@ -3701,6 +3773,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "lengths": {
@@ -3721,9 +3794,11 @@
                 "projection": {
                   "bar": 6
                 },
+                "stroke": "dc-london5",
                 "width": 1,
                 "zero": {
-                  "mixed": "black100",
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
@@ -3744,7 +3819,7 @@
                 "width": 1
               },
               "column": {
-                "stroke": "black100",
+                "stroke": "dc-landtext",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -3781,11 +3856,13 @@
                 "primaryIfSecondary": 13,
                 "secondary": 15
               },
+              "fill": "dc-london5",
               "realheight": 9.5,
               "minGapBetweenLabels": 6
             },
             "header": {
               "size": 15,
+              "stroke": "dc-london5",
               "leading": 20,
               "margin": 20
             },
@@ -3803,7 +3880,7 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
-                  "mixed": "black100",
+                  "mixed": "dc-landtext",
                   "width": 1
                 }
               },
@@ -3816,6 +3893,7 @@
             "text": {
               "size": 15,
               "leading": 16,
+              "fill": "dc-london5",
               "y": 3.5,
               "header": {
                 "size": 15,
@@ -4272,6 +4350,7 @@
               "maxSizedRadius": 30
             },
             "links": {
+              "stroke": "dc-london5",
               "length": 30,
               "width": 0.6
             },
@@ -4279,6 +4358,7 @@
               "x": 2,
               "y": 10,
               "leading": 15,
+              "fill": "dc-london5",
               "size": 13
             },
             "trendline": {
@@ -4294,6 +4374,8 @@
               "leading": 14,
               "dotRadius": 6,
               "dotStrokeWidth": 0.6,
+              "textFill": "dc-london5",
+              "dotStroke": "dc-london5",
               "gap": 4
             }
           },
@@ -4375,6 +4457,7 @@
               ]
             ],
             "stroke": {
+              "topcolour": "dc-london5",
               "width": 1,
               "topwidth": 1
             },
@@ -4633,10 +4716,12 @@
             "labels": {
               "LABELS_NOTE": "Not implemented; using standard legends...",
               "leading": 15,
+              "fill": "dc-london5",
               "size": 14
             },
             "header": {
               "leading": 15,
+              "fill": "dc-london5",
               "size": 14
             }
           },
@@ -4645,6 +4730,7 @@
               "header": {
                 "size": 15,
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 6,
                   "right": 6
@@ -4656,6 +4742,7 @@
                 "paragraph": 42.5,
                 "NOTE-2": "leading should be useful later, but as of Oct'20 is ignored",
                 "leading": 20,
+                "fill": "dc-london5",
                 "padding": {
                   "left": 0,
                   "right": 0
@@ -4665,6 +4752,7 @@
             "rules": {
               "top": {
                 "width": 1,
+                "stroke": "dc-london5",
                 "belowText": 16
               },
               "bottom": {
@@ -4746,6 +4834,7 @@
         "_LEGEND": "Legend properties",
         "legend": {
           "headerText": {
+            "stroke": "dc-london5",
             "size": 15,
             "leading": 20
           },
@@ -4753,7 +4842,7 @@
             "anchor": "start",
             "size": 15,
             "leading": 20,
-            "fill": "black100"
+            "stroke": "dc-london5"
           },
           "padding": {
             "belowHeader": 20,
@@ -4811,6 +4900,7 @@
           "maxCircleSize": 30,
           "maxRectWidth": 150,
           "text": {
+            "stroke": "dc-london5",
             "size": 15
          },
           "background": {
@@ -4828,6 +4918,14 @@
             "leading": 16,
             "strokewidth": 0,
             "rectHeight": 24
+          }
+        },
+        "other": {
+          "indexDot": {
+            "radius": 16
+          },
+          "brokenScale": {
+            "stroke": "dc-london5"
           }
         }
       },
@@ -4881,7 +4979,8 @@
               "x": 154,
               "y": 477.5,
               "width": 127,
-              "height": 10
+              "height": 10,
+              "fill": "dc-econred"
             }     
           },
           "strings": {
@@ -4915,6 +5014,7 @@
             "source": {
               "x": 154,
               "y": -487.5,
+              "fill": "dc-greytext",
               "wrapoptions": {
                 "hasfootnote": 45,
                 "nofootnote": 100,
@@ -4929,6 +5029,7 @@
               "y": -487.5,
               "wrapwidth": 45,
               "font-family": "EconomistSans-Light",
+              "fill": "dc-greytext",
               "font-size": 40,
               "leading": 48
             },
@@ -4984,11 +5085,28 @@
           }
         },
         "panelAttributes": {
+          "padding": {
+            "between": {
+              "x": {
+                "narrowThreshold": 1200,
+                "narrow": 90,
+                "wideTwo": 120,
+                "wideMoreThanTwo": 90
+              },
+              "y": 90
+            }
+          },
           "rect": {
-            "fill": "dc-london5"
+            "fill": "dc-london5",
+            "width": 120,
+            "height": 6
           },
           "panelheader": {
-            "fill": "dc-london5"
+            "font-size": 42,
+            "fill": "dc-london5",
+            "leading": 48,
+            "x": 0,
+            "y": 60
           }
         },
         "chart": {
@@ -5073,7 +5191,7 @@
                 },
                 "axisAtBottom": {
                   "default": 72,
-                  "brokenScatter": 30
+                  "brokenScatter": 50
                 }
               },
               "leading": 48,
@@ -5085,7 +5203,7 @@
               "fill": "dc-london5",
               "rowheight": 72,
               "realheight": 20,
-              "minGapBetweenLabels": 20
+              "minGapBetweenLabels": 40
             },
             "header": {
               "size": 40,
@@ -5113,6 +5231,7 @@
                 }
               },
               "thermohorizontal": {
+                "stroke": "dc-gridlines",
                 "width": 3
               }
             },
@@ -5141,6 +5260,13 @@
               "thermoHorizontal": 60
             },
             "doubleScale": {
+              "fill": {
+                "left": "dc-greytext",
+                "right": "dc-econred",
+                "NOTE": "If types are identical, set left/right; else set coloursets by type",
+                "linealone": "dc-econred",
+                "columnalone": "dc-greytext"
+              },
               "leading": 48,
               "size": 40,
               "HEADER-MARGIN-NOTE": "13 gives 12",
@@ -5688,7 +5814,7 @@
               ]
             ],
             "stroke": {
-              "topWidth": "dc-london5",
+              "topcolour": "dc-london5",
               "width": 1,
               "topwidth": 1
             },

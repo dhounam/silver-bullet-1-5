@@ -127,7 +127,7 @@ export function granularityPreferences() {
     },
     days: {
       NOTE: '***DAYS***',
-      testVal: 7,
+      testVal: 'DD',
       next: {
         interval: 'unlabelledDays',
         factor: 1,
@@ -190,7 +190,7 @@ export function granularityPreferences() {
     },
     weeks: {
       NOTE: '***WEEKS***',
-      testVal: 'dd',
+      testVal: 'DD',
       next: {
         interval: 'months',
         factor: 4,
@@ -218,7 +218,7 @@ export function granularityPreferences() {
     },
     months: {
       NOTE: '***MONTHS***',
-      testVal: 'May',
+      testVal: 'MMM',
       next: {
         interval: 'shortMonths',
         factor: 1,
@@ -248,7 +248,7 @@ export function granularityPreferences() {
     },
     shortMonths: {
       NOTE: '***SHORT MONTHS***',
-      testVal: 'M',
+      testVal: 'I',
       next: {
         interval: 'unlabelledMonths',
         factor: 1,
@@ -308,7 +308,7 @@ export function granularityPreferences() {
     },
     quarters: {
       NOTE: '***QUARTERS***',
-      testVal: 'Q4',
+      testVal: 'QQ',
       next: {
         interval: 'years',
         factor: 4,
@@ -338,7 +338,7 @@ export function granularityPreferences() {
     },
     years: {
       NOTE: '***YEARS***',
-      testVal: 10,
+      testVal: 'YY',
       next: {
         interval: 'years2',
         factor: 2,
@@ -361,7 +361,7 @@ export function granularityPreferences() {
     },
     years2: {
       NOTE: '***YEARS-2***',
-      testVal: 15,
+      testVal: 'YY',
       next: {
         interval: 'years5',
         factor: 2.5,
@@ -384,7 +384,7 @@ export function granularityPreferences() {
     },
     years5: {
       NOTE: '***YEARS-5***',
-      testVal: 15,
+      testVal: 'YY',
       next: {
         interval: 'years10',
         factor: 2,
@@ -407,7 +407,7 @@ export function granularityPreferences() {
     },
     years10: {
       NOTE: '***YEARS-10***',
-      testVal: 15,
+      testVal: 'YY',
       next: {
         interval: 'years50',
         factor: 5,
@@ -430,7 +430,7 @@ export function granularityPreferences() {
     },
     years50: {
       NOTE: '***YEARS-50***',
-      testVal: 15,
+      testVal: 'YYYY',
       next: {
         interval: 'years100',
         factor: 2,
@@ -453,7 +453,7 @@ export function granularityPreferences() {
     },
     years100: {
       NOTE: '***YEARS-100***',
-      testVal: 15,
+      testVal: 'YYYY',
       next: {
         interval: 'years100',
         factor: 1,
@@ -569,6 +569,7 @@ export function makeGranularityObjectForTimeAxis(
 ) {
   // Margin between strings (from DPs)
   const margin = textPrefs.minGapBetweenLabels
+  console.log(margin)
   // Complete set of granularity-interval preferences
   const granPrefs = granularityPreferences()
   // Interval, with month adjustment to "Mmm" default
