@@ -1179,7 +1179,7 @@
               "margin": 20
             },
             "brokenScalePadding": 10,
-            "textWidthSizeTestFactor": 2.5
+            "textWidthSizeTestFactor": 1
           },
           "yAxis": {
             "ticks": {
@@ -2516,7 +2516,7 @@
               "margin": 20
             },
             "brokenScalePadding": 10,
-            "textWidthSizeTestFactor": 2.5
+            "textWidthSizeTestFactor": 1
           },
           "yAxis": {
             "ticks": {
@@ -3867,7 +3867,7 @@
               "margin": 20
             },
             "brokenScalePadding": 10,
-            "textWidthSizeTestFactor": 2.5
+            "textWidthSizeTestFactor": 1
           },
           "yAxis": {
             "ticks": {

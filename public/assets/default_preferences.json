@@ -423,6 +423,7 @@
       },
       "brokenScalePadding": 10,
       "hasSecondaryAxis": true,
+      "note": "next seems redundant as of Apr'24",
       "textWidthSizeTestFactor": 1
     },
     "yAxis": {
