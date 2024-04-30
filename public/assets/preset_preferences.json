@@ -939,7 +939,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
-              "fill": "dc-london5",
+              "fill": "dc-econred",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -2286,7 +2286,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
-              "fill": "dc-london5",
+              "fill": "dc-econred",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -3627,7 +3627,7 @@
               "x": 0,
               "width": 40,
               "height": 4,
-              "fill": "dc-london5",
+              "fill": "dc-econred",
               "display": true,
               "adjustable": {
                 "height": false,
@@ -4922,7 +4922,7 @@
         },
         "other": {
           "indexDot": {
-            "radius": 16
+            "fill": "dc-london5"
           },
           "brokenScale": {
             "stroke": "dc-london5"
@@ -4946,7 +4946,7 @@
           "forceDefault": true
         },
         "colourSpace": "rgb",
-        "chartScaleClass": "chart-zoom-030",
+        "chartScaleClass": "chart-zoom-040",
         "background": {
           "outerbox": {
             "dimensions": {
@@ -5025,13 +5025,17 @@
               "leading": 48
             },
             "footnote": {
-              "x": -154,
+              "x": 154,
               "y": -487.5,
-              "wrapwidth": 45,
-              "font-family": "EconomistSans-Light",
-              "fill": "dc-greytext",
+              "anchor": "start",
               "font-size": 40,
-              "leading": 48
+              "leading": 48,
+              "fill": "dc-greytext",
+              "font-family": "EconomistSans-Light",
+              "note": "Footnote stacked above source",
+              "aboveSource": true,
+              "sourceGap": 50,
+              "wrapwidth": 100
             },
             "numberBox": {
               "content": "",

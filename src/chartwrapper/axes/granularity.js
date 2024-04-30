@@ -7,7 +7,7 @@ export function granularityPreferences() {
   return {
     minutes: {
       NOTE: '***MINUTES***',
-      testVal: 15,
+      testVal: 'MM',
       next: {
         interval: 'unlabelledMinutes',
         factor: 1,
@@ -37,7 +37,7 @@ export function granularityPreferences() {
     },
     unlabelledMinutes: {
       NOTE: '***UNLABELLED MINUTES***',
-      testVal: 2,
+      testVal: 'M',
       next: {
         interval: 'hours',
         factor: 60,
@@ -67,7 +67,7 @@ export function granularityPreferences() {
     },
     hours: {
       NOTE: '***HOURS***',
-      testVal: 15,
+      testVal: 'HH',
       next: {
         interval: 'unlabelledHours',
         factor: 1,
@@ -97,7 +97,7 @@ export function granularityPreferences() {
     },
     unlabelledHours: {
       NOTE: '***UNLABELLED HOURS***',
-      testVal: 2,
+      testVal: 'h',
       next: {
         interval: 'days',
         factor: 24,
@@ -159,7 +159,7 @@ export function granularityPreferences() {
     },
     unlabelledDays: {
       NOTE: '***UNLABELLED DAYS***',
-      testVal: 2,
+      testVal: 'D',
       next: {
         interval: 'months',
         factor: 31,
@@ -278,7 +278,7 @@ export function granularityPreferences() {
     },
     unlabelledMonths: {
       NOTE: '***UNLABELLED MONTHS***',
-      testVal: 3,
+      testVal: 'M',
       next: {
         interval: 'years',
         factor: 12,
@@ -569,7 +569,6 @@ export function makeGranularityObjectForTimeAxis(
 ) {
   // Margin between strings (from DPs)
   const margin = textPrefs.minGapBetweenLabels
-  console.log(margin)
   // Complete set of granularity-interval preferences
   const granPrefs = granularityPreferences()
   // Interval, with month adjustment to "Mmm" default
@@ -590,12 +589,14 @@ export function makeGranularityObjectForTimeAxis(
   while (notReady) {
     // Granularity prefs for this interval
     const thisGran = granPrefs[interval]
-    // testVal may be a string or a number
-    const testVal = +thisGran.testVal * wFactor
+    // testVal may be a string ('DD', 'MM'...) or a number
+    let testVal = thisGran.testVal
+    // Why did I EVER think next was a good idea?!
+    // const testVal = +thisGran.testVal * wFactor
     // If true, slots are wide enough
     let labelFits = false
     if (isNaN(testVal)) {
-      // testVal is an interval-specific string (e.g. 'May')
+      // testVal is an interval-specific string (e.g. 'MMM')
       // Test on-screen against slot width
       testText.text(thisGran.testVal)
       // Will it fit?
@@ -603,8 +604,9 @@ export function makeGranularityObjectForTimeAxis(
       testWidth *= wFactor
       labelFits = pWidth - margin > testWidth
     } else {
-      // Check a numeric value against slot width
-      labelFits = pWidth > testVal
+      // Check numeric value against slot width
+      testVal *= wFactor;
+      labelFits = pWidth > testVal;
     }
     // Break the loop if the label will fit...
     // ...or if I've come to the last available interval

@@ -16,6 +16,10 @@
   transform: scale(0.3);
 }
 
+.chart-zoom-040 {
+  transform: scale(0.4);
+}
+
 .chart-zoom-050 {
   transform: scale(0.5);
 }
