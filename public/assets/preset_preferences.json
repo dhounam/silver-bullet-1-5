@@ -310,7 +310,7 @@
         "background": {
           "outerbox": {
             "dimensions": {
-              "id": "leader",
+              "id": "worldthisweek",
               "display": "World this Week",
               "width": 117,
               "height": 110,
@@ -1170,7 +1170,7 @@
               },
               "fill": "dc-london5",
               "realheight": 9.5,
-              "minGapBetweenLabels": 6
+              "minGapBetweenLabels": 8
             },
             "header": {
               "size": 15,
@@ -3858,7 +3858,7 @@
               },
               "fill": "dc-london5",
               "realheight": 9.5,
-              "minGapBetweenLabels": 6
+              "minGapBetweenLabels": 8
             },
             "header": {
               "size": 15,

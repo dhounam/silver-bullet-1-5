@@ -37,7 +37,7 @@ export function granularityPreferences() {
     },
     unlabelledMinutes: {
       NOTE: '***UNLABELLED MINUTES***',
-      testVal: 'M',
+      testVal: '.',
       next: {
         interval: 'hours',
         factor: 60,
@@ -97,7 +97,7 @@ export function granularityPreferences() {
     },
     unlabelledHours: {
       NOTE: '***UNLABELLED HOURS***',
-      testVal: 'h',
+      testVal: '.',
       next: {
         interval: 'days',
         factor: 24,
@@ -159,7 +159,7 @@ export function granularityPreferences() {
     },
     unlabelledDays: {
       NOTE: '***UNLABELLED DAYS***',
-      testVal: 'D',
+      testVal: '.',
       next: {
         interval: 'months',
         factor: 31,
@@ -278,7 +278,7 @@ export function granularityPreferences() {
     },
     unlabelledMonths: {
       NOTE: '***UNLABELLED MONTHS***',
-      testVal: 'M',
+      testVal: '.',
       next: {
         interval: 'years',
         factor: 12,
