@@ -34,6 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:economist": "cross-env REACT_APP_SIBYL_ORG=economist PUBLIC_URL=https://infographics.economist.com/$npm_package_config_economist_folder/sibyl/ npm-run-all cleanup-economist build && mv build/* build-economist",
+    "build:economist:test": "cross-env REACT_APP_SIBYL_ORG=economist PUBLIC_URL=https://infographics.economist.com/$npm_package_config_test_folder/sibyl/ npm-run-all cleanup-economist build && mv build/* build-economist-test",
     "build:economist:dev": "cross-env REACT_APP_SIBYL_ORG=economist REACT_APP_TEST=true PUBLIC_URL=https://infographics.economist.com/$npm_package_config_test_folder/sibyl/ npm-run-all cleanup-economist build && mv build/* build-economist",
     "build:eiu": "cross-env REACT_APP_SIBYL_ORG=eiu PUBLIC_URL=https://infographics.economist.com/$npm_package_config_eiu_folder/sibyl/ npm-run-all cleanup-eiu build && mv build/* build-eiu",
     "deploy": "npm-run-all economist:deploy eiu:deploy",
