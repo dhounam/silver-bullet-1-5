@@ -397,7 +397,7 @@
         },
         "realheight": 4.75,
         "fill": "black100",
-        "minGapBetweenLabels": 3
+        "minGapBetweenLabels": 3.5
       },
       "header": {
         "anchor": "middle",
@@ -1909,7 +1909,7 @@
         "value": 1000000
       }
     ],
-    "maximumChartWidth": 1200,
+    "maximumChartWidth": 2000,
     "minimumBounds": {
       "width": 50,
       "height": 25
