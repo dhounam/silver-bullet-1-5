@@ -563,8 +563,11 @@ class ChartType extends Component {
         );
       } else if (tDef.cbString.includes('pie')) {
         tDisabled = config.noPie;
-      } else if (config.user === 'eiu' && tDef.cbString.includes('table')) {
-        // NOTE: kludge to disable tables for EIU
+      } else if (
+        (config.user === 'eiu' || config.isVideoPreset) &&
+        tDef.cbString.includes('table')
+      ) {
+        // NOTE: kludge to disable tables for EIU & video presets
         tDisabled = true;
       } else if (isLog) {
         // Log check:

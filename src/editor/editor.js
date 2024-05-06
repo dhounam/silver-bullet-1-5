@@ -1316,8 +1316,12 @@ class SilverEditor extends Component {
     let scatterLabels = false;
     let scatterTrendline = false;
     let typeDisabled = false;
-    // Does this do anything?
+    // Does this do anything? It's just passed along as 'false'...
     const onlyTableEnabled = false;
+    // Disable tables for video styles
+    const isVideoPreset = editorConfig.global.presets.subPreset.includes(
+      'video',
+    );
     const { isDouble } = onePanel.scales.double;
     const { isMixed } = onePanel.scales.mixed;
     const isTableData = onePanel.chartData.isTable;
@@ -1372,6 +1376,7 @@ class SilverEditor extends Component {
       type,
       typeDisabled,
       onlyTableEnabled,
+      isVideoPreset,
       isLog,
       // Pass in user to (temporarily, we hope) disable tables for EIU
       user: editorConfig.global.user,

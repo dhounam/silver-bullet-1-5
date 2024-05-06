@@ -421,7 +421,6 @@ export function getSeriesClusterWidthAndPadding(config, isBars) {
     padding = 0
     clusterWidth = bound / pCountMinusOne
   } else if (clusterWidth < minWidth) {
-    console.log(`tripped at ${clusterWidth}`)
     clusterWidth = bound / pCountMinusOne - narrowGap
     padding = narrowGap
   } else if (!isBars && clusterWidth > maxWidth) {

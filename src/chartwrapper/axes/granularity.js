@@ -37,7 +37,7 @@ export function granularityPreferences() {
     },
     unlabelledMinutes: {
       NOTE: '***UNLABELLED MINUTES***',
-      testVal: '.',
+      testVal: 0,
       next: {
         interval: 'hours',
         factor: 60,
@@ -97,7 +97,7 @@ export function granularityPreferences() {
     },
     unlabelledHours: {
       NOTE: '***UNLABELLED HOURS***',
-      testVal: '.',
+      testVal: 0,
       next: {
         interval: 'days',
         factor: 24,
@@ -159,7 +159,7 @@ export function granularityPreferences() {
     },
     unlabelledDays: {
       NOTE: '***UNLABELLED DAYS***',
-      testVal: '.',
+      testVal: 0,
       next: {
         interval: 'months',
         factor: 31,
@@ -278,7 +278,7 @@ export function granularityPreferences() {
     },
     unlabelledMonths: {
       NOTE: '***UNLABELLED MONTHS***',
-      testVal: '.',
+      testVal: 0,
       next: {
         interval: 'years',
         factor: 12,
@@ -598,15 +598,16 @@ export function makeGranularityObjectForTimeAxis(
     if (isNaN(testVal)) {
       // testVal is an interval-specific string (e.g. 'MMM')
       // Test on-screen against slot width
-      testText.text(thisGran.testVal)
+      testText.text(testVal)
       // Will it fit?
       let testWidth = testText.node().getComputedTextLength()
       testWidth *= wFactor
-      labelFits = pWidth - margin > testWidth
+      labelFits = pWidth - margin > testWidth;
     } else {
-      // Check numeric value against slot width
+      // Check numeric value against slot width (I use zero
+      // for unlabelled months/days...)
       testVal *= wFactor;
-      labelFits = pWidth > testVal;
+      labelFits = pWidth - margin > testVal;
     }
     // Break the loop if the label will fit...
     // ...or if I've come to the last available interval

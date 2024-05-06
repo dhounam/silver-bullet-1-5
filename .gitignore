@@ -11,6 +11,7 @@
 # production
 /build
 /build-economist
+/build-economist-test
 /build-eiu
 
 /sibyl
