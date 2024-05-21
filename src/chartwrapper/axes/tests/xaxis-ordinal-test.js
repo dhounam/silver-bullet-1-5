@@ -263,15 +263,51 @@ class SilverXaxisOrdinal extends Component {
       firstLabelMargin: 0,
       lastLabelIndex: 0,
       lastLabelMargin: 0,
+      evenDPsBeforeFirstBoundary: false,
     }
     // 1ry or 2ry axis doesn't exist:
     if (typeof myFilter === 'undefined') {
       return margins;
     }
+    // I need to know whether this is an even number of dataPoints
+    // before the first boundary.
+    // Also check whether the first datapoint is labelled
+    // Set a flag, so we break upon first occurrence...
+    let firstBoundaryFlag = false;
+    // Separate loops through axis filter...
+    // (I could engineer a single loop, but life is short)
+    // For boundary:
     for (let iii = 0; iii < myFilter.length; iii++) {
+      // if (myFilter[iii].isBoundary && !firstBoundaryFlag) {
+      //   firstBoundaryFlag = true;
+      //   if (iii % 2 === 0) {
+      //     margins.evenDPsBeforeFirstBoundary = true
+      //   }
+      // }
+      if (!firstBoundaryFlag) {
+        if (myFilter[iii].isBoundary) {
+          firstBoundaryFlag = true;
+          if (iii % 2 === 0) {
+            margins.evenDPsBeforeFirstBoundary = true
+          }
+        } else if (iii === 0 && myFilter[iii].label) {
+          firstBoundaryFlag = true;
+          margins.evenDPsBeforeFirstBoundary = true
+        }
+      }
+    }
+    // For index and margin:
+    // Start value of loop depends upon whether first element
+    // has a label
+    // const startVal = myFilter[0].label && myFilter[1].label ? 1 : 0;
+    // const startVal = myFilter[0].label ? 1 : 0;
+    // console.log(`startVal is ${startVal}`);
+    for (let iii = 0; iii < myFilter.length; iii++) {
+    // for (let iii = 1; iii < myFilter.length; iii++) {
       if (myFilter[iii].label) {
-        margins.firstLabelIndex = iii
-        margins.firstLabelMargin = iii * granularity.dataPointWidth
+        const jjj = iii; // === 0 ? 1 : iii;
+        margins.firstLabelIndex = jjj
+        margins.firstLabelMargin = jjj * granularity.dataPointWidth
         // I did a lot of fidding about here, Apr'24. I think the
         // above is correct; but I've left a few fails below, for
         // (hopefully) subsequent deletion
@@ -333,9 +369,13 @@ class SilverXaxisOrdinal extends Component {
     //   primaryMargins.firstLabelMargin -= granularity.dataPointWidth;
     // }
 
-    // I need to find out why I'm not getting the correct result...
-    // debugger
-
+    // Kludge to catch an anomaly where the data start with a 
+    // last day of month/year/whatever (ditto 2ry, below)
+    if (primaryMargins.firstLabelMargin === 0) {
+      primaryMargins.firstLabelMargin = halfDPWidth
+    }
+    // FIXME: There's a lot of speculative (desperate!) code that
+    // needs deleting...
     // if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin / 2) {
     // if (halfLabelWidths.primary.left > (primaryMargins.firstLabelMargin - halfDPWidth)) {
     if (halfLabelWidths.primary.left > primaryMargins.firstLabelMargin) {
@@ -348,10 +388,11 @@ class SilverXaxisOrdinal extends Component {
       // primaryLeftTweak += halfDPWidth 
       primaryLeftTweak = halfLabelWidths.primary.left;
       primaryLeftTweak -= primaryMargins.firstLabelMargin
+      // Tweak if even number of elements in first 'slot'
+      primaryLeftTweak += this.evenDPTweak(primaryMargins, halfDPWidth)
       // primaryLeftTweak -= (primaryMargins.firstLabelIndex * granularity.dataPointWidth);
-              // primaryLeftTweak -= primaryMargins.firstLabelMargin;
-              // primaryLeftTweak += halfDPWidth
-              // primaryLeftTweak *= 0.95
+      // primaryLeftTweak -= primaryMargins.firstLabelMargin;
+      // primaryLeftTweak += halfDPWidth
       primaryLeftTickFirstElement = false
     } else {
       primaryLeftTweak = halfDPWidth;
@@ -373,23 +414,29 @@ class SilverXaxisOrdinal extends Component {
     // }
 
     // Secondary axis:
-    // if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin / 2) {
-    // if (halfLabelWidths.secondary.left > (secondaryMargins.firstLabelMargin - halfDPWidth)) {
-    if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin) {
-      // secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin / 2
-      secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin // - halfDPWidth
-      secondaryLeftTweak += halfDPWidth
-      secondaryLeftTickFirstElement = false
-    } else {
-      secondaryLeftTweak = halfDPWidth;
-    }
+    if (hasSecondaryAxis) {
+      // See above (primary)
+      if (secondaryMargins.firstLabelMargin === 0) {
+        secondaryMargins.firstLabelMargin = halfDPWidth
+      }
+      // if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin / 2) {
+      // if (halfLabelWidths.secondary.left > (secondaryMargins.firstLabelMargin - halfDPWidth)) {
+      if (halfLabelWidths.secondary.left > secondaryMargins.firstLabelMargin) {
+        // secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin / 2
+        secondaryLeftTweak = halfLabelWidths.secondary.left - secondaryMargins.firstLabelMargin // - halfDPWidth
+        secondaryLeftTweak += halfDPWidth
+        secondaryLeftTickFirstElement = false
+      } else {
+        secondaryLeftTweak = halfDPWidth;
+      }
 
-    if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin / 2) {
-      secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin / 2
-      secondaryRightTweak += halfDPWidth
-      secondaryRightTickLastElement = false
-    } else {
-      secondaryRightTweak = halfDPWidth;
+      if (halfLabelWidths.secondary.right > secondaryMargins.lastLabelMargin / 2) {
+        secondaryRightTweak = halfLabelWidths.secondary.right - secondaryMargins.lastLabelMargin / 2
+        secondaryRightTweak += halfDPWidth
+        secondaryRightTickLastElement = false
+      } else {
+        secondaryRightTweak = halfDPWidth;
+      }
     }
 
     // But I need an override: if 1st 2ry label is 'between', but
@@ -476,8 +523,14 @@ class SilverXaxisOrdinal extends Component {
     // On/between ticks rejoin here...
 
     // Max halfLabelWidths for 1ry/2ry axes
-    let leftTweak = Math.max(halfLabelWidths.primary.left, halfLabelWidths.secondary.left)
-    let rightTweak = Math.max(halfLabelWidths.primary.right, halfLabelWidths.secondary.right)
+    let leftTweak = Math.max(
+      halfLabelWidths.primary.left,
+      halfLabelWidths.secondary.left,
+    );
+    let rightTweak = Math.max(
+      halfLabelWidths.primary.right,
+      halfLabelWidths.secondary.right,
+    );
 
     // Consider clusterwidth, if this is a column chart...
     // OK, so this is headache-inducing. The 'tweak' is
@@ -504,6 +557,17 @@ class SilverXaxisOrdinal extends Component {
     if (indexDotHalfRad > leftTweak) {
       leftTweak = indexDotHalfRad
     }
+
+    // NOTE: late fix May'24.
+    // This may be a start, but still needs refinement and
+    // more considered positioning.
+    // Specifically, I don't tweak if label DOESN'T project
+    // if (!granularity.ticksOn && primaryMargins.evenDPsBeforeFirstBoundary) {
+    //   console.log('Doing extra tweak++++++++++++++++++')
+    //   leftTweak += granularity.dataPointWidth / 2
+    // } else {
+    //   console.log('No adjusting tweak required--------')
+    // }
 
     // Update bounds
     bounds.x += leftTweak
@@ -610,6 +674,19 @@ class SilverXaxisOrdinal extends Component {
     this.props.onReturnRevisedInnerBox(result)
   }
   // DO STRING TESTS ends
+
+  evenDPTweak(margins, halfDPWidth) {
+    let result = 0
+    if (margins.evenDPsBeforeFirstBoundary) {
+      result += halfDPWidth
+      // console.log(`Doing extra tweak: ${ result}`)
+    }
+    //  else {
+      // console.log('No adjusting tweak required--------')
+    // }
+    return result
+  }
+
 
   // RENDER axis group
   // Just draw the axis group

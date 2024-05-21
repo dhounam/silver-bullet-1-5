@@ -1131,7 +1131,6 @@
                 "width": 1
               },
               "column": {
-                "stroke": "dc-london5",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -1185,6 +1184,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "padding": 10,
@@ -1192,6 +1192,7 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
+                  "simple": "dc-london5",
                   "mixed": "dc-london5",
                   "width": 1
                 }
@@ -2468,7 +2469,6 @@
                 "width": 1
               },
               "column": {
-                "stroke": "dc-london5",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -2522,6 +2522,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "padding": 10,
@@ -2529,6 +2530,7 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
+                  "simple": "dc-london5",
                   "mixed": "dc-london5",
                   "width": 1
                 }
@@ -3819,7 +3821,6 @@
                 "width": 1
               },
               "column": {
-                "stroke": "dc-landtext",
                 "display": false,
                 "lengths": {
                   "long": {
@@ -3873,6 +3874,7 @@
             "ticks": {
               "default": {
                 "baseline": {
+                  "stroke": "dc-london5",
                   "width": 1
                 },
                 "padding": 10,
@@ -3880,7 +3882,8 @@
                 "stroke": "dc-gridlines",
                 "width": 1,
                 "zero": {
-                  "mixed": "dc-landtext",
+                  "simple": "dc-london5",
+                  "mixed": "dc-london5",
                   "width": 1
                 }
               },
