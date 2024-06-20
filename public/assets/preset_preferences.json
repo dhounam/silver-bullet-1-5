@@ -4963,8 +4963,8 @@
             "margins": {
               "left": 154,
               "right": 154,
-              "top": 487.5,
-              "bottom": 487.5 
+              "top": 382,
+              "bottom": 593
             }
           },
           "shapes": {
@@ -4980,7 +4980,8 @@
             },
             "bboxC": {
               "x": 154,
-              "y": 477.5,
+              "old-y": 477.5,
+              "y": 372,
               "width": 127,
               "height": 10,
               "fill": "dc-econred"
@@ -4989,7 +4990,8 @@
           "strings": {
             "title": {
               "x": 154,
-              "y": 547.5,
+              "old-y": 547.5,
+              "y": 442,
               "wrapwidth": 100,
               "font-family": "EconomistSans-SemiBold",
               "fill": "dc-london5",
@@ -4998,7 +5000,8 @@
             },
             "subtitle": {
               "x": 154,
-              "y": 607.5,
+              "old-y": 607.5,
+              "y": 502,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
@@ -5007,7 +5010,8 @@
             },
             "subsubtitle": {
               "x": 154,
-              "y": 667.5,
+              "old-y": 667.5,
+              "y": 562,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
@@ -5016,7 +5020,8 @@
             },
             "source": {
               "x": 154,
-              "y": -487.5,
+              "old-y": -487.5,
+              "y": -593,
               "fill": "dc-greytext",
               "wrapoptions": {
                 "hasfootnote": 45,
@@ -5029,7 +5034,8 @@
             },
             "footnote": {
               "x": 154,
-              "y": -487.5,
+              "old-y": -487.5,
+              "y": -593,
               "anchor": "start",
               "font-size": 40,
               "leading": 48,
@@ -5044,7 +5050,8 @@
               "content": "",
               "id": "number-box",
               "x": 155.5,
-              "y": 489,
+              "old-y": 489,
+              "y": 384.5,
               "font": "EconomistSans-Medium",
               "fill": "dc-london5",
               "fontsize": 40,

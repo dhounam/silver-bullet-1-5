@@ -320,22 +320,22 @@
         },
         "bar": {
           "across": true,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5
         },
         "scatter": {
           "across": true,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5
         },
         "sizedscatter": {
           "across": true,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5
         },
         "thermovertical": {
           "across": true,
-          "stroke": "gridlines",
+          "stroke": "black25",
           "width": 0.5
         },
         "column": {
