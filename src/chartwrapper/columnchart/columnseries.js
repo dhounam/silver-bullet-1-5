@@ -30,9 +30,14 @@ class SilverSeriesColumn extends Component {
   // NOTE: This event currently gets passed back up to
   // ColumnChart, where I do a console.log. Long-term, I might
   // use this to set 'emphasis' on the column...
+  // NOTE: I set up this and other click events during
+  // development, but they were at least partly dismantled along the way...
   columnClick(colData, index) {
     const clickObj = { colData, index }
-    this.props.onPassColumnClick(clickObj)
+    // Double-scale passes a line-click, so this is a crude trap
+    if (typeof this.props.onPassColumnClick !== 'undefined') {
+      this.props.onPassColumnClick(clickObj)
+    }
   }
   // BAR CLICK ends
 

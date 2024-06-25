@@ -16,15 +16,26 @@ export default function(chartConfig, bounds, testFlag, side) {
   const stacked = chartConfig.scales[side].stacked
   const isLog = chartConfig.scales[side].log
   const invert = chartConfig.scales[side].invert
-  const breakScaleObj = BrokenScale.makeBreakScaleObj(chartType, chartConfig)
-  // If not indexed, log-scale or inverted-scale...
+  // Kludge, June'24: if *either* scale inverts, set a flag to prevent
+  // double scale charts breaking inverted scales
+  let allowBrokenScale = true;
+  if (chartConfig.scales.isDouble) {
+    if (chartConfig.scales.left.invert || chartConfig.scales.right.invert) {
+      allowBrokenScale = false;
+    } 
+  }
+  const breakScaleObj = BrokenScale.makeBreakScaleObj(chartType, chartConfig);
+  // If BS is allowd, and chart is not indexed, log-scale or inverted-scale...
   // if min val > 0, break scale:
-  if (!indexed.indexFlag && !isLog && !invert) {
-    if (mmO.min > 0) {
-      breakScaleObj.break = true
-      bounds.height -= breakScaleObj.padding
+  if (allowBrokenScale) {
+    if (!indexed.indexFlag && !isLog && !invert) {
+      if (mmO.min > 0) {
+        breakScaleObj.break = true
+        bounds.height -= breakScaleObj.padding
+      }
     }
   }
+
   // NOTE: originalBounds was designed for barchart ordinal
   // y-axis, where I need to move cat strings back to original l/h edge
   // Maybe redundant, but you never know...

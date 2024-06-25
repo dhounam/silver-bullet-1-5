@@ -518,15 +518,19 @@ class SilverMixedChart extends Component {
     const bounds = Object.assign({}, this.state.innerBox)
     // NOTE: next gets overridden anyway
     let padding = chartConfig.series[seriesType].gap
-    // Broken scale...?
-    const brokenScalePadding = BrokenScale.getYaxisBrokenScalePadding(
-      'mixed',
-      chartConfig
-    )
-    let breakScale = false
-    if (mmO.min > 0) {
-      bounds.height -= brokenScalePadding
-      breakScale = true
+    // Broken scale padding...?
+    let breakScale = false;
+    // Inverted scale can't have BS padding:
+    if (!chartConfig.scales[side].invert) {
+      const brokenScalePadding = BrokenScale.getYaxisBrokenScalePadding(
+        'mixed',
+        chartConfig
+      )
+      // No broken scale
+      if (mmO.min > 0) {
+        bounds.height -= brokenScalePadding
+        breakScale = true
+      }
     }
     // Append additional props to config:
     config.bounds = bounds
