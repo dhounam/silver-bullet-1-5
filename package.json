@@ -3,7 +3,6 @@
   "version": "0.2.1",
   "private": true,
   "dependencies": {
-    "@economist/silver-chart": "^1.1.5",
     "array-move": "^4.0.0",
     "cross-env": "^7.0.3",
     "d3": "^3.5.17",
@@ -16,7 +15,7 @@
     "react": "^16.10.2",
     "react-color": "^2.19.3",
     "react-dom": "^16.10.2",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^5.0.1",
     "react-sortable-hoc": "^2.0.0"
   },
   "config": {
