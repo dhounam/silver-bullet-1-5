@@ -50,6 +50,9 @@ class SilverBarChart extends Component {
   // Callbacks:
   // HANDLE Y-AXIS INNER BOX BOUNDS
   handleYaxisInnerBoxBounds(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       // Set flags for render 2 (blobs test)
@@ -74,6 +77,9 @@ class SilverBarChart extends Component {
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox (after axis testing)
   handleXaxisInnerBoxBounds(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       // Set flags for render 4 (final)

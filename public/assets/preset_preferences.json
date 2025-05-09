@@ -4958,7 +4958,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 154,
               "right": 154,
               "top": 382,
@@ -4980,16 +4980,16 @@
               "x": 154,
               "old-y": 477.5,
               "y": 372,
-              "width": 127,
-              "height": 10,
+              "width": 110,
+              "height": 11,
               "fill": "dc-econred"
             }     
           },
           "strings": {
             "title": {
               "x": 154,
-              "old-y": 547.5,
-              "y": 442,
+              "old-y": 442,
+              "y": 443,
               "wrapwidth": 100,
               "font-family": "EconomistSans-SemiBold",
               "fill": "dc-london5",
@@ -6281,11 +6281,17 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
-              "left": 487.5,
-              "right": 487.5,
-              "top": 154,
-              "bottom": 154
+            "outerMargins": {
+              "left": 196,
+              "right": 196,
+              "top": 55,
+              "bottom": 55
+            },
+            "innerMargins": {
+              "_NOTE": "May'25, for Online Video Landscape fixed internal margins",
+              "fixed": true,
+              "left": 150,
+              "right": 150
             }
           },
           "shapes": {
@@ -6293,11 +6299,11 @@
               "fill": "films-bkgd"
             },
             "bboxB": {
-              "bboxB-note": "Just as a guide during devel",
-              "x": 487.5,
-              "y": 154,
-              "width": 945,
-              "height": 772,
+              "bboxB-note": "Just as a guide during devel, doesn't display",
+              "x": 196,
+              "y": 55,
+              "width": 1528,
+              "height": 970,
               "fill": "white",
               "adjustable": {
                 "height": false,
@@ -6306,44 +6312,44 @@
               "display": false
             },
             "bboxC": {
-              "x": 487.5,
-              "y": 144,
-              "width": 127,
-              "height": 10,
+              "x": 196,
+              "y": 55,
+              "width": 98,
+              "height": 9.8,
               "fill": "dc-econred"
             }     
           },
           "strings": {
             "title": {
-              "x": 487.5,
-              "y": 214,
+              "x": 196,
+              "y": 116.8,
               "wrapwidth": 100,
               "font-family": "EconomistSans-SemiBold",
               "fill": "dc-london5",
-              "font-size": 52,
-              "leading": 60
+              "font-size": 46,
+              "leading": 52
             },
             "subtitle": {
-              "x": 487.5,
-              "y": 274,
+              "x": 196,
+              "y": 160.8,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
-              "font-size": 46,
-              "leading": 52
+              "font-size": 40,
+              "leading": 44
             },
             "subsubtitle": {
-              "x": 487.5,
-              "y": 334,
+              "x": 196,
+              "y": 204.8,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
-              "font-size": 46,
-              "leading": 52
+              "font-size": 40,
+              "leading": 44
             },
             "source": {
-              "x": 487.5,
-              "y": -154,
+              "x": 196,
+              "y": -136,
               "fill": "dc-greytext",
               "wrapoptions": {
                 "hasfootnote": 45,
@@ -6351,20 +6357,21 @@
                 "basealigned": true
               },
               "wrapwidth": 100,
+              "font-family": "EconomistSans-Light",
               "font-size": 40,
-              "leading": 48
+              "leading": 44
             },
             "footnote": {
-              "x": 487.5,
-              "y": -154,
+              "x": 196,
+              "y": -136,
               "anchor": "start",
               "font-size": 40,
-              "leading": 48,
+              "leading": 44,
               "fill": "dc-greytext",
               "font-family": "EconomistSans-Light",
               "note": "Footnote stacked above source",
               "aboveSource": true,
-              "sourceGap": 50,
+              "sourceGap": 44,
               "wrapwidth": 100
             },
             "numberBox": {
@@ -6384,37 +6391,37 @@
           },
           "topPadding": {
             "belowTitleClusterBaseline": {
-              "toPanelFlash": 96,
-              "toLegendBaseline": 84,
-              "toBlobTop": 90,
-              "toTableHeaders": 96,
+              "toPanelFlash": 52,
+              "toLegendBaseline": 46,
+              "toBlobTop": 50,
+              "toTableHeaders": 52,
               "toTopOfChart": {
-                "default": 96,
-                "bar": 78,
-                "double": 78
+                "default": 52,
+                "bar": 43,
+                "double": 43
               }
             },
             "belowPanelHeaderBaseline": {
-              "toLegendBaseline": 60,
-              "toBlobTop": 60,
-              "toTableHeaders": 45,
+              "toLegendBaseline": 33,
+              "toBlobTop": 33,
+              "toTableHeaders": 25,
               "toTopOfChart": {
-                "default": 96,
-                "bar": 78,
-                "double": 66
+                "default": 52,
+                "bar": 43,
+                "double": 36
               },
               "NOTE": "Padding BETWEEN panels is in panelAttributes node"
             },
             "belowLegendBaseline": {
-              "toBlobTop": 60,
+              "toBlobTop": 33,
               "toTopOfChart": {
-                "default": 96,
-                "bar": 78,
-                "double": 108
+                "default": 52,
+                "bar": 45,
+                "double": 60
               }
             },
             "belowBlobBottom": {
-              "default": 72
+              "default": 40
             }
           }
         },
@@ -6445,7 +6452,8 @@
         },
         "chart": {
           "padding": {
-            "below": 72
+            "NOTE": "Padding between source and x-axis labels baselines",
+            "below": 76
           }
         },
         "axes": {
@@ -6459,15 +6467,15 @@
                 "lengths": {
                   "long": {
                     "start": 0,
-                    "end": 30
+                    "end": 20
                   },
                   "default": {
                     "start": 0,
-                    "end": 18
+                    "end": 12
                   },
                   "short": {
                     "start": 0,
-                    "end": 12
+                    "end": 8
                   }
                 },
                 "padding": 12,
@@ -6535,7 +6543,7 @@
                 "secondary": 40
               },
               "fill": "dc-london5",
-              "rowheight": 72,
+              "rowheight": 52,
               "realheight": 20,
               "minGapBetweenLabels": 40
             },
@@ -7486,8 +7494,8 @@
           "text": {
             "font": "EconomistSans-Regular",
             "fill": "dc-london5",
-            "size": 46,
-            "leading": 48
+            "size": 40,
+            "leading": 44
           },
           "padding": {
             "belowHeader": 50,

@@ -435,3 +435,19 @@ export function getSeriesClusterWidthAndPadding(config, isBars) {
   }
 }
 // GET SERIES CLUSTER WIDTH AND PADDING ends
+
+// CHECK FOR FIXED INNER MARGINS
+// Called from the various series components (linechart, etc.)
+// Specific, as of May'25, to Online Video Landscape
+// Checks for fixed inner margins, left and right and overrides
+// default dynamic margins
+export function checkForFixedInnerMargins(innerBox, config) {
+  const innerMargins = config.innerMargins;
+  if (innerMargins.fixed) {
+    const origIB = config.originalInnerBox;
+    innerBox.x = origIB.x + innerMargins.left;
+    innerBox.width = origIB.width - (innerMargins.left + innerMargins.right);
+  }
+  return innerBox
+}
+// CHECK FOR FIXED INNER MARGINS ends

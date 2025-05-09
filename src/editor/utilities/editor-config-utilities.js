@@ -1061,10 +1061,16 @@ export function setBackgroundProperties(config, presetsConfig, startUp) {
   // I have a defaultRecommendedHeight, which is the original
   // height to which any chart is set initially or upon change
   // of preset. It can overriden.
-  // MARGINS
-  chain = ['background', 'outerbox', 'margins'];
-  const margins = findPreferencesNode(presetsConfig, chain);
-  config.background.margins = margins;
+  // OUTER MARGINS
+  chain = ['background', 'outerbox', 'outerMargins'];
+  const outerMargins = findPreferencesNode(presetsConfig, chain);
+  config.background.outerMargins = outerMargins;
+  // INNER MARGINS
+  // I added this property May'25 to allow fixed inner margins for Online Video Landscape charts
+  // It's all a desperate kludge (and this property really isn't in the right place)
+  chain = ['background', 'outerbox', 'innerMargins'];
+  const innerMargins = findPreferencesNode(presetsConfig, chain);
+  config.background.innerMargins = innerMargins;
   // SHAPES (convert object to array)
   const shapeKeys = Object.keys(dps.background.shapes);
   const shapeArray = [];

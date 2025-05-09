@@ -87,6 +87,9 @@ class SilverColumnChart extends Component {
   // IB is adjusted for projecting x-axis category strings. This
   // (hopefully!) allows me to adjust for blobs...
   handleYaxisInnerBoxBoundsLeft(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -99,6 +102,9 @@ class SilverColumnChart extends Component {
   }
 
   handleYaxisInnerBoxBoundsRight(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -113,6 +119,9 @@ class SilverColumnChart extends Component {
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox after calculating axis adjustments
   handleXaxisInnerBoxBounds(result) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    result.bounds = ChartUtilities.checkForFixedInnerMargins(result.bounds, config)
     this.setState({
       innerBox: result.bounds,
       granularity: result.granularity,

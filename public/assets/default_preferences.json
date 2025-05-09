@@ -16,9 +16,18 @@
           "forceWidth": true
         }
       },
-      "margins": {
+      "outerMargins": {
+        "_NOTE_A": "Between chart edge and drawn elements ",
+        "_NOTE_B": "At left: between chart edge and left end of x-axis baseline",
+        "_NOTE_C": "At right between end of yaxis labels and chart edge ",
         "left": 6,
         "right": 6
+      },
+      "innerMargins": {
+        "_NOTE": "May'25, for Online Video Landscape fixed internal margins",
+        "fixed": false,
+        "left": 0,
+        "right": 0
       }
     },
     "shapes": {

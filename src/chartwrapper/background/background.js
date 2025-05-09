@@ -246,10 +246,10 @@ class SilverBackground extends Component {
     const stringArray = this.restateStrings(strings)
     const chartWidth = config.background.outerbox.dimensions.width
     const chartHeight = config.background.outerbox.dimensions.height
-    // Width for wrapping is less margins:
+    // Width for wrapping is less outer margins:
     const wrappingWidth =
       chartWidth -
-      (config.background.margins.left + config.background.margins.right)
+      (config.background.outerMargins.left + config.background.outerMargins.right)
     const colours = config.metadata.colours
     // Context
     const stringsGroup = d3.select('.silver-chart-strings-group')
@@ -391,8 +391,8 @@ class SilverBackground extends Component {
     //    bottomMargin: baseline of top line of source/footnote cluster
     // Assemble and return a global (i.e. pre-panels) inner box object:
     const bGrd = config.background
-    const mLeft = bGrd.margins.left
-    const mRight = bGrd.margins.right
+    const mLeft = bGrd.outerMargins.left
+    const mRight = bGrd.outerMargins.right
     const globalInnerBox = {
       x: mLeft,
       width: bGrd.outerbox.dimensions.width - (mLeft + mRight),

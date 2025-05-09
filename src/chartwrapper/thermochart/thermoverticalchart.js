@@ -87,6 +87,8 @@ class SilverThermoVerticalChart extends Component {
   // IB is adjusted for projecting x-axis category strings. This
   // (hopefully!) allows me to adjust for blobs...
   handleYaxisInnerBoxBoundsLeft(innerBox) {
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -98,6 +100,8 @@ class SilverThermoVerticalChart extends Component {
   }
 
   handleYaxisInnerBoxBoundsRight(innerBox) {
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -111,6 +115,8 @@ class SilverThermoVerticalChart extends Component {
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox after calculating axis adjustments
   handleXaxisInnerBoxBounds(result) {
+    const config = this.props.config;
+    result.bounds = ChartUtilities.checkForFixedInnerMargins(result.bounds, config)
     this.setState({
       innerBox: result.bounds,
       granularity: result.granularity,

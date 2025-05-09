@@ -89,6 +89,9 @@ class SilverLineChart extends Component {
   // IB is adjusted for projecting x-axis category strings. This
   // (hopefully!) allows me to adjust for blobs...
   handleYaxisInnerBoxBoundsLeft(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -99,8 +102,10 @@ class SilverLineChart extends Component {
       blobsTest: false,
     })
   }
-
+  
   handleYaxisInnerBoxBoundsRight(innerBox) {
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -111,10 +116,12 @@ class SilverLineChart extends Component {
       blobsTest: false,
     })
   }
-
+  
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox after calculating axis adjustments
   handleXaxisInnerBoxBounds(result) {
+    const config = this.props.config;
+    result.bounds = ChartUtilities.checkForFixedInnerMargins(result.bounds, config)
     this.setState({
       innerBox: result.bounds,
       granularity: result.granularity,
@@ -534,7 +541,7 @@ class SilverLineChart extends Component {
     // };
     // // If comm'd in, next mmoves down into JSX
     // <rect style={rectStyle} />
-
+    
     // If unstacked, zeroline-group is in front of yaxis, behind series
     let chartComponentsJSX = (
       <g className={mainGroupClass} key={kids.mainGroupKey} id={kids.contentId}>

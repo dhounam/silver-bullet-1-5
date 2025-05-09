@@ -381,7 +381,7 @@ class SilverLegends extends Component {
           headerPrefs: config.legend.headerText,
           keyStyleArray,
           keySizePrefs: config.legend,
-          left: config.background.margins.left,
+          left: config.background.outerMargins.left,
           metadata: config.metadata,
           padding: config.legend.padding,
           stacked,

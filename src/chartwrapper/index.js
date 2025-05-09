@@ -226,6 +226,10 @@ class SilverChartWrapper extends Component {
         myIB.height -= paddingArray[pNo]
       }
     }
+    // Kludge May'25 to set innerMargins (for fixed Online Video Landscape)
+    for (let pNo = 0; pNo < pCount; pNo++) {
+      config.panelArray[pNo].innerMargins = config.background.innerMargins;
+    }
     this.setState({ innerboxes, renderPanels: false, renderLegends: true })
   }
   // HANDLE PANEL INNER BOX BOUNDS ends

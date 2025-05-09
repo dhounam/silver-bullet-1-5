@@ -461,6 +461,7 @@ export function getNewChartObject(newPayload, presetsConfig) {
     // emVal: dps.other.emVal,
     forceTurn: dps.other.forceTurn,
     idealMargin: dps.other.idealMargin,
+    innerMargins: dps.background.outerbox.innerMargins,
     // Smallest possible inner chart area
     minimumBounds: dps.other.minimumBounds,
     // NOTE: blob metadata moves to global CO
