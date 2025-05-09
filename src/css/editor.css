@@ -31,8 +31,9 @@ this class resets header width */
 /* stylelint-enable */
 /* CHART DATA fold elements: textarea... */
 .chartdata-textarea {
-  font-family: EconSansCndReg;
-  font-size: 16px;
+  /* font-family: EconSansCndReg; */
+  font-family: EconomistSans-Regular;
+  font-size: 14px;
   line-height: 20px;
   height: 200px;
   width: 98%;
