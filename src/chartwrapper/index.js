@@ -219,16 +219,18 @@ class SilverChartWrapper extends Component {
     // I'm after the padding below panel headers...
     const pCount = config.metadata.panels.total
     if (pCount > 1) {
+      // Multiple panels
       const paddingArray = this.getPaddingBelowPanelHeaderBaselines(config)
       for (let pNo = 0; pNo < pCount; pNo++) {
         const myIB = innerboxes[pNo]
         myIB.y += paddingArray[pNo]
         myIB.height -= paddingArray[pNo]
       }
-    }
-    // Kludge May'25 to set innerMargins (for fixed Online Video Landscape)
-    for (let pNo = 0; pNo < pCount; pNo++) {
-      config.panelArray[pNo].innerMargins = config.background.innerMargins;
+    } else {
+      // If no panels, kludge May'25 to set fixed innerMargins for Online Video Landscape
+      // (inferential: assumption is that if there are panels we don't want
+      // to waste space on fixed margins)
+      config.panelArray[0].innerMargins = config.background.innerMargins;
     }
     this.setState({ innerboxes, renderPanels: false, renderLegends: true })
   }

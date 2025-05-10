@@ -6331,7 +6331,7 @@
             },
             "subtitle": {
               "x": 196,
-              "y": 160.8,
+              "y": 168.8,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
@@ -6340,7 +6340,7 @@
             },
             "subsubtitle": {
               "x": 196,
-              "y": 204.8,
+              "y": 220.8,
               "wrapwidth": 100,
               "font-family": "EconomistSans-Light",
               "fill": "dc-london5",
