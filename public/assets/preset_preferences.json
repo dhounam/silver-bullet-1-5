@@ -175,7 +175,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 8,
               "bottom": 6
             }
@@ -316,7 +316,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 8,
               "bottom": 6
             }
@@ -455,7 +455,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 10,
               "bottom": 10
             }
@@ -484,7 +484,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 10,
               "bottom": 10,
               "left": 0,
@@ -551,7 +551,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 0,
               "right": 0
             }
@@ -636,7 +636,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 0,
               "right": 0
             }
@@ -693,7 +693,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 0,
               "right": 0
             }
@@ -750,7 +750,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 0,
               "right": 0
             }
@@ -807,7 +807,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 0,
               "right": 0
             }
@@ -922,7 +922,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 0,
               "bottom": 0,
               "left": 0,
@@ -2270,7 +2270,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 0,
               "bottom": 0,
               "left": 0,
@@ -3612,7 +3612,7 @@
               "forceHeight": true,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "top": 0,
               "bottom": 0,
               "left": 0,
@@ -8419,7 +8419,7 @@
               "forceHeight": false,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 6,
               "right": 6
             }
@@ -8443,7 +8443,7 @@
               "forceHeight": false,
               "forceWidth": true
             },
-            "margins": {
+            "outerMargins": {
               "left": 6,
               "right": 6
             }

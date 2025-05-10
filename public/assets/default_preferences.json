@@ -20,6 +20,7 @@
         "_NOTE_A": "Between chart edge and drawn elements ",
         "_NOTE_B": "At left: between chart edge and left end of x-axis baseline",
         "_NOTE_C": "At right between end of yaxis labels and chart edge ",
+        "_NOTE_D": "Some PPs have top and bottom properties here, but these seem to be redundant",
         "left": 6,
         "right": 6
       },
