@@ -6290,8 +6290,8 @@
             "innerMargins": {
               "_NOTE": "May'25, for Online Video Landscape fixed internal margins",
               "fixed": true,
-              "left": 150,
-              "right": 150
+              "left": 120,
+              "right": 120
             }
           },
           "shapes": {
@@ -6349,7 +6349,7 @@
             },
             "source": {
               "x": 196,
-              "y": -136,
+              "y": -179,
               "fill": "dc-greytext",
               "wrapoptions": {
                 "hasfootnote": 45,
@@ -6363,7 +6363,7 @@
             },
             "footnote": {
               "x": 196,
-              "y": -136,
+              "y": -179,
               "anchor": "start",
               "font-size": 40,
               "leading": 44,
@@ -6397,7 +6397,7 @@
               "toTableHeaders": 52,
               "toTopOfChart": {
                 "default": 52,
-                "bar": 43,
+                "bar": 52,
                 "double": 43
               }
             },

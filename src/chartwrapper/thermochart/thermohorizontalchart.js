@@ -60,6 +60,9 @@ class SilverThermoHorizontalChart extends Component {
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox (after axis testing)
   handleXaxisInnerBoxBounds(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config, 'hthermochart')
     this.setState({
       innerBox,
       // Set flags for render 2 (y-axis test)

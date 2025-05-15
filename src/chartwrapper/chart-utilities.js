@@ -440,13 +440,30 @@ export function getSeriesClusterWidthAndPadding(config, isBars) {
 // Called from the various series components (linechart, etc.)
 // Specific, as of May'25, to Online Video Landscape
 // Checks for fixed inner margins, left and right and overrides
-// default dynamic margins
-export function checkForFixedInnerMargins(innerBox, config) {
+// default dynamic margins.
+// Bar and h-thermo charts are an exception, flagged by 3rd arg
+export function checkForFixedInnerMargins(innerBox, config, style) {
   const innerMargins = config.innerMargins;
   if (innerMargins.fixed) {
     const origIB = config.originalInnerBox;
-    innerBox.x = origIB.x + innerMargins.left;
-    innerBox.width = origIB.width - (innerMargins.left + innerMargins.right);
+    if (typeof style === 'undefined') {
+      // So not a bar or hthermo chart
+      innerBox.x = origIB.x + innerMargins.left;
+      innerBox.width = origIB.width - (innerMargins.left + innerMargins.right);
+    } else {
+      // Don't override left
+      // At right, use new innerbox width... with a tweak--
+      // 'Normally', for bar/hthermo charts, the r/h margin is calc'd to
+      // the end of the final x-axis label. In this (highly inferential!)
+      // case, however, I think I am required to set the fixed margin
+      // to the rightmost *tick*. So I need to allow for half the
+      // width of the rightmost x-axis label:
+      const origRight = origIB.x + origIB.width;
+      const ibRight = innerBox.x + innerBox.width;
+      const halfLastLabelWidth = origRight - ibRight;
+      // So for width:
+      innerBox.width -= (innerMargins.right - halfLastLabelWidth);
+    }
   }
   return innerBox
 }
