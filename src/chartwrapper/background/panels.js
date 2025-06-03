@@ -3,42 +3,42 @@
   consistent-this, no-unused-vars */
 
 // FIXME: this could be a non-React component
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import * as d3 from 'd3'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import * as d3 from 'd3';
 
 // Utilities modules
-import * as ChartUtils from '../chart-utilities'
-import * as PanelUtils from './panel-utilities'
-import * as TextWrapping from '../chartside-utilities/text-wrapping'
+import * as ChartUtils from '../chart-utilities';
+import * as PanelUtils from './panel-utilities';
+import * as TextWrapping from '../chartside-utilities/text-wrapping';
 
 class SilverPanels extends Component {
   // DEFAULT PROPS
   static get defaultProps() {
-    return {}
+    return {};
   }
 
   // CONSTRUCTOR
   constructor(props) {
-    super(props)
-    this.panelArray = []
+    super(props);
+    this.panelArray = [];
     // I think I have to track the IB as a global...
-    this.innerBoxBounds = []
+    this.innerBoxBounds = [];
   }
 
   componentDidMount() {
     if (this.props.drawPanels) {
-      this.updatePanels()
+      this.updatePanels();
     }
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.drawPanels
+    return nextProps.drawPanels;
   }
 
   componentDidUpdate() {
     if (this.props.drawPanels) {
-      this.updatePanels()
+      this.updatePanels();
     }
   }
 
@@ -47,16 +47,16 @@ class SilverPanels extends Component {
   // inner box, adjusted for padding below title cluster
   adjustGlobalInnerBoxForBelowTitlePadding(config) {
     // All-chart inner box
-    const globalInnerBox = this.props.innerbox
+    const globalInnerBox = this.props.innerbox;
     // Total number of panels:
-    const pTotal = config.panelArray.length
+    const pTotal = config.panelArray.length;
     const topPadding =
-      config.background.topPadding.belowTitleClusterBaseline.toPanelFlash
+      config.background.topPadding.belowTitleClusterBaseline.toPanelFlash;
     if (pTotal > 1) {
-      globalInnerBox.y += topPadding
-      globalInnerBox.height -= topPadding
+      globalInnerBox.y += topPadding;
+      globalInnerBox.height -= topPadding;
     }
-    return globalInnerBox
+    return globalInnerBox;
   }
   // ADJUST GLOBAL INNER BOX FOR BELOW-TITLE PADDING ends
 
@@ -66,16 +66,16 @@ class SilverPanels extends Component {
   getHorizontalPanelGap(outerbox, opX, colLen) {
     // Horizontal padding depends upon overall chart width and number of panels
     // Initially assume the chart is narrow
-    const paddingX = opX
-    let pGapX = paddingX.narrow
+    const paddingX = opX;
+    let pGapX = paddingX.narrow;
     // But if chart is wide, h-gap depends upon number of panels
     if (outerbox.width >= paddingX.narrowThreshold) {
-      pGapX = opX.wideTwo
+      pGapX = opX.wideTwo;
       if (colLen > 2) {
-        pGapX = opX.wideMoreThanTwo
+        pGapX = opX.wideMoreThanTwo;
       }
     }
-    return pGapX
+    return pGapX;
   }
   // GET HORIZONTAL PANEL GAP ends
 
@@ -84,18 +84,18 @@ class SilverPanels extends Component {
   // and height of ONE panel
   getPanelWidth(pWidth, pGap, colLen) {
     // Deduct gaps
-    pWidth -= pGap * (colLen - 1)
-    pWidth /= colLen
-    pWidth = Math.max(pWidth, 0)
-    return pWidth
+    pWidth -= pGap * (colLen - 1);
+    pWidth /= colLen;
+    pWidth = Math.max(pWidth, 0);
+    return pWidth;
   }
 
   getPanelHeight(pHeight, pGap, rowLen) {
     // Take away gap(s) between rows
-    pHeight -= pGap * (rowLen - 1)
-    pHeight /= rowLen
-    pHeight = Math.max(pHeight, 0)
-    return pHeight
+    pHeight -= pGap * (rowLen - 1);
+    pHeight /= rowLen;
+    pHeight = Math.max(pHeight, 0);
+    return pHeight;
   }
   // GET PANEL WIDTH/HEIGHT end
 
@@ -104,70 +104,70 @@ class SilverPanels extends Component {
   // for binding. All I want here is 'location' properties for
   // each panel
   buildInitialPanelArray(globalInnerBox, pHeight) {
-    const config = this.props.config
-    const pConfig = config.metadata.panels
+    const config = this.props.config;
+    const pConfig = config.metadata.panels;
     // Total number of panels:
-    const pTotal = Number(pConfig.total)
+    const pTotal = Number(pConfig.total);
     // Given no. of rows, how many cols?
-    const rowLen = pConfig.rows
-    const colLen = pTotal / rowLen
-    const originalPadding = config.panelAttributes.padding
+    const rowLen = pConfig.rows;
+    const colLen = pTotal / rowLen;
+    const originalPadding = config.panelAttributes.padding;
     // Padding between panels: x (between cols) and y (between rows) axes
     // Depends upon overall chart width
-    const outerbox = config.background.outerbox.dimensions
+    const outerbox = config.background.outerbox.dimensions;
     const pGapX = this.getHorizontalPanelGap(
       outerbox,
       originalPadding.between.x,
-      colLen
-    )
-    const pGapY = originalPadding.between.y
+      colLen,
+    );
+    const pGapY = originalPadding.between.y;
 
     // Props for the panel rect (flash)
-    const rectProps = config.panelAttributes.rect
+    const rectProps = config.panelAttributes.rect;
 
     // Attributes common to *all* panels, rects and headers --
     // Panels:
-    const pWidth = this.getPanelWidth(globalInnerBox.width, pGapX, colLen)
-    const pHeadAttribs = config.panelAttributes.panelheader
+    const pWidth = this.getPanelWidth(globalInnerBox.width, pGapX, colLen);
+    const pHeadAttribs = config.panelAttributes.panelheader;
 
-    const panelArray = []
+    const panelArray = [];
     // Since we're looping by rows, then columns, we need a counter:
-    let pCount = 0
+    let pCount = 0;
     // Drawing row by row...
     for (let rNo = 0; rNo < rowLen; rNo++) {
       // ...and column by column
       for (let cNo = 0; cNo < colLen; cNo++) {
-        const pObj = {}
+        const pObj = {};
         // Panel 'location'
-        pObj.x = globalInnerBox.x + (pWidth + pGapX) * cNo
-        pObj.y = globalInnerBox.y + (pHeight + pGapY) * rNo
-        pObj.height = pHeight
+        pObj.x = globalInnerBox.x + (pWidth + pGapX) * cNo;
+        pObj.y = globalInnerBox.y + (pHeight + pGapY) * rNo;
+        pObj.height = pHeight;
         // Rect location and ID
-        pObj.rectX = pObj.x + Number(rectProps.x)
-        pObj.rectY = pObj.y + Number(rectProps.y)
-        pObj.rectID = rectProps.id
+        pObj.rectX = pObj.x + Number(rectProps.x);
+        pObj.rectY = pObj.y + Number(rectProps.y);
+        pObj.rectID = rectProps.id;
         // Panel header -- if more than 1 'panel'
         // (forced to string and trimmed)
-        let pStr = ''
+        let pStr = '';
         if (pTotal > 1) {
-          pStr = config.panelArray[pCount].panelheader.toString().trim()
+          pStr = config.panelArray[pCount].panelheader.toString().trim();
         }
-        pObj.content = pStr
-        pObj.textX = pObj.x + pHeadAttribs.x
-        pObj.textY = pObj.y + pHeadAttribs.y
-        pObj.height = pHeight
-        panelArray.push(pObj)
-        pCount++
+        pObj.content = pStr;
+        pObj.textX = pObj.x + pHeadAttribs.x;
+        pObj.textY = pObj.y + pHeadAttribs.y;
+        pObj.height = pHeight;
+        panelArray.push(pObj);
+        pCount++;
       }
     }
-    return panelArray
+    return panelArray;
   }
   // BUILD INITIAL PANEL ARRAY ends
 
   // BUILD INNER BOX ARRAY
   // Called from updatePanels to make array of innerbox-bounds objects
   buildInnerBoxArray(panelArray, pWidth, pHeight, hBaseline) {
-    const ibArray = panelArray.map((pObj) => {
+    const ibArray = panelArray.map(pObj => {
       const ibItem = {
         x: pObj.x,
         width: pWidth,
@@ -175,10 +175,10 @@ class SilverPanels extends Component {
         // ...then again by set margin. If there is a header (see just above)
         y: pObj.y + hBaseline,
         height: pHeight - hBaseline,
-      }
-      return ibItem
-    })
-    return ibArray
+      };
+      return ibItem;
+    });
+    return ibArray;
   }
   // BUILD INNER BOX ARRAY ends
 
@@ -186,20 +186,20 @@ class SilverPanels extends Component {
   // Called from updatePanels to set props on the flash
   // Flash is drawn *above* (sitting on) top of IB
   updateRect(pGrpBinding, rectProps, colours) {
-    const rHeight = +rectProps.height
+    const rHeight = +rectProps.height;
     pGrpBinding
       .select('rect')
       .attr({
         class: 'panel-rect',
-        id: (ddd) => `${ddd.rectID}~~~fill:${rectProps.fill}`,
-        x: (ddd) => ddd.rectX,
-        y: (ddd) => ddd.rectY - rHeight,
+        id: ddd => `${ddd.rectID}~~~fill:${rectProps.fill}`,
+        x: ddd => ddd.rectX,
+        y: ddd => ddd.rectY - rHeight,
         height: rHeight,
         width: +rectProps.width,
       })
       .style({
         fill: colours[rectProps.fill],
-      })
+      });
   }
   // UPDATE RECT ends
 
@@ -208,16 +208,16 @@ class SilverPanels extends Component {
   // (All except x and y -- see caller)
   updateText(pHeadText, headProps, colours) {
     pHeadText
-      .text((ddd) => ddd.content)
+      .text(ddd => ddd.content)
       .attr({
         class: 'panel-header',
         id: (ddd, iii) => {
-          const id = `panel-header-${iii}`
-          const fill = headProps.fill
-          const justification = 'start'
-          const leading = headProps.leading
-          const tID = ChartUtils.getTextID(id, fill, justification, leading)
-          return tID
+          const id = `panel-header-${iii}`;
+          const fill = headProps.fill;
+          const justification = 'start';
+          const leading = headProps.leading;
+          const tID = ChartUtils.getTextID(id, fill, justification, leading);
+          return tID;
         },
         leading: headProps.leading,
       })
@@ -226,7 +226,7 @@ class SilverPanels extends Component {
         'font-family': headProps['font-family'],
         'font-size': `${headProps['font-size']}px`,
         'text-anchor': 'start',
-      })
+      });
   }
   // UPDATE TEXT
 
@@ -234,9 +234,9 @@ class SilverPanels extends Component {
   // Called from updatePanels. Sets up binding and appends
   // rect and header
   bindAndAppend(panelsGroup, panelArray) {
-    const pGrpBinding = panelsGroup.selectAll('g').data(panelArray)
+    const pGrpBinding = panelsGroup.selectAll('g').data(panelArray);
     // EXIT
-    pGrpBinding.exit().remove()
+    pGrpBinding.exit().remove();
     // ENTER
     const panelGroupEnter = pGrpBinding
       .enter()
@@ -244,13 +244,13 @@ class SilverPanels extends Component {
       .attr({
         class: (ddd, iii) => `panel-group-${iii}`,
         id: (ddd, iii) => `panel-group-${iii}`,
-      })
+      });
     // RECT
-    panelGroupEnter.append('rect')
+    panelGroupEnter.append('rect');
     // HEADER
-    panelGroupEnter.append('text')
+    panelGroupEnter.append('text');
     //
-    return pGrpBinding
+    return pGrpBinding;
   }
   // BIND AND APPEND ends
 
@@ -259,102 +259,104 @@ class SilverPanels extends Component {
   // an empty array to the selection, so that the exit method
   // removes any panel furniture left over from previous chart...
   dealWithNoPanels(iBox) {
-    const panelArray = []
-    const panelsGroup = d3.select('.silver-chart-panels-group')
-    this.bindAndAppend(panelsGroup, panelArray)
+    const panelArray = [];
+    const panelsGroup = d3.select('.silver-chart-panels-group');
+    this.bindAndAppend(panelsGroup, panelArray);
     // Return un-panelled IB as single array element
-    this.props.onGetInnerBoxes([iBox])
+    this.props.onGetInnerBoxes([iBox]);
   }
   // DEAL WITH NO PANELS ends
 
   // UPDATE PANELS
   updatePanels() {
-    const globalThis = this
-    const config = this.props.config
-    const pConfig = config.metadata.panels
+    const globalThis = this;
+    const config = this.props.config;
+    const pConfig = config.metadata.panels;
     // Total number of panels:
-    const pTotal = Number(pConfig.total)
+    const pTotal = Number(pConfig.total);
     if (pTotal < 2) {
       // NOTE: this feels like a whacko kludge...
-      this.dealWithNoPanels(this.props.innerbox)
-      return
+      this.dealWithNoPanels(this.props.innerbox);
+      return;
     }
     // Still here? We have panels...
-    const globalInnerBox = this.adjustGlobalInnerBoxForBelowTitlePadding(config)
+    const globalInnerBox = this.adjustGlobalInnerBoxForBelowTitlePadding(
+      config,
+    );
     // Given no. of rows, how many cols?
-    const rowLen = pConfig.rows
-    const colLen = pTotal / rowLen
+    const rowLen = pConfig.rows;
+    const colLen = pTotal / rowLen;
     // Colours lookup
-    const colours = config.metadata.colours
+    const colours = config.metadata.colours;
 
     // X-padding between panels depends upon overall chart width
-    const outerbox = config.background.outerbox.dimensions
-    const originalPadding = config.panelAttributes.padding
+    const outerbox = config.background.outerbox.dimensions;
+    const originalPadding = config.panelAttributes.padding;
     const pGapX = this.getHorizontalPanelGap(
       outerbox,
       originalPadding.between.x,
-      colLen
-    )
+      colLen,
+    );
     // Y-padding doesn't adjust
-    const pGapY = originalPadding.between.y
+    const pGapY = originalPadding.between.y;
 
     // Props for the flash
-    const rectProps = config.panelAttributes.rect
+    const rectProps = config.panelAttributes.rect;
 
     // Attributes common to *all* panels, rects and headers --
     // Panels:
-    const pWidth = this.getPanelWidth(globalInnerBox.width, pGapX, colLen)
+    const pWidth = this.getPanelWidth(globalInnerBox.width, pGapX, colLen);
     // Get height of each panel, after we have allowed
     // for padding between panels:
-    const pHeight = this.getPanelHeight(globalInnerBox.height, pGapY, rowLen)
+    const pHeight = this.getPanelHeight(globalInnerBox.height, pGapY, rowLen);
     // IBs will adjust to header baseline (below rect)
-    const headProps = config.panelAttributes.panelheader
-    const hBaseline = headProps.y
+    const headProps = config.panelAttributes.panelheader;
+    const hBaseline = headProps.y;
 
     // Data for binding
-    const panelArray = this.buildInitialPanelArray(globalInnerBox, pHeight)
+    const panelArray = this.buildInitialPanelArray(globalInnerBox, pHeight);
     // Inner boxes held as global for future ref
     this.innerBoxBounds = this.buildInnerBoxArray(
       panelArray,
       pWidth,
       pHeight,
-      hBaseline
-    )
+      hBaseline,
+    );
 
     // D3 'global panels' binding: parent group for all panel groups
-    const panelsGroup = d3.select('.silver-chart-panels-group')
+    const panelsGroup = d3.select('.silver-chart-panels-group');
 
     // Bind data; append rect and header
-    const panelGroupBinding = this.bindAndAppend(panelsGroup, panelArray)
+    const panelGroupBinding = this.bindAndAppend(panelsGroup, panelArray);
 
     // UPDATE RECT
-    this.updateRect(panelGroupBinding, rectProps, colours)
+    this.updateRect(panelGroupBinding, rectProps, colours);
     // For textwrapping call
     const wtConfig = {
       wWidth: pWidth,
       forceTurn: config.metadata.forceTurn,
-    }
+    };
 
     // UPDATE TEXT
-    const panelHeaderText = panelGroupBinding.select('text')
+    const panelHeaderText = panelGroupBinding.select('text');
     // Set all properties...
-    this.updateText(panelHeaderText, headProps, colours)
+    this.updateText(panelHeaderText, headProps, colours);
     // ...except x and y, which chain into call to guarantee completion
     panelHeaderText
       .attr({
-        x: (ddd) => +ddd.textX,
-        y: (ddd) => +ddd.textY,
+        x: ddd => +ddd.textX,
+        y: ddd => +ddd.textY,
       })
       .call(
         TextWrapping.wrapAllTextElements,
         wtConfig,
         globalThis,
-        globalThis.afterPanelHeaderWrap
-      )
+        globalThis.afterPanelHeaderWrap,
+      );
     // Wrap text, with callback
 
     // Exit
-    panelGroupBinding.exit().remove()
+    panelGroupBinding.exit().remove();
   }
   // UPDATE PANELS ends
 
@@ -370,7 +372,7 @@ class SilverPanels extends Component {
     // *** size, innerbox y-value was incrementing during the lag, causing
     // *** the innerbox to move down the chart (and shrink)
     // *** So no wait:
-    globalThis.adjustInnerBoxAndReturn()
+    globalThis.adjustInnerBoxAndReturn();
   }
   // AFTER PANEL HEADER WRAP ends
 
@@ -380,41 +382,45 @@ class SilverPanels extends Component {
   // change the panel rect...
   adjustInnerBoxAndReturn() {
     // Not just concerned with 'active' panel: handle ALL innerboxes...
-    const config = this.props.config
+    const config = this.props.config;
     // Loop all headers for max line count
-    const headers = d3.selectAll('.panel-header')
-    const pProps = config.metadata.panels
+    const headers = d3.selectAll('.panel-header');
+    const pProps = config.metadata.panels;
     // Number of charts per row
-    const rowLen = pProps.total / pProps.rows
+    const rowLen = pProps.total / pProps.rows;
     // Get leading
-    const leading = config.panelAttributes.panelheader.leading
+    const leading = config.panelAttributes.panelheader.leading;
     // Inner boxes:
-    const innerBoxes = JSON.parse(JSON.stringify(this.innerBoxBounds))
+    const innerBoxes = JSON.parse(JSON.stringify(this.innerBoxBounds));
     // First, get a 1d array of all panel-headers' line-counts
-    const pLinesArray = []
+    const pLinesArray = [];
     headers.each(function() {
-      const head = d3.select(this)
+      const head = d3.select(this);
       // I want the number of lines, rather than a distance to
       // move each element. So I don't pass in any leading
-      const thisCount = TextWrapping.getTextAndTspansMove(head)
-      pLinesArray.push(thisCount)
-    })
+      const thisCount = TextWrapping.getTextAndTspansMove(head);
+      pLinesArray.push(thisCount);
+    });
     // Do charts in panel rows align?
-    const panelsAlign = config.panelAttributes.alignChartsInPanels
+    const panelsAlign = config.panelAttributes.alignChartsInPanels;
     if (panelsAlign) {
       // Create a flat array of the max linecounts in each 'row'
       const maxLineCountArray = PanelUtils.createLineCountMaxArray(
         pLinesArray,
         rowLen,
-        leading
-      )
+        leading,
+      );
       // Update array of innerboxes
-      PanelUtils.adjustAlignedInnerBoxes(innerBoxes, maxLineCountArray, leading)
+      PanelUtils.adjustAlignedInnerBoxes(
+        innerBoxes,
+        maxLineCountArray,
+        leading,
+      );
     } else {
       // Unaligned charts; set adjustment on each
-      PanelUtils.adjustNonAlignedInnerBoxes(innerBoxes, pLinesArray, leading)
+      PanelUtils.adjustNonAlignedInnerBoxes(innerBoxes, pLinesArray, leading);
     }
-    this.props.onGetInnerBoxes(innerBoxes)
+    this.props.onGetInnerBoxes(innerBoxes);
     // At this point, the IBs are tight on panel header baselines
     // (So I don't insert padding below the header here)
   }
@@ -422,7 +428,7 @@ class SilverPanels extends Component {
 
   // RENDER
   render() {
-    return null
+    return null;
   }
 }
 
@@ -431,6 +437,6 @@ SilverPanels.propTypes = {
   drawPanels: PropTypes.bool,
   innerbox: PropTypes.object,
   onGetInnerBoxes: PropTypes.func.isRequired,
-}
+};
 
-export default SilverPanels
+export default SilverPanels;

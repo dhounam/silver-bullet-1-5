@@ -4,12 +4,12 @@
 // Called from Legends.handleLegendSetInnerBoxBounds to
 // generate an array for panels, by rows
 export function createRowedArray(iBoxes, rowLen) {
-  const rowedArray = []
+  const rowedArray = [];
   // Array nests by rows
   for (let iii = 0; iii < iBoxes.length; iii += rowLen) {
-    rowedArray.push(iBoxes.slice(iii, iii + rowLen))
+    rowedArray.push(iBoxes.slice(iii, iii + rowLen));
   }
-  return rowedArray
+  return rowedArray;
 }
 // CREATE ROWED ARRAY ends
 
@@ -17,41 +17,41 @@ export function createRowedArray(iBoxes, rowLen) {
 // Args are a 'rowed' array of innerbox definitions,
 // and the number of rows
 export function getRowMaxesArray(rowedArray, rowLen) {
-  const maxArray = []
+  const maxArray = [];
   // Loop by rows
   for (const rNo in rowedArray) {
-    const aRow = rowedArray[rNo]
+    const aRow = rowedArray[rNo];
     // Get the max tweak in that row
     const rowMax = Math.max(
-      ...aRow.map((obj) => obj.tweak + obj.paddingBelowLegends)
-    )
+      ...aRow.map(obj => obj.tweak + obj.paddingBelowLegends),
+    );
     // For each element in current row, push the row-max to an array
     // that should (!) match the complete array of IB defs...
     for (let iii = 0; iii < rowLen; iii++) {
-      maxArray.push(rowMax)
+      maxArray.push(rowMax);
     }
   }
-  return maxArray
+  return maxArray;
 }
 // GET ROW MAXES ARRAY
 
 export function adjustAlignedInnerBoxes(iBoxes, maxArray) {
-  const ibCount = iBoxes.length
+  const ibCount = iBoxes.length;
   for (let ibx = 0; ibx < ibCount; ibx++) {
-    const thisBox = iBoxes[ibx]
+    const thisBox = iBoxes[ibx];
     // Adjust
-    const tuneTweak = maxArray[ibx]
-    thisBox.y += tuneTweak
-    thisBox.height -= tuneTweak
+    const tuneTweak = maxArray[ibx];
+    thisBox.y += tuneTweak;
+    thisBox.height -= tuneTweak;
   }
 }
 
 export function adjustNonAlignedInnerBoxes(iBoxes) {
   for (const ibx in iBoxes) {
-    const iBox = iBoxes[ibx]
-    const adjustment = iBox.tweak + iBox.paddingBelowLegends
-    iBox.y += adjustment
-    iBox.height -= adjustment
+    const iBox = iBoxes[ibx];
+    const adjustment = iBox.tweak + iBox.paddingBelowLegends;
+    iBox.y += adjustment;
+    iBox.height -= adjustment;
   }
 }
 

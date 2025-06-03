@@ -58,10 +58,7 @@ class DesignFoldBody extends Component {
           config={legend}
           onValuesToDesignBody={this.handleLegendChange}
         />
-        <Blobs
-          config={blobs}
-          onValuesToDesignBody={this.handleBlobChange}
-        />
+        <Blobs config={blobs} onValuesToDesignBody={this.handleBlobChange} />
       </div>
     );
   }

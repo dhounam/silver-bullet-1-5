@@ -1,5 +1,5 @@
+/* eslint-disable no-underscore-dangle */
 import { has } from 'lodash';
-
 
 /*
     In Sept 2022 Online sub presets and its sizes are updated. Here the table of old ones and the
@@ -39,31 +39,30 @@ export function updateOldSubPreset(preset, _subPreset) {
   // Lookups have old sub preset names and new equivalents
   // for print special and online charts
   const printSpecialConversionTable = {
-   'half-column': 'mini',
-   'standard-one-column': 'one-column',
+    'half-column': 'mini',
+    'standard-one-column': 'one-column',
     'one-and-a-half-column': 'one-column-wide',
   };
   const onlineConversionTable = {
-    'narrow': 'online-slim',
-    'wide': 'online-full-width',
-    'espresso': 'online-espresso',
+    narrow: 'online-slim',
+    wide: 'online-full-width',
+    espresso: 'online-espresso',
     'instagram-story': 'online-slim',
     'daily-chart-desktop': 'online-full-width',
     'daily-chart-mobile': 'online-slim',
-    'films': 'online-films'
+    films: 'online-films',
   };
   // So: print-special, or online?
-  const conversionTable = (preset === 'print') ?
-    printSpecialConversionTable :
-    onlineConversionTable;
+  const conversionTable =
+    preset === 'print' ? printSpecialConversionTable : onlineConversionTable;
 
-  // let subPreset = (preset === 'online' && has(conversionTable, _subPreset)) ? 
-  let subPreset = (has(conversionTable, _subPreset)) ? 
-    conversionTable[_subPreset] : 
-    _subPreset;
-  
+  // let subPreset = (preset === 'online' && has(conversionTable, _subPreset)) ?
+  let subPreset = has(conversionTable, _subPreset)
+    ? conversionTable[_subPreset]
+    : _subPreset;
+
   return {
-    subPreset, 
+    subPreset,
     hasBeenUpdated: _subPreset !== subPreset,
   };
 }

@@ -474,23 +474,23 @@ export function granularityPreferences() {
       ticksOn: true,
       tickLevel: 'years',
     },
-  }
+  };
 }
 // GRANULARITY PREFERENCES ends
 
 // GET TICKS ON
 export function getTicksOn(tickLevel, rawTickLevel, isThermo) {
   // By default, ticks are 'on' if time-interval 'level' hasn't changed...
-  let tOn = tickLevel === rawTickLevel
+  let tOn = tickLevel === rawTickLevel;
   // ...but there are overrides.
   if (isThermo) {
     // Thermometers force ticks on:
-    tOn = true
+    tOn = true;
   } else if ('monthsquarters'.includes(tickLevel.toLowerCase())) {
     // Non-thermo, mths and qs force ticks off
-    tOn = false
+    tOn = false;
   }
-  return tOn
+  return tOn;
 }
 // GET TICKS ON ends
 
@@ -498,9 +498,9 @@ export function getTicksOn(tickLevel, rawTickLevel, isThermo) {
 // Returns width of one 'slot' along the axis
 export function getDataPointWidth(width, config) {
   // Number of raw data points
-  const pointCount = config.pointCount
+  const pointCount = config.pointCount;
   // Width of one data-point
-  return width / pointCount
+  return width / pointCount;
 }
 // GET DATA POINT WIDTH ends
 
@@ -508,12 +508,12 @@ export function getDataPointWidth(width, config) {
 // Determines the 2ry axis long date format
 // to use, based upon default format
 export function switchToLongFormat(format) {
-  let longFormat = format
+  let longFormat = format;
   if (format === '%b') {
     // 'Mmm' to 'Mmmm yyyy'
-    longFormat = '%B %Y'
+    longFormat = '%B %Y';
   }
-  return longFormat
+  return longFormat;
 }
 // SWITCH TO LONG FORMAT ends
 
@@ -521,27 +521,27 @@ export function switchToLongFormat(format) {
 // Determines whether the 2ry axis needs
 // to display, say, 'January 2020' instead of merely 'Jan'
 export function secondaryAxisNeedsLongFormat(config) {
-  let result = false
-  const cData = config.chartData
-  const firstD = cData[0]
-  const lastD = cData[cData.length - 1]
+  let result = false;
+  const cData = config.chartData;
+  const firstD = cData[0];
+  const lastD = cData[cData.length - 1];
   // Access by key
-  const dKey = Object.keys(firstD)[0]
-  const dateA = firstD[dKey]
-  const dateZ = lastD[dKey]
-  const rawInterval = config.timeFormats.interval
+  const dKey = Object.keys(firstD)[0];
+  const dateA = firstD[dKey];
+  const dateZ = lastD[dKey];
+  const rawInterval = config.timeFormats.interval;
   // Inferentially, for now at least
   // Days: check same month and year
   if (rawInterval === 'days') {
-    const monthA = new Date(dateA).getMonth()
-    const monthZ = new Date(dateZ).getMonth()
-    const yearA = new Date(dateA).getFullYear()
-    const yearZ = new Date(dateZ).getFullYear()
+    const monthA = new Date(dateA).getMonth();
+    const monthZ = new Date(dateZ).getMonth();
+    const yearA = new Date(dateA).getFullYear();
+    const yearZ = new Date(dateZ).getFullYear();
     if (monthZ === monthA && yearZ === yearA) {
-      result = true
+      result = true;
     }
   }
-  return result
+  return result;
 }
 // SECONDARY AXIS NEEDS LONG FORMAT ends
 
@@ -549,11 +549,11 @@ export function secondaryAxisNeedsLongFormat(config) {
 // Called from getGranularity. For string axis, creates
 // a simple granularity object
 export function makeGranularityObjectForStringAxis(gObj) {
-  gObj.pointWidth = gObj.dataPointWidth
-  gObj.primary = { filter: false, showLabel: true }
-  gObj.ticks = { increment: 1 }
-  gObj.ticksOn = true
-  return gObj
+  gObj.pointWidth = gObj.dataPointWidth;
+  gObj.primary = { filter: false, showLabel: true };
+  gObj.ticks = { increment: 1 };
+  gObj.ticksOn = true;
+  return gObj;
 }
 // MAKE GRANULARITY OBJECT FOR STRING AXIS ends
 
@@ -565,43 +565,43 @@ export function makeGranularityObjectForTimeAxis(
   width,
   config,
   testText,
-  textPrefs
+  textPrefs,
 ) {
   // Margin between strings (from DPs)
-  const margin = textPrefs.minGapBetweenLabels
+  const margin = textPrefs.minGapBetweenLabels;
   // Complete set of granularity-interval preferences
-  const granPrefs = granularityPreferences()
+  const granPrefs = granularityPreferences();
   // Interval, with month adjustment to "Mmm" default
-  const rawInterval = config.timeFormats.interval
+  const rawInterval = config.timeFormats.interval;
   // So start with a raw level:
-  const rawTickLevel = granPrefs[rawInterval].tickLevel
+  const rawTickLevel = granPrefs[rawInterval].tickLevel;
   // And a dynamic version...
-  let interval = rawInterval
+  let interval = rawInterval;
   // ...and a dynamic copy
-  let pWidth = gObj.dataPointWidth
+  let pWidth = gObj.dataPointWidth;
   // Flag will be set false when we have a 'fit'
-  let notReady = true
+  let notReady = true;
   // Default primary filter. Primary axis starts 1-to-1 with
   // raw data; but if granularity coarsens, must filter...
-  let primaryFilter = false
+  let primaryFilter = false;
   // Adjusts value for width testing, for DC scaling
-  const wFactor = config.xAxis.textWidthSizeTestFactor
+  const wFactor = config.xAxis.textWidthSizeTestFactor;
   while (notReady) {
     // Granularity prefs for this interval
-    const thisGran = granPrefs[interval]
+    const thisGran = granPrefs[interval];
     // testVal may be a string ('DD', 'MM'...) or a number
-    let testVal = thisGran.testVal
+    let testVal = thisGran.testVal;
     // Why did I EVER think next was a good idea?!
     // const testVal = +thisGran.testVal * wFactor
     // If true, slots are wide enough
-    let labelFits = false
+    let labelFits = false;
     if (isNaN(testVal)) {
       // testVal is an interval-specific string (e.g. 'MMM')
       // Test on-screen against slot width
-      testText.text(testVal)
+      testText.text(testVal);
       // Will it fit?
-      let testWidth = testText.node().getComputedTextLength()
-      testWidth *= wFactor
+      let testWidth = testText.node().getComputedTextLength();
+      testWidth *= wFactor;
       labelFits = pWidth - margin > testWidth;
     } else {
       // Check numeric value against slot width (I use zero
@@ -612,31 +612,31 @@ export function makeGranularityObjectForTimeAxis(
     // Break the loop if the label will fit...
     // ...or if I've come to the last available interval
     // (NOTE: in lookup final interval must set ITSELF as 'next')
-    const lastInterval = interval === thisGran.next.interval
+    const lastInterval = interval === thisGran.next.interval;
     if (labelFits || lastInterval) {
       // Label will fit, so apply values to result
-      gObj.ticks = thisGran.ticks
-      gObj.primary = thisGran.primary
-      gObj.primary.filter = primaryFilter
-      gObj.secondary = thisGran.secondary
-      gObj.pointWidth = pWidth
-      gObj.interval = interval
+      gObj.ticks = thisGran.ticks;
+      gObj.primary = thisGran.primary;
+      gObj.primary.filter = primaryFilter;
+      gObj.secondary = thisGran.secondary;
+      gObj.pointWidth = pWidth;
+      gObj.interval = interval;
       // Reset flag to break
-      notReady = false
+      notReady = false;
     } else {
       // Reset for next loop
-      interval = thisGran.next.interval
-      pWidth *= thisGran.next.factor
-      primaryFilter = true
+      interval = thisGran.next.interval;
+      pWidth *= thisGran.next.factor;
+      primaryFilter = true;
     }
   }
   // Use ticksOn property of raw granularity set
-  gObj.ticksOn = granPrefs[rawTickLevel].ticksOn
-  gObj.pointWidth = pWidth
+  gObj.ticksOn = granPrefs[rawTickLevel].ticksOn;
+  gObj.pointWidth = pWidth;
   // In some cases I need to revise the 2ry axis label
   // to a longer format (e.g. 'Mmmm yyyy' on days that fall within a single month)
   if (secondaryAxisNeedsLongFormat(config)) {
-    gObj.secondary.format = switchToLongFormat(gObj.secondary.format)
+    gObj.secondary.format = switchToLongFormat(gObj.secondary.format);
   }
   // Kludgey override for quarters:
   if (
@@ -644,9 +644,9 @@ export function makeGranularityObjectForTimeAxis(
     gObj.primary.displayInterval === 'months' &&
     gObj.primary.increment === 3
   ) {
-    gObj.primary.filter = true
+    gObj.primary.filter = true;
   }
-  return gObj
+  return gObj;
 }
 // MAKE GRANULARITY OBJECT FOR TIME AXIS ends
 
@@ -661,25 +661,25 @@ export function makeGranularityObjectForTimeAxis(
 //    text properties
 export function getGranularity(width, config, testText, textPrefs) {
   // 'Slot' width
-  const dataPointWidth = getDataPointWidth(width, config)
+  const dataPointWidth = getDataPointWidth(width, config);
   // Object to return, with raw-data point width. Other props added below
   const granularityObject = {
     dataPointWidth,
-  }
+  };
 
   // Categories are strings or time-based
   // Assemble and return granularityObject
   if (config.categoryType === 'string') {
-    makeGranularityObjectForStringAxis(granularityObject)
+    makeGranularityObjectForStringAxis(granularityObject);
   } else {
     makeGranularityObjectForTimeAxis(
       granularityObject,
       width,
       config,
       testText,
-      textPrefs
-    )
+      textPrefs,
+    );
   }
-  return granularityObject
+  return granularityObject;
 }
 // GET GRANULARITY ends

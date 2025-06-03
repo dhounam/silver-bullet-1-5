@@ -3,7 +3,7 @@
 // Main entry is via initiateNewEditorConfig, which is called
 // from Editor.componentWillMount...
 
-import globalAssets from "../assets/globalAssets";
+import globalAssets from '../assets/globalAssets';
 import * as FactorUtils from './factor-utilities';
 import * as LogUtils from './log-utilities';
 import * as OtherUtils from './other-utilities';

@@ -1,10 +1,10 @@
-import * as d3 from 'd3'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as d3 from 'd3';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Utilities modules
-import * as ThermoUtilities from './thermo-utilities'
-import * as ChartUtilities from '../chart-utilities'
+import * as ThermoUtilities from './thermo-utilities';
+import * as ChartUtilities from '../chart-utilities';
 
 class SilverThermoHorizontalSeries extends Component {
   // COMPONENT DID MOUNT
@@ -12,7 +12,7 @@ class SilverThermoHorizontalSeries extends Component {
   componentDidMount() {
     // To guarantee that we only update on 2nd render:
     if (!this.props.config.firstRender) {
-      this.updateThermos()
+      this.updateThermos();
       // const context = this.props.config.className.split(' ')[1]
       // const context = 'zeroline-group';
       // ChartUtilities.updateAnyZeroLine(this.props.config, context, true);
@@ -24,7 +24,7 @@ class SilverThermoHorizontalSeries extends Component {
   componentDidUpdate() {
     // To guarantee that we only update on 2nd render:
     if (!this.props.config.firstRender) {
-      this.updateThermos()
+      this.updateThermos();
       // const context = this.props.config.className.split(' ')[1]
       // const context = 'zeroline-group';
       // ChartUtilities.updateAnyZeroLine(this.props.config, context, true);
@@ -41,8 +41,8 @@ class SilverThermoHorizontalSeries extends Component {
   // ThermoChart, where I do a console.log. Long-term, I might
   // use this to set 'emphasis'...
   thermoClick(colData, index) {
-    const clickObj = { colData, index }
-    this.props.onPassThermoClick(clickObj)
+    const clickObj = { colData, index };
+    this.props.onPassThermoClick(clickObj);
   }
   // BAR CLICK ends
 
@@ -51,22 +51,22 @@ class SilverThermoHorizontalSeries extends Component {
   // ENTER SPINDLES
   // Called from updateThermos
   enterSpindles(spindleBinding, config) {
-    const styles = config.styles.spindle
+    const styles = config.styles.spindle;
     spindleBinding
       .enter()
       .append('line')
       .attr({
         class: 'thermo-spindle',
         id: (ddd, iii) => {
-          let idStr = `thermo-spindle-${iii}`
-          idStr = `${idStr}~~~stroke:${styles.stroke}`
-          return idStr
+          let idStr = `thermo-spindle-${iii}`;
+          idStr = `${idStr}~~~stroke:${styles.stroke}`;
+          return idStr;
         },
       })
       .style({
         stroke: config.colourLookup[styles.stroke],
         'stroke-width': styles.width,
-      })
+      });
   }
   // ENTER SPINDLES ends
 
@@ -79,16 +79,16 @@ class SilverThermoHorizontalSeries extends Component {
       y2: ddd => config.yMainScale(ddd.category),
       width: ddd => ddd.strokewidth,
       x1: ddd => {
-        let x1 = config.xScale(ddd.min)
+        let x1 = config.xScale(ddd.min);
         if (config.isLog) {
-          x1 = config.xScale(config.minVal)
+          x1 = config.xScale(config.minVal);
         } else if (config.seriesCount === 1 && config.breakScale) {
-          x1 = config.xScale(config.minVal) - config.brokenScalePadding
+          x1 = config.xScale(config.minVal) - config.brokenScalePadding;
         }
-        return x1
+        return x1;
       },
       x2: ddd => config.xScale(ddd.max),
-    })
+    });
   }
   // UPDATE SPINDLES ends
 
@@ -99,12 +99,12 @@ class SilverThermoHorizontalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     spindleBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT SPINDLES ends
 
@@ -113,7 +113,7 @@ class SilverThermoHorizontalSeries extends Component {
   // ENTER LINE MARKERS
   // Called from updateThermos
   enterLineMarkers(markerBinding, config) {
-    const styles = config.styles.line
+    const styles = config.styles.line;
     // Enter appends line in place, with zero width
     markerBinding
       .enter()
@@ -121,22 +121,22 @@ class SilverThermoHorizontalSeries extends Component {
       .attr({
         class: 'd3-thermo-marker',
         y1: ddd => {
-          let yPos = config.yMainScale(ddd.category)
-          yPos -= styles.length / 2
-          return yPos
+          let yPos = config.yMainScale(ddd.category);
+          yPos -= styles.length / 2;
+          return yPos;
         },
         y2: ddd => {
-          let yPos = config.yMainScale(ddd.category)
-          yPos += styles.length / 2
-          return yPos
+          let yPos = config.yMainScale(ddd.category);
+          yPos += styles.length / 2;
+          return yPos;
         },
         'stroke-width': 0,
         x1: 0,
         x2: 0,
         id: (ddd, iii) => {
-          let idStr = `thermo-horizontal-series-${iii}`
-          idStr = `${idStr}~~~stroke:${ddd.strokeName}`
-          return idStr
+          let idStr = `thermo-horizontal-series-${iii}`;
+          idStr = `${idStr}~~~stroke:${ddd.strokeName}`;
+          return idStr;
         },
       })
       // Set click event on rect
@@ -147,9 +147,9 @@ class SilverThermoHorizontalSeries extends Component {
       .each(function() {
         d3.select(this)
           .append('svg:title')
-          .attr('class', 'd3-tooltip')
-      })
-    return markerBinding
+          .attr('class', 'd3-tooltip');
+      });
+    return markerBinding;
   }
   // ENTER LINE MARKERS ends
 
@@ -173,12 +173,12 @@ class SilverThermoHorizontalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     markerBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT LINE MARKERS ends
 
@@ -199,9 +199,9 @@ class SilverThermoHorizontalSeries extends Component {
         r: 0,
         'stroke-width': 0,
         id: (ddd, iii) => {
-          let idStr = `thermo-horizontal-series-${iii}`
-          idStr = `${idStr}~~~fill:${ddd.fillName}`
-          return idStr
+          let idStr = `thermo-horizontal-series-${iii}`;
+          idStr = `${idStr}~~~fill:${ddd.fillName}`;
+          return idStr;
         },
       })
       // Set click event on rect
@@ -212,16 +212,16 @@ class SilverThermoHorizontalSeries extends Component {
       .each(function() {
         d3.select(this)
           .append('svg:title')
-          .attr('class', 'd3-tooltip')
-      })
-    return markerBinding
+          .attr('class', 'd3-tooltip');
+      });
+    return markerBinding;
   }
   // ENTER DOT MARKERS ends
 
   // UPDATE DOT MARKERS
   // Called from updateThermos
   updateDotMarkers(markerBinding, config) {
-    const styles = config.styles.dot
+    const styles = config.styles.dot;
     markerBinding
       .transition(config.duration)
       .attr({
@@ -239,12 +239,12 @@ class SilverThermoHorizontalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     markerBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT DOP MARKERS ends
 
@@ -252,15 +252,15 @@ class SilverThermoHorizontalSeries extends Component {
 
   // UPDATE THERMOS
   updateThermos() {
-    const config = this.props.config
+    const config = this.props.config;
     // Context (parent group created in render) and duration
     // (NOTE: In the long term, we'd need more than one group...)
-    const className = config.className.split(' ')[1]
-    const mainSeriesGroup = d3.select(`.${className}`)
+    const className = config.className.split(' ')[1];
+    const mainSeriesGroup = d3.select(`.${className}`);
 
     // SPINDLE
     // Values for the 'spindle'
-    const spindleData = ThermoUtilities.mapSpindleData(config)
+    const spindleData = ThermoUtilities.mapSpindleData(config);
     // Group
     // Originally nested spindles with series. As of Jul'20,
     // in separate group, rendered in parent
@@ -269,23 +269,23 @@ class SilverThermoHorizontalSeries extends Component {
     //   id: 'thermo-spindle-group',
     // });
     // Bind
-    const spindleGroupClass = `.${this.props.spindlesId}`
-    const spindleGroup = d3.select(spindleGroupClass)
+    const spindleGroupClass = `.${this.props.spindlesId}`;
+    const spindleGroup = d3.select(spindleGroupClass);
     const spindleBinding = spindleGroup
       .selectAll('.thermo-spindle')
-      .data(spindleData)
+      .data(spindleData);
     // Enter (NOTE: will it want 'config'?)
-    this.enterSpindles(spindleBinding, config)
+    this.enterSpindles(spindleBinding, config);
     // Update
-    this.updateSpindles(spindleBinding, config)
+    this.updateSpindles(spindleBinding, config);
     // Exit
-    this.exitSpindles(spindleBinding, config.duration)
+    this.exitSpindles(spindleBinding, config.duration);
 
     // SERIES
     // Map the actual series data:
     // As far as I can see, the data is in the right format:
     // an array of objects with header:value properties
-    const mappedData = ChartUtilities.mapSeriesData(config, false)
+    const mappedData = ChartUtilities.mapSeriesData(config, false);
     // mappedData is an array of arrays, each of which represents a series
     // Each series sub-array consists of <pointCount> objects
     // defining one data point and with properties...
@@ -298,20 +298,20 @@ class SilverThermoHorizontalSeries extends Component {
       mainSeriesGroup,
       mappedData,
       config.duration,
-      'thermo'
-    )
+      'thermo',
+    );
     // Bind inner (points) data
     const markerBinding = groupBinding
       .selectAll('.d3-thermo-marker')
       .data(ddd => ddd);
     if (config.dotFlag) {
-      this.enterDotMarkers(markerBinding, config)
-      this.updateDotMarkers(markerBinding, config)
-      this.exitDotMarkers(markerBinding, config.duration)
+      this.enterDotMarkers(markerBinding, config);
+      this.updateDotMarkers(markerBinding, config);
+      this.exitDotMarkers(markerBinding, config.duration);
     } else {
-      this.enterLineMarkers(markerBinding, config)
-      this.updateLineMarkers(markerBinding, config)
-      this.exitLineMarkers(markerBinding, config.duration)
+      this.enterLineMarkers(markerBinding, config);
+      this.updateLineMarkers(markerBinding, config);
+      this.exitLineMarkers(markerBinding, config.duration);
     }
   }
   // UPDATE THERMOS ends
@@ -323,7 +323,7 @@ class SilverThermoHorizontalSeries extends Component {
         className={this.props.config.className}
         id="series-group:thermo-horizontal"
       />
-    )
+    );
   }
 }
 
@@ -331,6 +331,6 @@ SilverThermoHorizontalSeries.propTypes = {
   spindlesId: PropTypes.string,
   config: PropTypes.object,
   onPassThermoClick: PropTypes.func,
-}
+};
 
-export default SilverThermoHorizontalSeries
+export default SilverThermoHorizontalSeries;

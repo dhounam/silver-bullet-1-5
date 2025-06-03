@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import SibylEventEmitter from '../../../../util/event/EventEmitter';
 import { EVENT_SEND_COLOUR_MAP, EVENT_UPDATE_COLOUR_MAP } from '../../../../util/event/EventNames';
@@ -19,7 +20,7 @@ class InspectorColorSeries extends Component {
       colorKeys: [],
       colors: [],
       labels: [],
-      color: undefined //hex value of the selected color
+      color: undefined // hex value of the selected color
     };
   }
 

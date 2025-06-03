@@ -1,6 +1,6 @@
 // X-AXIS FILTERS
 
-import FixYearInDate from '../chartside-utilities/fix-year'
+import FixYearInDate from '../chartside-utilities/fix-year';
 
 // NOTE: maybe try to fix this if I ever decide that
 // getAxisFilter is 'finished'...
@@ -15,7 +15,7 @@ export function defaultFilterItem() {
     // that sets default tick length
     tick: 2,
     duplicate: 0,
-  }
+  };
 }
 
 // GET DEFAULT FILTER ARRAY
@@ -23,16 +23,16 @@ export function defaultFilterItem() {
 // Passed the length of the categories array, returns an array of falses
 // that can be selectively overwritten
 export function getDefaultFilterArray(len) {
-  const filterArray = []
+  const filterArray = [];
   // Have to do this the hard way, apparently...
   // label = draw a label
   // shift = move label left
   // tick = tick-length (0 = no tick)
   // duplicate = duplicate last tick to close final slot
   while (filterArray.length < len) {
-    filterArray.push(defaultFilterItem())
+    filterArray.push(defaultFilterItem());
   }
-  return filterArray
+  return filterArray;
 }
 // GET DEFAULT FILTER ARRAY ends
 
@@ -43,8 +43,8 @@ export function getDefaultFilterArray(len) {
 // getYearsAxisFilter
 export function addYearAdjustment(catArray, yearsAdjustedBy) {
   for (let iii = 0; iii < catArray.length; iii++) {
-    const thisCat = catArray[iii]
-    catArray[iii] = parseInt(thisCat, 10) + yearsAdjustedBy
+    const thisCat = catArray[iii];
+    catArray[iii] = parseInt(thisCat, 10) + yearsAdjustedBy;
   }
 }
 // ADD YEAR ADJUSTMENT ends
@@ -54,14 +54,14 @@ export function addYearAdjustment(catArray, yearsAdjustedBy) {
 // Forces labels and ticks on 1st and last items in years axis
 // NOTE: hard-wired tick lengths
 export function forceFirstAndLastYears(fArray, tickLengths) {
-  const len = fArray.length
-  fArray[0].label = true
+  const len = fArray.length;
+  fArray[0].label = true;
   if (fArray[0].tick === 0) {
-    fArray[0].tick = tickLengths.default
+    fArray[0].tick = tickLengths.default;
   }
-  fArray[len - 1].label = true
+  fArray[len - 1].label = true;
   if (fArray[len - 1].tick === 0) {
-    fArray[len - 1].tick = tickLengths.default
+    fArray[len - 1].tick = tickLengths.default;
   }
 }
 // FORCE FIRST AND LAST YEARS ends
@@ -72,9 +72,9 @@ export function forceFirstAndLastYears(fArray, tickLengths) {
 export function fillAllYears(fArray, isPrimary, tickLengths) {
   if (isPrimary) {
     for (let iii = 0; iii < fArray.length; iii++) {
-      const thisYear = fArray[iii]
-      thisYear.label = true
-      thisYear.tick = tickLengths.default
+      const thisYear = fArray[iii];
+      thisYear.label = true;
+      thisYear.tick = tickLengths.default;
     }
   }
 }
@@ -84,47 +84,47 @@ export function fillAllYears(fArray, isPrimary, tickLengths) {
 // Called from getYearsAxisFilter to force labels and ticks every 2 years
 // NOTE: hard-wired tick lengths
 export function fillAlternateYears(fArray, isPrimary, tickLengths) {
-  const len = fArray.length
+  const len = fArray.length;
   for (let iii = 0; iii < len; iii++) {
-    const thisYear = fArray[iii]
+    const thisYear = fArray[iii];
     if (iii % 2 === 0) {
-      thisYear.label = true
-      thisYear.tick = tickLengths.default
+      thisYear.label = true;
+      thisYear.tick = tickLengths.default;
     } else {
-      thisYear.tick = tickLengths.short
+      thisYear.tick = tickLengths.short;
     }
   }
   // Do I even need to test on isPrimary? Surely this should
   // only be called on primary axis, anyway. Year+ series don't have
   // a 2ry axis...
   if (isPrimary) {
-    forceFirstAndLastYears(fArray, tickLengths)
+    forceFirstAndLastYears(fArray, tickLengths);
   }
 }
 // FILL ALTERNATE YEARS ends
 
 // GET MINOR MOD
 export function getMinorMod(mainMod) {
-  let minorMod = 1
+  let minorMod = 1;
   if (mainMod === 10) {
-    minorMod = 5
+    minorMod = 5;
   } else if (mainMod === 50) {
-    minorMod = 10
+    minorMod = 10;
   } else if (mainMod === 100) {
-    minorMod = 25
+    minorMod = 25;
   }
-  return minorMod
+  return minorMod;
 }
 // GET MINOR MOD ends
 
 // FORCE DATE TO YEAR
 // If date to check for year-mod isn't a pure year, returns yyyy
 export function forceDateToYear(val) {
-  let yDate = val
+  let yDate = val;
   if (isNaN(yDate)) {
-    yDate = new Date(Date.parse(yDate)).getFullYear()
+    yDate = new Date(Date.parse(yDate)).getFullYear();
   }
-  return yDate
+  return yDate;
 }
 // FORCE DATE TO YEAR
 
@@ -135,32 +135,32 @@ export function fillModYears(
   catArray,
   mainMod,
   isPrimary,
-  tickLengths
+  tickLengths,
 ) {
   if (!isPrimary) {
-    return
+    return;
   }
   // NOTE: as an expedient, a lookup for minor ticks to display
-  const minorMod = getMinorMod(mainMod)
+  const minorMod = getMinorMod(mainMod);
   for (let iii = 0; iii < fArray.length; iii++) {
     // Actual value
-    const thisCat = forceDateToYear(catArray[iii])
+    const thisCat = forceDateToYear(catArray[iii]);
     // Element in the filter array
-    const thisYear = fArray[iii]
+    const thisYear = fArray[iii];
     // This works like fillAlternateYears, above
     if (thisCat % mainMod === 0) {
-      thisYear.label = true
-      thisYear.tick = tickLengths.default
+      thisYear.label = true;
+      thisYear.tick = tickLengths.default;
     } else if (thisCat % minorMod === 0) {
-      thisYear.tick = tickLengths.short
+      thisYear.tick = tickLengths.short;
     } else {
-      thisYear.tick = 0
+      thisYear.tick = 0;
     }
   }
   // if (isPrimary) {
   // No: I think we have to force first and last for both 1ry and 2ry axes
   // NOTE: really? Surely no 2ry axis on years+
-  forceFirstAndLastYears(fArray, tickLengths)
+  forceFirstAndLastYears(fArray, tickLengths);
   // }
 }
 // FILL MOD YEARS ends
@@ -171,29 +171,29 @@ export function getYearsAxisFilter(config, timeFormats, isPrimary) {
   // Clone the category array
   // (Prevents refs back, which increment low numbers for yearsAdjustedBy
   // e.g. '5' can become '8005'!!)
-  const catArray = JSON.parse(JSON.stringify(config.categories))
-  const len = catArray.length
+  const catArray = JSON.parse(JSON.stringify(config.categories));
+  const len = catArray.length;
   // Set up default filter of falses
-  const filterArray = getDefaultFilterArray(len)
+  const filterArray = getDefaultFilterArray(len);
   // Now selective overwriting, according to timeFormat
-  const displayInterval = timeFormats.displayInterval
+  const displayInterval = timeFormats.displayInterval;
   // Check for year-intervals (1/2/5/10...)
-  const yMod = getYearMod(displayInterval)
+  const yMod = getYearMod(displayInterval);
   // tickLengths: default and long
-  const tickLengths = getTickLengths(config)
+  const tickLengths = getTickLengths(config);
   // Now fill in the array selectively.
   // 'years2' is the special case
   if (yMod === 1) {
-    fillAllYears(filterArray, isPrimary, tickLengths)
+    fillAllYears(filterArray, isPrimary, tickLengths);
   } else if (yMod === 2) {
-    fillAlternateYears(filterArray, isPrimary, tickLengths)
+    fillAlternateYears(filterArray, isPrimary, tickLengths);
   } else {
-    fillModYears(filterArray, catArray, yMod, isPrimary, tickLengths)
+    fillModYears(filterArray, catArray, yMod, isPrimary, tickLengths);
   }
   // NOTE: kludging some loose ends. I'm playing fast and loose here,
   // updating by ref:
-  timeFormats.yearCount = len
-  return filterArray
+  timeFormats.yearCount = len;
+  return filterArray;
 }
 // GET YEARS AXIS FILTER ends
 
@@ -202,14 +202,14 @@ export function getYearsAxisFilter(config, timeFormats, isPrimary) {
 export function getCatArrayForNonYearsAxisFilter(config) {
   // Cloning the category array prevents refs back, which increment low numbers for yearsAdjustedBy
   // e.g. '5' can become '8005'!!
-  const catArray = Object.assign([], config.categories)
+  const catArray = Object.assign([], config.categories);
   // Allow for 1000-adjustment, so that years/numbers can undergo
   // a successful Date.parse below...
-  const yearsAdjustedBy = config.yearsAdjustedBy
+  const yearsAdjustedBy = config.yearsAdjustedBy;
   if (yearsAdjustedBy > 0) {
-    addYearAdjustment(catArray, yearsAdjustedBy)
+    addYearAdjustment(catArray, yearsAdjustedBy);
   }
-  return catArray
+  return catArray;
 }
 // GET CAT ARRAY FOR NON YEARS AXIS FILTER ends
 
@@ -220,24 +220,24 @@ export function getNoFilterArray(timeFormats, catLen) {
   // NOTE: double-kludge: update passed timeFormats object
   // by ref, with number of year labels!
   if (timeFormats.displayInterval.includes('years')) {
-    timeFormats.yearCount = catLen
+    timeFormats.yearCount = catLen;
   }
   // NOTE: that I'm hard-coding tick lengths for now
-  const anObj = { duplicate: false, label: true, shift: false, tick: 3 }
-  const noFilterArray = Array(catLen).fill(anObj)
-  return noFilterArray
+  const anObj = { duplicate: false, label: true, shift: false, tick: 3 };
+  const noFilterArray = Array(catLen).fill(anObj);
+  return noFilterArray;
 }
 // GET NO FILTER ARRAY
 
 export function setDateByInterval(date, interval) {
-  let result = ''
+  let result = '';
   if (interval === 'months' || interval === 'quarters') {
-    result = date.getMonth()
+    result = date.getMonth();
   } else if (interval === 'days' || interval === 'weeks') {
-    result = date.getDate()
+    result = date.getDate();
   }
   // Hours/minutes to come
-  return result
+  return result;
 }
 
 // GET DATE PROPS
@@ -261,38 +261,38 @@ export function getDateProps(
   forceTick,
   tickInterval,
   tickLengths,
-  dpWidth
+  dpWidth,
 ) {
   // Extract tick lengths
-  const longLength = tickLengths.long
-  const defaultLength = tickLengths.default
+  const longLength = tickLengths.long;
+  const defaultLength = tickLengths.default;
   // Short exists, but not currently used...
   const shortLength = tickLengths.short;
   // Years
-  const yearA = dateA.getFullYear()
-  const yearB = dateB.getFullYear()
+  const yearA = dateA.getFullYear();
+  const yearB = dateB.getFullYear();
   // Months
-  const monthA = dateA.getMonth()
-  const monthB = dateB.getMonth()
+  const monthA = dateA.getMonth();
+  const monthB = dateB.getMonth();
   // Days
-  const dayA = dateA.getDate()
-  const dayB = dateB.getDate()
+  const dayA = dateA.getDate();
+  const dayB = dateB.getDate();
   // Hours
-  const hourA = dateA.getHours()
-  const hourB = dateB.getHours()
+  const hourA = dateA.getHours();
+  const hourB = dateB.getHours();
   // Hours
-  const minuteA = dateA.getMinutes()
-  const minuteB = dateB.getMinutes()
+  const minuteA = dateA.getMinutes();
+  const minuteB = dateB.getMinutes();
   // Interval as number, for comparison
   let intervalNo = 1;
   if (displayInterval.includes('month')) {
-    intervalNo = 2
+    intervalNo = 2;
   } else if (displayInterval.includes('day')) {
-    intervalNo = 3
+    intervalNo = 3;
   } else if (displayInterval.includes('hour')) {
-    intervalNo = 4
+    intervalNo = 4;
   } else if (displayInterval.includes('minute')) {
-    intervalNo = 5
+    intervalNo = 5;
   }
   // NOTE: this is all very messy and needs re-examination
   // Default object to return:
@@ -301,7 +301,7 @@ export function getDateProps(
     label: false,
     duplicate: 0,
     isBoundary: false,
-  }
+  };
   if (yearB > yearA) {
     // Year incremented
     // NOTE: do I need to check displayInterval,
@@ -309,28 +309,28 @@ export function getDateProps(
     if (showLabel && checkTimeChange) {
       // Don't do this for
       if (!firstDate) {
-        result.label = true
+        result.label = true;
       }
     }
     if (intervalNo === 1) {
-      result.tickLen = defaultLength
+      result.tickLen = defaultLength;
     } else {
-      result.tickLen = longLength
+      result.tickLen = longLength;
     }
-    result.isBoundary = true
+    result.isBoundary = true;
   } else if (monthB > monthA) {
     // Month incremented
     // if (displayInterval.includes('month') || displayInterval.includes('day')) {
     if (intervalNo > 1) {
       result.tickLen = defaultLength;
       if (showLabel && !firstDate) {
-        result.label = true
-        result.isBoundary = true
+        result.label = true;
+        result.isBoundary = true;
       }
     } else if (firstDate || forceTick) {
       if (intervalNo === 1) {
         // So in this case, if monthly data are drawn by years
-        result.tickLen = shortLength // was default
+        result.tickLen = shortLength; // was default
       }
     }
   } else if (dayB > dayA) {
@@ -338,57 +338,57 @@ export function getDateProps(
       // Are day-ticks spaced enough to display?
       // (NOTE: 3-pt gap is arbitrary, and Print-specific: what about Online?)
       if (dpWidth < 3) {
-        result.tickLen = 0
+        result.tickLen = 0;
       } else {
-        result.tickLen = shortLength
+        result.tickLen = shortLength;
       }
     } else if (intervalNo === 3) {
-      result.tickLen = defaultLength
+      result.tickLen = defaultLength;
       if (showLabel && !firstDate) {
-        result.label = true
-        result.isBoundary = true
+        result.label = true;
+        result.isBoundary = true;
       }
     } else {
-      result.tickLen = defaultLength
+      result.tickLen = defaultLength;
     }
     if (firstDate || forceTick) {
       if (intervalNo < 3) {
-        result.tickLen = shortLength
+        result.tickLen = shortLength;
       } else {
-        result.tickLen = defaultLength
+        result.tickLen = defaultLength;
       }
     }
   } else if (hourB > hourA) {
     // Hour incremented
     if (intervalNo >= 4) {
-      result.tickLen = defaultLength // was 2
+      result.tickLen = defaultLength; // was 2
       if (showLabel && !firstDate) {
-        result.label = true
-        result.isBoundary = true
+        result.label = true;
+        result.isBoundary = true;
       }
     } else if (firstDate || forceTick) {
       if (intervalNo < 4) {
-        result.tickLen = shortLength // was default
+        result.tickLen = shortLength; // was default
       }
     }
   } else if (minuteB !== minuteA) {
     // Minute incremented
     // if (displayInterval === 'minutes' || displayInterval === 'hours') {
     if (intervalNo >= 4) {
-      result.tickLen = defaultLength
+      result.tickLen = defaultLength;
       if (showLabel && !firstDate) {
-        result.label = true
-        result.isBoundary = true
+        result.label = true;
+        result.isBoundary = true;
       }
     } else if (firstDate || forceTick) {
-      result.tickLen = shortLength // was 2
+      result.tickLen = shortLength; // was 2
     }
   }
   if (lastDate && showLabel) {
     // Last date always labelled
-    result.label = true
+    result.label = true;
   }
-  return result
+  return result;
 }
 // GET DATE PROPS ends
 
@@ -397,28 +397,28 @@ export function getDateProps(
 // 1 date preceding and 2 succeeding...
 export function getVirtualDates(catArray) {
   // First date
-  const firstDate = new Date(Date.parse(catArray[0]))
+  const firstDate = new Date(Date.parse(catArray[0]));
   // And I want an increment, so...
-  const secondDate = new Date(Date.parse(catArray[1]))
+  const secondDate = new Date(Date.parse(catArray[1]));
   // NOTE: don't like next. Apart from anything else, I should've
   // got the increment while I was parsing the payload...
-  const increment = secondDate - firstDate
+  const increment = secondDate - firstDate;
   // I need last date (in ms, so I can add increment)
   // (firstDate is OK as date obj becos I can subtract an increment --
   // it's only *adding* an increment in ms to a date obj that goes askew)
-  const lastDate = Date.parse(catArray[catArray.length - 1])
+  const lastDate = Date.parse(catArray[catArray.length - 1]);
   // Do I need next?
-  const endDate = new Date(lastDate)
+  const endDate = new Date(lastDate);
   // Now get 'virtual' dates preceding and following series:
-  const precedingDate = new Date(firstDate - increment)
-  const succeedingDate = new Date(lastDate + increment)
-  const afterSucceedingDate = new Date(lastDate + increment * 2)
+  const precedingDate = new Date(firstDate - increment);
+  const succeedingDate = new Date(lastDate + increment);
+  const afterSucceedingDate = new Date(lastDate + increment * 2);
   return {
     precedingDate,
     endDate,
     succeedingDate,
     afterSucceedingDate,
-  }
+  };
 }
 // GET VIRTUAL DATES ends
 
@@ -426,14 +426,14 @@ export function getVirtualDates(catArray) {
 // Called from getNonYearsAxisFilter to assemble a broad list
 // of 'tickable' intervals in descending order
 export function getIntervalsList(int) {
-  let broadInts = 'years'
+  let broadInts = 'years';
   if (int.includes('quarter') || int.includes('month')) {
-    broadInts = `broadInts,${'months'}`
+    broadInts = `broadInts,${'months'}`;
   } else if (int.includes('week') || int.includes('day')) {
-    broadInts = `broadInts,${'days'}`
+    broadInts = `broadInts,${'days'}`;
   }
   // Hours, etc, to come
-  return broadInts
+  return broadInts;
 }
 // GET INTERVALS LIST ends
 
@@ -441,98 +441,98 @@ export function getIntervalsList(int) {
 // Called from getYearsAxisFilter and getNonYearsAxisFilter
 // Returns the incremental value of, say, 'years2'
 export function getYearMod(interval) {
-  let yMod = 1
+  let yMod = 1;
   // Non-years stick with default
   if (interval.includes('years')) {
     // If we're years + n (e.g. 'years2')
     if (interval.replace('years', '').length > 0) {
-      yMod = parseInt(interval.replace('years', ''), 10)
+      yMod = parseInt(interval.replace('years', ''), 10);
     }
   }
-  return yMod
+  return yMod;
 }
 // GET YEAR MOD ends
 
 // GET NON-YEARS AXIS FILTER
 export function getNonYearsAxisFilter(config, granularity, isPrimary) {
   // Default timeFormats are 2ry axis
-  let granularityTimeFormats = granularity.secondary
+  let granularityTimeFormats = granularity.secondary;
   if (isPrimary) {
-    granularityTimeFormats = granularity.primary
+    granularityTimeFormats = granularity.primary;
   }
   // Axis labels? (actually always true for 2ry)
-  const showLabel = granularityTimeFormats.showLabel
+  const showLabel = granularityTimeFormats.showLabel;
   // From the original config.timeFormats
-  const originalInterval = config.timeFormats.interval
+  const originalInterval = config.timeFormats.interval;
   // Time interval of the actual raw data
-  const displayInterval = granularityTimeFormats.displayInterval
+  const displayInterval = granularityTimeFormats.displayInterval;
   // Ticks display interval:
-  const tickInterval = granularity.ticks.displayInterval
+  const tickInterval = granularity.ticks.displayInterval;
   // Which is, broadly:
   // NOTE: comm'd out, but this may be useful
   // const displayIntervalsList = getIntervalsList(displayInterval);
   // I want year mod
-  const yearMod = getYearMod(displayInterval)
+  const yearMod = getYearMod(displayInterval);
   // Cloned array of categories with any 1000-year adjustment
   // NOTE: do I need to convert date strings to date objects now?
   // For the time being, left as strings
-  const catArray = getCatArrayForNonYearsAxisFilter(config)
-  const catLen = catArray.length
+  const catArray = getCatArrayForNonYearsAxisFilter(config);
+  const catLen = catArray.length;
   // 'Virtual' dates preceding first and following last
-  const virtualDates = getVirtualDates(catArray)
-  const { precedingDate, endDate, succeedingDate } = virtualDates
+  const virtualDates = getVirtualDates(catArray);
+  const { precedingDate, endDate, succeedingDate } = virtualDates;
   // Added Nov'21: we need tick lengths
   // (Prev'y hard-coded in getDateProps. Ouch!)
-  const tickLengths = getTickLengths(config)
+  const tickLengths = getTickLengths(config);
   // Set up a counter to track the number of datapoints within whatever
   // time-interval I'm *plotting* (e.g., to count the number of days in a month)
   // I use this to count back at the end of the time-interval, to find the
   // halfway position where I'll actually set the flag to draw a label
-  let clusterCounter = 0
-  let crossedBoundary = false
-  let pointLabelled = false
+  let clusterCounter = 0;
+  let crossedBoundary = false;
+  let pointLabelled = false;
   // Array to return:
-  const filterArray = []
-  let filterIndex = 0
+  const filterArray = [];
+  let filterIndex = 0;
   // Loop through categories
   for (let catNo = 0; catNo < catLen; catNo++) {
     // I need to set up prev and next items
-    const filterItem = defaultFilterItem()
-    const thisDate = new Date(catArray[catNo])
-    const lastPoint = catNo === catLen - 1
+    const filterItem = defaultFilterItem();
+    const thisDate = new Date(catArray[catNo]);
+    const lastPoint = catNo === catLen - 1;
     // I want to compare this item with previous
-    let dateA
-    let dateB
-    let firstDate = false
-    let lastDate = false
+    let dateA;
+    let dateB;
+    let firstDate = false;
+    let lastDate = false;
     if (catNo === 0) {
-      dateA = precedingDate
-      dateB = thisDate
-      firstDate = true
+      dateA = precedingDate;
+      dateB = thisDate;
+      firstDate = true;
     } else if (lastPoint) {
-      dateA = new Date(catArray[catNo - 1])
-      dateB = thisDate
-      lastDate = true
+      dateA = new Date(catArray[catNo - 1]);
+      dateB = thisDate;
+      lastDate = true;
     } else {
-      dateA = new Date(catArray[catNo - 1])
-      dateB = thisDate
+      dateA = new Date(catArray[catNo - 1]);
+      dateB = thisDate;
     }
     // Flag to prevent year being drawn for first
     // slot with sub-yearly data
     // And similarly for other intervals
-    let checkTimeChange = true
+    let checkTimeChange = true;
     if (catNo === 0) {
       if (
         displayInterval.includes('year') &&
         !originalInterval.includes('year')
       ) {
-        checkTimeChange = false
+        checkTimeChange = false;
       }
     }
     // Late kludge, March'24. Let's send in the dataPointWidth. This
     // is, so far, just for day-series, where I need to determine whether
     // there's enough space to display them...
-    const dpWidth = granularity.dataPointWidth
+    const dpWidth = granularity.dataPointWidth;
     // So I want to check sequentially at year, month and day levels
     // I'm oversimplifying now, assuming data are days->months
     const boundaryObj = getDateProps(
@@ -546,41 +546,41 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
       false,
       tickInterval,
       tickLengths,
-      dpWidth
-    )
-    filterItem.tick = boundaryObj.tickLen
-    filterItem.duplicate = boundaryObj.duplicate
-    filterItem.isBoundary = boundaryObj.isBoundary
-    crossedBoundary = boundaryObj.isBoundary
+      dpWidth,
+    );
+    filterItem.tick = boundaryObj.tickLen;
+    filterItem.duplicate = boundaryObj.duplicate;
+    filterItem.isBoundary = boundaryObj.isBoundary;
+    crossedBoundary = boundaryObj.isBoundary;
     if (boundaryObj.label) {
       // If this is last point and it isn't the first
       // in a new 'cluster' decrement cluster counter
       if (lastPoint && !crossedBoundary) {
-        clusterCounter--
+        clusterCounter--;
       }
-      const stepBack = clusterCounter / 2
-      filterIndex = catNo - Math.ceil(stepBack)
-      const shift = stepBack === Math.ceil(stepBack)
+      const stepBack = clusterCounter / 2;
+      filterIndex = catNo - Math.ceil(stepBack);
+      const shift = stepBack === Math.ceil(stepBack);
       // Find slot, either an existing 'back' element
       // in the array, or use current
-      let labelPoint = filterArray[filterIndex]
+      let labelPoint = filterArray[filterIndex];
       if (typeof labelPoint === 'undefined') {
-        labelPoint = filterItem
+        labelPoint = filterItem;
       }
-      labelPoint.label = true
-      labelPoint.shift = shift
+      labelPoint.label = true;
+      labelPoint.shift = shift;
       // Reset counter to 1, to allow for the fact
       // that we're at start of next 'cluster'
       if (!lastPoint) {
-        clusterCounter = 1
+        clusterCounter = 1;
       }
-      pointLabelled = true
+      pointLabelled = true;
     } else {
       // Right place to increment?
-      clusterCounter++
-      pointLabelled = false
+      clusterCounter++;
+      pointLabelled = false;
     }
-    filterArray.push(filterItem)
+    filterArray.push(filterItem);
   }
   // Emerging from the points loop, I have to deal with:
   //  -- length of the additional 'duplicate' tick
@@ -600,47 +600,47 @@ export function getNonYearsAxisFilter(config, granularity, isPrimary) {
     // Force tick (because duplicate)
     true,
     tickInterval,
-    tickLengths
-  )
+    tickLengths,
+  );
   // Isolate last element in array and set duplicate value
-  const lastEl = filterArray[catLen - 1]
-  lastEl.duplicate = dupBoundaryObj.tickLen
+  const lastEl = filterArray[catLen - 1];
+  lastEl.duplicate = dupBoundaryObj.tickLen;
   // If the last point was the first in a 'cluster', the loop
   // 'used' this last point to set the label on the previous
   // 'cluster'. So I have to set the label for *this* point
   // Kill off non-mod years and adjust ticklengths
-  fixYearMods(filterArray, catArray, yearMod, tickLengths)
+  fixYearMods(filterArray, catArray, yearMod, tickLengths);
   if (crossedBoundary && pointLabelled) {
-    lastEl.label = true
-    lastEl.shift = false
+    lastEl.label = true;
+    lastEl.shift = false;
   } else {
     // We have to go back in the cluster for final label:
-    const stepBack = clusterCounter / 2
-    filterIndex = catLen - 1 - Math.ceil(stepBack)
-    const shift = stepBack === Math.ceil(stepBack)
-    const backEl = filterArray[filterIndex]
-    backEl.label = dupBoundaryObj.label
-    backEl.shift = shift
+    const stepBack = clusterCounter / 2;
+    filterIndex = catLen - 1 - Math.ceil(stepBack);
+    const shift = stepBack === Math.ceil(stepBack);
+    const backEl = filterArray[filterIndex];
+    backEl.label = dupBoundaryObj.label;
+    backEl.shift = shift;
   }
   // Number of years for yyyy/yy formatting on axis
   if (displayInterval.includes('years')) {
-    granularityTimeFormats.yearCount = getYearCount(catArray)
+    granularityTimeFormats.yearCount = getYearCount(catArray);
   }
   // console.log(filterArray)
-  return filterArray
+  return filterArray;
 }
 // GET NON-YEARS AXIS FILTER ends
 
 // CHECK ALTERNATE YEAR MOD
 export function checkAlternateYearMod(catArray, yearMod) {
-  let altMod = false
+  let altMod = false;
   if (yearMod === 2) {
-    const firstYear = FixYearInDate(catArray[0]).getFullYear()
+    const firstYear = FixYearInDate(catArray[0]).getFullYear();
     if (firstYear % 2 !== 0) {
-      altMod = true
+      altMod = true;
     }
   }
-  return altMod
+  return altMod;
 }
 // CHECK ALTERNATE YEAR MOD ends
 
@@ -653,29 +653,29 @@ export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
   // No: I'm not tweaking ticklengths here any more (Mar'24)
   // const longLength = tickLengths.long
   if (yearMod > 1) {
-    const aLen = filterArray.length - 1
+    const aLen = filterArray.length - 1;
     // Alternate years may be odd or even, depending
     // upon initial year. altMod is true for even
     // years, false for odd
-    const oddMod = checkAlternateYearMod(catArray, yearMod)
+    const oddMod = checkAlternateYearMod(catArray, yearMod);
     // Set the mod val to check for slot-opening point
-    let modCheckA = 0
+    let modCheckA = 0;
     // ...and for closing point
-    let modCheckB = 1
+    let modCheckB = 1;
     if (oddMod) {
-      modCheckA = 1
-      modCheckB = 0
+      modCheckA = 1;
+      modCheckB = 0;
     }
     // Flag to preserve first label, mod or not
-    let killYears = false
+    let killYears = false;
     for (let pNo = 1; pNo < aLen; pNo++) {
       // const thisDate = new Date(catArray[pNo]).getFullYear();
-      const thisDate = FixYearInDate(catArray[pNo]).getFullYear()
-      const thisPoint = filterArray[pNo]
+      const thisDate = FixYearInDate(catArray[pNo]).getFullYear();
+      const thisPoint = filterArray[pNo];
       if (killYears) {
         if (thisDate % yearMod !== modCheckA) {
           // Kill non-mod labels
-          thisPoint.label = false
+          thisPoint.label = false;
           if (thisDate % yearMod === modCheckB) {
             // But if it's the year-end AFTER the mod,
             // set the tick long
@@ -700,7 +700,7 @@ export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
           // filterArray[0].tick = longLength // was 3
         }
         // Preserve it and reset flag
-        killYears = true
+        killYears = true;
       }
     }
   }
@@ -711,11 +711,11 @@ export function fixYearMods(filterArray, catArray, yearMod, tickLengths) {
 // Called from getNonYearsAxisFilter
 // Get year count by subtracting first from last
 export function getYearCount(catArray) {
-  const firstYear = FixYearInDate(catArray[0]).getFullYear()
-  const lastCat = catArray[catArray.length - 1]
-  const lastYear = FixYearInDate(lastCat).getFullYear()
-  const yearCount = lastYear - firstYear + 1
-  return yearCount
+  const firstYear = FixYearInDate(catArray[0]).getFullYear();
+  const lastCat = catArray[catArray.length - 1];
+  const lastYear = FixYearInDate(lastCat).getFullYear();
+  const yearCount = lastYear - firstYear + 1;
+  return yearCount;
 }
 // GET YEAR COUNT ends
 
@@ -727,31 +727,31 @@ export function getYearCount(catArray) {
 export function getAnyAxisFilter(xAxisConfig, chartConfig, granularity) {
   // Do nothing if not time-based series
   if (xAxisConfig.categoryType === 'time') {
-    const rawInterval = chartConfig.timeFormats.interval
+    const rawInterval = chartConfig.timeFormats.interval;
     // Years: 1ry and 2ry
     if (rawInterval.includes('years')) {
       xAxisConfig.primaryAxisFilter = getYearsAxisFilter(
         chartConfig,
         granularity.primary,
-        true
-      )
+        true,
+      );
       xAxisConfig.secondaryAxisFilter = getYearsAxisFilter(
         chartConfig,
         granularity.primary,
-        false
-      )
+        false,
+      );
     } else {
       xAxisConfig.primaryAxisFilter = getNonYearsAxisFilter(
         chartConfig,
         granularity,
-        true
-      )
+        true,
+      );
       if (typeof granularity.secondary !== 'undefined') {
         xAxisConfig.secondaryAxisFilter = getNonYearsAxisFilter(
           chartConfig,
           granularity,
-          false
-        )
+          false,
+        );
       }
     }
   }
@@ -760,11 +760,11 @@ export function getAnyAxisFilter(xAxisConfig, chartConfig, granularity) {
 // GET TICK LENGTHS
 // Variously called to extract tick lengths
 export function getTickLengths(config) {
-  const lengths = config.xAxis.ticks.default.lengths
+  const lengths = config.xAxis.ticks.default.lengths;
   return {
     long: lengths.long.end,
     default: lengths.default.end,
     short: lengths.short.end,
-  }
+  };
 }
 // GET TICK LENGTHS ends

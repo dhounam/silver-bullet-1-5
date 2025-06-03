@@ -1,29 +1,29 @@
 // NOTE: while I'm messing around...
 // /* eslint-disable no-unused-vars */
 
-import * as d3 from 'd3'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as d3 from 'd3';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Utilities modules
-import * as ChartUtilities from '../chart-utilities'
-import * as AxisUtilities from '../axes/axis-utilities'
-import ConfigXaxisOrdinal from '../axes/configuration/xaxis-ordinal-config'
-import ConfigYaxisLinear from '../axes/configuration/yaxis-linear-config'
-import * as BrokenScale from '../axes/broken-scale'
-import * as BlobUtilities from '../blobs/blob-utilities'
+import * as ChartUtilities from '../chart-utilities';
+import * as AxisUtilities from '../axes/axis-utilities';
+import ConfigXaxisOrdinal from '../axes/configuration/xaxis-ordinal-config';
+import ConfigYaxisLinear from '../axes/configuration/yaxis-linear-config';
+import * as BrokenScale from '../axes/broken-scale';
+import * as BlobUtilities from '../blobs/blob-utilities';
 // D3 sub-components:
-import SilverXaxisOrdinal from '../axes/live/xaxis-ordinal'
-import SilverXaxisOrdinalTest from '../axes/tests/xaxis-ordinal-test'
-import SilverYaxisLinear from '../axes/live/yaxis-linear'
-import SilverYaxisLinearTest from '../axes/tests/yaxis-linear-test'
-import SilverThermoVerticalSeries from './thermoverticalseries'
-import SilverXaxisBlobs from '../blobs/xaxis-blobs'
+import SilverXaxisOrdinal from '../axes/live/xaxis-ordinal';
+import SilverXaxisOrdinalTest from '../axes/tests/xaxis-ordinal-test';
+import SilverYaxisLinear from '../axes/live/yaxis-linear';
+import SilverYaxisLinearTest from '../axes/tests/yaxis-linear-test';
+import SilverThermoVerticalSeries from './thermoverticalseries';
+import SilverXaxisBlobs from '../blobs/xaxis-blobs';
 
 class SilverThermoVerticalChart extends Component {
   // CONSTRUCTOR
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       // flags to control subcomponent testing/rendering
       yaxisTestLeft: false,
@@ -36,18 +36,18 @@ class SilverThermoVerticalChart extends Component {
       granularity: {},
       // Temporary innerBox bounds
       postYaxisBounds: {},
-    }
+    };
     // Callbacks from axis and blobs tests:
-    this.handleXaxisInnerBoxBounds = this.handleXaxisInnerBoxBounds.bind(this)
+    this.handleXaxisInnerBoxBounds = this.handleXaxisInnerBoxBounds.bind(this);
     this.handleYaxisInnerBoxBoundsLeft = this.handleYaxisInnerBoxBoundsLeft.bind(
-      this
-    )
+      this,
+    );
     this.handleYaxisInnerBoxBoundsRight = this.handleYaxisInnerBoxBoundsRight.bind(
-      this
-    )
-    this.handleBlobsInnerBoxBounds = this.handleBlobsInnerBoxBounds.bind(this)
+      this,
+    );
+    this.handleBlobsInnerBoxBounds = this.handleBlobsInnerBoxBounds.bind(this);
     // Click on thermo marker
-    this.handleThermoClick = this.handleThermoClick.bind(this)
+    this.handleThermoClick = this.handleThermoClick.bind(this);
   }
 
   // COMPONENT WILL MOUNT
@@ -59,12 +59,12 @@ class SilverThermoVerticalChart extends Component {
       xaxisTest: false,
       blobsTest: false,
       innerBox: this.props.config.innerBox,
-    })
+    });
   }
 
   // COMPONENT DID MOUNT
   UNSAFE_componentDidMount() {
-    this.mainDthreeGroupTransition(0)
+    this.mainDthreeGroupTransition(0);
   }
 
   // COMPONENT WILL RECEIVE PROPS
@@ -76,7 +76,7 @@ class SilverThermoVerticalChart extends Component {
       yaxisTestRight: false,
       xaxisTest: false,
       blobsTest: false,
-    })
+    });
   }
 
   // Callbacks:
@@ -88,7 +88,7 @@ class SilverThermoVerticalChart extends Component {
   // (hopefully!) allows me to adjust for blobs...
   handleYaxisInnerBoxBoundsLeft(innerBox) {
     const config = this.props.config;
-    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config);
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -96,12 +96,12 @@ class SilverThermoVerticalChart extends Component {
       yaxisTestRight: true,
       xaxisTest: false,
       blobsTest: false,
-    })
+    });
   }
 
   handleYaxisInnerBoxBoundsRight(innerBox) {
     const config = this.props.config;
-    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config)
+    innerBox = ChartUtilities.checkForFixedInnerMargins(innerBox, config);
     this.setState({
       innerBox,
       postYaxisBounds: Object.assign({}, innerBox),
@@ -109,14 +109,17 @@ class SilverThermoVerticalChart extends Component {
       yaxisTestRight: false,
       xaxisTest: true,
       blobsTest: false,
-    })
+    });
   }
 
   // HANDLE X-AXIS INNER BOX BOUNDS
   // ...fields the revised innerBox after calculating axis adjustments
   handleXaxisInnerBoxBounds(result) {
     const config = this.props.config;
-    result.bounds = ChartUtilities.checkForFixedInnerMargins(result.bounds, config)
+    result.bounds = ChartUtilities.checkForFixedInnerMargins(
+      result.bounds,
+      config,
+    );
     this.setState({
       innerBox: result.bounds,
       granularity: result.granularity,
@@ -124,7 +127,7 @@ class SilverThermoVerticalChart extends Component {
       yaxisTestRight: false,
       xaxisTest: false,
       blobsTest: true,
-    })
+    });
   }
 
   // HANDLE BLOBS INNER BOX BOUNDS
@@ -140,22 +143,22 @@ class SilverThermoVerticalChart extends Component {
       yaxisTestRight: false,
       xaxisTest: false,
       blobsTest: false,
-    })
+    });
     // const duration = this.props.config.duration;
     // NOTE: set to zero to prevent visible drop-in from top left...
     // NOTE: if I'm going to use a zero duration regularly, put it into prefs
-    const duration = 0
-    this.mainDthreeGroupTransition(duration)
+    const duration = 0;
+    this.mainDthreeGroupTransition(duration);
   }
 
   // HANDLE THERMO CLICK EVENT
   // This is potentially useful... maybe...
   handleThermoClick(event) {
-    const thermoData = event.colData
+    const thermoData = event.colData;
     // const index = event.index;
-    const info = `Value is ${thermoData.category}`
+    const info = `Value is ${thermoData.category}`;
     /* eslint-disable no-console */
-    console.log(info)
+    console.log(info);
     /* eslint-enable no-console */
   }
   // HANDLE THERMO CLICK EVENT ends
@@ -174,16 +177,16 @@ class SilverThermoVerticalChart extends Component {
   // Moves main D3 group into position
   // NB: This isn't interested in mainGroup *size* -- only in location
   mainDthreeGroupTransition(duration) {
-    const innerBox = this.state.innerBox
-    const bLeft = innerBox.x
-    const bTop = innerBox.y
-    const transStr = `translate(${bLeft}, ${bTop})`
-    const mainGroupClass = this.getMainGroupClass(true, false)
-    const mainGroup = d3.select(mainGroupClass)
+    const innerBox = this.state.innerBox;
+    const bLeft = innerBox.x;
+    const bTop = innerBox.y;
+    const transStr = `translate(${bLeft}, ${bTop})`;
+    const mainGroupClass = this.getMainGroupClass(true, false);
+    const mainGroup = d3.select(mainGroupClass);
     mainGroup
       .transition()
       .duration(duration)
-      .attr('transform', transStr)
+      .attr('transform', transStr);
   }
 
   // GET MAIN GROUP CLASS
@@ -195,15 +198,15 @@ class SilverThermoVerticalChart extends Component {
   // for CSS (probably n/a for this main group; but important for
   // axes, at least...)
   getMainGroupClass(prefixDot, addGeneralClass) {
-    let dot = ''
-    let generalClass = ''
+    let dot = '';
+    let generalClass = '';
     if (prefixDot) {
-      dot = '.'
+      dot = '.';
     }
     if (addGeneralClass) {
-      generalClass = `${dot}chart-main-group`
+      generalClass = `${dot}chart-main-group`;
     }
-    return `${generalClass} ${dot}chart-main-group-${this.props.config.chartIndex}`
+    return `${generalClass} ${dot}chart-main-group-${this.props.config.chartIndex}`;
   }
   // GET MAIN GROUP CLASS ends
 
@@ -216,19 +219,19 @@ class SilverThermoVerticalChart extends Component {
   // Hands off to function in axis-utilities.
   // Params is CO
   getXaxisConfig(chartConfig) {
-    const innerBox = Object.assign({}, this.state.innerBox)
+    const innerBox = Object.assign({}, this.state.innerBox);
     // Check for test...
-    const testFlag = this.state.xaxisTest
-    const granularity = this.state.granularity
+    const testFlag = this.state.xaxisTest;
+    const granularity = this.state.granularity;
     const axisConfig = ConfigXaxisOrdinal(
       chartConfig,
       innerBox,
       testFlag,
-      granularity
-    )
+      granularity,
+    );
     // NOTE: force ticks ON for thermometers
-    axisConfig.tickPrefs.ticksOn = true
-    return axisConfig
+    axisConfig.tickPrefs.ticksOn = true;
+    return axisConfig;
   }
   // GET X-AXIS CONFIG ends
 
@@ -236,28 +239,28 @@ class SilverThermoVerticalChart extends Component {
   // Hands off to function in axis-utilities.
   // Params are CO and either 'left' or 'right'
   getYaxisConfig(chartConfig, side, testFlag) {
-    const innerBox = Object.assign({}, this.state.innerBox)
-    const axisConfig = ConfigYaxisLinear(chartConfig, innerBox, testFlag, side)
-    return axisConfig
+    const innerBox = Object.assign({}, this.state.innerBox);
+    const axisConfig = ConfigYaxisLinear(chartConfig, innerBox, testFlag, side);
+    return axisConfig;
   }
   // GET Y-AXIS CONFIG ends
 
   // GET BLOBS CONFIG
   // Hands off to function in BlobUtilities
   getBlobsConfig(chartConfig) {
-    const nowBounds = this.state.innerBox
-    const postYBounds = this.state.postYaxisBounds
+    const nowBounds = this.state.innerBox;
+    const postYBounds = this.state.postYaxisBounds;
     // Check for test...
-    const testFlag = this.state.blobsTest
-    const side = AxisUtilities.getSide(chartConfig.scales)
+    const testFlag = this.state.blobsTest;
+    const side = AxisUtilities.getSide(chartConfig.scales);
     const blobConfig = BlobUtilities.configXBlobs(
       chartConfig,
       nowBounds,
       postYBounds,
       testFlag,
-      side
-    )
-    return blobConfig
+      side,
+    );
+    return blobConfig;
   }
   // GET BLOBS CONFIG ends
 
@@ -265,40 +268,40 @@ class SilverThermoVerticalChart extends Component {
     return {
       minWidth: config.series.thermovertical.minWidth,
       maxWidth: config.series.thermovertical.maxWidth,
-    }
+    };
   }
 
   // CONFIG SERIES THERMOS
   // Assembles thermo series config object
   configSeriesThermos(chartConfig) {
     // The default name/value lookup of colours
-    const colourLookup = chartConfig.colourLookup
+    const colourLookup = chartConfig.colourLookup;
     // Colours for this sequence of series
-    const colourSet = chartConfig.series.thermovertical.colours
-    const bounds = Object.assign({}, this.state.innerBox)
-    const padding = chartConfig.series.thermovertical.gap
-    const mmw = this.getMinMaxWidth(chartConfig)
-    const minWidth = mmw.minWidth
-    const maxWidth = mmw.maxWidth
-    const side = AxisUtilities.getSide(chartConfig.scales)
-    const chartType = chartConfig.scales[side].type
-    const isLog = chartConfig.scales[side].log
-    const mmO = Object.assign({}, chartConfig.scales[side].minMaxObj.scale)
+    const colourSet = chartConfig.series.thermovertical.colours;
+    const bounds = Object.assign({}, this.state.innerBox);
+    const padding = chartConfig.series.thermovertical.gap;
+    const mmw = this.getMinMaxWidth(chartConfig);
+    const minWidth = mmw.minWidth;
+    const maxWidth = mmw.maxWidth;
+    const side = AxisUtilities.getSide(chartConfig.scales);
+    const chartType = chartConfig.scales[side].type;
+    const isLog = chartConfig.scales[side].log;
+    const mmO = Object.assign({}, chartConfig.scales[side].minMaxObj.scale);
     // Broken scale...?
     const brokenScalePadding = BrokenScale.getYaxisBrokenScalePadding(
       chartType,
-      chartConfig
-    )
-    let breakScale = false
+      chartConfig,
+    );
+    let breakScale = false;
     if (mmO.min > 0 && !isLog) {
       // Reset range
-      bounds.height -= brokenScalePadding
-      breakScale = true
+      bounds.height -= brokenScalePadding;
+      breakScale = true;
     }
     // Dot markers?
-    let dotFlag = chartConfig.scales[side].thermoDots
+    let dotFlag = chartConfig.scales[side].thermoDots;
     if (typeof dotFlag === 'undefined') {
-      dotFlag = false
+      dotFlag = false;
     }
     // Assemble the config object with 'simple' props
     const config = {
@@ -326,47 +329,47 @@ class SilverThermoVerticalChart extends Component {
       styles: chartConfig.series.thermovertical,
       thermometer: chartConfig.thermometer,
       zeroPrefs: chartConfig.xAxis.ticks.zero,
-    }
+    };
     // Mixed +/– flag:
-    config.mixedVals = mmO.min < 0 && mmO.max >= 0
+    config.mixedVals = mmO.min < 0 && mmO.max >= 0;
     // Y-SCALE (linear):
     if (isLog) {
       config.yScale = d3.scale
         .log()
         .range([bounds.height, 0])
-        .domain([mmO.min, mmO.max])
+        .domain([mmO.min, mmO.max]);
     } else {
       config.yScale = d3.scale
         .linear()
         .range([bounds.height, 0])
-        .domain([mmO.min, mmO.max])
+        .domain([mmO.min, mmO.max]);
     }
     // HEADERS:
     // NOTE: this is all dup'd in barchart.js...
     // and there's redundancy in header-extraction, too...
     // Separate first (category) column header from subsequent headers:
-    config.catHead = chartConfig.headers[0]
+    config.catHead = chartConfig.headers[0];
     // Now exclude any blob headers:
-    const actualHeaders = []
+    const actualHeaders = [];
     for (let iii = 1; iii <= chartConfig.seriesCount; iii++) {
       if (chartConfig.headers[iii] !== chartConfig.blobs.blobState.header) {
-        actualHeaders.push(chartConfig.headers[iii])
+        actualHeaders.push(chartConfig.headers[iii]);
       }
     }
-    config.seriesHeads = actualHeaders
+    config.seriesHeads = actualHeaders;
     // Map series colours:
-    config.colourMap = ChartUtilities.getColourMap(actualHeaders, colourSet)
+    config.colourMap = ChartUtilities.getColourMap(actualHeaders, colourSet);
     // So, to be clear, the config obj includes properties--
     //      catHead: the category column header
     //      seriesHeads: all subsequent (col 2 etc...) header strings
     //      colourMap: a D3 scale object that maps headers to series colours
     // X-SCALE:
-    const xMainDomain = chartConfig.chartData.map((ddd) => ddd[config.catHead])
+    const xMainDomain = chartConfig.chartData.map(ddd => ddd[config.catHead]);
     config.xMainScale = d3.scale
       .ordinal()
       .domain(xMainDomain)
-      .rangePoints([0, config.bounds.width], 0, 0)
-    return config
+      .rangePoints([0, config.bounds.width], 0, 0);
+    return config;
   }
   // CONFIG SERIES THERMOS ends
 
@@ -376,24 +379,24 @@ class SilverThermoVerticalChart extends Component {
   // going to start passing state around as a param, it has to live
   // here, and all chart-type components will duplicate this code...
   getYaxisJsx(config, exists, key, side) {
-    let axisConfig = { enabled: false }
+    let axisConfig = { enabled: false };
     // Check for test...
-    let testFlag = this.state.yaxisTestLeft
+    let testFlag = this.state.yaxisTestLeft;
     if (side === 'right') {
-      testFlag = this.state.yaxisTestRight
+      testFlag = this.state.yaxisTestRight;
     }
     if (exists) {
-      axisConfig = this.getYaxisConfig(config, side, testFlag)
+      axisConfig = this.getYaxisConfig(config, side, testFlag);
     }
-    axisConfig.bounds = this.state.innerBox
+    axisConfig.bounds = this.state.innerBox;
     // return axisConfig;
     // Render left yaxis only, with 'test' flag
     // to get margin
-    let callbackHandler = this.handleYaxisInnerBoxBoundsRight
+    let callbackHandler = this.handleYaxisInnerBoxBoundsRight;
     if (side === 'left') {
-      callbackHandler = this.handleYaxisInnerBoxBoundsLeft
+      callbackHandler = this.handleYaxisInnerBoxBoundsLeft;
     }
-    let axisJsx = ''
+    let axisJsx = '';
     if (testFlag) {
       axisJsx = (
         <SilverYaxisLinearTest
@@ -401,13 +404,13 @@ class SilverThermoVerticalChart extends Component {
           config={axisConfig}
           onReturnRevisedInnerBox={callbackHandler}
         />
-      )
+      );
     } else {
       axisJsx = (
         <SilverYaxisLinear key={`${key}-test-${side}`} config={axisConfig} />
-      )
+      );
     }
-    return axisJsx
+    return axisJsx;
   }
   // GET Y-AXIS JSX ends
 
@@ -416,10 +419,10 @@ class SilverThermoVerticalChart extends Component {
   getXaxisJsx(config, key) {
     // Fcn in this component pulls a couple of strings, then calls
     // fcn in AxisUtilities... and the result is the axis config obj.
-    const axisConfig = this.getXaxisConfig(config)
-    axisConfig.bounds = this.state.innerBox
+    const axisConfig = this.getXaxisConfig(config);
+    axisConfig.bounds = this.state.innerBox;
     // Test or live:
-    let xaxisJsx = ''
+    let xaxisJsx = '';
     if (this.state.xaxisTest) {
       // Only send callback for test
       xaxisJsx = (
@@ -428,80 +431,80 @@ class SilverThermoVerticalChart extends Component {
           config={axisConfig}
           onReturnRevisedInnerBox={this.handleXaxisInnerBoxBounds}
         />
-      )
+      );
     } else {
-      xaxisJsx = <SilverXaxisOrdinal key={key} config={axisConfig} />
+      xaxisJsx = <SilverXaxisOrdinal key={key} config={axisConfig} />;
     }
-    return xaxisJsx
+    return xaxisJsx;
   }
   // GET X-AXIS JSX ends
 
   // GET BLOBS JSX
   getBlobsJsx(config, key, isTest) {
-    const blobsConfig = this.getBlobsConfig(config)
-    blobsConfig.bounds = this.state.innerBox
+    const blobsConfig = this.getBlobsConfig(config);
+    blobsConfig.bounds = this.state.innerBox;
     const jsxTemplate = (
       <SilverXaxisBlobs
         key={key}
         config={blobsConfig}
         onReturnRevisedInnerBox={this.handleBlobsInnerBoxBounds}
       />
-    )
-    let jsx = ''
+    );
+    let jsx = '';
     if (isTest) {
       // If it's a test, always assemble jsx
-      jsx = jsxTemplate
+      jsx = jsxTemplate;
     } else if (blobsConfig.blobs.blobState.column > 0) {
       // Not a test, only make up jsx if there ARE blobs
-      jsx = jsxTemplate
+      jsx = jsxTemplate;
     }
-    return jsx
+    return jsx;
   }
   // GET BLOBS JSX ends
 
   // RENDER
   render() {
-    const config = this.props.config
-    const chartIndex = config.chartIndex
+    const config = this.props.config;
+    const chartIndex = config.chartIndex;
     // Key all subcomponents:
-    const kids = ChartUtilities.getKeysAndIds(chartIndex)
+    const kids = ChartUtilities.getKeysAndIds(chartIndex);
 
     // Custom config objects for the various d3 components
     // See linechart.js
 
     // Y axis can be left/right/both...
-    const enableScale = config.scales.enableScale
-    const yLeft = enableScale.left
-    const yRight = enableScale.right
+    const enableScale = config.scales.enableScale;
+    const yLeft = enableScale.left;
+    const yRight = enableScale.right;
     // Default empty jsx
-    let xaxisJSX = ''
-    let yaxisJSXLeft = ''
-    let yaxisJSXRight = ''
-    let blobsJSX = ''
-    let thermoseriesJSX = ''
+    let xaxisJSX = '';
+    let yaxisJSXLeft = '';
+    let yaxisJSXRight = '';
+    let blobsJSX = '';
+    let thermoseriesJSX = '';
     // Render sequence:
     // Either the tests, where we render individual components...
     if (this.state.yaxisTestLeft) {
-      yaxisJSXLeft = this.getYaxisJsx(config, yLeft, kids.yAxisKey, 'left')
+      yaxisJSXLeft = this.getYaxisJsx(config, yLeft, kids.yAxisKey, 'left');
     } else if (this.state.yaxisTestRight) {
-      yaxisJSXRight = this.getYaxisJsx(config, yRight, kids.yAxisKey, 'right')
+      yaxisJSXRight = this.getYaxisJsx(config, yRight, kids.yAxisKey, 'right');
     } else if (this.state.xaxisTest) {
-      xaxisJSX = this.getXaxisJsx(config, kids.xAxisKey)
+      xaxisJSX = this.getXaxisJsx(config, kids.xAxisKey);
     } else if (this.state.blobsTest) {
-      blobsJSX = this.getBlobsJsx(config, kids.blobsKey, this.state.blobsTest)
+      blobsJSX = this.getBlobsJsx(config, kids.blobsKey, this.state.blobsTest);
     } else {
       // ...or, when all tests are done, the whole shebang!
       // Full render, with all children.
-      xaxisJSX = this.getXaxisJsx(config, kids.xAxisKey)
+      xaxisJSX = this.getXaxisJsx(config, kids.xAxisKey);
       if (yLeft) {
-        yaxisJSXLeft = this.getYaxisJsx(config, yLeft, kids, 'left')
+        yaxisJSXLeft = this.getYaxisJsx(config, yLeft, kids, 'left');
       }
       if (yRight) {
-        yaxisJSXRight = this.getYaxisJsx(config, yRight, kids, 'right')
+        yaxisJSXRight = this.getYaxisJsx(config, yRight, kids, 'right');
       }
-      blobsJSX = this.getBlobsJsx(config, kids.blobsKey, this.state.blobsTest)
-      const seriesConfig = this.configSeriesThermos(config)
-      seriesConfig.bounds = this.state.innerBox
+      blobsJSX = this.getBlobsJsx(config, kids.blobsKey, this.state.blobsTest);
+      const seriesConfig = this.configSeriesThermos(config);
+      seriesConfig.bounds = this.state.innerBox;
       thermoseriesJSX = (
         <SilverThermoVerticalSeries
           spindlesId={kids.thermoSpindlesId}
@@ -509,10 +512,10 @@ class SilverThermoVerticalChart extends Component {
           config={seriesConfig}
           onPassThermoClick={this.handleThermoClick}
         />
-      )
+      );
     }
     // General and indexed class for main group:
-    const mainGroupClass = this.getMainGroupClass(false, true)
+    const mainGroupClass = this.getMainGroupClass(false, true);
 
     // NOTE: I can draw a temporary 'inner box'
     // so I can see what I've got...
@@ -530,9 +533,9 @@ class SilverThermoVerticalChart extends Component {
     // furniture that has to overlay other elements
 
     // Structure changes according to number of series
-    let sCount = config.seriesCount
+    let sCount = config.seriesCount;
     if (config.blobs.hasBlobs) {
-      sCount--
+      sCount--;
     }
     // Default is more than one series:
     let chartComponentsJSX = (
@@ -545,7 +548,7 @@ class SilverThermoVerticalChart extends Component {
         <g className={kids.thermoSpindlesId} id={kids.thermoSpindlesId} />
         {thermoseriesJSX}
       </g>
-    )
+    );
     // But if only one series, zeroline is in front of spindles
     if (sCount < 2) {
       chartComponentsJSX = (
@@ -562,14 +565,14 @@ class SilverThermoVerticalChart extends Component {
           <g className={kids.zeroId} id={kids.zeroId} />
           {thermoseriesJSX}
         </g>
-      )
+      );
     }
-    return chartComponentsJSX
+    return chartComponentsJSX;
   }
 }
 
 SilverThermoVerticalChart.propTypes = {
   config: PropTypes.object.isRequired,
-}
+};
 
-export default SilverThermoVerticalChart
+export default SilverThermoVerticalChart;

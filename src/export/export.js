@@ -334,6 +334,7 @@ export function processExport(
 // DEFAULT
 // Callback from footer.js > handleSvg/Png/GifExportClick
 // Simply unpicks args before calling processExport
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function(argObj) {
   processExport(
     argObj.colourSpace,

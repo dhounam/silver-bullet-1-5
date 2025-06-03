@@ -1,26 +1,26 @@
 /* eslint-disable complexity */
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Utilities module
-import * as ChartUtils from '../chart-utilities'
-import * as LegendUtils from './legend-utilities'
-import SilverLegendSet from './legendset'
+import * as ChartUtils from '../chart-utilities';
+import * as LegendUtils from './legend-utilities';
+import SilverLegendSet from './legendset';
 
 class SilverLegends extends Component {
   // CONSTRUCTOR
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       legendSets: '',
-    }
+    };
     // I think I have to track all IB bounds as a global...
-    this.innerBoxes = []
+    this.innerBoxes = [];
     // Callback from LegendSet
     this.handleLegendSetInnerBoxBounds = this.handleLegendSetInnerBoxBounds.bind(
-      this
-    )
+      this,
+    );
   }
 
   // COMPONENT DID MOUNT
@@ -38,28 +38,28 @@ class SilverLegends extends Component {
   // the 'drawn' flag at default false.
   // Then assembles array of legendSets (JSX)
   UNSAFE_componentWillReceiveProps(nextProps) {
-    let legendSets = ''
+    let legendSets = '';
     // On first call in update cycle, the drawLegend flag
     // will be false, preventing legends being attempted
     // until Background has assembled a decent IB
     if (nextProps.drawLegends) {
       // Pull in the IBs passed as props; mark each as 'un-legended';
       // and save an an internal global (see handleLegendSetInnerBoxBounds, above)
-      const ibDefs = Object.assign([], nextProps.innerboxes)
+      const ibDefs = Object.assign([], nextProps.innerboxes);
       for (let ibx = 0; ibx < ibDefs.length; ibx++) {
-        ibDefs[ibx].drawn = false
+        ibDefs[ibx].drawn = false;
       }
-      this.innerBoxes = ibDefs
-      legendSets = this.assembleLegendSets()
+      this.innerBoxes = ibDefs;
+      legendSets = this.assembleLegendSets();
     }
-    this.setState({ legendSets })
+    this.setState({ legendSets });
   }
   // COMPONENT WILL RECEIVE PROPS ends
 
   // SHOULD COMPONENT UPDATE
   // Only update if the flag says so
   shouldComponentUpdate(nextProps) {
-    return nextProps.drawLegends
+    return nextProps.drawLegends;
   }
   // SHOULD COMPONENT UPDATE
 
@@ -79,47 +79,47 @@ class SilverLegends extends Component {
     // Are there enough series for a legend?
     // Is this a table?
     // Is the legend drawn inside the chart?
-    let legendWithin = false
-    let seriesCount = panelConfig.seriesCount
+    let legendWithin = false;
+    let seriesCount = panelConfig.seriesCount;
     // If there are blobs, subtract a series
     if (panelConfig.blobs.blobState.column > 0) {
-      seriesCount--
+      seriesCount--;
     }
     // I'm checking that legends are within panel. Also that, if
     // double scale, there are more than 2 series
     // (2-series dbl scale shows axis headers and  omits legends)
-    let seriesThreshold = 1
+    let seriesThreshold = 1;
     if (panelConfig.scales.isDouble) {
-      seriesThreshold = 2
+      seriesThreshold = 2;
     }
     if (
       panelConfig.overallChartType !== 'table' &&
       seriesCount > seriesThreshold &&
       panelConfig.legend.value > 0
     ) {
-      legendWithin = true
+      legendWithin = true;
     }
     if (legendWithin) {
       // Internal legends
       if (panelConfig.blobs.hasBlobs) {
         // Blobs:
-        iBox.paddingBelowLegends = paddings.toBlobTop
+        iBox.paddingBelowLegends = paddings.toBlobTop;
       } else if (panelConfig.scales.isDouble) {
         // Double scale
-        iBox.paddingBelowLegends = paddings.toTopOfChart.double
+        iBox.paddingBelowLegends = paddings.toTopOfChart.double;
       } else if (
         panelConfig.overallChartType.includes('bar') ||
         panelConfig.overallChartType.includes('thermohorizontal')
       ) {
         // Bars or hThermos
-        iBox.paddingBelowLegends = paddings.toTopOfChart.bar
+        iBox.paddingBelowLegends = paddings.toTopOfChart.bar;
       } else {
         // Default
-        iBox.paddingBelowLegends = paddings.toTopOfChart.default
+        iBox.paddingBelowLegends = paddings.toTopOfChart.default;
       }
     } else {
       // External legends: no padding
-      iBox.paddingBelowLegends = 0
+      iBox.paddingBelowLegends = 0;
     }
     // Can I handle outside here?
   }
@@ -138,44 +138,44 @@ class SilverLegends extends Component {
   // This ensures that all charts (if multipanel) start at the same
   // vertical position
   handleLegendSetInnerBoxBounds(ibObj) {
-    const config = this.props.config
+    const config = this.props.config;
     // ibObj is an object with 2 props: IB-tweak and panel-index
-    const ibCount = this.innerBoxes.length
+    const ibCount = this.innerBoxes.length;
     // Identify the IB def in the array of IBs, adjust top,
     // and mark as 'drawn'
-    const thisIB = this.innerBoxes[ibObj.index]
-    thisIB.drawn = true
-    thisIB.tweak = ibObj.tweak
+    const thisIB = this.innerBoxes[ibObj.index];
+    thisIB.drawn = true;
+    thisIB.tweak = ibObj.tweak;
     // Loop through all panels.
-    let drawnCount = 0
+    let drawnCount = 0;
     for (let ibx = 0; ibx < ibCount; ibx++) {
-      const thisBox = this.innerBoxes[ibx]
+      const thisBox = this.innerBoxes[ibx];
       if (thisBox.drawn) {
-        drawnCount++
+        drawnCount++;
       }
     }
-    const allDone = drawnCount === ibCount
+    const allDone = drawnCount === ibCount;
 
     // When ALL charts have been 'legended', I get the max tweak
     // in each 'row' of panels and apply to that entire row
     // NOTE: this can surely be farmed out...
     if (allDone) {
       // Array of panels, by rows
-      const rowCount = config.metadata.panels.rows
+      const rowCount = config.metadata.panels.rows;
       // Get number of panels in each row. I'm assuming that upstream
       // checks guarantee this is an integer
-      const rowLen = ibCount / rowCount
-      const rowedArray = LegendUtils.createRowedArray(this.innerBoxes, rowLen)
+      const rowLen = ibCount / rowCount;
+      const rowedArray = LegendUtils.createRowedArray(this.innerBoxes, rowLen);
       // So each element in rowedArray represents one row
       // Do charts in panel rows align?
-      const panelsAlign = config.panelAttributes.alignChartsInPanels
+      const panelsAlign = config.panelAttributes.alignChartsInPanels;
       if (panelsAlign) {
         // Tweaks are max in any row
-        const maxArray = LegendUtils.getRowMaxesArray(rowedArray, rowLen)
+        const maxArray = LegendUtils.getRowMaxesArray(rowedArray, rowLen);
         // Feed tweaks back into main array
-        LegendUtils.adjustAlignedInnerBoxes(this.innerBoxes, maxArray)
+        LegendUtils.adjustAlignedInnerBoxes(this.innerBoxes, maxArray);
       } else {
-        LegendUtils.adjustNonAlignedInnerBoxes(this.innerBoxes)
+        LegendUtils.adjustNonAlignedInnerBoxes(this.innerBoxes);
       }
       //
       //
@@ -183,7 +183,7 @@ class SilverLegends extends Component {
       // This callback was originally outside the condition, just below.
       // But this resulted in legend-stacks being moved down
       // with every legendset drawn... (fixed 18.7.18)
-      this.props.onGetInnerBoxes(this.innerBoxes)
+      this.props.onGetInnerBoxes(this.innerBoxes);
     }
     // HANDLE LEGEND-SET INNER BOX BOUNDS ends
   }
@@ -194,47 +194,47 @@ class SilverLegends extends Component {
   getKeyStyleArray(pConfig, styles) {
     // Styles are defined in DPs, by series type
     // If chart is mixed/double, potentially 2 chart-types
-    const isMixed = pConfig.scales.isDouble || pConfig.scales.isMixed
-    const splitAt = pConfig.scales.splitDataAtCol
-    const keyStyleArray = []
+    const isMixed = pConfig.scales.isDouble || pConfig.scales.isMixed;
+    const splitAt = pConfig.scales.splitDataAtCol;
+    const keyStyleArray = [];
     // Pick a 'side'
-    let side = 'left'
+    let side = 'left';
     if (pConfig.scales.enableScale.right) {
-      side = 'right'
+      side = 'right';
     }
-    let loopCount = pConfig.seriesCount
+    let loopCount = pConfig.seriesCount;
     // But pies loop by categories, so...
     if (pConfig.scales[side].type.includes('pie')) {
-      loopCount = pConfig.pointCount
+      loopCount = pConfig.pointCount;
     }
     // Loop by series:
     for (let iii = 0; iii < loopCount; iii++) {
-      let keyProps = {}
+      let keyProps = {};
       if (isMixed) {
         if (iii < splitAt) {
           keyProps = this.getKeyStyleProps(
             pConfig.scales.left.type,
             pConfig.scales.left.stacked,
             pConfig.scales.left.thermoDots,
-            styles
-          )
+            styles,
+          );
         } else {
           keyProps = this.getKeyStyleProps(
             pConfig.scales.right.type,
             pConfig.scales.right.stacked,
             pConfig.scales.right.thermoDots,
-            styles
-          )
+            styles,
+          );
         }
       } else {
-        const type = pConfig.scales[side].type
-        const stacked = pConfig.scales[side].stacked
-        const thermoDots = pConfig.scales[side].thermoDots
-        keyProps = this.getKeyStyleProps(type, stacked, thermoDots, styles)
+        const type = pConfig.scales[side].type;
+        const stacked = pConfig.scales[side].stacked;
+        const thermoDots = pConfig.scales[side].thermoDots;
+        keyProps = this.getKeyStyleProps(type, stacked, thermoDots, styles);
       }
-      keyStyleArray.push(keyProps)
+      keyStyleArray.push(keyProps);
     }
-    return keyStyleArray
+    return keyStyleArray;
   }
 
   // ASSEMBLE LEGEND SETS
@@ -248,12 +248,12 @@ class SilverLegends extends Component {
       NOTE: desperately needs refactoring
   */
   assembleLegendSets() {
-    const config = this.props.config
-    const innerboxes = this.innerBoxes
+    const config = this.props.config;
+    const innerboxes = this.innerBoxes;
     // Init array of legend sets...
-    const legendSets = []
+    const legendSets = [];
     // Count the number of panels that have legends
-    let legendCounter = 0
+    let legendCounter = 0;
     // ...each element of which consists of:
     // - a call to a keyed LegendSet with...
     // - legendPrefs: {keyWidth, keyHeight, padding}
@@ -265,62 +265,62 @@ class SilverLegends extends Component {
     //
     // Lookup values for paddings below legends (if any)
     // const legendPaddings = config.legend.padding;
-    const legendPaddings = config.background.topPadding.belowLegendBaseline
+    const legendPaddings = config.background.topPadding.belowLegendBaseline;
     // So Legend is doing external triage. Legendset components are 'dumb' and
     // just render a containing group, then a stack of subgroups with
     // key-element and text...
     // Loop by 'panel'
     for (let ibIndex = 0; ibIndex < config.panelArray.length; ibIndex++) {
-      const thisData = config.panelArray[ibIndex]
+      const thisData = config.panelArray[ibIndex];
       // Append padding-below value to each innerbox object
       // based on chart type
-      this.getPaddingForInnerBox(legendPaddings, innerboxes[ibIndex], thisData)
+      this.getPaddingForInnerBox(legendPaddings, innerboxes[ibIndex], thisData);
       // Double/mixed scale
-      const isDouble = thisData.scales.isDouble
-      const isMixed = thisData.scales.isMixed
+      const isDouble = thisData.scales.isDouble;
+      const isMixed = thisData.scales.isMixed;
       // seriesCount
-      let { seriesCount } = thisData
+      let { seriesCount } = thisData;
       // Side:
-      let side = 'left'
+      let side = 'left';
       if (thisData.scales.enableScale.right) {
-        side = 'right'
+        side = 'right';
       }
       // No legend if only 1 series; if 2 series, no legend if double scale
-      let hasLegend = true
+      let hasLegend = true;
       // Number of data-'columns' per series. Default (non-scatters) is 1
-      let cluster = 1
+      let cluster = 1;
       // Check for scatters or pies:
       // NOTE: should be using the overallChartType prop
       const typeString = `${thisData.scales.left.type}-
-        ${thisData.scales.right.type}`
-      const isScatter = typeString.includes('scatter')
-      const isPie = typeString.includes('pie')
-      const isTable = typeString.includes('table')
+        ${thisData.scales.right.type}`;
+      const isScatter = typeString.includes('scatter');
+      const isPie = typeString.includes('pie');
+      const isTable = typeString.includes('table');
       if (!isPie) {
         if (isTable) {
-          hasLegend = false
+          hasLegend = false;
         } else if (isScatter) {
-          cluster = 2
+          cluster = 2;
           if (typeString.includes('sized')) {
-            cluster = 3
+            cluster = 3;
           }
           if (seriesCount / cluster < 2) {
-            hasLegend = false
+            hasLegend = false;
           } else {
-            seriesCount /= cluster
+            seriesCount /= cluster;
           }
         } else {
           // Non scatters: possible blobs series
-          let blobAdjust = 0
+          let blobAdjust = 0;
           if (thisData.blobs.blobState.column > 0) {
-            blobAdjust = 1
+            blobAdjust = 1;
           }
           if (seriesCount - blobAdjust === 1) {
-            hasLegend = false
+            hasLegend = false;
           } else if (isDouble && seriesCount - blobAdjust === 2) {
             // Double scale: if only two series we rely upon axis headers
             // and don't need legends
-            hasLegend = false
+            hasLegend = false;
           }
         }
       }
@@ -328,50 +328,50 @@ class SilverLegends extends Component {
         hasLegend,
         index: ibIndex,
         seriesCount,
-      }
+      };
       if (!isTable) {
-        const headers = []
+        const headers = [];
         // If it's a double scale, the array remains empty,
         // killing ALL legends
         // NO! If double and seriesCount (-blobs) > 2, also runs
         // Key by series headers...
-        let sourceArray = thisData.headers
-        let startFrom = 1
+        let sourceArray = thisData.headers;
+        let startFrom = 1;
         if (isPie) {
           // ...except pies, which key categories
-          sourceArray = thisData.categories
-          startFrom = 0
+          sourceArray = thisData.categories;
+          startFrom = 0;
         }
         // Take first header from each 'cluster' (ignoring category header)
         for (let iii = startFrom; iii < sourceArray.length; iii += cluster) {
           // Omit any blob header
           if (sourceArray[iii] !== thisData.blobs.blobState.header) {
-            headers.push(sourceArray[iii])
+            headers.push(sourceArray[iii]);
           }
         }
-        const scales = thisData.scales
-        const chartType = scales[side].type
-        const stacked = scales[side].stacked
-        const thermoDots = scales[side].thermoDots
+        const scales = thisData.scales;
+        const chartType = scales[side].type;
+        const stacked = scales[side].stacked;
+        const thermoDots = scales[side].thermoDots;
         // Map series colours:
-        let colours = thisData.series[chartType].colours
+        let colours = thisData.series[chartType].colours;
         if (isDouble || isMixed) {
-          colours = thisData.series.colours
+          colours = thisData.series.colours;
         }
         // Function converts to array of legend-data, each element with
         // props 'header' and 'colour'
-        const colourMap = ChartUtils.getColourMap(headers, colours)
+        const colourMap = ChartUtils.getColourMap(headers, colours);
 
         // The key styles as defined in DPs
-        const styles = config.legend.styles
-        const keyStyleArray = this.getKeyStyleArray(thisData, styles)
+        const styles = config.legend.styles;
+        const keyStyleArray = this.getKeyStyleArray(thisData, styles);
         // NOTE: can I integrate colours into keyStyleArray?
-        lSetObj.headers = headers
-        lSetObj.colourMap = colourMap
-        lSetObj.mainHeader = thisData.legend.header
+        lSetObj.headers = headers;
+        lSetObj.colourMap = colourMap;
+        lSetObj.mainHeader = thisData.legend.header;
         // General legend prefs
         const usePartyColours =
-          thisData.series.ukParties || thisData.series.usParties
+          thisData.series.ukParties || thisData.series.usParties;
         lSetObj.prefs = {
           chartType,
           chartWidth: config.background.outerbox.dimensions.width,
@@ -388,53 +388,53 @@ class SilverLegends extends Component {
           textPrefs: config.legend.text,
           thermoDots,
           usePartyColours,
-        }
+        };
         lSetObj.prefs.isMixed =
-          thisData.scales.isDouble || thisData.scales.isMixed
+          thisData.scales.isDouble || thisData.scales.isMixed;
         // ...and panel-specific innerbox bounds (use all IB props, in case
         // we want to consider wrapping... eventually...)
-        lSetObj.prefs.innerbox = innerboxes[ibIndex]
+        lSetObj.prefs.innerbox = innerboxes[ibIndex];
         // Absolute panel left, before any margin adjustment
         // Used to do legend tweaks
-        lSetObj.prefs.absoluteLeft = innerboxes[ibIndex].x
-        lSetObj.prefs.emVal = config.metadata.emVal
+        lSetObj.prefs.absoluteLeft = innerboxes[ibIndex].x;
+        lSetObj.prefs.emVal = config.metadata.emVal;
         // Colour lookup:
-        lSetObj.prefs.colourLookup = config.metadata.colours
+        lSetObj.prefs.colourLookup = config.metadata.colours;
         // And doubleScale:
         // lSetObj.prefs.doubleScale = isDouble;
         // }
         // Increment counter (if, just below, this is
         // zero, no panel has legends, so simply abort)
         if (lSetObj.hasLegend) {
-          legendCounter++
+          legendCounter++;
         }
       }
       // All legendsets are pushed to the array, even tables,
       // or 1-series charts
-      legendSets.push(lSetObj)
+      legendSets.push(lSetObj);
     }
 
-    const jsxArray = []
+    const jsxArray = [];
     // If no legends, return unmodified innerboxes
     if (legendCounter === 0) {
-      this.props.onGetInnerBoxes(innerboxes)
+      this.props.onGetInnerBoxes(innerboxes);
     } else {
       // So, in theory, legendSets should be an array of set
       // definitions. Knock up the jsx array:
       for (let childI = 0; childI < legendSets.length; childI++) {
-        const lSet = Object.assign({}, legendSets[childI])
+        const lSet = Object.assign({}, legendSets[childI]);
         const lSetJSX = (
           <SilverLegendSet
             config={lSet}
             key={`legendset-${childI}`}
             onGetInnerBox={this.handleLegendSetInnerBoxBounds}
           />
-        )
-        jsxArray.push(lSetJSX)
+        );
+        jsxArray.push(lSetJSX);
       }
     }
 
-    return jsxArray
+    return jsxArray;
   }
   // ASSEMBLE LEGEND SETS ends
 
@@ -444,51 +444,52 @@ class SilverLegends extends Component {
   // Params are series-type, stacked-flag,
   // thermo-dots flag, and key styles from DPs
   getKeyStyleProps(type, stacked, thermoDots, styles) {
-    let wah = styles.line
+    let wah = styles.line;
     if (type.includes('line') && stacked) {
-      wah = styles.linestacked
+      wah = styles.linestacked;
     } else if (type.includes('thermo')) {
       if (thermoDots) {
-        wah = styles.thermodot
+        wah = styles.thermodot;
       } else {
-        wah = styles.thermo
+        wah = styles.thermo;
       }
     } else if (type.includes('scatter')) {
-      wah = styles.scatter
+      wah = styles.scatter;
     } else if (type.includes('bar') || type.includes('column')) {
-      wah = styles.barcolumn
+      wah = styles.barcolumn;
     } else if (type.includes('pie')) {
-      wah = styles.pie
+      wah = styles.pie;
     }
-    return wah
+    return wah;
   }
 
   // RENDER
   render() {
     // There is a potential legendSet for each panel
-    const legendSets = Object.assign([], this.state.legendSets)
-    const actualSets = []
+    const legendSets = Object.assign([], this.state.legendSets);
+    const actualSets = [];
     for (let i = 0; i < legendSets.length; i++) {
-      const thisSet = legendSets[i]
-      actualSets.push(thisSet)
+      const thisSet = legendSets[i];
+      actualSets.push(thisSet);
     }
     // So are there any legend sets? If not, I don't want any empty groups...
-    let legendSetsJsx = null
+    let legendSetsJsx = null;
     if (actualSets.length > 0) {
       legendSetsJsx = (
         <g className="silver-chart-legends-group" id="legends-group">
           {actualSets}
         </g>
-      )
+      );
     }
-    return legendSetsJsx
+    return legendSetsJsx;
   }
 }
 
 SilverLegends.propTypes = {
   config: PropTypes.object,
+  innerboxes: PropTypes.array,
   drawLegends: PropTypes.bool,
   onGetInnerBoxes: PropTypes.func.isRequired,
-}
+};
 
-export default SilverLegends
+export default SilverLegends;

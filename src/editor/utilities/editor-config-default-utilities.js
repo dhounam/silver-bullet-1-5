@@ -1,4 +1,4 @@
-import globalAssets from "../assets/globalAssets";
+import globalAssets from '../assets/globalAssets';
 import * as ScaleCallbackUtils from './scale-callback-utilities';
 import * as EditorUtils from './editor-utilities';
 import * as MinMaxUtils from './editor-minmax-utilities';
@@ -17,7 +17,10 @@ export function getEdConfigDefaultSize() {
   };
 }
 export function getEdConfigDefaultPanelVals() {
-  const source = Object.assign({}, globalAssets.DefaultPreferences.metadata.defaults.panels);
+  const source = Object.assign(
+    {},
+    globalAssets.DefaultPreferences.metadata.defaults.panels,
+  );
   return {
     active: source.active,
     total: source.total,
@@ -25,7 +28,10 @@ export function getEdConfigDefaultPanelVals() {
   };
 }
 export function getEdConfigDefaultChartType() {
-  const source = Object.assign({}, globalAssets.DefaultPreferences.metadata.defaults);
+  const source = Object.assign(
+    {},
+    globalAssets.DefaultPreferences.metadata.defaults,
+  );
   return {
     left: {
       type: source.type,
@@ -48,7 +54,10 @@ export function getEdConfigDefaultOverallChartType() {
   return ocType;
 }
 export function getEdConfigDefaultBlobs() {
-  const source = Object.assign({}, globalAssets.DefaultPreferences.metadata.defaults.blobs);
+  const source = Object.assign(
+    {},
+    globalAssets.DefaultPreferences.metadata.defaults.blobs,
+  );
   return {
     column: source.column,
     hasBlobs: false,
@@ -88,7 +97,10 @@ export function getDefaultScaleSideProps() {
   };
 }
 export function getEdConfigDefaultScales() {
-  const source = Object.assign({}, globalAssets.DefaultPreferences.metadata.defaults);
+  const source = Object.assign(
+    {},
+    globalAssets.DefaultPreferences.metadata.defaults,
+  );
   const defaultScales = {
     mixed: Object.assign({}, source.mixedScale),
     double: Object.assign({}, source.doubleScale),
@@ -104,7 +116,10 @@ export function getEdConfigDefaultScales() {
   return defaultScales;
 }
 export function getEdConfigDefaultBackgroundStrings() {
-  const source = Object.assign({}, globalAssets.DefaultPreferences.background.strings);
+  const source = Object.assign(
+    {},
+    globalAssets.DefaultPreferences.background.strings,
+  );
   // Until Nov'23, editorConfig only needed basic string *content*
   // Update introduces the various 'special' source strings
   // for The Economist, EIU & Refinitiv

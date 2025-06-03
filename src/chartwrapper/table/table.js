@@ -1,22 +1,23 @@
 // NOTE: while I'm messing around...
 // /* eslint-disable no-unused-vars */
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import TableText from './tabletext'
-import TopAndBottomRules from './topandbottomrules'
-import RowSeparators from './rowseparators'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import TableText from './tabletext';
+import TopAndBottomRules from './topandbottomrules';
+import RowSeparators from './rowseparators';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class SilverTable extends Component {
   render() {
-    const config = this.props.config
-    const chartIndex = config.chartIndex
+    const config = this.props.config;
+    const chartIndex = config.chartIndex;
     // Name parent group:
-    const outerId = `table-outer-group-${chartIndex}`
-    const textId = `table-text-group-${chartIndex}`
-    const rulesId = `table-rules-group-${chartIndex}`
-    const fillsId = `table-fills-group-${chartIndex}`
-    const tableTextJsx = <TableText config={config} idName={textId} />
+    const outerId = `table-outer-group-${chartIndex}`;
+    const textId = `table-text-group-${chartIndex}`;
+    const rulesId = `table-rules-group-${chartIndex}`;
+    const fillsId = `table-fills-group-${chartIndex}`;
+    const tableTextJsx = <TableText config={config} idName={textId} />;
     const topAndBottomRulesJsx = (
       <TopAndBottomRules config={config} idName={rulesId} />
     );
@@ -50,13 +51,13 @@ class SilverTable extends Component {
         {topAndBottomRulesJsx}
         {tableTextJsx}
       </g>
-    )
-    return chartComponentsJSX
+    );
+    return chartComponentsJSX;
   }
 }
 
 SilverTable.propTypes = {
   config: PropTypes.object.isRequired,
-}
+};
 
-export default SilverTable
+export default SilverTable;

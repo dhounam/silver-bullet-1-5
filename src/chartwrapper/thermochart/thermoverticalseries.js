@@ -1,17 +1,17 @@
-import * as d3 from 'd3'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as d3 from 'd3';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 // Utilities modules
-import * as ThermoUtilities from './thermo-utilities'
-import * as ChartUtilities from '../chart-utilities'
+import * as ThermoUtilities from './thermo-utilities';
+import * as ChartUtilities from '../chart-utilities';
 
 class SilverThermoVerticalSeries extends Component {
   // COMPONENT DID MOUNT
   componentDidMount() {
     // To guarantee that we only update on 2nd render:
     if (!this.props.config.firstRender) {
-      this.updateThermos()
+      this.updateThermos();
       // const context = this.props.config.className.split(' ')[1]
       // const context = 'zeroline-group';
       // ChartUtilities.updateAnyZeroLine(this.props.config, context, true);
@@ -23,7 +23,7 @@ class SilverThermoVerticalSeries extends Component {
   componentDidUpdate() {
     // To guarantee that we only update on 2nd render:
     if (!this.props.config.firstRender) {
-      this.updateThermos()
+      this.updateThermos();
       // const context = this.props.config.className.split(' ')[1]
       // const context = 'zeroline-group';
       // ChartUtilities.updateAnyZeroLine(this.props.config, context, true);
@@ -40,8 +40,8 @@ class SilverThermoVerticalSeries extends Component {
   // ThermoChart, where I do a console.log. Long-term, I might
   // use this to set 'emphasis'...
   thermoClick(colData, index) {
-    const clickObj = { colData, index }
-    this.props.onPassThermoClick(clickObj)
+    const clickObj = { colData, index };
+    this.props.onPassThermoClick(clickObj);
   }
   // BAR CLICK ends
 
@@ -50,22 +50,22 @@ class SilverThermoVerticalSeries extends Component {
   // ENTER SPINDLES
   // Called from updateThermos
   enterSpindles(spindleBinding, config) {
-    const styles = config.styles.spindle
+    const styles = config.styles.spindle;
     spindleBinding
       .enter()
       .append('line')
       .attr({
         class: 'thermo-spindle',
         id: (ddd, iii) => {
-          let idStr = `thermo-spindle-${iii}`
-          idStr = `${idStr}~~~stroke:${styles.stroke}`
-          return idStr
+          let idStr = `thermo-spindle-${iii}`;
+          idStr = `${idStr}~~~stroke:${styles.stroke}`;
+          return idStr;
         },
       })
       .style({
         stroke: config.colourLookup[styles.stroke],
         'stroke-width': styles.width,
-      })
+      });
   }
   // ENTER SPINDLES ends
 
@@ -74,20 +74,20 @@ class SilverThermoVerticalSeries extends Component {
   updateSpindles(spindleBinding, config) {
     spindleBinding.attr({
       class: 'thermo-spindle',
-      x1: (ddd) => config.xMainScale(ddd.category),
-      x2: (ddd) => config.xMainScale(ddd.category),
-      width: (ddd) => ddd.strokewidth,
-      y1: (ddd) => config.yScale(ddd.max),
-      y2: (ddd) => {
-        let y2 = config.yScale(ddd.min)
+      x1: ddd => config.xMainScale(ddd.category),
+      x2: ddd => config.xMainScale(ddd.category),
+      width: ddd => ddd.strokewidth,
+      y1: ddd => config.yScale(ddd.max),
+      y2: ddd => {
+        let y2 = config.yScale(ddd.min);
         if (config.isLog) {
-          y2 = config.yScale(config.minVal)
+          y2 = config.yScale(config.minVal);
         } else if (config.seriesCount === 1 && config.breakScale) {
-          y2 = config.yScale(config.minVal) + config.brokenScalePadding
+          y2 = config.yScale(config.minVal) + config.brokenScalePadding;
         }
-        return y2
+        return y2;
       },
-    })
+    });
   }
   // UPDATE SPINDLES ends
 
@@ -98,12 +98,12 @@ class SilverThermoVerticalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     spindleBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT SPINDLES ends
 
@@ -112,30 +112,30 @@ class SilverThermoVerticalSeries extends Component {
   // ENTER LINE MARKERS
   // Called from updateThermos
   enterLineMarkers(markerBinding, config) {
-    const styles = config.styles.line
+    const styles = config.styles.line;
     // Enter appends line in place, with zero width
     markerBinding
       .enter()
       .append('line')
       .attr({
         class: 'd3-thermo-marker',
-        x1: (ddd) => {
-          let xPos = config.xMainScale(ddd.category)
-          xPos -= styles.length / 2
-          return xPos
+        x1: ddd => {
+          let xPos = config.xMainScale(ddd.category);
+          xPos -= styles.length / 2;
+          return xPos;
         },
-        x2: (ddd) => {
-          let xPos = config.xMainScale(ddd.category)
-          xPos += styles.length / 2
-          return xPos
+        x2: ddd => {
+          let xPos = config.xMainScale(ddd.category);
+          xPos += styles.length / 2;
+          return xPos;
         },
         'stroke-width': 0,
         y1: config.bounds.height,
         y2: config.bounds.height,
         id: (ddd, iii) => {
-          let idStr = `thermo-vertical-series-${iii}`
-          idStr = `${idStr}~~~stroke:${ddd.strokeName}`
-          return idStr
+          let idStr = `thermo-vertical-series-${iii}`;
+          idStr = `${idStr}~~~stroke:${ddd.strokeName}`;
+          return idStr;
         },
       })
       // Set click event on rect
@@ -146,9 +146,9 @@ class SilverThermoVerticalSeries extends Component {
       .each(function() {
         d3.select(this)
           .append('svg:title')
-          .attr('class', 'd3-tooltip')
-      })
-    return markerBinding
+          .attr('class', 'd3-tooltip');
+      });
+    return markerBinding;
   }
   // ENTER LINE MARKERS ends
 
@@ -159,10 +159,10 @@ class SilverThermoVerticalSeries extends Component {
       .transition(config.duration)
       .attr({
         'stroke-width': config.styles.line.width,
-        y1: (ddd) => config.yScale(ddd.val),
-        y2: (ddd) => config.yScale(ddd.val),
+        y1: ddd => config.yScale(ddd.val),
+        y2: ddd => config.yScale(ddd.val),
       })
-      .style('stroke', (ddd) => ddd.stroke)
+      .style('stroke', ddd => ddd.stroke);
   }
   // UPDATE LINE MARKERS ends
 
@@ -172,12 +172,12 @@ class SilverThermoVerticalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     markerBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT LINE MARKERS ends
 
@@ -192,14 +192,14 @@ class SilverThermoVerticalSeries extends Component {
       .append('circle')
       .attr({
         class: 'd3-thermo-marker',
-        cx: (ddd) => config.xMainScale(ddd.category),
+        cx: ddd => config.xMainScale(ddd.category),
         cy: config.yScale(0),
         r: 0,
         'stroke-width': 0,
         id: (ddd, iii) => {
-          let idStr = `thermo-vertical-series-${iii}`
-          idStr = `${idStr}~~~fill:${ddd.fillName}`
-          return idStr
+          let idStr = `thermo-vertical-series-${iii}`;
+          idStr = `${idStr}~~~fill:${ddd.fillName}`;
+          return idStr;
         },
       })
       // Set click event on rect
@@ -210,24 +210,24 @@ class SilverThermoVerticalSeries extends Component {
       .each(function() {
         d3.select(this)
           .append('svg:title')
-          .attr('class', 'd3-tooltip')
-      })
-    return markerBinding
+          .attr('class', 'd3-tooltip');
+      });
+    return markerBinding;
   }
   // ENTER DOT MARKERS ends
 
   // UPDATE DOT MARKERS
   // Called from updateThermos
   updateDotMarkers(markerBinding, config) {
-    const styles = config.styles.dot
+    const styles = config.styles.dot;
     markerBinding
       .transition(config.duration)
       .attr({
         'stroke-width': styles.strokeWidth,
-        cy: (ddd) => config.yScale(ddd.val),
+        cy: ddd => config.yScale(ddd.val),
         r: styles.radius,
       })
-      .style('fill', (ddd) => ddd.fill)
+      .style('fill', ddd => ddd.fill);
   }
   // UPDATE DOT MARKERS ends
 
@@ -237,12 +237,12 @@ class SilverThermoVerticalSeries extends Component {
       .exit()
       .transition()
       .duration(duration)
-      .attr('opacity', 0)
+      .attr('opacity', 0);
     markerBinding
       .exit()
       .transition()
       .delay(duration * 2)
-      .remove()
+      .remove();
   }
   // EXIT DOT MARKERS ends
 
@@ -250,14 +250,14 @@ class SilverThermoVerticalSeries extends Component {
 
   // UPDATE THERMOS
   updateThermos() {
-    const config = this.props.config
+    const config = this.props.config;
     // Context (parent group created in render) and duration
     // (NOTE: In the long term, we'd need more than one group...)
-    const className = config.className.split(' ')[1]
-    const mainSeriesGroup = d3.select(`.${className}`)
+    const className = config.className.split(' ')[1];
+    const mainSeriesGroup = d3.select(`.${className}`);
     // SPINDLE
     // Values for the 'spindle'
-    const spindleData = ThermoUtilities.mapSpindleData(config)
+    const spindleData = ThermoUtilities.mapSpindleData(config);
     // Group
     // Originally nested spindles with series. As of Jul'20,
     // in separate group, rendered in parent
@@ -266,23 +266,23 @@ class SilverThermoVerticalSeries extends Component {
     //   id: 'thermo-spindle-group',
     // });
     // Bind
-    const spindleGroupClass = `.${this.props.spindlesId}`
-    const spindleGroup = d3.select(spindleGroupClass)
+    const spindleGroupClass = `.${this.props.spindlesId}`;
+    const spindleGroup = d3.select(spindleGroupClass);
     const spindleBinding = spindleGroup
       .selectAll('.thermo-spindle')
-      .data(spindleData)
+      .data(spindleData);
     // Enter
-    this.enterSpindles(spindleBinding, config)
+    this.enterSpindles(spindleBinding, config);
     // Update
-    this.updateSpindles(spindleBinding, config)
+    this.updateSpindles(spindleBinding, config);
     // Exit
-    this.exitSpindles(spindleBinding, config.duration)
+    this.exitSpindles(spindleBinding, config.duration);
 
     // SERIES
     // Map the actual series data:
     // As far as I can see, the data is in the right format:
     // an array of objects with header:value properties
-    const mappedData = ChartUtilities.mapSeriesData(config, false)
+    const mappedData = ChartUtilities.mapSeriesData(config, false);
     // mappedData is an array of arrays, each of which represents a series
     // Each series sub-array consists of <pointCount> objects
     // defining one data point and with properties...
@@ -295,20 +295,20 @@ class SilverThermoVerticalSeries extends Component {
       mainSeriesGroup,
       mappedData,
       config.duration,
-      'thermo'
-    )
+      'thermo',
+    );
     // Bind inner (points) data
     const markerBinding = groupBinding
       .selectAll('.d3-thermo-marker')
-      .data((ddd) => ddd)
+      .data(ddd => ddd);
     if (config.dotFlag) {
-      this.enterDotMarkers(markerBinding, config)
-      this.updateDotMarkers(markerBinding, config)
-      this.exitDotMarkers(markerBinding, config.duration)
+      this.enterDotMarkers(markerBinding, config);
+      this.updateDotMarkers(markerBinding, config);
+      this.exitDotMarkers(markerBinding, config.duration);
     } else {
-      this.enterLineMarkers(markerBinding, config)
-      this.updateLineMarkers(markerBinding, config)
-      this.exitLineMarkers(markerBinding, config.duration)
+      this.enterLineMarkers(markerBinding, config);
+      this.updateLineMarkers(markerBinding, config);
+      this.exitLineMarkers(markerBinding, config.duration);
     }
   }
   // UPDATE THERMOS ends
@@ -320,7 +320,7 @@ class SilverThermoVerticalSeries extends Component {
         className={this.props.config.className}
         id="series-group:thermo-vertical"
       />
-    )
+    );
   }
 }
 
@@ -328,5 +328,5 @@ SilverThermoVerticalSeries.propTypes = {
   spindlesId: PropTypes.string,
   config: PropTypes.object,
   onPassThermoClick: PropTypes.func,
-}
-export default SilverThermoVerticalSeries
+};
+export default SilverThermoVerticalSeries;

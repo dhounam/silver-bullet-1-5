@@ -1,7 +1,8 @@
 // Allow 'document'
+// eslint-disable-next-line no-redeclare
 /* global document: false */
 
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 
 // GET MONTH LENGTH
 // Called from getSecondaryAxisFilter. Returns number of days in month...
@@ -11,8 +12,8 @@ export function getMonthLength(date) {
   // the last day of the target month...
   // (Conveniently, if datePlusOne is 11:December, incrementing by 1
   // jumps to Jan of next year!)
-  const datePlusOne = date.getMonth() + 1
-  return new Date(date.getFullYear(), datePlusOne, 1, -1).getDate()
+  const datePlusOne = date.getMonth() + 1;
+  return new Date(date.getFullYear(), datePlusOne, 1, -1).getDate();
 }
 // GET MONTH LENGTH ends
 
@@ -24,8 +25,8 @@ export function getColourMap(headers, colours) {
   const colourMap = d3.scale
     .ordinal()
     .domain(headers)
-    .range(colours)
-  return colourMap
+    .range(colours);
+  return colourMap;
 }
 // GET COLOUR MAP ends
 
@@ -35,18 +36,18 @@ export function getColourMap(headers, colours) {
 // this doesn't include width, which is calculated by Joxer
 export function getTextID(id, fill, justification, leading) {
   // I think the assumption is that there's ALWAYS metadata for text...
-  let idStr = `${id}~~~`
+  let idStr = `${id}~~~`;
   if (typeof fill !== 'undefined') {
-    idStr = `${idStr}fill:${fill},`
+    idStr = `${idStr}fill:${fill},`;
   }
   if (typeof justification !== 'undefined') {
-    idStr = `${idStr}justification:${justification},`
+    idStr = `${idStr}justification:${justification},`;
   }
   if (typeof leading !== 'undefined') {
-    idStr = `${idStr}leading:${leading},`
+    idStr = `${idStr}leading:${leading},`;
   }
   // Strip trailing comma
-  return idStr.replace(/,$/, '')
+  return idStr.replace(/,$/, '');
 }
 // GET TEXT ID ends
 
@@ -55,17 +56,17 @@ export function getTextID(id, fill, justification, leading) {
 // the colours lookup, converts colour name to value for browser
 export function getColour(ddd, colours, isFill) {
   // Stroke or fill?
-  let colName = ddd.stroke
+  let colName = ddd.stroke;
   if (isFill) {
-    colName = ddd.fill
+    colName = ddd.fill;
   }
-  const colDef = colours[colName]
+  const colDef = colours[colName];
   // For argument's sake:
-  let colVal = '#ccc'
+  let colVal = '#ccc';
   if (typeof colDef !== 'undefined') {
-    colVal = colDef
+    colVal = colDef;
   }
-  return colVal
+  return colVal;
 }
 // GET COLOUR ends
 
@@ -74,49 +75,49 @@ export function getColour(ddd, colours, isFill) {
 // width to include any external legends, blob headers or sized-scatter keys...
 export function getSilverChartwrapperStyle(config) {
   // Start from existing dimensions
-  const outerWidth = config.background.outerbox.dimensions.width
+  const outerWidth = config.background.outerbox.dimensions.width;
   const wStyle = {
     height: config.background.outerbox.dimensions.height,
     width: outerWidth,
-  }
+  };
   // We're going to loop by rows of panels
-  const panels = config.metadata.panels
-  const pRows = panels.rows
-  const pCols = panels.total / pRows
-  let pCounter = 0
-  let overallWidthExtra = 0
+  const panels = config.metadata.panels;
+  const pRows = panels.rows;
+  const pCols = panels.total / pRows;
+  let pCounter = 0;
+  let overallWidthExtra = 0;
   for (let pRowNo = 0; pRowNo < pRows; pRowNo++) {
     // Set row defaults of tweaks for legends or blobs
-    let legendExtra = 0
-    let blobExtra = 0
-    let ssKeyExtra = 0
+    let legendExtra = 0;
+    let blobExtra = 0;
+    let ssKeyExtra = 0;
     for (let pColNo = 0; pColNo < pCols; pColNo++) {
-      const pDef = config.panelArray[pCounter]
+      const pDef = config.panelArray[pCounter];
       // I need to know if it has external legend
       if (pDef.legend.value === 0) {
-        legendExtra += outerWidth
+        legendExtra += outerWidth;
       }
       // Blobs
       if (pDef.blobs.blobState.column > 0) {
-        blobExtra += 100
+        blobExtra += 100;
       }
       // Key for sized scatter
       // NOTE: let's try to get overallChartType working, huh?
       // if (pDef.overallChartType === 'sizedscatter') {
       if (pDef.scales.right.type === 'sizedscatter') {
-        ssKeyExtra += 100
+        ssKeyExtra += 100;
       }
-      pCounter++
+      pCounter++;
     }
     overallWidthExtra = Math.max(
       overallWidthExtra,
       legendExtra,
       blobExtra,
-      ssKeyExtra
-    )
+      ssKeyExtra,
+    );
   }
-  wStyle.width += overallWidthExtra
-  return wStyle
+  wStyle.width += overallWidthExtra;
+  return wStyle;
 }
 // GET SILVER CHART WRAPPER STYLE ends
 
@@ -138,7 +139,7 @@ export function getKeysAndIds(cIndex) {
     pieSeriesKey: `pie-series-key-${cIndex}`,
     zeroId: `zeroline-group-${cIndex}`,
     contentId: `content-group-${cIndex}`,
-  }
+  };
 }
 // GET CHART KEYS ends
 
@@ -148,30 +149,30 @@ export function getKeysAndIds(cIndex) {
 // For pies, colours mapped on categories,not headers
 // But in either case, we map on *series*
 export function mapSeriesData(config, isPie) {
-  const colours = config.colourMap
-  let colourLookup = colours
+  const colours = config.colourMap;
+  let colourLookup = colours;
   // But pies set colours by category
   if (isPie) {
-    const pieColours = config.catsColourMap
-    colourLookup = pieColours
+    const pieColours = config.catsColourMap;
+    colourLookup = pieColours;
   }
-  const chartData = config.chartData
-  const factor = config.factor
+  const chartData = config.chartData;
+  const factor = config.factor;
   // First header string is key to category strings
-  const catStr = config.catHead
+  const catStr = config.catHead;
   // iii is series index
   const mappedData = colours.domain().map((header, iii) => {
-    const objA = chartData.map((ddd) => {
-      let val = ddd[header]
+    const objA = chartData.map(ddd => {
+      let val = ddd[header];
       // Val may be an empty string. Number() would
       // turn it into zero, so...
       if (val !== '') {
-        val = Number(val) / factor
+        val = Number(val) / factor;
       }
       //
-      let lookUp = header
+      let lookUp = header;
       if (isPie) {
-        lookUp = ddd[catStr]
+        lookUp = ddd[catStr];
       }
       const objB = {
         // val is the x-val for columns, y-val for bars
@@ -185,73 +186,73 @@ export function mapSeriesData(config, isPie) {
         stroke: config.colourLookup[colourLookup(lookUp)],
         header,
         seriesNo: iii,
-      }
-      return objB
-    })
+      };
+      return objB;
+    });
     // No don't: if stacked, substitute zeroes for
     // missing values; otherwise delete
-    const dataLen = objA.length - 1
+    const dataLen = objA.length - 1;
     for (let jjj = dataLen; jjj >= 0; jjj--) {
       if (objA[jjj].val === '') {
         if (config.accum) {
-          objA[jjj].val = 0
+          objA[jjj].val = 0;
         } else {
-          objA.splice(jjj, 1)
+          objA.splice(jjj, 1);
         }
       } else {
         // Survivors convert to number,
-        objA[jjj].val = Number(objA[jjj].val)
+        objA[jjj].val = Number(objA[jjj].val);
       }
     }
-    return objA
-  })
-  return mappedData
+    return objA;
+  });
+  return mappedData;
 }
 // MAP SERIES DATA ends
 
 // MAP SCATTER SERIES DATA
 // Using simple loops, for sanity's sake
 export function mapScatterSeriesData(config) {
-  const colours = config.colourMap
-  const chartData = config.chartData
+  const colours = config.colourMap;
+  const chartData = config.chartData;
   // Factors for x and y vals
-  const xFactor = config.xFactor
-  const yFactor = config.yFactor
-  const clusterNo = config.clusterNo
+  const xFactor = config.xFactor;
+  const yFactor = config.yFactor;
+  const clusterNo = config.clusterNo;
   // NOTE: is next safe?
-  const rowTotal = chartData.length
-  const colTotal = Object.keys(chartData[0]).length - 1
-  const mappedData = []
+  const rowTotal = chartData.length;
+  const colTotal = Object.keys(chartData[0]).length - 1;
+  const mappedData = [];
   for (let colNo = 0; colNo < colTotal; colNo += clusterNo) {
-    mappedData.push([])
+    mappedData.push([]);
   }
   // I need to loop by columns, starting from first data column...
-  const headerArray = config.headers
+  const headerArray = config.headers;
   // Outer loop is by rows. Each row is an object with properties
   // named to headers
   for (let rowNo = 0; rowNo < rowTotal; rowNo++) {
-    const thisRow = chartData[rowNo]
+    const thisRow = chartData[rowNo];
     // Series counter:
-    let seriesCounter = 0
+    let seriesCounter = 0;
     // Inner loop by 'cells' in 'row':
     for (let cNo = 0; cNo < colTotal; cNo += clusterNo) {
-      const xHeader = headerArray[cNo]
-      const yHeader = headerArray[cNo + 1]
-      const xPoint = thisRow[xHeader]
-      const yPoint = thisRow[yHeader]
+      const xHeader = headerArray[cNo];
+      const yHeader = headerArray[cNo + 1];
+      const xPoint = thisRow[xHeader];
+      const yPoint = thisRow[yHeader];
       // Omit any empty datapoints (which would get set to zero)
       // And omit zeroes on logs
-      let valOk = true
+      let valOk = true;
       if (xPoint.length === 0 || yPoint.length === 0) {
-        valOk = false
+        valOk = false;
       } else if (config.leftLog && +xPoint === 0) {
-        valOk = false
+        valOk = false;
       } else if (config.rightLog && +yPoint === 0) {
-        valOk = false
+        valOk = false;
       }
       if (valOk) {
-        const valX = Number(xPoint) / xFactor
-        const valY = Number(yPoint) / yFactor
+        const valX = Number(xPoint) / xFactor;
+        const valY = Number(yPoint) / yFactor;
         const pointObj = {
           valX,
           valY,
@@ -262,34 +263,34 @@ export function mapScatterSeriesData(config) {
           strokeName: colours(xHeader),
           stroke: config.colourLookup[colours(xHeader)],
           seriesNo: seriesCounter,
-        }
+        };
         if (config.isSized) {
-          const zHeader = headerArray[cNo + 2]
-          const zPoint = thisRow[zHeader]
-          pointObj.valZ = Number(zPoint)
+          const zHeader = headerArray[cNo + 2];
+          const zPoint = thisRow[zHeader];
+          pointObj.valZ = Number(zPoint);
         }
         // The datapoint object has to be pushed to the series
         // array as an *array element*.
-        mappedData[seriesCounter].push([pointObj])
+        mappedData[seriesCounter].push([pointObj]);
       }
-      seriesCounter++
+      seriesCounter++;
     }
   }
-  return mappedData
+  return mappedData;
 }
 // MAP SCATTER SERIES DATA
 
 // GET SERIES BASE VALS
 // For stacked charts
 export function getSeriesBaseVals(pointCount) {
-  const baseVals = []
+  const baseVals = [];
   for (let aPt = 0; aPt < pointCount; aPt++) {
     baseVals.push({
       negBase: 0,
       posBase: 0,
-    })
+    });
   }
-  return baseVals
+  return baseVals;
 }
 // GET SERIES BASE VALS ends
 
@@ -298,16 +299,16 @@ export function makeBarColSeriesGroupBinding(
   mainSeriesGroup,
   mappedData,
   duration,
-  chartType
+  chartType,
 ) {
   const groupBinding = mainSeriesGroup
     .selectAll('.series-group')
-    .data(mappedData)
+    .data(mappedData);
   // Enter, appending class
   groupBinding
     .enter()
     .append('g')
-    .attr('id', (ddd, iii) => `series-group series-${iii}`)
+    .attr('id', (ddd, iii) => `series-group series-${iii}`);
   // No update
   // Exit
   groupBinding
@@ -315,14 +316,14 @@ export function makeBarColSeriesGroupBinding(
     .selectAll(`.d3-${chartType}-rect`)
     .transition()
     .duration(duration)
-    .attr('width', 0)
+    .attr('width', 0);
   // Exit
   groupBinding
     .exit()
     .transition()
     .delay(duration)
-    .remove()
-  return groupBinding
+    .remove();
+  return groupBinding;
 }
 // MAKE BAR-COL SERIES GROUP BINDING ends
 
@@ -335,29 +336,29 @@ export function extendLayerFill(fillPath, scaleZero, duration) {
   // hard way: isolating the first and last elements in the svg path and
   // duplicating them with y-moves to scale-zero
   setTimeout(() => {
-    const elem = document.getElementById(fillPath.attr('id'))
-    let pathStr = elem.getAttribute('d')
+    const elem = document.getElementById(fillPath.attr('id'));
+    let pathStr = elem.getAttribute('d');
     // Convert string to array
-    const pathArray = pathStr.split('L')
-    pathStr = pathStr.replace('M', 'L')
+    const pathArray = pathStr.split('L');
+    pathStr = pathStr.replace('M', 'L');
     // Drop initial 'M' (moveto). So now entire array is [x,y] vals
-    pathArray[0] = pathArray[0].replace('M', '')
+    pathArray[0] = pathArray[0].replace('M', '');
     // Get first point, set y-point to zero and prepend to path string
-    const firstPt = pathArray[0].split(',')
+    const firstPt = pathArray[0].split(',');
     // x-coord: just the value
-    firstPt[1] = scaleZero
+    firstPt[1] = scaleZero;
     // This is now the 'moveto':
-    pathStr = `M ${firstPt.join()}${pathStr}`
+    pathStr = `M ${firstPt.join()}${pathStr}`;
     // Ditto last point
-    const paLen = pathArray.length - 1
-    const lastPt = pathArray[paLen].split(',')
-    lastPt[1] = scaleZero
-    pathStr += `L ${lastPt.join()}`
+    const paLen = pathArray.length - 1;
+    const lastPt = pathArray[paLen].split(',');
+    lastPt[1] = scaleZero;
+    pathStr += `L ${lastPt.join()}`;
     // Reset entire path
-    elem.setAttribute('d', pathStr)
+    elem.setAttribute('d', pathStr);
     // And, now that the path is complete, make it visible
-    elem.setAttribute('opacity', 1)
-  }, duration)
+    elem.setAttribute('opacity', 1);
+  }, duration);
 }
 // EXTEND LAYER FILL ends
 
@@ -366,21 +367,21 @@ export function extendLayerFill(fillPath, scaleZero, duration) {
 // horizontal spur at the end of a stepline that ends with a vertical
 // In here to work round D3 'this' issue
 export function addSteplineSpur(line, spur) {
-  const elem = document.getElementById(line.attr('id'))
-  let pathStr = elem.getAttribute('d')
+  const elem = document.getElementById(line.attr('id'));
+  let pathStr = elem.getAttribute('d');
   // Convert string to array
-  const pathArray = pathStr.split('L')
-  const paLen = pathArray.length - 1
+  const pathArray = pathStr.split('L');
+  const paLen = pathArray.length - 1;
   // Get the last point two points:
-  const ultPt = pathArray[paLen].split(',')
-  const penUltPt = pathArray[paLen - 1].split(',')
+  const ultPt = pathArray[paLen].split(',');
+  const penUltPt = pathArray[paLen - 1].split(',');
   // If the ult y-value is different from the penult, we need a spur
   if (ultPt[1] !== penUltPt[1]) {
     // Increase x-coord and append to path string
-    ultPt[0] = Number(ultPt[0]) + spur
-    pathStr += `L ${ultPt.join()}`
+    ultPt[0] = Number(ultPt[0]) + spur;
+    pathStr += `L ${ultPt.join()}`;
     // Reset entire path
-    elem.setAttribute('d', pathStr)
+    elem.setAttribute('d', pathStr);
   }
 }
 // ADD STEPLINE SPUR ends
@@ -395,44 +396,44 @@ export function addSteplineSpur(line, spur) {
 // projecting elements
 // FIXME: duplicates AxisUtils.getHalfClusterWidthForAxis
 export function getSeriesClusterWidthAndPadding(config, isBars) {
-  let lookup = config.series.column
-  let bound = config.innerBox.width
+  let lookup = config.series.column;
+  let bound = config.innerBox.width;
   // But, if bar chart:
   if (isBars) {
-    lookup = config.series.bar
-    bound = config.innerBox.height
+    lookup = config.series.bar;
+    bound = config.innerBox.height;
   }
-  const pCountMinusOne = Math.max(config.pointCount - 1, 1)
+  const pCountMinusOne = Math.max(config.pointCount - 1, 1);
   // -1 because series range will be one cluster wider than inner box
   // (half-cluster left and right). But mustn't be < 1 !!
-  const defaultPadding = lookup.gap
+  const defaultPadding = lookup.gap;
   // Add up total amount of default padding
   //
-  const paddingTotal = pCountMinusOne * defaultPadding
-  let clusterWidth = (bound - paddingTotal) / pCountMinusOne
+  const paddingTotal = pCountMinusOne * defaultPadding;
+  let clusterWidth = (bound - paddingTotal) / pCountMinusOne;
   // But what if cluster is too narrow?
-  const absoluteMinWidth = lookup.absoluteMinWidth
-  const minWidth = lookup.minWidth
-  const maxWidth = lookup.maxWidth
-  const narrowGap = lookup.narrowGap
-  let padding = defaultPadding
+  const absoluteMinWidth = lookup.absoluteMinWidth;
+  const minWidth = lookup.minWidth;
+  const maxWidth = lookup.maxWidth;
+  const narrowGap = lookup.narrowGap;
+  let padding = defaultPadding;
   // Check for min/max column width...
   if (clusterWidth < absoluteMinWidth) {
-    padding = 0
-    clusterWidth = bound / pCountMinusOne
+    padding = 0;
+    clusterWidth = bound / pCountMinusOne;
   } else if (clusterWidth < minWidth) {
-    clusterWidth = bound / pCountMinusOne - narrowGap
-    padding = narrowGap
+    clusterWidth = bound / pCountMinusOne - narrowGap;
+    padding = narrowGap;
   } else if (!isBars && clusterWidth > maxWidth) {
     // Max only applies to columns
-    clusterWidth = maxWidth
-    const aggregateClusterWidth = clusterWidth * pCountMinusOne
-    padding = (bound - aggregateClusterWidth) / pCountMinusOne
+    clusterWidth = maxWidth;
+    const aggregateClusterWidth = clusterWidth * pCountMinusOne;
+    padding = (bound - aggregateClusterWidth) / pCountMinusOne;
   }
   return {
     clusterWidth,
     padding,
-  }
+  };
 }
 // GET SERIES CLUSTER WIDTH AND PADDING ends
 
@@ -462,9 +463,9 @@ export function checkForFixedInnerMargins(innerBox, config, style) {
       const ibRight = innerBox.x + innerBox.width;
       const halfLastLabelWidth = origRight - ibRight;
       // So for width:
-      innerBox.width -= (innerMargins.right - halfLastLabelWidth);
+      innerBox.width -= innerMargins.right - halfLastLabelWidth;
     }
   }
-  return innerBox
+  return innerBox;
 }
 // CHECK FOR FIXED INNER MARGINS ends

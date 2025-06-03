@@ -3,7 +3,7 @@
 // config objects for linear/ordinal x/y-axes...
 
 // We need D3 and ChartUtilities
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 
 // SCALE NUMBER FORMAT
 // Called by axis-config functions
@@ -12,14 +12,14 @@ import * as d3 from 'd3'
 // process: dps, then format...
 // NOTE: duped in BlobUtils.formatBlobVal
 export function scaleNumberFormat(scaleIncr) {
-  const numArray = scaleIncr.toString().split('.')
+  const numArray = scaleIncr.toString().split('.');
   // Always thou separators...
   // let snForm = ',f';
-  let snForm = ','
+  let snForm = ',';
   if (numArray.length > 1) {
-    snForm = `,.${numArray[1].length}f`
+    snForm = `,.${numArray[1].length}f`;
   }
-  return snForm
+  return snForm;
 }
 // SCALE NUMBER FORMAT ends
 
@@ -27,11 +27,11 @@ export function scaleNumberFormat(scaleIncr) {
 // Cheaply and cheerfully returns axis side. This
 // needs a proper left/right/top/bottom fix eventually...
 export function getSide(scales) {
-  let side = 'left'
+  let side = 'left';
   if (scales.enableScale.right) {
-    side = 'right'
+    side = 'right';
   }
-  return side
+  return side;
 }
 // GET SIDE ends
 
@@ -42,41 +42,41 @@ export function getSide(scales) {
 // ChartUtils.getSeriesClusterWidthAndPadding
 export function getHalfClusterWidthForAxis(config, bounds, isCol) {
   // NOTE: is this necessary?
-  let bound = bounds.height
+  let bound = bounds.height;
   if (isCol) {
-    bound = bounds.width
+    bound = bounds.width;
   }
   // Thermo, column or bar?
-  let type = 'thermovertical'
+  let type = 'thermovertical';
   if (!config.thermometer) {
     if (isCol) {
-      type = 'column'
+      type = 'column';
     } else {
-      type = 'bar'
+      type = 'bar';
     }
   }
-  const defaultPadding = config.series[type].gap
-  const pointCount = config.pointCount
+  const defaultPadding = config.series[type].gap;
+  const pointCount = config.pointCount;
   // Add up total amount of default padding
-  const paddingTotal = (pointCount - 1) * defaultPadding
+  const paddingTotal = (pointCount - 1) * defaultPadding;
   // And get w/h of one cluster
-  let clusterWidth = (bound - paddingTotal) / pointCount
+  let clusterWidth = (bound - paddingTotal) / pointCount;
   // But what if cluster is too narrow?
-  const minWidth = config.series[type].minWidth
-  const absoluteMinWidth = config.series[type].absoluteMinWidth
-  const maxWidth = config.series[type].maxWidth
-  const narrowGap = config.series[type].narrowGap
+  const minWidth = config.series[type].minWidth;
+  const absoluteMinWidth = config.series[type].absoluteMinWidth;
+  const maxWidth = config.series[type].maxWidth;
+  const narrowGap = config.series[type].narrowGap;
   // Check for min/max column width...
   if (clusterWidth < absoluteMinWidth) {
-    clusterWidth = bound / pointCount
+    clusterWidth = bound / pointCount;
   } else if (clusterWidth < minWidth) {
-    clusterWidth = bound / pointCount - narrowGap
+    clusterWidth = bound / pointCount - narrowGap;
   } else if (type === 'column' && clusterWidth > maxWidth) {
     // Only apply a max width to columns
-    clusterWidth = maxWidth
+    clusterWidth = maxWidth;
   }
   // I only want half
-  return clusterWidth / 2
+  return clusterWidth / 2;
 }
 // GET HALF CLUSTER WIDTH FOR AXIS ends
 
@@ -85,10 +85,10 @@ export function getHalfClusterWidthForAxis(config, bounds, isCol) {
 // configBlobs
 export function getBarThermoGap(config) {
   if (config.thermometer) {
-    return config.series.thermohorizontal.gap
+    return config.series.thermohorizontal.gap;
   }
   // Still here?
-  return config.series.bar.gap
+  return config.series.bar.gap;
 }
 // GET BAR-THERMO GAP ends
 
@@ -101,40 +101,40 @@ export function setDoubleScaleAxisColours(
   dPrefs,
   side,
   leftType,
-  rightType
+  rightType,
 ) {
   // I want to set 2 props: fill and fillValue, according to side
   // Default is left/right
-  const leftLine = leftType.includes('line')
-  const rightLine = rightType.includes('line')
+  const leftLine = leftType.includes('line');
+  const rightLine = rightType.includes('line');
   // NOTE: no doubt I could be cleverer and duck this fork; but I
   // suspect it would make the code even more impenetrable...
   if (side === 'left') {
     // 'fill' is colour name, for Illustrator to pick up
     // 'fillValue' is actual hex val for browser display
-    textPrefs.fill = dPrefs.fill.left
-    textPrefs.fillValue = dPrefs.fill.leftVal
+    textPrefs.fill = dPrefs.fill.left;
+    textPrefs.fillValue = dPrefs.fill.leftVal;
     // If series types differ...
     if (leftLine !== rightLine) {
       if (leftLine) {
-        textPrefs.fill = dPrefs.fill.linealone
-        textPrefs.fillValue = dPrefs.fill.linealoneVal
+        textPrefs.fill = dPrefs.fill.linealone;
+        textPrefs.fillValue = dPrefs.fill.linealoneVal;
       } else {
-        textPrefs.fill = dPrefs.fill.columnalone
-        textPrefs.fillValue = dPrefs.fill.columnaloneVal
+        textPrefs.fill = dPrefs.fill.columnalone;
+        textPrefs.fillValue = dPrefs.fill.columnaloneVal;
       }
     }
   } else {
     // Right axis
-    textPrefs.fill = dPrefs.fill.right
-    textPrefs.fillValue = dPrefs.fill.rightVal
+    textPrefs.fill = dPrefs.fill.right;
+    textPrefs.fillValue = dPrefs.fill.rightVal;
     if (leftLine !== rightLine) {
       if (rightLine) {
-        textPrefs.fill = dPrefs.fill.linealone
-        textPrefs.fillValue = dPrefs.fill.linealoneVal
+        textPrefs.fill = dPrefs.fill.linealone;
+        textPrefs.fillValue = dPrefs.fill.linealoneVal;
       } else {
-        textPrefs.fill = dPrefs.fill.columnalone
-        textPrefs.fillValue = dPrefs.fill.columnaloneVal
+        textPrefs.fill = dPrefs.fill.columnalone;
+        textPrefs.fillValue = dPrefs.fill.columnaloneVal;
       }
     }
   }
@@ -144,10 +144,10 @@ export function setDoubleScaleAxisColours(
 // SET DOUBLE SCALE AXIS TEXT PROPS
 // Called from ConfigYaxisLinear
 export function setDoubleScaleAxisTextProps(textPrefs, dPrefs) {
-  textPrefs.font = dPrefs.font
-  textPrefs.leading = dPrefs.leading
-  textPrefs.size = dPrefs.size
-  textPrefs.headerMargin = dPrefs.headerMargin
+  textPrefs.font = dPrefs.font;
+  textPrefs.leading = dPrefs.leading;
+  textPrefs.size = dPrefs.size;
+  textPrefs.headerMargin = dPrefs.headerMargin;
 }
 // SET DOUBLE SCALE AXIS TEXT PROPS ends
 
@@ -156,7 +156,7 @@ export function setDoubleScaleAxisTextProps(textPrefs, dPrefs) {
 // Arg is scale definition, left/right
 // This is for y-axis only
 export function checkPropertiesForAdditionalBaseline(scaleDef) {
-  let baseFlag = false
+  let baseFlag = false;
   if (
     scaleDef.type.includes('column') ||
     scaleDef.type.includes('scatter') ||
@@ -164,10 +164,10 @@ export function checkPropertiesForAdditionalBaseline(scaleDef) {
     scaleDef.stacked
   ) {
     if (scaleDef.minMaxObj.scale.min <= 0) {
-      baseFlag = true
+      baseFlag = true;
     }
   }
-  return baseFlag
+  return baseFlag;
 }
 // CHECK PROPERTIES FOR ADDITIONAL BASELINE ends
 
@@ -175,24 +175,24 @@ export function checkPropertiesForAdditionalBaseline(scaleDef) {
 // Called from ConfigYaxisLinear. Determines whether the chart needs
 // the additional baseline in front of the series
 export function flagAdditionalBaseline(config, side) {
-  let addBaseline = false
+  let addBaseline = false;
   // Mixed: test both sides
   // Single: just 'this' side
   // Test 'this' side:
-  const thisSide = config.scales[side]
-  addBaseline = checkPropertiesForAdditionalBaseline(thisSide)
+  const thisSide = config.scales[side];
+  addBaseline = checkPropertiesForAdditionalBaseline(thisSide);
   // Now mixed (only if not already set)
   if (!addBaseline) {
     if (config.scales.isMixed || config.scales.isDouble) {
-      let otherSideName = 'right'
+      let otherSideName = 'right';
       if (side === 'right') {
-        otherSideName = 'left'
+        otherSideName = 'left';
       }
-      const otherSide = config.scales[otherSideName]
-      addBaseline = checkPropertiesForAdditionalBaseline(otherSide)
+      const otherSide = config.scales[otherSideName];
+      addBaseline = checkPropertiesForAdditionalBaseline(otherSide);
     }
   }
-  return addBaseline
+  return addBaseline;
 }
 // FLAG ADDITIONAL BASELINE ends
 
@@ -202,7 +202,7 @@ export function flagAdditionalBaseline(config, side) {
 // object into which test strings are injected
 // (caller removes)
 export function appendTestText(config, contextId) {
-  const axisGroup = d3.select(`#${contextId}`)
+  const axisGroup = d3.select(`#${contextId}`);
   // Text object
   const testText = axisGroup
     .append('text')
@@ -210,15 +210,15 @@ export function appendTestText(config, contextId) {
     .style({
       'font-family': config.textPrefs.font,
       'font-size': () => {
-        let size = config.textPrefs.size.primaryOnly
+        let size = config.textPrefs.size.primaryOnly;
         if (config.hasSecondaryAxis) {
-          size = config.textPrefs.size.primaryIfSecondary
+          size = config.textPrefs.size.primaryIfSecondary;
         }
-        return `${size}px`
+        return `${size}px`;
       },
       fill: config.textPrefs.fillValue,
-    })
-  return testText
+    });
+  return testText;
 }
 // APPEND TEST TEXT ends
 
@@ -229,34 +229,34 @@ export function appendTestText(config, contextId) {
 //    Arg 2 is true for yaxis/column, false for xaxis/bar
 //    Arg 3 contains coords for line ends
 export function appendInFrontTick(config, isHorizontal, points) {
-  const zPrefs = config.tickPrefs.zero
-  const start = points.start
-  const end = points.end
-  const scaleVal = points.scaleVal
-  const duration = config.duration
+  const zPrefs = config.tickPrefs.zero;
+  const start = points.start;
+  const end = points.end;
+  const scaleVal = points.scaleVal;
+  const duration = config.duration;
   // How will the zero line appear?
-  let zColVal = zPrefs.simpleValue
-  let zColName = zPrefs.simple
+  let zColVal = zPrefs.simpleValue;
+  let zColName = zPrefs.simple;
   if (config.mixedVals) {
-    zColVal = zPrefs.mixedValue
-    zColName = zPrefs.mixed
+    zColVal = zPrefs.mixedValue;
+    zColName = zPrefs.mixed;
   }
-  const zClass = 'axis-zero-line'
-  const zId = `${zClass}~~~stroke:${zColName}`
-  const zThickness = zPrefs.width
+  const zClass = 'axis-zero-line';
+  const zId = `${zClass}~~~stroke:${zColName}`;
+  const zThickness = zPrefs.width;
   // Use a separate group so this lies above the series
-  const zeroGrp = `.zeroline-group-${config.chartIndex}`
+  const zeroGrp = `.zeroline-group-${config.chartIndex}`;
   // Bind data
   const zBinding = d3
     .select(zeroGrp)
     .selectAll(zClass)
-    .data([0])
+    .data([0]);
   // If there's already a zero line (double scales), tiptoe away now
   if (config.isDouble && zBinding[0].parentNode.childElementCount > 0) {
-    return
+    return;
   }
   // ENTER
-  zBinding.enter().append('line')
+  zBinding.enter().append('line');
   // NOTE. This works with +/– values, but I haven't
   // looked at broken scales yet
   // (Although if scale breaks, the zero line will vanish somewhere off-chart...)
@@ -266,41 +266,41 @@ export function appendInFrontTick(config, isHorizontal, points) {
     .attr({
       class: zClass,
       x1: () => {
-        let val = start
+        let val = start;
         if (!isHorizontal) {
-          val = scaleVal
+          val = scaleVal;
         }
-        return val
+        return val;
       },
       x2: () => {
-        let val = end
+        let val = end;
         if (!isHorizontal) {
-          val = scaleVal
+          val = scaleVal;
         }
-        return val
+        return val;
       },
       y1: () => {
-        let val = start
+        let val = start;
         if (isHorizontal) {
-          val = scaleVal
+          val = scaleVal;
         }
-        return val
+        return val;
       },
       y2: () => {
-        let val = end
+        let val = end;
         if (isHorizontal) {
-          val = scaleVal
+          val = scaleVal;
         }
-        return val
+        return val;
       },
       id: zId,
     })
     .style({
       'stroke-width': zThickness,
       stroke: zColVal,
-    })
+    });
 
-  zBinding.exit().remove()
+  zBinding.exit().remove();
 }
 // APPEND IN-FRONT TICK ends
 
@@ -311,28 +311,28 @@ export function appendInFrontTick(config, isHorizontal, points) {
 // to centre-align on the number
 export function fixNegativeLabels(axisGroup) {
   axisGroup.selectAll('text').each(function(ddd) {
-    const thisLab = d3.select(this)
+    const thisLab = d3.select(this);
     // Now that this is called from XaxisOrdinal, we have
     // to check for dates (which evaluate to < 0), too
     if (typeof ddd !== 'object' && +ddd < 0) {
       thisLab.attr('x', () => {
-        let xVal = thisLab.attr('x')
+        let xVal = thisLab.attr('x');
         // Get width of label with '-'. Then re-measure
         // without the '-' and adjust by half. Not
         // overwhelmingly efficient, but shouldn't be
         // a big drag
         // (Keep value as a string)
-        const originalVal = thisLab.text()
-        const widA = thisLab.node().getComputedTextLength()
-        thisLab.text(originalVal.substring(1))
-        const widB = thisLab.node().getComputedTextLength()
-        const halfMinus = (widA - widB) / 2
-        thisLab.text(originalVal)
-        xVal -= halfMinus
-        return xVal
-      })
+        const originalVal = thisLab.text();
+        const widA = thisLab.node().getComputedTextLength();
+        thisLab.text(originalVal.substring(1));
+        const widB = thisLab.node().getComputedTextLength();
+        const halfMinus = (widA - widB) / 2;
+        thisLab.text(originalVal);
+        xVal -= halfMinus;
+        return xVal;
+      });
     }
-  })
+  });
 }
 // FIX NEGATIVE LABELS ends
 
@@ -342,41 +342,41 @@ export function fixNegativeLabels(axisGroup) {
 export function getAxisLabelWidth(testObj, tVal, forceTurn, isFirst) {
   // Fork on whether text turns, in which case
   // check width of each 'line'
-  const textTurns = tVal.toString().includes(forceTurn)
-  let valArray = [tVal]
+  const textTurns = tVal.toString().includes(forceTurn);
+  let valArray = [tVal];
   if (textTurns) {
-    valArray = tVal.split(forceTurn)
+    valArray = tVal.split(forceTurn);
   }
-  let labelWidth = 0
+  let labelWidth = 0;
   // Loop on 'lines'
   for (let vNo = 0; vNo < valArray.length; vNo++) {
-    const thisVal = valArray[vNo]
-    let minusAdj = 0
+    const thisVal = valArray[vNo];
+    let minusAdj = 0;
     // Get line width
-    testObj.text(thisVal)
-    let tWidth = testObj.node().getBBox().width
+    testObj.text(thisVal);
+    let tWidth = testObj.node().getBBox().width;
     if (!textTurns) {
       // If text doesn't turn (i.e. it's a simple label)
       // and first val < 0, allow for the width of the '-'
       // Ticks will subsequently align to centre of value without '-'
-      let unMinusWidth = 0
+      let unMinusWidth = 0;
       if (isFirst && tVal < 0) {
         // Measure without any minus
-        testObj.text(Math.abs(tVal))
-        unMinusWidth = testObj.node().getComputedTextLength()
+        testObj.text(Math.abs(tVal));
+        unMinusWidth = testObj.node().getComputedTextLength();
         // Difference between absolute and minus val, if any
-        minusAdj = (tWidth - unMinusWidth) / 2
+        minusAdj = (tWidth - unMinusWidth) / 2;
         // But, inferentially:
-        minusAdj -= 0.28
+        minusAdj -= 0.28;
       }
     }
     // NOTE: assumption that xaxis strings are centre-aligned
     // (minusAdj is always zero for split labels)
-    tWidth /= 2
-    tWidth += minusAdj
-    labelWidth = Math.max(labelWidth, tWidth)
+    tWidth /= 2;
+    tWidth += minusAdj;
+    labelWidth = Math.max(labelWidth, tWidth);
   }
-  return labelWidth
+  return labelWidth;
 }
 // GET AXIS LABEL WIDTH
 
@@ -384,9 +384,9 @@ export function getAxisLabelWidth(testObj, tVal, forceTurn, isFirst) {
 // Conditional tick label formatter forces zeros to "0"
 export function getLinearAxisTickFormat(val, fStr) {
   if (val.toString() === '0') {
-    fStr = 'f'
+    fStr = 'f';
   }
-  const myFormatter = d3.format(fStr)
-  return myFormatter(val)
+  const myFormatter = d3.format(fStr);
+  return myFormatter(val);
 }
 // GET LINEAR AXIS TICK FORMAT ends

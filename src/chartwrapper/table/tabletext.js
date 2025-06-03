@@ -1,6 +1,6 @@
-import * as d3 from 'd3'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import * as d3 from 'd3';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TableText extends Component {
   // constructor(props) {
@@ -9,30 +9,30 @@ class TableText extends Component {
 
   // COMPONENT DID MOUNT
   componentDidMount() {
-    this.updateText()
+    this.updateText();
   }
 
   // COMPONENT DID UPDATE
   componentDidUpdate() {
-    this.updateText()
+    this.updateText();
   }
 
   // APPEND ROW
   // Called from addTableContent to append a row tSpen to the text element
   appendRow(tableText, rowContent, config, isHeader) {
-    let x = config.innerBox.x
-    const contentPrefs = config.tableProperties.text.content
-    x += contentPrefs.padding.left
+    let x = config.innerBox.x;
+    const contentPrefs = config.tableProperties.text.content;
+    x += contentPrefs.padding.left;
     // Row anchor uses paragraph
     // (Although the prefs define a leading, I'm ignoring it until
     //    I can work out another way of handling table text in Joxer)
-    let dy = contentPrefs.paragraph
-    let fill = contentPrefs.fill
+    let dy = contentPrefs.paragraph;
+    let fill = contentPrefs.fill;
     // Similarly: pending further devel, use paragraph for leading. This
     // is all due to SVGs' inability to handle leading
-    let leading = contentPrefs.paragraph
+    let leading = contentPrefs.paragraph;
     if (isHeader) {
-      dy = 0
+      dy = 0;
     }
     const thisRow = tableText
       .append('tspan')
@@ -44,13 +44,13 @@ class TableText extends Component {
       })
       .style({
         leading,
-      })
+      });
     // Headers overwrite style, and id:fill
     if (isHeader) {
-      const headPrefs = config.tableProperties.text.header
-      const { size, font } = headPrefs
-      fill = headPrefs.fill
-      leading = headPrefs.paragraph
+      const headPrefs = config.tableProperties.text.header;
+      const { size, font } = headPrefs;
+      fill = headPrefs.fill;
+      leading = headPrefs.paragraph;
       thisRow
         .attr({ id: `table-tspan~~~fill:${fill}, leading:${leading}` })
         .style({
@@ -58,7 +58,7 @@ class TableText extends Component {
           'font-size': `${size}px`,
           fill: config.colourLookup[fill],
           leading,
-      })
+        });
     }
   }
   // APPEND ROW ends
@@ -66,11 +66,11 @@ class TableText extends Component {
   // ADD TABLE CONTENT
   // Called from updateText
   addTableContent(tableText, config, contentArray) {
-    const cLen = contentArray.length
+    const cLen = contentArray.length;
     for (let rowNo = 0; rowNo < cLen; rowNo++) {
-      const rowText = contentArray[rowNo]
-      const isHeader = rowNo === 0
-      this.appendRow(tableText, rowText, config, isHeader)
+      const rowText = contentArray[rowNo];
+      const isHeader = rowNo === 0;
+      this.appendRow(tableText, rowText, config, isHeader);
     }
   }
   // ADD TABLE CONTENT ends
@@ -78,16 +78,16 @@ class TableText extends Component {
   // MAKE INITIAL TEXT ELEMENT
   makeInitialTextElement(config) {
     // Group
-    const idName = this.props.idName
-    const textGrp = d3.select(`#${idName}`)
+    const idName = this.props.idName;
+    const textGrp = d3.select(`#${idName}`);
     // Attributes:
-    const textProps = config.tableProperties.text.content
-    const { size, font, fill } = textProps
+    const textProps = config.tableProperties.text.content;
+    const { size, font, fill } = textProps;
     // For now...
-    const leading = textProps.paragraph
-    const xPos = config.innerBox.x
+    const leading = textProps.paragraph;
+    const xPos = config.innerBox.x;
     // NOTE: up for refinement...
-    const yPos = config.innerBox.y
+    const yPos = config.innerBox.y;
     const tableText = textGrp
       .append('text')
       .attr({
@@ -101,8 +101,8 @@ class TableText extends Component {
         fill: config.colourLookup[fill],
         leading,
       })
-      .text('')
-    return tableText
+      .text('');
+    return tableText;
   }
   // MAKE INITIAL TEXT ELEMENT ends
 
@@ -115,9 +115,9 @@ class TableText extends Component {
     // Headers:
     // SVG doesn't recognise tabs (converts to space chars)
     // so use a string for Illy to find
-    const headers = config.headers.join('___')
+    const headers = config.headers.join('___');
     // Dig out the table content
-    const rawContent = config.chartData
+    const rawContent = config.chartData;
     // This is an array of ojbects, each representing one line:
     //  {
     //   "Column one": "China",
@@ -125,43 +125,43 @@ class TableText extends Component {
     // }
     // What we want is a 1D array of strings
     // const contentArray = this.arrayifyContent(rawContent);
-    const tableArray = rawContent.map((oneElement) => {
-      const keys = Object.keys(oneElement)
-      const lineArray = []
+    const tableArray = rawContent.map(oneElement => {
+      const keys = Object.keys(oneElement);
+      const lineArray = [];
       for (const thisKey in keys) {
-        lineArray.push(oneElement[keys[thisKey]])
+        lineArray.push(oneElement[keys[thisKey]]);
       }
       // FIXME: this join is a temp subterfuge
-      return lineArray.join('___')
-    })
+      return lineArray.join('___');
+    });
     // Prefix headers and return
-    tableArray.unshift(headers)
-    return tableArray
+    tableArray.unshift(headers);
+    return tableArray;
   }
   // ARRAYIFY CONTENT ends
 
   // UPDATE TEXT
   // Called upon component mount/update
   updateText() {
-    const config = this.props.config
+    const config = this.props.config;
     // Assemble the complete array of data (headers and content)
-    const contentArray = this.arrayifyContent(config)
+    const contentArray = this.arrayifyContent(config);
     // Put the basic text element on the page
-    const tableText = this.makeInitialTextElement(config)
+    const tableText = this.makeInitialTextElement(config);
     // Append tSpans
-    this.addTableContent(tableText, config, contentArray)
+    this.addTableContent(tableText, config, contentArray);
   }
   // UPDATE TEXT ENDS
 
   // RENDER:
   render() {
-    return <g className={this.props.config.className} id={this.props.idName} />
+    return <g className={this.props.config.className} id={this.props.idName} />;
   }
 }
 
 TableText.propTypes = {
   config: PropTypes.object,
   idName: PropTypes.string,
-}
+};
 
-export default TableText
+export default TableText;

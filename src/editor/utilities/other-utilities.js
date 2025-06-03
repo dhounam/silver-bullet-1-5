@@ -45,7 +45,6 @@ export function trimDecimals(val) {
 // Overrides default scaling of chart-wrapper for
 // responsive DCs
 export function setChartWrapperScaleClass(presetsConfig) {
-  
   // Look for a chartScaleClass property on the node
   const upNode = presetsConfig.userPresets;
   const pNode = upNode[presetsConfig.presetName];
@@ -61,12 +60,12 @@ export function setChartWrapperScaleClass(presetsConfig) {
     // remove any zooming class applied. The specific zooming class is defined in
     // preset_preferences.json, using the property 'chartScaleClass'
     scWrapper.classList.remove(
-      ...Array.from(
-        scWrapper.classList.values()
-      ).filter(className => /chart-zoom-.*/.test(className))
-    );  
+      ...Array.from(scWrapper.classList.values()).filter(className =>
+        /chart-zoom-.*/.test(className),
+      ),
+    );
     // set specific scaling class or use the default scaling factor (x2.5)
-    scWrapper.classList.add(classExists?scaleClass:'chart-zoom-250')    
+    scWrapper.classList.add(classExists ? scaleClass : 'chart-zoom-250');
   }
 }
 // SET CHART-WRAPPER SCALE CLASS ends

@@ -1605,9 +1605,7 @@ export function reconcileEditorToChartPanelConfig(activePanel, presetsConfig) {
   // SCALES
   configPanel.scales = reconcileEdConfigPanelScalesToConfig(activePanel);
   // Now we've got scales, for mixed or double, we need to know if there are columns...
-  const typeStr = `${configPanel.scales.left.type}${
-    configPanel.scales.right.type
-  }`;
+  const typeStr = `${configPanel.scales.left.type}${configPanel.scales.right.type}`;
   configPanel.hasColumns = typeStr.includes('column');
   // Indexed
   configPanel.indexDot.indexCat = activePanel.indexed.indexCat;

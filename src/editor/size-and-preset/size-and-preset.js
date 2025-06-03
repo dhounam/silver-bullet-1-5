@@ -69,7 +69,7 @@ class SizeAndPreset extends Component {
     return (
       <div className="size-and-preset-wrapper">
         {presetJsx}
-        {sizeJsx}        
+        {sizeJsx}
       </div>
     );
   }

@@ -7,7 +7,7 @@
     All (?) called from Editor.handleValuesFromScalesFold
 */
 
-import globalAssets from "../assets/globalAssets";
+import globalAssets from '../assets/globalAssets';
 import * as EditorConfigDefaultUtils from './editor-config-default-utilities';
 import * as EditorUtils from './editor-utilities';
 import * as FactorUtils from './factor-utilities';
