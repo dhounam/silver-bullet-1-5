@@ -6392,12 +6392,12 @@
           "topPadding": {
             "belowTitleClusterBaseline": {
               "toPanelFlash": 52,
-              "toLegendBaseline": 46,
+              "toLegendBaseline": 84,
               "toBlobTop": 50,
               "toTableHeaders": 52,
               "toTopOfChart": {
                 "default": 52,
-                "bar": 52,
+                "bar": 80,
                 "double": 43
               }
             },
