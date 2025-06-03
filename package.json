@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "array-move": "^4.0.0",
+    "caniuse-lite": "^1.0.30001717",
     "cross-env": "^7.0.3",
     "d3": "^3.5.17",
     "env-cmd": "^10.1.0",
@@ -11,11 +12,12 @@
     "gif.js": "^0.2.0",
     "lodash": "^4.17.21",
     "npm-run-all": "^4.1.5",
+    "process": "^0.11.10",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
+    "react": "^16.14.0",
     "react-color": "^2.19.3",
-    "react-dom": "^16.10.2",
-    "react-scripts": "^5.0.1",
+    "react-dom": "^16.14.0",
+    "react-scripts": "^4.0.3",
     "react-sortable-hoc": "^2.0.0"
   },
   "config": {
@@ -24,10 +26,11 @@
     "eiu_folder": "silver-bullet-eiu"
   },
   "scripts": {
-    "start:economist": "cross-env REACT_APP_SIBYL_ORG=economist PORT=8080 react-scripts --openssl-legacy-provider start",
-    "start:economist:test": "cross-env REACT_APP_SIBYL_ORG=economist REACT_APP_TEST=true PORT=8080 react-scripts --openssl-legacy-provider start",
-    "start:eiu": "cross-env REACT_APP_SIBYL_ORG=eiu PORT=8080 react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "start": "react-scripts start",
+    "start:economist": "cross-env REACT_APP_SIBYL_ORG=economist PORT=8080 react-scripts start",
+    "start:economist:test": "cross-env REACT_APP_SIBYL_ORG=economist REACT_APP_TEST=true PORT=8080 react-scripts start",
+    "start:eiu": "cross-env REACT_APP_SIBYL_ORG=eiu PORT=8080 react-scripts start",
+    "build": "react-scripts build",
     "cleanup-economist": "rm -rf build-economist && mkdir -p build-economist",
     "cleanup-eiu": "rm -rf build-eiu && mkdir -p build-eiu",
     "test": "react-scripts test",
@@ -49,14 +52,12 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.18.9",
-    "eslint": "5.12.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "4.1.0",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-prettier": "3.0.1",
-    "eslint-plugin-react": "7.12.4",
-    "prettier": "1.16.4"
+    "@babel/eslint-parser": "^7.27.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^1.16.4",
+    "source-map-explorer": "^2.5.3"
   }
 }

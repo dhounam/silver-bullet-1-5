@@ -1,22 +1,16 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
-  "parser": "babel-eslint",
+  "extends": ["react-app", "prettier"],
+  "plugins": ["prettier", "react"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "rules": {
-    "RULES-NOTE": "max-lines/per-function both upped by factor of 10 until I can get to refactoring",
-    "max-lines": [
-      "error",
-      {
-        "max": 5000,
-        "skipComments": true
-      }
-    ],
-    "max-lines-per-function": [
-      "error",
-      {
-        "max": 500
-      }
-    ],
+    "max-lines": ["error", { "max": 5000, "skipComments": true }],
+    "max-lines-per-function": ["error", { "max": 500 }],
     "prettier/prettier": [
       "error",
       {
@@ -25,54 +19,18 @@
         "bracketSpacing": true
       }
     ],
-    "camelcase": [
-      2,
-      {
-        "allow": ["^UNSAFE_"]
-      }
-    ],
+    "camelcase": [2, { "allow": ["^UNSAFE_"] }],
     "no-restricted-syntax": 0,
     "func-names": 0,
     "no-use-before-define": 0,
-    "no-restricted-globals": [
-      0,
-      {
-        "name": "isNaN"
-      }
-    ],
+    "no-restricted-globals": [0, { "name": "isNaN" }],
     "guard-for-in": 0,
-    "no-mixed-operators": [
-      0,
-      {
-        "groups": [
-          ["&", "|", "^", "~", "<<", ">>", ">>>"],
-          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
-          ["&&", "||"],
-          ["in", "instanceof"]
-        ]
-      }
-    ],
+    "no-mixed-operators": 0,
     "no-nested-ternary": 0,
-    "no-plusplus": [
-      0,
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
-    "spaced-comment": [
-      2,
-      "always",
-      {
-        "exceptions": ["/"]
-      }
-    ],
+    "no-plusplus": [0, { "allowForLoopAfterthoughts": true }],
+    "spaced-comment": [2, "always", { "exceptions": ["/"] }],
     "no-cond-assign": [2, "except-parens"],
-    "no-shadow": [
-      2,
-      {
-        "allow": ["memo"]
-      }
-    ],
+    "no-shadow": [2, { "allow": ["memo"] }],
     "no-param-reassign": 0,
     "no-confusing-arrow": 0,
     "no-underscore-dangle": [
@@ -89,38 +47,26 @@
     ],
     "no-unused-expressions": [
       2,
-      {
-        "allowShortCircuit": true,
-        "allowTernary": true
-      }
+      { "allowShortCircuit": true, "allowTernary": true }
     ],
     "class-methods-use-this": 0,
     "no-prototype-builtins": 0,
     "prefer-destructuring": 0,
-    "react/prop-types": [
-      2,
-      {
-        "skipUndeclared": true
-      }
-    ],
+    "react/prop-types": [2, { "skipUndeclared": true }],
     "react/no-array-index-key": 0,
     "react/forbid-prop-types": 0,
     "react/sort-comp": 0,
     "react/require-default-props": 0,
     "react/prefer-stateless-function": [
       2,
-      {
-        "ignorePureComponents": true
-      }
+      { "ignorePureComponents": true }
     ],
     "react/jsx-filename-extension": 0,
     "react/destructuring-assignment": 0,
-    "jsx-a11y/no-static-element-interactions": [0],
+    "jsx-a11y/no-static-element-interactions": 0,
     "import/no-extraneous-dependencies": [
       2,
-      {
-        "devDependencies": ["**/*config*.js", "./build.js"]
-      }
+      { "devDependencies": ["**/*config*.js", "./build.js"] }
     ]
   },
   "env": {
