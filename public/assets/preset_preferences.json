@@ -2085,20 +2085,6 @@
           "double": {
             "colours": {
               "left": [
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark"
-              ],
-              "right": [
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext",
@@ -2111,6 +2097,20 @@
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
@@ -3423,20 +3423,6 @@
           "double": {
             "colours": {
               "left": [
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark"
-              ],
-              "right": [
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext",
@@ -3449,6 +3435,20 @@
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
@@ -4773,20 +4773,6 @@
           "double": {
             "colours": {
               "left": [
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark"
-              ],
-              "right": [
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext",
@@ -4799,6 +4785,20 @@
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
@@ -6096,20 +6096,6 @@
           "double": {
             "colours": {
               "left": [
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark"
-              ],
-              "right": [
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext",
@@ -6122,6 +6108,20 @@
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
@@ -7426,20 +7426,6 @@
           "double": {
             "colours": {
               "left": [
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark",
-                "dc-econred",
-                "dc-econredtint",
-                "dc-econreddark"
-              ],
-              "right": [
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext",
@@ -7452,6 +7438,20 @@
                 "dc-land3",
                 "dc-land4",
                 "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
               ],
               "NOTE": "If types are identical, set left/right; else set types to a colourset ",
               "linealone": [
