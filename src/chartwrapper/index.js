@@ -32,6 +32,7 @@ import EconomistSansRegular from './font/economistsans-regular';
 import EconomistSansRegularItalic from './font/economistsans-regularitalic';
 import EconomistSansSemiBold from './font/economistsans-semibold';
 import EconomistSansSemiBoldItalic from './font/economistsans-semibolditalic';
+import EconomistSerifSemiBold from './font/economistserif-semibold';
 
 class SilverChartWrapper extends Component {
   static get defaultProps() {
@@ -399,6 +400,10 @@ class SilverChartWrapper extends Component {
               @font-face {
                 font-family: EconomistSans-SemiBoldItalic;
                 src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSansSemiBoldItalic})
+              }
+              @font-face {
+	              font-family: EconomistSerif-SemiBold;
+                src: url(data:application/x-font-woff2;charset=utf-8;base64,${EconomistSerifSemiBold})
               }
               `,
           }}
