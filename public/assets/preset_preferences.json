@@ -6362,17 +6362,16 @@
               "leading": 44
             },
             "footnote": {
-              "x": 196,
+              "x": -196,
               "y": -179,
-              "anchor": "start",
+              "anchor": "end",
               "font-size": 40,
               "leading": 44,
               "fill": "dc-greytext",
               "font-family": "EconomistSans-Light",
-              "note": "Footnote stacked above source",
-              "aboveSource": true,
+              "aboveSource": false,
               "sourceGap": 44,
-              "wrapwidth": 100
+              "wrapwidth": 100  
             },
             "numberBox": {
               "content": "",
@@ -7494,6 +7493,1341 @@
           "text": {
             "font": "EconomistSans-Regular",
             "fill": "dc-london5",
+            "size": 40,
+            "leading": 44
+          },
+          "padding": {
+            "belowHeader": 50,
+            "betweenKeys": 50,
+            "betweenColumns": 30,
+            "textGap": 20,
+            "belowStack": 20,
+            "belowStackWithBlobs": 20,
+            "belowStackDoubleScale": 25
+          },
+          "styles": {
+            "line": {
+              "style": "line",
+              "width": 50,
+              "height": 9
+            },
+            "linestacked": {
+              "style": "rect",
+              "width": 50,
+              "height": 50
+            },
+            "barcolumn": {
+              "style": "rect",
+              "width": 50,
+              "height": 50
+            },
+            "thermo": {
+              "style": "line",
+              "note": "Visible width and height. If w < h, line is vertical",
+              "width": 30,
+              "height": 50
+            },
+            "thermodot": {
+              "style": "dot",
+              "width": 30,
+              "height": 30
+            },
+            "scatter": {
+              "style": "dot",
+              "width": 30,
+              "height": 30
+            },
+            "pie": {
+              "style": "rect",
+              "width": 30,
+              "height": 30
+            }
+          }
+        },
+        "_BLOBS": "Properties for blobs",
+        "blobs": {
+          "NOTE": "Minimum sizes are redundant",
+          "minCircleSize": 30,
+          "minRectWidth": 150,
+          "maxCircleSize": 90,
+          "maxRectWidth": 450,
+          "text": {
+            "fill": "dc-london5",
+            "size": 46
+          },
+          "background": {
+            "padding": {
+              "horizontal": 18,
+              "vertical": 18
+            },
+            "fill": "dc-gridlines"
+          },
+          "margin": {
+            "left": 60
+          },
+          "header": {
+            "size": 46,
+            "leading": 48,
+            "strokewidth": 0,
+            "rectHeight": 60
+          }
+        },
+        "other": {
+          "indexDot": {
+            "radius": 16,
+            "fill": "dc-london5"
+          },
+          "brokenScale": {
+            "stroke": "dc-london5"
+          }
+        }
+      },
+      "__INSIDER-LANDSCAPE": "Insider landscape",
+      "insider-landscape": {
+        "sections": {
+          "list": [
+            {
+              "code": "WO",
+              "name": "Web only [WO]"
+            },
+            {
+              "code": "ZZ",
+              "name": "Data analytics [ZZ]"
+            }
+          ],
+          "default": "WO",
+          "forceDefault": true
+        },
+        "colourSpace": "rgb",
+        "chartScaleClass": "chart-zoom-040",
+        "background": {
+          "outerbox": {
+            "dimensions": {
+              "id": "insiderlandscape",
+              "display": "Insider landscape",
+              "width": 1920,
+              "height": 1080,
+              "forceHeight": true,
+              "forceWidth": true
+            },
+            "outerMargins": {
+              "left": 180,
+              "right": 180,
+              "top": 55,
+              "bottom": 55
+            },
+            "innerMargins": {
+              "fixed": true,
+              "left": 120,
+              "right": 120
+            }
+          },
+          "shapes": {
+            "bboxA": {
+              "fill": "dc-london5"
+            },
+            "bboxB": {
+              "bboxB-note": "Just as a guide during devel, doesn't display",
+              "x": 196,
+              "y": 55,
+              "width": 1528,
+              "height": 970,
+              "fill": "white",
+              "adjustable": {
+                "height": false,
+                "width": false
+              },
+              "display": false
+            },
+            "bboxC": {
+              "display": true,
+              "type": "circle",
+              "NOTE": "x and y are centre coords, margins to edge + radius",
+              "x": 197,
+              "y": 77.5,
+              "diameter": 34,
+              "fill": "dc-econred60"
+            }     
+          },
+          "strings": {
+            "title": {
+              "x": 226,
+              "y": 96,
+              "wrapwidth": 100,
+              "font-family": "EconomistSerif-SemiBold",
+              "fill": "white",
+              "font-size": 52,
+              "leading": 60
+            },
+            "subtitle": {
+              "x": 180,
+              "y": 186,
+              "wrapwidth": 100,
+              "font-family": "EconomistSans-Light",
+              "fill": "white",
+              "font-size": 40,
+              "leading": 48
+            },
+            "subsubtitle": {
+              "x": 180,
+              "y": 246,
+              "wrapwidth": 100,
+              "font-family": "EconomistSans-Light",
+              "fill": "white",
+              "font-size": 40,
+              "leading": 48
+            },
+            "source": {
+              "x": 180,
+              "y": -60,
+              "fill": "dc-london70",
+              "wrapoptions": {
+                "hasfootnote": 45,
+                "nofootnote": 100,
+                "basealigned": true
+              },
+              "wrapwidth": 100,
+              "font-family": "EconomistSans-Light",
+              "font-size": 40,
+              "leading": 48
+            },
+            "footnote": {
+              "x": -180,
+              "y": -60,
+              "anchor": "end",
+              "font-size": 40,
+              "leading": 48,
+              "fill": "dc-london70",
+              "font-family": "EconomistSans-Light",
+              "aboveSource": false,
+              "sourceGap": 44,
+              "wrapwidth": 100
+            },
+            "numberBox": {
+              "content": "",
+              "id": "number-box",
+              "x": 489,
+              "y": 155.5,
+              "font": "EconomistSans-Medium",
+              "fill": "dc-london5",
+              "fontsize": 40,
+              "leading": 48,
+              "rectwidth": 50,
+              "rectheight": 50,
+              "rectstroke": "dc-london5",
+              "rectstrokewidth": 3
+            }
+          },
+          "topPadding": {
+            "belowTitleClusterBaseline": {
+              "toPanelFlash": 52,
+              "toLegendBaseline": 84,
+              "toBlobTop": 50,
+              "toTableHeaders": 52,
+              "toTopOfChart": {
+                "default": 60,
+                "bar": 80,
+                "double": 43
+              }
+            },
+            "belowPanelHeaderBaseline": {
+              "toLegendBaseline": 33,
+              "toBlobTop": 33,
+              "toTableHeaders": 25,
+              "toTopOfChart": {
+                "default": 60,
+                "bar": 43,
+                "double": 36
+              },
+              "NOTE": "Padding BETWEEN panels is in panelAttributes node"
+            },
+            "belowLegendBaseline": {
+              "toBlobTop": 33,
+              "toTopOfChart": {
+                "default": 60,
+                "bar": 45,
+                "double": 60
+              }
+            },
+            "belowBlobBottom": {
+              "default": 40
+            }
+          }
+        },
+        "panelAttributes": {
+          "padding": {
+            "between": {
+              "x": {
+                "narrowThreshold": 1200,
+                "narrow": 90,
+                "wideTwo": 120,
+                "wideMoreThanTwo": 90
+              },
+              "y": 90
+            }
+          },
+          "rect": {
+            "fill": "dc-london5",
+            "width": 120,
+            "height": 6
+          },
+          "panelheader": {
+            "font-size": 42,
+            "fill": "dc-london5",
+            "leading": 48,
+            "x": 0,
+            "y": 60
+          }
+        },
+        "chart": {
+          "padding": {
+            "NOTE": "Padding between source and x-axis labels baselines",
+            "below": 80
+          }
+        },
+        "axes": {
+          "xAxis": {
+            "ticks": {
+              "default": {
+                "baseline": {
+                  "stroke": "dc-london70",
+                  "width": 3
+                },
+                "lengths": {
+                  "long": {
+                    "start": 0,
+                    "end": 20
+                  },
+                  "default": {
+                    "start": 0,
+                    "end": 12
+                  },
+                  "short": {
+                    "start": 0,
+                    "end": 8
+                  }
+                },
+                "padding": 12,
+                "projection": {
+                  "bar": 18
+                },
+                "stroke": "dc-london70",
+                "width": 3,
+                "zero": {
+                  "simple": "dc-london20",
+                  "mixed": "dc-london20",
+                  "width": 3
+                }
+              },
+              "bar": {
+                "width": 3,
+                "stroke": "dc-london20"
+              },
+              "scatter": {
+                "width": 3,
+                "stroke": "dc-london20"
+              },
+              "sizedscatter": {
+                "width": 3,
+                "stroke": "dc-london20"
+              },
+              "thermovertical": {
+                "width": 3,
+                "stroke": "dc-london20"
+              },
+              "column": {
+                "display": false,
+                "lengths": {
+                  "long": {
+                    "start": 0,
+                    "end": 36
+                  },
+                  "default": {
+                    "start": 0,
+                    "end": 30
+                  },
+                  "short": {
+                    "start": 0,
+                    "end": 24
+                  }
+                }
+              }
+            },
+            "text": {
+              "x": -30,
+              "padding": {
+                "axisAtTop": {
+                  "bar": 30,
+                  "thermo": 12
+                },
+                "axisAtBottom": {
+                  "default": 72,
+                  "brokenScatter": 50
+                }
+              },
+              "leading": 48,
+              "size": {
+                "primaryOnly": 40,
+                "primaryIfSecondary": 36,
+                "secondary": 40
+              },
+              "fill": "dc-london70",
+              "rowheight": 60,
+              "realheight": 20,
+              "minGapBetweenLabels": 40
+            },
+            "header": {
+              "size": 40,
+              "fill": "dc-london70",
+              "leading": 48,
+              "margin": 72
+            },
+            "brokenScalePadding": 40          
+          },
+          "yAxis": {
+            "ticks": {
+              "default": {
+                "baseline": {
+                  "stroke": "dc-london70",
+                  "width": 3
+                },
+                "padding": 30,
+                "projection": 3,
+                "width": 3,
+                "stroke": "dc-london20",
+                "zero": {
+                  "simple": "dc-london70",
+                  "mixed": "dc-london70",
+                  "width": 3
+                }
+              },
+              "thermohorizontal": {
+                "stroke": "dc-london20",
+                "width": 3
+              }
+            },
+            "text": {
+              "note_on_y_val": "distance from edge of tick, not centre; should fix!",
+              "y": 12,
+              "leading": 48,
+              "size": 40,
+              "fill": "dc-london70",
+              "header": {
+                "anchor": "middle",
+                "font": "EconomistSans-Regular",
+                "size": 40,
+                "fill": "dc-london70",
+                "leading": 48,
+                "margin": 60
+              }
+            },
+            "margins": {
+              "linearInnerMargin": 24,
+              "noScaleInnerMargin": 0,
+              "ordinalInnerMargin": 24
+            },
+            "brokenScalePadding": {
+              "default": 50,
+              "thermoHorizontal": 60
+            },
+            "doubleScale": {
+              "fill": {
+                "left": "dc-greytext",
+                "right": "dc-econred",
+                "NOTE": "If types are identical, set left/right; else set coloursets by type",
+                "linealone": "dc-econred",
+                "columnalone": "dc-greytext"
+              },
+              "leading": 48,
+              "size": 40,
+              "HEADER-MARGIN-NOTE": "13 gives 12",
+              "headerMargin": 60
+            },
+            "scatter": {
+              "headerMargin": 60
+            }
+          },
+          "brokenScaleFactors": {
+            "note": "x and y axes (tho no BS drawn on x-axis)",
+            "size": 8,
+            "strokewidth": 10
+          }
+        },
+        "series": {
+          "bar": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "gap": 30,
+            "narrowGap": 6,
+            "minWidth": 20,
+            "absoluteMinWidth": 0.6,
+            "maxWidth": 150
+          },
+          "stackedbar": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "gap": 10,
+            "minWidth": 7,
+            "maxWidth": 60
+          },
+          "thermometer": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "spindle": {
+              "stroke": "dc-greytext",
+              "width": 9
+            },
+            "dot": {
+              "radius": 20,
+              "strokeWidth": 0
+            },
+            "line": {
+              "width": 12,
+              "length": 50
+            },
+            "gap": 10
+          },
+          "line": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "stroke": {
+              "width": 9,
+              "crowdedWidth": 6,
+              "crowdedThreshold": 36
+            }
+          },
+          "scatter": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "dots": {
+              "fixedRadius": 15,
+              "minSizedRadius": 20,
+              "maxSizedRadius": 100
+            },
+            "links": {
+              "length": 90,
+              "stroke": "dc-london5",
+              "width": 2
+            },
+            "text": {
+              "x": 6,
+              "y": 30,
+              "leading": 48,
+              "fill": "dc-london5",
+              "size": 40
+            },
+            "trendline": {
+              "stroke": "dc-econred60",
+              "strokewidth": 6,
+              "dash": [
+                18,
+                6
+              ]
+            },
+            "zkey": {
+              "fontSize": 42,
+              "leading": 48,
+              "dotRadius": 18,
+              "dotStrokeWidth": 1.8,
+              "textFill": "dc-london5",
+              "dotStroke": "dc-london5",
+              "gap": 12
+            }
+          },
+          "layercake": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "stroke": {
+              "topcolour": "dc-london5",
+              "width": 1,
+              "topwidth": 1
+            },
+            "blobGap": 10
+          },
+          "pointline": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "stroke": {
+              "width": 9,
+              "crowdedWidth": 6,
+              "crowdedThreshold": 36
+            },
+            "radius": 10
+          },
+          "stepline": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "stroke": {
+              "width": 9,
+              "crowdedWidth": 6,
+              "crowdedThreshold": 36
+            }
+          },
+          "pie": {
+            "colours": [
+              [
+                "dc-econred60"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55"
+              ],
+              [
+              "dc-econred60",
+              "dc-econredtint",
+              "dc-gridlines",
+              "dc-london55",
+              "dc-greytext"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4"
+              ],
+              [
+                "dc-econred60",
+                "dc-econredtint",
+                "dc-gridlines",
+                "dc-london55",
+                "dc-greytext",
+                "dc-chicago55",
+                "dc-chartblue",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            ],
+            "wedges": {
+              "outerMargin": 10
+            },
+            "labels": {
+              "LABELS_NOTE": "Not implemented; using standard legends...",
+              "leading": 15,
+              "fill": "dc-london5",
+              "size": 14
+            },
+            "header": {
+              "leading": 48,
+              "fill": "dc-london5",
+              "size": 40
+            }
+          },
+          "___table": "No tables in video",
+          "double": {
+            "colours": {
+              "left": [
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ],
+              "right": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
+              ],
+              "NOTE": "If types are identical, set left/right; else set types to a colourset ",
+              "linealone": [
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark",
+                "dc-econred",
+                "dc-econredtint",
+                "dc-econreddark"
+               ],
+              "columnalone": [
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext",
+                "dc-land3",
+                "dc-land4",
+                "dc-landtext"
+              ]
+            }
+          }
+        },
+        "legend": {
+          "headerText": {
+            "fill": "dc-london5",
+            "size": 40,
+            "leading": 48
+          },
+          "text": {
+            "font": "EconomistSans-Regular",
+            "fill": "white",
             "size": 40,
             "leading": 44
           },

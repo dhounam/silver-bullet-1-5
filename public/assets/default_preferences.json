@@ -35,7 +35,7 @@
       "bboxA": {
         "name": "Main background box",
         "note": "This element MUST exist, set to 100% width and height...",
-        "shape": "rect",
+        "type": "rect",
         "class": "chart-d3-backbox-main",
         "id": "background-shape-1",
         "display": true,
@@ -52,7 +52,7 @@
       "bboxB": {
         "name": "Background box: bar at top",
         "note": "Setting display property to false causes element not to display; can override in presets",
-        "shape": "rect",
+        "type": "rect",
         "class": "chart-d3-backbox-topline",
         "id": "background-shape-2",
         "display": false,
@@ -69,7 +69,7 @@
       "bboxC": {
         "name": "Sub-background box (red flash)",
         "note": "Size change for Print.LD, at least",
-        "shape": "rect",
+        "type": "rect",
         "class": "chart-d3-backbox-sub",
         "id": "background-shape-3",
         "display": true,

@@ -142,23 +142,41 @@ class SilverBackground extends Component {
     const ten = 10;
     const config = this.props.config;
     // Populate an array of shapes to be drawn, checking 'display' prop
+    // With parallel array of shape types (rect or circle)
     const backArray = [];
+    const shapeArray = [];
     for (const shape of config.background.shapes) {
       if (shape.display) {
         backArray.push(shape);
+        shapeArray.push(shape.type);
       }
     }
+    // Insider Landscape: to swap out rect flash for circle (and vice versa)
+    // I must explicitly remove it
+    // Easier to do by class, since metadata gets appended to id for Illy
+    // d3.select('#background-shape-3').remove();
+    d3.selectAll('.chart-d3-backbox-sub').remove();
+    // Also have to remove bboxA and bboxB
+    d3.selectAll('.chart-d3-backbox-main').remove();
+    d3.selectAll('.chart-d3-backbox-topline').remove();
+
     const chartHeight = config.background.outerbox.dimensions.height;
     const chartWidth = config.background.outerbox.dimensions.width;
     // Colours
     const colours = config.metadata.colours;
     // Context
     const marginsGroup = d3.select('.silver-chart-shapes-group');
-    const boundShape = marginsGroup.selectAll('rect').data(backArray);
+    const boundShape = marginsGroup.selectAll('bbox').data(backArray);
     // Enter
     boundShape
       .enter()
-      .append('rect')
+      .append(function(d, i) {
+        const shapeType = shapeArray[i];
+        return document.createElementNS(
+          'http://www.w3.org/2000/svg',
+          shapeType,
+        );
+      })
       .attr({
         class: ddd => ddd.class,
         // NOTE: default fill should probably be the same as the
@@ -190,8 +208,13 @@ class SilverBackground extends Component {
           }
           return idStr;
         },
+        // I'm giving properties for both rects and circles, but only
+        // those relevant to the shape will be used
         x: ddd => ddd.x,
         y: ddd => ddd.y,
+        cx: ddd => ddd.x,
+        cy: ddd => ddd.y,
+        r: ddd => ddd.diameter / 2,
         // Height and width can be absolute px values, or a percent
         // of the containing outerbox...
         height: ddd => {
