@@ -183,8 +183,10 @@ export function isRowIndexable(aRow) {
   let rowFlag = true;
   // Loop by 'columns' (omit cats)
   for (let cNo = 1; cNo < aRow.length; cNo++) {
-    // If any 'cell' in the row is not 100, break
-    if (parseInt(aRow[cNo], 10) !== 100) {
+    // If any 'cell' in the row is not >=100 & <101, break
+    // if (parseInt(aRow[cNo], 10) !== 100) {
+    // No: check for *exactly* 100
+    if (Number(aRow[cNo]) !== 100) {
       rowFlag = false;
       break;
     }
