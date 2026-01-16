@@ -1701,6 +1701,17 @@ export function reconcileEdConfigOtherPropsToConfig(
   if (
     specificOtherProps &&
     specificOtherProps.indexDot &&
+    specificOtherProps.indexDot.strokewidth > 0
+  ) {
+    const stroke = specificOtherProps.indexDot.stroke;
+    configPanel.indexDot.strokeName = stroke;
+    configPanel.indexDot.strokeValue =
+      globalAssets.ColourLookup.colours[stroke];
+    configPanel.indexDot.strokeWidth = specificOtherProps.indexDot.strokewidth;
+  }
+  if (
+    specificOtherProps &&
+    specificOtherProps.indexDot &&
     specificOtherProps.indexDot.radius
   ) {
     configPanel.indexDot.radius = specificOtherProps.indexDot.radius;

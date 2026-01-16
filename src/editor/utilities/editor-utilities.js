@@ -501,12 +501,15 @@ export function getNewChartObject(newPayload, presetsConfig) {
   };
   // Index dot props
   const iPrefs = dps.other.indexDot;
-  // Define fillName for lookup
   const fillName = iPrefs.fill;
+  const strokeName = iPrefs.stroke;
   newChart.indexDot = {
     radius: iPrefs.radius,
     fillName,
     fillValue: globalAssets.ColourLookup.colours[fillName],
+    strokeName,
+    strokeValue: globalAssets.ColourLookup.colours[strokeName],
+    strokeWidth: iPrefs.strokewidth,
     value: iPrefs.value,
   };
   // Broken scale props

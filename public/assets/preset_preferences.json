@@ -7643,7 +7643,7 @@
               "display": true,
               "type": "circle",
               "NOTE": "x and y are centre coords, margins to edge + radius",
-              "x": 197,
+              "x": 201,
               "y": 77.5,
               "diameter": 34,
               "fill": "dc-econred60"
@@ -7651,7 +7651,7 @@
           },
           "strings": {
             "title": {
-              "x": 226,
+              "x": 230,
               "y": 96,
               "wrapwidth": 100,
               "font-family": "EconomistSerif-SemiBold",
@@ -8910,7 +8910,9 @@
         "other": {
           "indexDot": {
             "radius": 16,
-            "fill": "dc-london5"
+            "fill": "dc-london5",
+            "stroke": "dc-london70",
+            "strokewidth": 2
           },
           "brokenScale": {
             "stroke": "dc-london5"

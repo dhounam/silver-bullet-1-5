@@ -1853,6 +1853,8 @@
     "indexDot": {
       "radius": 2.5,
       "fill": "black100",
+      "stroke": "none",
+      "strokewidth": 0,
       "value": 100
     },
     "brokenScale": {

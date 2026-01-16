@@ -70,11 +70,12 @@ class SilverSeriesLine extends Component {
       const iGrp = d3.select(`#${className}`)
       iGrp.append('circle').attr({
         fill: indexed.fillValue,
-        'stroke-width': 0,
+        'stroke-width': indexed.strokeWidth,
+        stroke: indexed.strokeValue,
         r: indexed.radius,
         id: () => {
           let dId = `index-dot-${config.chartIndex}~~~`
-          dId = `${dId}fill: ${indexed.fillName}`
+          dId = `${dId}fill: ${indexed.fillName},stroke: ${indexed.strokeName}`
           return dId
         },
         cx: config.xMainScale(indexed.indexCat),
