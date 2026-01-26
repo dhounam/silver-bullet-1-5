@@ -214,7 +214,8 @@
           "BAR-NOTE": "Was 13 gives 15 to x-axis labels baseline",
           "double": 12,
           "DOUBLE-NOTE": "Was 12 gives 15 to axis header baseline",
-          "noSubtitleAdjustment": 0
+          "noSubtitleAdjustment": 0,
+          "NSA-NOTE": "If no subtitle, add this to default. N/a except Insider Landscape."
         }
       },
       "belowPanelHeaderBaseline": {
