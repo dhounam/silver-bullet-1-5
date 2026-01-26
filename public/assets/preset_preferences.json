@@ -229,7 +229,8 @@
                 "default": 12,
                 "bar": 10,
                 "BAR-NOTE": "8 gives 10 to x-axis labels baseline",
-                "double": 8.5
+                "double": 8.5,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -368,7 +369,8 @@
                 "default": 12,
                 "bar": 10,
                 "BAR-NOTE": "8 gives 10 to x-axis labels baseline",
-                "double": 8.5
+                "double": 8.5,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -1019,7 +1021,8 @@
                 "default": 32,
                 "NOTE": "to get 28 for bars/hthermos",
                 "bar": 26,
-                "double": 26
+                "double": 26,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -2358,7 +2361,8 @@
                 "default": 32,
                 "NOTE": "to get 28 for bars/hthermos",
                 "bar": 26,
-                "double": 26
+                "double": 26,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -3709,7 +3713,8 @@
                 "default": 32,
                 "NOTE": "to get 28 for bars/hthermos",
                 "bar": 26,
-                "double": 26
+                "double": 26,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -5069,7 +5074,8 @@
               "toTopOfChart": {
                 "default": 96,
                 "bar": 78,
-                "double": 78
+                "double": 78,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -6397,7 +6403,8 @@
               "toTopOfChart": {
                 "default": 52,
                 "bar": 80,
-                "double": 43
+                "double": 43,
+                "noSubtitleAdjustment": 0
               }
             },
             "belowPanelHeaderBaseline": {
@@ -7727,7 +7734,9 @@
               "toTopOfChart": {
                 "default": 60,
                 "bar": 80,
-                "double": 43
+                "double": 43,
+                "NOTE": "If no subtitle, IL increases padding.",
+                "noSubtitleAdjustment": 30
               }
             },
             "belowPanelHeaderBaseline": {
@@ -7932,8 +7941,8 @@
             },
             "doubleScale": {
               "fill": {
-                "left": "dc-greytext",
-                "right": "dc-econred",
+                "left": "dc-london70",
+                "right": "dc-econred60",
                 "NOTE": "If types are identical, set left/right; else set coloursets by type",
                 "linealone": "dc-econred",
                 "columnalone": "dc-greytext"
@@ -7950,7 +7959,7 @@
           "brokenScaleFactors": {
             "note": "x and y axes (tho no BS drawn on x-axis)",
             "size": 8,
-            "strokewidth": 10
+            "strokewidth": 7.5
           }
         },
         "series": {
@@ -8895,7 +8904,8 @@
               "horizontal": 18,
               "vertical": 18
             },
-            "fill": "dc-gridlines"
+            "fill": "dc-gridlines",
+            "opacity": 1
           },
           "margin": {
             "left": 60
@@ -8912,10 +8922,10 @@
             "radius": 16,
             "fill": "dc-london5",
             "stroke": "dc-london70",
-            "strokewidth": 2
+            "strokewidth": 3
           },
           "brokenScale": {
-            "stroke": "dc-london5"
+            "stroke": "dc-london70"
           }
         }
       }

@@ -109,7 +109,8 @@ class SilverChartWrapper extends Component {
   // Called from getPaddingBelowTitleCluster &
   // getPaddingBelowPanelHeaderBaselines
   // pLookup is title-cluster or panel-header padding lookup
-  getOnePaddingValue(pConfig, pLookup) {
+  // noSubtitle is boolean flag for Insider Landscape kludge
+  getOnePaddingValue(pConfig, pLookup, noSubtitle) {
     // What's below? Could be legends,
     // blobs or top of chart
     const hasBlobs = pConfig.blobs.hasBlobs;
@@ -142,6 +143,12 @@ class SilverChartWrapper extends Component {
     } else if (typeof pLookup.toTopOfChart[chartType] !== 'undefined') {
       padding = pLookup.toTopOfChart[chartType];
     }
+    // Jan'26: Insider Landscape increases padding if there's no subtitle.
+    // So I've added an extra property to the padding lookup. Set to zero
+    // for all styles except Insider Landscape
+    if (noSubtitle) {
+      padding += pLookup.toTopOfChart.noSubtitleAdjustment;
+    }
     return padding;
   }
   // GET ONE PADDING VALUE ends
@@ -152,7 +159,9 @@ class SilverChartWrapper extends Component {
   getPaddingBelowTitleCluster(config) {
     const pLookup = config.background.topPadding.belowTitleClusterBaseline;
     const pConfig = config.panelArray[0];
-    const pVal = this.getOnePaddingValue(pConfig, pLookup);
+    // No subtitle? (Kludge for Insider Landscape, Jan'26)
+    const noSubtitle = config.background.strings.subtitle.content.trim() === '';
+    const pVal = this.getOnePaddingValue(pConfig, pLookup, noSubtitle);
     return pVal;
   }
   // GET PADDING BELOW TITLE CLUSTER ends
@@ -166,7 +175,9 @@ class SilverChartWrapper extends Component {
     const pArray = [];
     for (let pNo = 0; pNo < pCount; pNo++) {
       const pConfig = config.panelArray[pNo];
-      pArray.push(this.getOnePaddingValue(pConfig, pLookup));
+      // Irrelevant for panels:
+      const noSubtitle = false;
+      pArray.push(this.getOnePaddingValue(pConfig, pLookup, noSubtitle));
     }
     return pArray;
   }
