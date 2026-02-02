@@ -25,7 +25,8 @@
         "right": 6
       },
       "innerMargins": {
-        "_NOTE": "May'25, for Online Video Landscape fixed internal margins",
+        "_NOTE-A": "May'25, Online Video/Insider Landscape use fixed internal margins...",
+        "_NOTE-B": "...for line/column.",
         "fixed": false,
         "left": 0,
         "right": 0
@@ -34,7 +35,7 @@
     "shapes": {
       "bboxA": {
         "name": "Main background box",
-        "note": "This element MUST exist, set to 100% width and height...",
+        "NOTE": "This element MUST exist, set to 100% width and height...",
         "type": "rect",
         "class": "chart-d3-backbox-main",
         "id": "background-shape-1",
