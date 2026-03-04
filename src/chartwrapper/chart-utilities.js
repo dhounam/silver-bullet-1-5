@@ -450,8 +450,9 @@ export function checkForFixedInnerMargins(innerBox, config, style) {
     const origIB = config.originalInnerBox;
     if (typeof style === 'undefined') {
       // So not a bar or hthermo chart
-      innerBox.x = origIB.x + innerMargins.left;
-      innerBox.width = origIB.width - (innerMargins.left + innerMargins.right);
+      // innerBox.x = origIB.x + innerMargins.left;
+      // innerBox.width = origIB.width - (innerMargins.left + innerMargins.right);
+      // REVISIT, March'26: comm'd out because I'm not convinced it helps...
     } else {
       // Don't override left
       // At right, use new innerbox width... with a tweak--

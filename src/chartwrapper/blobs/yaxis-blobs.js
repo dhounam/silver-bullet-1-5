@@ -120,6 +120,7 @@ class SilverYaxisBlobs extends Component {
   // Called from updateBlobs to calculate height of blobs
   getBlobHeight(config) {
     let blobHeight = 0;
+    debugger;
     if (config.chartType.includes('bar')) {
       // Bars have a rangeband
       blobHeight = config.yMainScale.rangeBand();
@@ -129,7 +130,9 @@ class SilverYaxisBlobs extends Component {
       blobHeight = this.getBlobHeightFromChartHeight(config);
     }
     // Don't be < 0!
-    blobHeight = Math.max(blobHeight, 0);
+    // blobHeight = Math.max(blobHeight, 0);
+    // On 2nd thoughts, don't be < fontsize...
+    blobHeight = Math.max(blobHeight, config.blobs.blobMeta.text.size);
     return blobHeight;
   }
   // GET BLOB HEIGHT ends

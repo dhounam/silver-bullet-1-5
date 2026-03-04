@@ -87,7 +87,6 @@ class SilverLegendSet extends Component {
       .append('text')
       .attr({
         class: 'legend-header',
-        fill: lPrefs.headerPrefs.fill,
       });
     boundHead
       .attr({
@@ -104,6 +103,7 @@ class SilverLegendSet extends Component {
         'font-family': lPrefs.headerPrefs.font,
         'font-size': `${lPrefs.headerPrefs.size}px`,
         'text-anchor': lPrefs.headerPrefs.anchor,
+        fill: lPrefs.colourLookup[lPrefs.textPrefs.fill],
       })
       .text(ddd => ddd);
     boundHead.exit().remove();

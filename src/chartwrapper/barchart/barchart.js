@@ -22,9 +22,9 @@ class SilverBarChart extends Component {
     super(props);
     this.state = {
       // flags to control subcomponent testing/rendering
-      yaxisTest: true,
+      xaxisTest: true,
       blobsTest: false,
-      xaxisTest: false,
+      yaxisTest: false,
       // updated innerBox bounds
       innerBox: this.props.config.innerBox,
     };
@@ -41,13 +41,32 @@ class SilverBarChart extends Component {
   UNSAFE_componentWillReceiveProps(newProps) {
     this.setState({
       innerBox: newProps.config.innerBox,
-      yaxisTest: true,
+      xaxisTest: true,
+      yaxisTest: false,
       blobsTest: false,
-      xaxisTest: false,
     });
   }
 
   // Callbacks:
+  // HANDLE X-AXIS INNER BOX BOUNDS
+  // ...fields the revised innerBox (after axis testing)
+  handleXaxisInnerBoxBounds(innerBox) {
+    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
+    const config = this.props.config;
+    innerBox = ChartUtilities.checkForFixedInnerMargins(
+      innerBox,
+      config,
+      'barchart',
+    );
+    this.setState({
+      innerBox,
+      // Set flags for render 4 (final)
+      xaxisTest: false,
+      yaxisTest: true,
+      blobsTest: false,
+    });
+  }
+
   // HANDLE Y-AXIS INNER BOX BOUNDS
   handleYaxisInnerBoxBounds(innerBox) {
     // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
@@ -68,25 +87,6 @@ class SilverBarChart extends Component {
     this.setState({
       innerBox,
       // Set flags for render 3 (xaxis)
-      xaxisTest: true,
-      yaxisTest: false,
-      blobsTest: false,
-    });
-  }
-
-  // HANDLE X-AXIS INNER BOX BOUNDS
-  // ...fields the revised innerBox (after axis testing)
-  handleXaxisInnerBoxBounds(innerBox) {
-    // Mod May'25 checks for fixed l/r inner margins (Online Video Landscape)
-    const config = this.props.config;
-    innerBox = ChartUtilities.checkForFixedInnerMargins(
-      innerBox,
-      config,
-      'barchart',
-    );
-    this.setState({
-      innerBox,
-      // Set flags for render 4 (final)
       xaxisTest: false,
       yaxisTest: false,
       blobsTest: false,
@@ -380,8 +380,20 @@ class SilverBarChart extends Component {
     let xaxisJSX = '';
     let barseriesJSX = '';
     // Render sequence:
-    if (this.state.yaxisTest) {
+    if (this.state.xaxisTest) {
+      const xAxisConfig = this.getAxisConfig(config, true);
+      // xAxisConfig.bounds = JSON.parse(JSON.stringify(this.state.innerBox));
+      // Test render, with callback
+      xaxisJSX = (
+        <SilverXaxisLinearTest
+          key={kids.xAxisKey}
+          config={xAxisConfig}
+          onReturnRevisedInnerBox={this.handleXaxisInnerBoxBounds}
+        />
+      );
+    } else if (this.state.yaxisTest) {
       const yAxisConfig = this.getAxisConfig(config, false);
+      yAxisConfig.bounds = this.state.innerBox;
       // Render yaxis only, with 'test' flag
       yaxisJSX = (
         <SilverYaxisOrdinalTest
@@ -399,17 +411,6 @@ class SilverBarChart extends Component {
           key={kids.blobsKey}
           config={blobsConfig}
           onReturnRevisedInnerBox={this.handleBlobsInnerBoxBounds}
-        />
-      );
-    } else if (this.state.xaxisTest) {
-      const xAxisConfig = this.getAxisConfig(config, true);
-      xAxisConfig.bounds = JSON.parse(JSON.stringify(this.state.innerBox));
-      // Test render, with callback
-      xaxisJSX = (
-        <SilverXaxisLinearTest
-          key={kids.xAxisKey}
-          config={xAxisConfig}
-          onReturnRevisedInnerBox={this.handleXaxisInnerBoxBounds}
         />
       );
     } else {

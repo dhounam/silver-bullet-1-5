@@ -881,8 +881,8 @@
             "name": "Web only [WO]"
           },
           {
-            "code": "DA",
-            "name": "Espresso [DA]"
+            "code": "IB",
+            "name": "Espresso [IB]"
           },
         {
             "code": "ZZ",
@@ -901,8 +901,8 @@
               "name": "Web only [WO]"
             },
             {
-              "code": "DA",
-              "name": "Espresso [DA]"
+              "code": "IB",
+              "name": "Espresso [IB]"
             },
             {
               "code": "ZZ",
@@ -3589,8 +3589,8 @@
         "sections": {
           "list": [
             {
-              "code": "DA",
-              "name": "Espresso [DA]"
+              "code": "IB",
+              "name": "Espresso [IB]"
             },
             {
               "code": "WO",
@@ -3601,7 +3601,7 @@
               "name": "Data analytics [ZZ]"
             }
           ],
-          "default": "DA",
+          "default": "IB",
           "forceDefault": true
         },
         "colourSpace": "rgb",
@@ -7823,8 +7823,8 @@
                 "stroke": "dc-london70",
                 "width": 3,
                 "zero": {
-                  "simple": "dc-london20",
-                  "mixed": "dc-london20",
+                  "simple": "dc-london70",
+                  "mixed": "dc-london70",
                   "width": 3
                 }
               },
@@ -8390,14 +8390,14 @@
             },
             "links": {
               "length": 90,
-              "stroke": "dc-london5",
+              "stroke": "dc-london70",
               "width": 2
             },
             "text": {
               "x": 6,
               "y": 30,
               "leading": 48,
-              "fill": "dc-london5",
+              "fill": "dc-london70",
               "size": 40
             },
             "trendline": {
@@ -8830,7 +8830,7 @@
         },
         "legend": {
           "headerText": {
-            "fill": "dc-london5",
+            "fill": "white",
             "size": 40,
             "leading": 48
           },
@@ -8862,8 +8862,8 @@
             },
             "barcolumn": {
               "style": "rect",
-              "width": 50,
-              "height": 50
+              "width": 32,
+              "height": 32
             },
             "thermo": {
               "style": "line",
@@ -8873,22 +8873,21 @@
             },
             "thermodot": {
               "style": "dot",
-              "width": 30,
-              "height": 30
+              "width": 32,
+              "height": 32
             },
             "scatter": {
               "style": "dot",
-              "width": 30,
-              "height": 30
+              "width": 32,
+              "height": 32
             },
             "pie": {
               "style": "rect",
-              "width": 30,
-              "height": 30
+              "width": 32,
+              "height": 32
             }
           }
         },
-        "_BLOBS": "Properties for blobs",
         "blobs": {
           "NOTE": "Minimum sizes are redundant",
           "minCircleSize": 30,
@@ -8896,7 +8895,7 @@
           "maxCircleSize": 90,
           "maxRectWidth": 450,
           "text": {
-            "fill": "dc-london5",
+            "fill": "dc-london85",
             "size": 46
           },
           "background": {
@@ -8904,7 +8903,9 @@
               "horizontal": 18,
               "vertical": 18
             },
-            "fill": "dc-gridlines",
+            "fill": "dc-london5",
+            "strokewidth": 2,
+            "stroke": "dc-london85",
             "opacity": 1
           },
           "margin": {
