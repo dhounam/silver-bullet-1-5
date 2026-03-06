@@ -1796,7 +1796,7 @@
     "defaults": {
       "blobs": {
         "column": 0,
-        "isRect": false,
+        "isRect": true,
         "header": ""
       },
       "chartIndex": 0,

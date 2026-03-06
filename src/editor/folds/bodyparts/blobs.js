@@ -88,17 +88,17 @@ class Blobs extends Component {
 
         <button
           type="button"
-          className={bubbleClass}
-          onClick={this.handleBlobShapeChange}
-        >
-          bubble
-        </button>
-        <button
-          type="button"
           className={blockClass}
           onClick={this.handleBlobShapeChange}
         >
           block
+        </button>
+        <button
+          type="button"
+          className={bubbleClass}
+          onClick={this.handleBlobShapeChange}
+        >
+          bubble
         </button>
       </div>
     );
