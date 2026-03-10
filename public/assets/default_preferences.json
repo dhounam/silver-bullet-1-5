@@ -1714,7 +1714,8 @@
       "fill": "gridlines",
       "opacity": 0.8,
       "stroke": "none",
-      "strokewidth": 0
+      "strokewidth": 0,
+      "blendingmode": "multiply"
     },
     "margin": {
       "DELETED_below-set in top-padding": 10,

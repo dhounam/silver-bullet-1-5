@@ -8906,7 +8906,8 @@
             "fill": "dc-london5",
             "strokewidth": 2,
             "stroke": "dc-london85",
-            "opacity": 1
+            "opacity": 1,
+            "blendingmode": "normal"
           },
           "margin": {
             "left": 60

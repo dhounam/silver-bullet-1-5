@@ -120,7 +120,6 @@ class SilverYaxisBlobs extends Component {
   // Called from updateBlobs to calculate height of blobs
   getBlobHeight(config) {
     let blobHeight = 0;
-    debugger;
     if (config.chartType.includes('bar')) {
       // Bars have a rangeband
       blobHeight = config.yMainScale.rangeBand();
@@ -259,7 +258,9 @@ class SilverYaxisBlobs extends Component {
           const bStr = config.blobs.blobMeta.background.stroke;
           bID = `${bID}stroke: ${bStr},`;
           const bWid = config.blobs.blobMeta.background.strokewidth;
-          bID = `${bID}strokewidth: ${bWid}`;
+          bID = `${bID}strokewidth: ${bWid},`;
+          const blendingMode = config.blobs.blobMeta.background.blendingmode;
+          bID = `${bID}blendingmode: ${blendingMode}`;
           return bID;
         },
       });
@@ -283,7 +284,9 @@ class SilverYaxisBlobs extends Component {
           const bStr = config.blobs.blobMeta.background.stroke;
           bID = `${bID}stroke: ${bStr},`;
           const bWid = config.blobs.blobMeta.background.strokewidth;
-          bID = `${bID}strokewidth: ${bWid}`;
+          bID = `${bID}strokewidth: ${bWid},`;
+          const blendingMode = config.blobs.blobMeta.background.blendingmode;
+          bID = `${bID}blendingmode: ${blendingMode}`;
           return bID;
         },
       });

@@ -115,7 +115,9 @@ export function updateBlobHeader(config) {
       const bStr = config.blobs.blobMeta.background.stroke;
       bID = `${bID}stroke: ${bStr},`;
       const bWid = config.blobs.blobMeta.background.strokewidth;
-      bID = `${bID}strokewidth: ${bWid}`;
+      bID = `${bID}strokewidth: ${bWid},`;
+      const blendingMode = config.blobs.blobMeta.background.blendingmode;
+      bID = `${bID}blendingmode: ${blendingMode}`;
       return bID;
     },
   });
